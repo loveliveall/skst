@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (_, argv) => {
-  const isProd = argv.mode === 'production' ? 'production' : 'development';
+  const isProd = argv.mode === 'production';
   const baseConfig = {
     mode: isProd ? 'production' : 'development',
     devtool: isProd ? false : 'source-map',
