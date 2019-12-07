@@ -44,6 +44,7 @@ module.exports = (_, argv) => {
       new CopyWebpackPlugin([
         'src/CNAME',
         'src/404.html',
+        { from: 'assets/images', to: 'images' },
       ]),
     ],
   };
