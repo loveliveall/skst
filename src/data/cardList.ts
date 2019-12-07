@@ -1,0 +1,177 @@
+import { MEMBER } from './memberMetadata';
+import { RARITY, ATTRIBUTE, ROLE } from './cardMetadata';
+
+type Card = {
+  readonly id: number,
+  readonly memberId: keyof typeof MEMBER,
+  readonly title: string,
+  readonly awakenTitle: string,
+  readonly rarityId: keyof typeof RARITY,
+  readonly attributeId: keyof typeof ATTRIBUTE,
+  readonly roleId: keyof typeof ROLE,
+  readonly fromId: ['gacha' | 'event', number], // When the card first added?
+};
+type CardList = readonly Card[];
+
+/* eslint-disable object-curly-newline, max-len */
+export const CARD_LIST: CardList = [
+  { id: 1, memberId: 1, title: '音ノ木坂学院2年生', awakenTitle: '笑顔でいっぱいの女の子', rarityId: 1, attributeId: 1, roleId: 1, fromId: ['gacha', 1] },
+  { id: 2, memberId: 1, title: 'μ’ｓのリーダー', awakenTitle: '飽くなき挑戦', rarityId: 1, attributeId: 4, roleId: 2, fromId: ['gacha', 1] },
+  { id: 3, memberId: 1, title: 'ことりちゃんと食べるパン', awakenTitle: 'フレッシュフルーツパーラー', rarityId: 2, attributeId: 2, roleId: 4, fromId: ['gacha', 1] },
+  { id: 4, memberId: 1, title: '動物園で対決！', awakenTitle: 'はいからロマンス', rarityId: 3, attributeId: 6, roleId: 3, fromId: ['gacha', 1] },
+  { id: 5, memberId: 2, title: '音ノ木坂学院3年生', awakenTitle: '才色兼備の生徒会長', rarityId: 1, attributeId: 3, roleId: 2, fromId: ['gacha', 1] },
+  { id: 6, memberId: 2, title: 'μ’ｓのムードメーカー', awakenTitle: 'かしこい、かわいい、エリーチカ', rarityId: 1, attributeId: 1, roleId: 4, fromId: ['gacha', 1] },
+  { id: 7, memberId: 2, title: 'あなたのことを知りたくて', awakenTitle: 'フレッシュフルーツパーラー', rarityId: 2, attributeId: 6, roleId: 1, fromId: ['gacha', 1] },
+  { id: 8, memberId: 2, title: 'エリーチカ先生のボウリング講座', awakenTitle: 'エターナルプロミス', rarityId: 3, attributeId: 2, roleId: 3, fromId: ['gacha', 1] },
+  { id: 9, memberId: 3, title: '音ノ木坂学院2年生', awakenTitle: '幻のミナリンスキー', rarityId: 1, attributeId: 2, roleId: 2, fromId: ['gacha', 1] },
+  { id: 10, memberId: 3, title: 'μ’ｓの衣装担当', awakenTitle: 'おっとり優等生', rarityId: 1, attributeId: 5, roleId: 4, fromId: ['gacha', 1] },
+  { id: 11, memberId: 3, title: '眠れない日々', awakenTitle: 'フレッシュフルーツパーラー', rarityId: 2, attributeId: 1, roleId: 3, fromId: ['gacha', 1] },
+  { id: 12, memberId: 3, title: 'あなたとの初めての思い出', awakenTitle: 'ラブリーポリス', rarityId: 3, attributeId: 3, roleId: 1, fromId: ['gacha', 1] },
+  { id: 13, memberId: 4, title: '音ノ木坂学院2年生', awakenTitle: 'スクールアイドル兼弓道部員', rarityId: 1, attributeId: 3, roleId: 4, fromId: ['gacha', 1] },
+  { id: 14, memberId: 4, title: 'μ’ｓの歌詞担当', awakenTitle: 'みんなのしっかり者', rarityId: 1, attributeId: 4, roleId: 1, fromId: ['gacha', 1] },
+  { id: 15, memberId: 4, title: 'ほたる玉は海未の色', awakenTitle: 'フレッシュフルーツパーラー', rarityId: 2, attributeId: 5, roleId: 3, fromId: ['gacha', 1] },
+  { id: 16, memberId: 4, title: '大和撫子パニック', awakenTitle: '夏祭りシンフォニー', rarityId: 3, attributeId: 1, roleId: 2, fromId: ['gacha', 1] },
+  { id: 17, memberId: 5, title: '音ノ木坂学院1年生', awakenTitle: 'スポーツ万能少女', rarityId: 1, attributeId: 4, roleId: 3, fromId: ['gacha', 1] },
+  { id: 18, memberId: 5, title: 'μ’ｓの元気印', awakenTitle: 'アスレチックスクールアイドル', rarityId: 1, attributeId: 2, roleId: 1, fromId: ['gacha', 1] },
+  { id: 19, memberId: 5, title: '至福の昼下がり', awakenTitle: 'フレッシュフルーツパーラー', rarityId: 2, attributeId: 3, roleId: 4, fromId: ['gacha', 1] },
+  { id: 20, memberId: 5, title: '凛がいるから大丈夫！', awakenTitle: '月光の踊り子', rarityId: 3, attributeId: 5, roleId: 2, fromId: ['gacha', 1] },
+  { id: 21, memberId: 6, title: '音ノ木坂学院1年生', awakenTitle: 'クールビューティー', rarityId: 1, attributeId: 6, roleId: 1, fromId: ['gacha', 1] },
+  { id: 22, memberId: 6, title: 'μ’ｓの作曲担当', awakenTitle: '信念を持つ才女', rarityId: 1, attributeId: 5, roleId: 3, fromId: ['gacha', 1] },
+  { id: 23, memberId: 6, title: 'どっちが子ども？', awakenTitle: 'フレッシュフルーツパーラー', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['gacha', 1] },
+  { id: 24, memberId: 6, title: '「真姫ちゃんと映画デート」', awakenTitle: 'スカーレットロワイヤル', rarityId: 3, attributeId: 3, roleId: 4, fromId: ['gacha', 1] },
+  { id: 25, memberId: 7, title: '音ノ木坂学院3年生', awakenTitle: 'オールラウンドな副会長', rarityId: 1, attributeId: 2, roleId: 3, fromId: ['gacha', 1] },
+  { id: 26, memberId: 7, title: 'μ’ｓの導き手', awakenTitle: '音ノ木坂の魔女', rarityId: 1, attributeId: 3, roleId: 2, fromId: ['gacha', 1] },
+  { id: 27, memberId: 7, title: 'ため息なんか吹きとばせ！', awakenTitle: 'フレッシュフルーツパーラー', rarityId: 2, attributeId: 6, roleId: 1, fromId: ['gacha', 1] },
+  { id: 28, memberId: 7, title: '星空の下で', awakenTitle: 'スイートナイトパレード', rarityId: 3, attributeId: 1, roleId: 4, fromId: ['gacha', 1] },
+  { id: 29, memberId: 8, title: '音ノ木坂学院1年生', awakenTitle: '音ノ木坂の飼育係', rarityId: 1, attributeId: 5, roleId: 2, fromId: ['gacha', 1] },
+  { id: 30, memberId: 8, title: 'μ’ｓのスクールアイドル博士', awakenTitle: '控えめスクールアイドル', rarityId: 1, attributeId: 6, roleId: 4, fromId: ['gacha', 1] },
+  { id: 31, memberId: 8, title: '今までも、これからも', awakenTitle: 'フレッシュフルーツパーラー', rarityId: 2, attributeId: 1, roleId: 1, fromId: ['gacha', 1] },
+  { id: 32, memberId: 8, title: 'これからが本番！', awakenTitle: 'チェリーフラッター', rarityId: 3, attributeId: 4, roleId: 3, fromId: ['gacha', 1] },
+  { id: 33, memberId: 9, title: '音ノ木坂学院3年生', awakenTitle: 'アイドル研究部部長', rarityId: 1, attributeId: 1, roleId: 4, fromId: ['gacha', 1] },
+  { id: 34, memberId: 9, title: 'μ’ｓの小悪魔', awakenTitle: '大銀河宇宙No.1アイドル', rarityId: 1, attributeId: 2, roleId: 2, fromId: ['gacha', 1] },
+  { id: 35, memberId: 9, title: '本日のラッキーアイテム', awakenTitle: 'フレッシュフルーツパーラー', rarityId: 2, attributeId: 5, roleId: 3, fromId: ['gacha', 1] },
+  { id: 36, memberId: 9, title: 'サプライズプレゼント', awakenTitle: 'My Sweet Devil', rarityId: 3, attributeId: 6, roleId: 1, fromId: ['gacha', 1] },
+
+  { id: 37, memberId: 11, title: '浦の星女学院2年生', awakenTitle: '普通怪獣ちかちー', rarityId: 1, attributeId: 1, roleId: 2, fromId: ['gacha', 1] },
+  { id: 38, memberId: 11, title: 'Aqoursのリーダー', awakenTitle: '諦めない心', rarityId: 1, attributeId: 5, roleId: 3, fromId: ['gacha', 1] },
+  { id: 39, memberId: 11, title: '素直なキモチ', awakenTitle: 'ハピネスチアガール', rarityId: 2, attributeId: 2, roleId: 1, fromId: ['gacha', 1] },
+  { id: 40, memberId: 11, title: '浜辺をさんぽ', awakenTitle: 'サマーアドベンチャー', rarityId: 3, attributeId: 4, roleId: 4, fromId: ['gacha', 1] },
+  { id: 41, memberId: 12, title: '浦の星女学院2年生', awakenTitle: '東京からの転校生', rarityId: 1, attributeId: 5, roleId: 4, fromId: ['gacha', 1] },
+  { id: 42, memberId: 12, title: 'Aqoursの作曲担当', awakenTitle: 'あわてんぼうなピアニスト', rarityId: 1, attributeId: 4, roleId: 1, fromId: ['gacha', 1] },
+  { id: 43, memberId: 12, title: 'リトルデーモンリリー', awakenTitle: 'ハピネスチアガール', rarityId: 2, attributeId: 6, roleId: 2, fromId: ['gacha', 1] },
+  { id: 44, memberId: 12, title: '水のシンフォニー', awakenTitle: 'ロイヤルエンジェル', rarityId: 3, attributeId: 2, roleId: 3, fromId: ['gacha', 1] },
+  { id: 45, memberId: 13, title: '浦の星女学院3年生', awakenTitle: '浦の星のアクアダイバー', rarityId: 1, attributeId: 2, roleId: 4, fromId: ['gacha', 1] },
+  { id: 46, memberId: 13, title: 'Aqours専任コーチ', awakenTitle: 'みんなのお姉さん', rarityId: 1, attributeId: 6, roleId: 3, fromId: ['gacha', 1] },
+  { id: 47, memberId: 13, title: '大切な思い出', awakenTitle: 'ハピネスチアガール', rarityId: 2, attributeId: 3, roleId: 2, fromId: ['gacha', 1] },
+  { id: 48, memberId: 13, title: 'そろそろ一緒に潜ってみる？', awakenTitle: '海神の巫女', rarityId: 3, attributeId: 5, roleId: 1, fromId: ['gacha', 1] },
+  { id: 49, memberId: 14, title: '浦の星女学院3年生', awakenTitle: '浦の星の生徒会長', rarityId: 1, attributeId: 3, roleId: 1, fromId: ['gacha', 1] },
+  { id: 50, memberId: 14, title: 'Aqoursのツッコミ担当', awakenTitle: 'スクールアイドルアニマ', rarityId: 1, attributeId: 5, roleId: 2, fromId: ['gacha', 1] },
+  { id: 51, memberId: 14, title: 'あなたという人は！', awakenTitle: 'ハピネスチアガール', rarityId: 2, attributeId: 1, roleId: 3, fromId: ['gacha', 1] },
+  { id: 52, memberId: 14, title: '内緒ですわよ', awakenTitle: '巫女舞ステップ', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['gacha', 1] },
+  { id: 53, memberId: 15, title: '浦の星女学院2年生', awakenTitle: '陽気な人気者', rarityId: 1, attributeId: 4, roleId: 1, fromId: ['gacha', 1] },
+  { id: 54, memberId: 15, title: 'Aqours料理担当', awakenTitle: '敬礼っ！', rarityId: 1, attributeId: 1, roleId: 4, fromId: ['gacha', 1] },
+  { id: 55, memberId: 15, title: '放課後ホリデー', awakenTitle: 'ハピネスチアガール', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 1] },
+  { id: 56, memberId: 15, title: '水族館デート', awakenTitle: 'ラビットインワンダーランド', rarityId: 3, attributeId: 3, roleId: 3, fromId: ['gacha', 1] },
+  { id: 57, memberId: 16, title: '浦の星女学院1年生', awakenTitle: '浦の星の有名？配信者', rarityId: 1, attributeId: 3, roleId: 1, fromId: ['gacha', 1] },
+  { id: 58, memberId: 16, title: 'Aqoursの堕天使', awakenTitle: '堕天使ヨハネ', rarityId: 1, attributeId: 2, roleId: 3, fromId: ['gacha', 1] },
+  { id: 59, memberId: 16, title: '正座対決', awakenTitle: 'ハピネスチアガール', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['gacha', 1] },
+  { id: 60, memberId: 16, title: 'エンジェルスナイパー', awakenTitle: 'ホーンテッドプリンセス', rarityId: 3, attributeId: 6, roleId: 2, fromId: ['gacha', 1] },
+  { id: 61, memberId: 17, title: '浦の星女学院1年生', awakenTitle: '浦の星の図書委員', rarityId: 1, attributeId: 1, roleId: 3, fromId: ['gacha', 1] },
+  { id: 62, memberId: 17, title: 'Aqoursの歩く図書館', awakenTitle: '天然素材スクールアイドル', rarityId: 1, attributeId: 3, roleId: 1, fromId: ['gacha', 1] },
+  { id: 63, memberId: 17, title: '二人は親友', awakenTitle: 'ハピネスチアガール', rarityId: 2, attributeId: 5, roleId: 4, fromId: ['gacha', 1] },
+  { id: 64, memberId: 17, title: '紙越しの緑', awakenTitle: 'ドリーミングシープ', rarityId: 3, attributeId: 2, roleId: 2, fromId: ['gacha', 1] },
+  { id: 65, memberId: 18, title: '浦の星女学院3年生', awakenTitle: '浦の星の理事長', rarityId: 1, attributeId: 6, roleId: 2, fromId: ['gacha', 1] },
+  { id: 66, memberId: 18, title: 'Aqoursのムードメーカー', awakenTitle: 'さらに上を目指して', rarityId: 1, attributeId: 2, roleId: 3, fromId: ['gacha', 1] },
+  { id: 67, memberId: 18, title: '一番ちかくに', awakenTitle: 'ハピネスチアガール', rarityId: 2, attributeId: 4, roleId: 4, fromId: ['gacha', 1] },
+  { id: 68, memberId: 18, title: '初めてのツーショット', awakenTitle: 'Bitter & Sweet', rarityId: 3, attributeId: 5, roleId: 1, fromId: ['gacha', 1] },
+  { id: 69, memberId: 19, title: '浦の星女学院1年生', awakenTitle: '芯ある泣き虫', rarityId: 1, attributeId: 2, roleId: 3, fromId: ['gacha', 1] },
+  { id: 70, memberId: 19, title: 'Aqoursのマスコット', awakenTitle: '優しい妹', rarityId: 1, attributeId: 1, roleId: 2, fromId: ['gacha', 1] },
+  { id: 71, memberId: 19, title: '姉妹の休日', awakenTitle: 'ハピネスチアガール', rarityId: 2, attributeId: 3, roleId: 1, fromId: ['gacha', 1] },
+  { id: 72, memberId: 19, title: '夢のスイートポテト', awakenTitle: 'ファンタスティックピエロ', rarityId: 3, attributeId: 4, roleId: 4, fromId: ['gacha', 1] },
+
+  { id: 73, memberId: 21, title: '虹ヶ咲学園2年生', awakenTitle: '真面目な努力家', rarityId: 1, attributeId: 1, roleId: 2, fromId: ['gacha', 1] },
+  { id: 74, memberId: 21, title: '努力家スクールアイドル', awakenTitle: '昨日より一歩前へ', rarityId: 1, attributeId: 6, roleId: 4, fromId: ['gacha', 1] },
+  { id: 75, memberId: 21, title: '食べ過ぎ注意報', awakenTitle: '夢への一歩', rarityId: 2, attributeId: 4, roleId: 3, fromId: ['gacha', 1] },
+  { id: 76, memberId: 22, title: '虹ヶ咲学園1年生', awakenTitle: 'プリティーマスコット', rarityId: 1, attributeId: 6, roleId: 1, fromId: ['gacha', 1] },
+  { id: 77, memberId: 22, title: '虎視眈々スクールアイドル', awakenTitle: 'スクールアイドル研究家', rarityId: 1, attributeId: 1, roleId: 3, fromId: ['gacha', 1] },
+  { id: 78, memberId: 22, title: '楽しみなご褒美！', awakenTitle: 'ダイアモンド', rarityId: 2, attributeId: 4, roleId: 4, fromId: ['gacha', 1] },
+  { id: 79, memberId: 23, title: '虹ヶ咲学園1年生', awakenTitle: 'しっかり者の優等生', rarityId: 1, attributeId: 6, roleId: 4, fromId: ['gacha', 1] },
+  { id: 80, memberId: 23, title: '演劇部兼スクールアイドル', awakenTitle: '高い表現力', rarityId: 1, attributeId: 3, roleId: 1, fromId: ['gacha', 1] },
+  { id: 81, memberId: 23, title: '女優を夢見て', awakenTitle: 'あなたの理想のヒロイン', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 1] },
+  { id: 82, memberId: 24, title: '虹ヶ咲学園3年生', awakenTitle: '孤高の花', rarityId: 1, attributeId: 3, roleId: 1, fromId: ['gacha', 1] },
+  { id: 83, memberId: 24, title: 'モデル兼スクールアイドル', awakenTitle: '美の追求', rarityId: 1, attributeId: 6, roleId: 2, fromId: ['gacha', 1] },
+  { id: 84, memberId: 24, title: '教えてあげる', awakenTitle: 'Starlight', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['gacha', 1] },
+  { id: 85, memberId: 25, title: '虹ヶ咲学園2年生', awakenTitle: '虹ヶ咲の人気者', rarityId: 1, attributeId: 4, roleId: 1, fromId: ['gacha', 1] },
+  { id: 86, memberId: 25, title: 'ダジャレ大好きスクールアイドル', awakenTitle: 'チャレンジャー愛', rarityId: 1, attributeId: 3, roleId: 4, fromId: ['gacha', 1] },
+  { id: 87, memberId: 25, title: '愛のメモリー', awakenTitle: 'めっちゃGoing!!', rarityId: 2, attributeId: 5, roleId: 3, fromId: ['gacha', 1] },
+  { id: 88, memberId: 26, title: '虹ヶ咲学園3年生', awakenTitle: '中庭の眠り姫', rarityId: 1, attributeId: 2, roleId: 4, fromId: ['gacha', 1] },
+  { id: 89, memberId: 26, title: '眠れるスクールアイドル', awakenTitle: 'スリーピングビューティー', rarityId: 1, attributeId: 1, roleId: 3, fromId: ['gacha', 1] },
+  { id: 90, memberId: 26, title: '夢見心地のティータイム', awakenTitle: '眠れる森に行きたいな', rarityId: 2, attributeId: 5, roleId: 2, fromId: ['gacha', 1] },
+  { id: 91, memberId: 27, title: '虹ヶ咲学園2年生', awakenTitle: '？？？？系スクールアイドル', rarityId: 1, attributeId: 4, roleId: 2, fromId: ['gacha', 1] },
+  { id: 92, memberId: 27, title: '期待のスクールアイドル', awakenTitle: '頼れる才女', rarityId: 1, attributeId: 5, roleId: 1, fromId: ['gacha', 1] },
+  { id: 93, memberId: 27, title: 'もっと教えてください！', awakenTitle: 'CHASE!', rarityId: 2, attributeId: 6, roleId: 3, fromId: ['gacha', 1] },
+  { id: 94, memberId: 28, title: '虹ヶ咲学園3年生', awakenTitle: 'おっとりマイペース', rarityId: 1, attributeId: 5, roleId: 3, fromId: ['gacha', 1] },
+  { id: 95, memberId: 28, title: 'スイスから来たスクールアイドル', awakenTitle: 'アルプスの少女', rarityId: 1, attributeId: 2, roleId: 4, fromId: ['gacha', 1] },
+  { id: 96, memberId: 28, title: 'ぽかぽか天使', awakenTitle: 'Evergreen', rarityId: 2, attributeId: 6, roleId: 1, fromId: ['gacha', 1] },
+  { id: 97, memberId: 29, title: '虹ヶ咲学園1年生', awakenTitle: '秘められた素顔', rarityId: 1, attributeId: 5, roleId: 3, fromId: ['gacha', 1] },
+  { id: 98, memberId: 29, title: '顔出しNG系スクールアイドル', awakenTitle: '璃奈ちゃんボード', rarityId: 1, attributeId: 4, roleId: 2, fromId: ['gacha', 1] },
+  { id: 99, memberId: 29, title: 'はい！チーズ', awakenTitle: 'ドキピポ☆エモーション', rarityId: 2, attributeId: 2, roleId: 1, fromId: ['gacha', 1] },
+
+  { id: 100, memberId: 3, title: 'こっち手伝ってくれる？', awakenTitle: 'welcome to the party', rarityId: 3, attributeId: 5, roleId: 4, fromId: ['gacha', 10001] },
+  { id: 101, memberId: 15, title: 'つまみ食いしちゃダメだよ？', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['gacha', 10001] },
+  { id: 102, memberId: 1, title: '今日は目一杯楽しもー！', awakenTitle: 'welcome to the party', rarityId: 3, attributeId: 1, roleId: 2, fromId: ['event', 1] },
+  { id: 103, memberId: 11, title: '沼津の名産', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 1, roleId: 3, fromId: ['event', 1] },
+  { id: 104, memberId: 21, title: 'みんな喜んでくれるかな？', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['event', 1] },
+
+  { id: 105, memberId: 16, title: '堕天使降臨っ！', awakenTitle: 'トワイライトデーモン', rarityId: 3, attributeId: 3, roleId: 3, fromId: ['gacha', 20001] },
+  { id: 106, memberId: 2, title: '少し隣で待っててくれる？', awakenTitle: 'Snow halation', rarityId: 2, attributeId: 4, roleId: 4, fromId: ['gacha', 20001] },
+
+  { id: 107, memberId: 14, title: '次のポーズはどのように？', awakenTitle: 'ラピヌ・ミミ', rarityId: 3, attributeId: 3, roleId: 2, fromId: ['gacha', 10002] },
+  { id: 108, memberId: 6, title: 'あまりジロジロ見ないでくれる？', awakenTitle: 'Snow halation', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['gacha', 10002] },
+  { id: 109, memberId: 19, title: 'こ、こう、ですか？', awakenTitle: 'ラピヌ・ミミ', rarityId: 3, attributeId: 1, roleId: 1, fromId: ['event', 2] },
+  { id: 110, memberId: 9, title: '誰が七五三よ！', awakenTitle: 'Snow halation', rarityId: 2, attributeId: 2, roleId: 1, fromId: ['event', 2] },
+  { id: 111, memberId: 22, title: 'かすみんに死角はないですよ～', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['event', 2] },
+
+  { id: 112, memberId: 4, title: '一射入魂', awakenTitle: 'ブルーアモール', rarityId: 3, attributeId: 4, roleId: 1, fromId: ['gacha', 20002] },
+  { id: 113, memberId: 17, title: 'マルの大好きな本！', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['gacha', 20002] },
+  { id: 114, memberId: 23, title: '虹ヶ咲のジュリエット', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 3, roleId: 1, fromId: ['gacha', 20002] },
+
+  { id: 115, memberId: 13, title: 'ちゃんと繋がれたんだから', awakenTitle: 'ブルーレーヴ', rarityId: 3, attributeId: 6, roleId: 2, fromId: ['gacha', 10003] },
+  { id: 116, memberId: 5, title: 'お布団気持ちいいにゃ〜♪♪', awakenTitle: 'Snow halation', rarityId: 2, attributeId: 3, roleId: 4, fromId: ['gacha', 10003] },
+  { id: 117, memberId: 8, title: '一歩きりで終わらせないように', awakenTitle: 'フルールレーヴ', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['event', 3] },
+  { id: 118, memberId: 18, title: 'これが下町マジック……！', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['event', 3] },
+  { id: 119, memberId: 25, title: '特別なお出かけ', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['event', 3] },
+
+  { id: 120, memberId: 12, title: '迷いのない澄んだ旋律', awakenTitle: 'プレリュードブロッサム', rarityId: 3, attributeId: 1, roleId: 4, fromId: ['gacha', 20003] },
+  { id: 121, memberId: 7, title: 'あなたのことも占ってあげる', awakenTitle: 'Snow halation', rarityId: 2, attributeId: 6, roleId: 2, fromId: ['gacha', 20003] },
+
+  { id: 122, memberId: 2, title: 'い、今、そこの茂みが揺れて……', awakenTitle: 'フォレストフェアリー', rarityId: 3, attributeId: 5, roleId: 1, fromId: ['gacha', 10004] },
+  { id: 123, memberId: 16, title: '嘆くのはおやめなさい', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 6, roleId: 3, fromId: ['gacha', 10004] },
+  { id: 124, memberId: 17, title: 'それが、野鳥観察の入り口ずら！', awakenTitle: 'フォレストフェアリー', rarityId: 3, attributeId: 4, roleId: 1, fromId: ['event', 4] },
+  { id: 125, memberId: 4, title: '計画を立てましょう！', awakenTitle: 'Snow halation', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['event', 4] },
+  { id: 126, memberId: 26, title: '遅れてごめんね〜', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 3, roleId: 1, fromId: ['event', 4] },
+
+  { id: 127, memberId: 6, title: '私をこんなに待たせるなんて', awakenTitle: 'ドラマティックローズ', rarityId: 3, attributeId: 6, roleId: 3, fromId: ['gacha', 30001] },
+  { id: 128, memberId: 15, title: 'せっかく一緒に海に来たんだし', awakenTitle: 'スプラッシュマリン', rarityId: 3, attributeId: 2, roleId: 1, fromId: ['gacha', 30001] },
+  { id: 129, memberId: 24, title: 'キミと二人きりだもの', awakenTitle: 'ブルータンタシオン', rarityId: 3, attributeId: 3, roleId: 2, fromId: ['gacha', 30001] },
+  { id: 130, memberId: 3, title: 'お手本を見せるね', awakenTitle: 'Snow halation', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['gacha', 30001] },
+  { id: 131, memberId: 19, title: 'とことんこだわって作りたいな', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 30001] },
+
+  { id: 132, memberId: 11, title: '流星に囲まれて', awakenTitle: 'レオスターブライト', rarityId: 3, attributeId: 1, roleId: 1, fromId: ['gacha', 10005] },
+  { id: 133, memberId: 8, title: 'お弁当と言えば……', awakenTitle: 'Snow halation', rarityId: 2, attributeId: 3, roleId: 4, fromId: ['gacha', 10005] },
+  { id: 134, memberId: 7, title: 'もしかしたら叶うかもしれないよ', awakenTitle: 'ジェミニスターブライト', rarityId: 3, attributeId: 4, roleId: 2, fromId: ['event', 5] },
+  { id: 135, memberId: 12, title: '千歌ちゃん、起きて！', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['event', 5] },
+  { id: 136, memberId: 28, title: '言葉に言い表せない魅力', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['event', 5] },
+];
+/* eslint-enable object-curly-newline, max-len */
+
+export function getCardIconAssetPath(card: Card, isAwaken: boolean): string {
+  const prefix = 'images/card-icons';
+  const lowerSymbol = RARITY[card.rarityId].symbol.toLowerCase();
+  const { enName } = MEMBER[card.memberId];
+  const base = `${prefix}/${card.id}_${lowerSymbol}_${enName}`;
+  if (isAwaken) {
+    return `${base}_awaken.png`;
+  }
+  return `${base}.png`;
+}
