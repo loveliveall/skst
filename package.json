@@ -7,7 +7,7 @@
     "build": "npm run lint; webpack --mode production --config webpack.config.js",
     "start": "webpack-dev-server --open",
     "lint": "eslint --ext .ts,.tsx src/",
-    "deploy": "npm run build; echo 'skst.llasfans.net' >> build/CNAME; gh-pages -d build",
+    "deploy": "npm run build; gh-pages -d build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,6 +24,7 @@
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
     "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.5",
     "eslint": "^6.7.2",
     "eslint-config-airbnb": "^18.0.1",
     "eslint-config-airbnb-typescript": "^6.3.1",
