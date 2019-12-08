@@ -21,6 +21,7 @@ module.exports = {
   rules: {
     'no-console': 'off',
     'max-len': ['error', 120],
+    'react/prop-types': 'off',
     'import/prefer-default-export': 'off',
     '@typescript-eslint/member-delimiter-style': ['error', {
       multiline: {
