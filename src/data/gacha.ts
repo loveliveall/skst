@@ -1,4 +1,4 @@
-interface GachaList {
+interface Gacha {
   readonly [id: number]: {
     type: 'normal' | 'event' | 'pickup' | 'fes',
     name: string,
@@ -8,7 +8,7 @@ interface GachaList {
 }
 
 /* eslint-disable object-curly-newline, max-len */
-export const GACHA_LIST: GachaList = {
+export const GACHA: Gacha = {
   1: { type: 'normal', name: 'リリース記念ガチャ', startDate: '2019.09.26.', endDate: '2019.10.31.' },
   2: { type: 'normal', name: 'オールスターガチャ', startDate: '2019.10.31.', endDate: '2019.11.30.' },
   3: { type: 'normal', name: 'オールスターガチャ', startDate: '2019.11.30.', endDate: '2019.12.31.' },

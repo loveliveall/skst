@@ -1,4 +1,4 @@
-interface EventList {
+interface Event {
   readonly [id: number]: {
     readonly name: string,
     readonly rankBorder: {
@@ -13,7 +13,7 @@ interface EventList {
   },
 }
 
-export const EVENT_LIST: EventList = {
+export const EVENT: Event = {
   1: {
     name: '秘密のパーティー！',
     rankBorder: {
