@@ -44,6 +44,7 @@ module.exports = (_, argv) => {
       new CopyWebpackPlugin([
         'src/CNAME',
         'src/404.html',
+        'src/favicon-128.png',
         { from: 'assets/images', to: 'images' },
       ]),
     ],
