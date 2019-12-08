@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import { CARD, getCardIconAssetPath } from '@/data/cardList';
 
+import Timer from '@/components/home/Timer';
+
 function pickRandom<T>(array: T[]): T {
   return array[Math.floor(Math.random() * array.length)];
 }
@@ -32,8 +34,15 @@ function tenGachaResultIDs() {
   });
 }
 
-const StyledH2 = styled.h2`
-  margin-top: 0px;
+const BorderedDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+`;
+
+const DenseH3 = styled.h3`
+  margin-bottom: 0px;
 `;
 
 const CardImage = styled.img`
@@ -43,10 +52,19 @@ const CardImage = styled.img`
 `;
 
 const Home: React.FC = () => {
+  const FES_TIME = new Date(Date.UTC(2020, 0, 18, 9, 0, 0));
   const gachaResult = tenGachaResultIDs();
   return (
     <>
-      <StyledH2>오늘의 운세</StyledH2>
+      <BorderedDiv>
+        <div>
+          <DenseH3>페스까지 1일차까지 남은 시간은...</DenseH3>
+        </div>
+        <p>
+          <Timer targetTime={FES_TIME} />
+        </p>
+      </BorderedDiv>
+      <h2>오늘의 운세</h2>
       <p>
         재미로 보는 10연차 (마지막 SR 이상 확정) 결과
         <br />
