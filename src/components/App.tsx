@@ -47,8 +47,8 @@ const App: React.FC = () => {
       exact: true,
     },
     {
-      key: 'cardList',
-      path: '/card-list',
+      key: 'cards',
+      path: '/cards',
       title: '카드 목록',
       exact: false,
     },
