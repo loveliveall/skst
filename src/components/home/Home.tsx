@@ -51,9 +51,24 @@ const CardImage = styled.img`
   padding: 8px;
 `;
 
+const StyledButton = styled.button`
+  border: 1px solid black;
+  background: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 4px;
+  font-size: 1em;
+  padding: 8px 16px 8px 16px;
+
+  &:hover {
+    background: #111;
+    color: #f1f1f1;
+  }
+`;
+
 const Home: React.FC = () => {
+  const [gachaResult, setGachaResult] = React.useState(tenGachaResultIDs());
   const FES_TIME = new Date(Date.UTC(2020, 0, 18, 9, 0, 0));
-  const gachaResult = tenGachaResultIDs();
   return (
     <>
       <BorderedDiv>
@@ -70,10 +85,18 @@ const Home: React.FC = () => {
         <br />
         대상 카드 풀은 이벤 배포 카드를 제외한 모든 카드
       </p>
+      <div style={{ paddingBottom: '8px' }}>
+        <StyledButton
+          type="button"
+          onClick={() => setGachaResult(tenGachaResultIDs())}
+        >
+          한번 더?
+        </StyledButton>
+      </div>
       <div>
         {gachaResult.slice(0, 5).map((id) => (
           <CardImage
-            key={id}
+            key={`${id}-${Math.random()}`}
             src={getCardIconAssetPath(id, false)}
             alt="card-icon"
           />
@@ -82,7 +105,7 @@ const Home: React.FC = () => {
       <div>
         {gachaResult.slice(5).map((id) => (
           <CardImage
-            key={id}
+            key={`${id}-${Math.random()}`}
             src={getCardIconAssetPath(id, false)}
             alt="card-icon"
           />
