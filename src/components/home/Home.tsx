@@ -32,6 +32,10 @@ function tenGachaResultIDs() {
   });
 }
 
+const StyledH2 = styled.h2`
+  margin-top: 0px;
+`;
+
 const CardImage = styled.img`
   width: 80px;
   height: 80px;
@@ -42,7 +46,7 @@ const Home: React.FC = () => {
   const gachaResult = tenGachaResultIDs();
   return (
     <>
-      <h2>오늘의 운세</h2>
+      <StyledH2>오늘의 운세</StyledH2>
       <p>
         재미로 보는 10연차 (마지막 SR 이상 확정) 결과
         <br />
