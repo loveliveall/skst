@@ -55,6 +55,7 @@ const Home: React.FC = () => {
       <div>
         {gachaResult.slice(0, 5).map((id) => (
           <CardImage
+            key={id}
             src={getCardIconAssetPath(id, false)}
             alt="card-icon"
           />
@@ -63,6 +64,7 @@ const Home: React.FC = () => {
       <div>
         {gachaResult.slice(5).map((id) => (
           <CardImage
+            key={id}
             src={getCardIconAssetPath(id, false)}
             alt="card-icon"
           />
