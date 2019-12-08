@@ -19,6 +19,7 @@ module.exports = (_, argv) => {
       path: path.resolve(__dirname, 'build'),
       filename: '[name].bundle.js',
       chunkFilename: '[name].bundle.js',
+      publicPath: '/',
     },
     module: {
       rules: [

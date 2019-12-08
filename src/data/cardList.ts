@@ -167,7 +167,7 @@ export const CARD: Card = {
 
 export function getCardIconAssetPath(id: number, isAwaken: boolean): string {
   const card = CARD[id];
-  const prefix = 'images/card-icons';
+  const prefix = '/images/card-icons';
   const lowerSymbol = RARITY[card.rarityId].symbol.toLowerCase();
   const { enName } = MEMBER[card.memberId];
   const base = `${prefix}/${id}_${lowerSymbol}_${enName}`;
