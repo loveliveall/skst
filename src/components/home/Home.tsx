@@ -73,7 +73,7 @@ const Home: React.FC = () => {
     <>
       <BorderedDiv>
         <div>
-          <DenseH3>페스까지 1일차까지 남은 시간은...</DenseH3>
+          <DenseH3>페스 1일차까지 남은 시간은...</DenseH3>
         </div>
         <p>
           <Timer targetTime={FES_TIME} />
