@@ -39,6 +39,10 @@ const BorderedDiv = styled.div`
   flex-direction: column;
   align-items: center;
   border: 1px solid black;
+  & * {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 `;
 
 const DenseH3 = styled.h3`
@@ -64,6 +68,10 @@ const StyledButton = styled.button`
     background: #111;
     color: #f1f1f1;
   }
+`;
+
+const MaxWidthDiv = styled.div`
+  max-width: 480px; // (80 + 8 + 8) * 5. So maximum 5 card-icons in one row
 `;
 
 const Home: React.FC = () => {
@@ -93,24 +101,15 @@ const Home: React.FC = () => {
           한번 더?
         </StyledButton>
       </div>
-      <div>
-        {gachaResult.slice(0, 5).map((id) => (
+      <MaxWidthDiv>
+        {gachaResult.map((id) => (
           <CardImage
             key={`${id}-${Math.random()}`}
             src={getCardIconAssetPath(id, false)}
             alt="card-icon"
           />
         ))}
-      </div>
-      <div>
-        {gachaResult.slice(5).map((id) => (
-          <CardImage
-            key={`${id}-${Math.random()}`}
-            src={getCardIconAssetPath(id, false)}
-            alt="card-icon"
-          />
-        ))}
-      </div>
+      </MaxWidthDiv>
     </>
   );
 };

@@ -14,6 +14,14 @@ const FixedNav = styled.nav`
   background-color: #111;
   overflow-x: hidden;
   padding-top: 20px;
+  padding-bottom: 20px;
+
+  // Mobile UI
+  @media screen and (max-width: 768px) {
+    height: auto;
+    width: 100%;
+    position: static;
+  }
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -31,6 +39,11 @@ const StyledNavLink = styled(NavLink)`
 const Main = styled.div`
   margin-left: 160px;
   padding: 12px 10px;
+
+  // Mobile UI
+  @media screen and (max-width: 768px) {
+    margin-left: 0px;
+  }
 `;
 
 interface PageInfo {
@@ -58,6 +71,11 @@ const App: React.FC = () => {
 
   return (
     <>
+      <Main>
+        <Switch>
+          <Route exact path="/" component={Home} />
+        </Switch>
+      </Main>
       <FixedNav>
         {pages.map((page) => (
           <StyledNavLink
@@ -70,11 +88,6 @@ const App: React.FC = () => {
           </StyledNavLink>
         ))}
       </FixedNav>
-      <Main>
-        <Switch>
-          <Route exact path="/" component={Home} />
-        </Switch>
-      </Main>
     </>
   );
 };
