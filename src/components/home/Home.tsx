@@ -65,6 +65,7 @@ const StyledButton = styled.button`
   padding: 8px 16px 8px 16px;
 
   &:hover {
+    cursor: pointer;
     background: #111;
     color: #f1f1f1;
   }
