@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import { CARD, getCardIconAssetPath } from '@/data/cardList';
 
+import { FlexBox } from '@/components/Styles';
+import CardStats from '@/components/home/CardStats';
 import Timer from '@/components/home/Timer';
 
 function pickRandom<T>(array: T[]): T {
@@ -88,29 +90,38 @@ const Home: React.FC = () => {
           <Timer targetTime={FES_TIME} />
         </p>
       </BorderedDiv>
-      <h2>오늘의 운세</h2>
-      <p>
-        재미로 보는 10연차 (마지막 SR 이상 확정) 결과
-        <br />
-        대상 카드 풀은 이벤 배포 카드를 제외한 모든 카드
-      </p>
-      <div style={{ paddingBottom: '8px' }}>
-        <StyledButton
-          type="button"
-          onClick={() => setGachaResult(tenGachaResultIDs())}
-        >
-          한번 더?
-        </StyledButton>
-      </div>
-      <MaxWidthDiv>
-        {gachaResult.map((id) => (
-          <CardImage
-            key={`${id}-${Math.random()}`}
-            src={getCardIconAssetPath(id, false)}
-            alt="card-icon"
-          />
-        ))}
-      </MaxWidthDiv>
+      <FlexBox>
+        <div style={{ paddingRight: '8px' }}>
+          <h2>오늘의 운세</h2>
+          <p>
+            재미로 보는 10연차 (마지막 SR 이상 확정) 결과
+            <br />
+            대상 카드 풀은 이벤 배포 카드를 제외한 모든 카드
+          </p>
+          <div style={{ paddingBottom: '8px' }}>
+            <StyledButton
+              type="button"
+              onClick={() => setGachaResult(tenGachaResultIDs())}
+            >
+              한번 더?
+            </StyledButton>
+          </div>
+          <MaxWidthDiv>
+            {gachaResult.map((id) => (
+              <CardImage
+                key={`${id}-${Math.random()}`}
+                src={getCardIconAssetPath(id, false)}
+                alt="card-icon"
+              />
+            ))}
+          </MaxWidthDiv>
+        </div>
+
+        <div>
+          <h2>카드 갯수 간략 통계</h2>
+          <CardStats />
+        </div>
+      </FlexBox>
     </>
   );
 };
