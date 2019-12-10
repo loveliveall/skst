@@ -36,7 +36,14 @@ function tenGachaResultIDs() {
   });
 }
 
+const VerticalFlex = styled(FlexBox)`
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const BorderedDiv = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,7 +88,7 @@ const Home: React.FC = () => {
   const [gachaResult, setGachaResult] = React.useState(tenGachaResultIDs());
   const FES_TIME = new Date(Date.UTC(2020, 0, 18, 9, 0, 0));
   return (
-    <>
+    <VerticalFlex>
       <BorderedDiv>
         <div>
           <DenseH3>페스 1일차까지 남은 시간은...</DenseH3>
@@ -90,39 +97,37 @@ const Home: React.FC = () => {
           <Timer targetTime={FES_TIME} />
         </p>
       </BorderedDiv>
-      <FlexBox>
-        <div style={{ paddingRight: '8px' }}>
-          <h2>오늘의 운세</h2>
-          <p>
-            재미로 보는 10연차 (마지막 SR 이상 확정) 결과
-            <br />
-            대상 카드 풀은 이벤 배포 카드를 제외한 모든 카드
-          </p>
-          <div style={{ paddingBottom: '8px' }}>
-            <StyledButton
-              type="button"
-              onClick={() => setGachaResult(tenGachaResultIDs())}
-            >
-              한번 더?
-            </StyledButton>
-          </div>
-          <MaxWidthDiv>
-            {gachaResult.map((id) => (
-              <CardImage
-                key={`${id}-${Math.random()}`}
-                src={getCardIconAssetPath(id, false)}
-                alt="card-icon"
-              />
-            ))}
-          </MaxWidthDiv>
+      <VerticalFlex>
+        <h2>오늘의 운세</h2>
+        <p style={{ marginTop: 0, textAlign: 'center' }}>
+          재미로 보는 10연차 (마지막 SR 이상 확정) 결과
+          <br />
+          대상 카드 풀은 이벤 배포 카드를 제외한 모든 카드
+        </p>
+        <div style={{ paddingBottom: '8px' }}>
+          <StyledButton
+            type="button"
+            onClick={() => setGachaResult(tenGachaResultIDs())}
+          >
+            한번 더?
+          </StyledButton>
         </div>
+        <MaxWidthDiv>
+          {gachaResult.map((id) => (
+            <CardImage
+              key={`${id}-${Math.random()}`}
+              src={getCardIconAssetPath(id, false)}
+              alt="card-icon"
+            />
+          ))}
+        </MaxWidthDiv>
+      </VerticalFlex>
 
-        <div>
-          <h2>카드 갯수 간략 통계</h2>
-          <CardStats />
-        </div>
-      </FlexBox>
-    </>
+      <VerticalFlex>
+        <h2>카드 갯수 간략 통계</h2>
+        <CardStats />
+      </VerticalFlex>
+    </VerticalFlex>
   );
 };
 

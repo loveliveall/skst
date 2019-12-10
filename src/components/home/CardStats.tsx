@@ -60,7 +60,7 @@ const CardStats: React.FC = () => {
   const ATTRIBUTE_IDS = Object.keys(ATTRIBUTE).map(Number);
   return (
     <StyledDiv>
-      <FlexBox>
+      <FlexBox style={{ justifyContent: 'center' }}>
         <PaddedDiv>
           <PaddedDiv>레어도</PaddedDiv>
           <div>
@@ -86,7 +86,7 @@ const CardStats: React.FC = () => {
             </FlexBox>
           </div>
         </PaddedDiv>
-        <PaddedDiv>
+        <PaddedDiv style={{ paddingRight: 0 }}>
           <PaddedDiv>최초 등장</PaddedDiv>
           <div>
             <FlexBox>
