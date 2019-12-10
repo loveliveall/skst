@@ -40,8 +40,8 @@ const StyledTd = styled.td`
 `;
 
 const Icon = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
 `;
 
 const StyledInput = styled.input`
