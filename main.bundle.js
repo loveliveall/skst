@@ -13,8 +13,8 @@
   border: 1px solid black;
   padding: 8px;
 `,x=m.a.img`
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
 `,N=m.a.input`
   margin-right: 4px;
 `,v=m.a.div`
