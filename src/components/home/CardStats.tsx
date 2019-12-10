@@ -49,8 +49,7 @@ const StyledInput = styled.input`
 `;
 
 const PaddedDiv = styled.div`
-  padding-right: 8px;
-  padding-bottom: 8px;
+  padding: 4px;
 `;
 
 const CardStats: React.FC = () => {
@@ -86,7 +85,7 @@ const CardStats: React.FC = () => {
             </FlexBox>
           </div>
         </PaddedDiv>
-        <PaddedDiv style={{ paddingRight: 0 }}>
+        <PaddedDiv>
           <PaddedDiv>최초 등장</PaddedDiv>
           <div>
             <FlexBox>
