@@ -1,6 +1,12 @@
 import { MEMBER } from './memberMetadata';
 import { RARITY, ATTRIBUTE, ROLE } from './cardMetadata';
 
+export const FROM_MAP = {
+  gacha: '가챠',
+  event: '이벤트',
+} as const;
+export type FromTag = keyof typeof FROM_MAP;
+
 type Card = {
   readonly [id: number]: {
     readonly memberId: keyof typeof MEMBER,
@@ -9,7 +15,7 @@ type Card = {
     readonly rarityId: keyof typeof RARITY,
     readonly attributeId: keyof typeof ATTRIBUTE,
     readonly roleId: keyof typeof ROLE,
-    readonly fromId: ['gacha' | 'event', number], // When the card first added?
+    readonly fromId: [FromTag, number], // When the card first added?
   },
 };
 
