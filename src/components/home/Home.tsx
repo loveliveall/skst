@@ -80,7 +80,8 @@ const StyledButton = styled.button`
   }
 `;
 
-const MaxWidthDiv = styled.div`
+const MaxWidthFlex = styled(FlexBox)`
+  justify-content: center;
   max-width: 480px; // (80 + 8 + 8) * 5. So maximum 5 card-icons in one row
 `;
 
@@ -112,7 +113,7 @@ const Home: React.FC = () => {
             한번 더?
           </StyledButton>
         </div>
-        <MaxWidthDiv>
+        <MaxWidthFlex>
           {gachaResult.map((id) => (
             <CardImage
               key={`${id}-${Math.random()}`}
@@ -120,7 +121,7 @@ const Home: React.FC = () => {
               alt="card-icon"
             />
           ))}
-        </MaxWidthDiv>
+        </MaxWidthFlex>
       </VerticalFlex>
 
       <VerticalFlex>
