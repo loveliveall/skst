@@ -54,7 +54,8 @@
     background: #111;
     color: #f1f1f1;
   }
-`,C=m.a.div`
+`,C=Object(m.a)(y)`
+  justify-content: center;
   max-width: 480px; // (80 + 8 + 8) * 5. So maximum 5 card-icons in one row
 `;var z=()=>{const[e,t]=d.a.useState(O()),a=new Date(Date.UTC(2020,0,18,9,0,0));return d.a.createElement(P,null,d.a.createElement($,null,d.a.createElement("div",null,d.a.createElement(M,null,"페스 1일차까지 남은 시간은...")),d.a.createElement("p",null,d.a.createElement(j,{targetTime:a}))),d.a.createElement(P,null,d.a.createElement("h2",null,"오늘의 운세"),d.a.createElement("p",{style:{marginTop:0,textAlign:"center"}},"재미로 보는 10연차 (마지막 SR 이상 확정) 결과",d.a.createElement("br",null),"대상 카드 풀은 이벤 배포 카드를 제외한 모든 카드"),d.a.createElement("div",{style:{paddingBottom:"8px"}},d.a.createElement(_,{type:"button",onClick:()=>t(O())},"한번 더?")),d.a.createElement(C,null,e.map(e=>d.a.createElement(q,{key:`${e}-${Math.random()}`,src:f(e,!1),alt:"card-icon"})))),d.a.createElement(P,null,d.a.createElement("h2",null,"카드 갯수 간략 통계"),d.a.createElement(E,null)))};const D=m.a.nav`
   height: 100%;
