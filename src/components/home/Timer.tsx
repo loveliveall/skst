@@ -35,7 +35,7 @@ const Timer: React.FC<TimerProps> = ({
   targetTime,
 }) => {
   const [currTime, setCurrTime] = React.useState(new Date());
-  React.useState(() => {
+  React.useEffect(() => {
     const timerID = setInterval(() => setCurrTime(new Date()), 1000);
     return () => {
       clearInterval(timerID);
