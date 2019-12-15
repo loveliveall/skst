@@ -22,6 +22,7 @@ export const GACHA: Gacha = {
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },
   20003: { type: 'pickup', name: 'ピックアップガチャ (UR 리코)', startDate: '2019.11.15.', endDate: '2019.11.21.' },
+  20004: { type: 'pickup', name: 'ピックアップガチャ (UR 린)', startDate: '2019.12.16.', endDate: '2019.12.23.' },
 
   30001: { type: 'fes', name: 'スクスタフェス', startDate: '2019.11.30.', endDate: '2019.12.06.' },
 };

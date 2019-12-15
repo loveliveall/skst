@@ -168,6 +168,9 @@ export const CARD: Card = {
   134: { memberId: 7, title: 'もしかしたら叶うかもしれないよ', awakenTitle: 'ジェミニスターブライト', rarityId: 3, attributeId: 4, roleId: 2, fromId: ['event', 5] },
   135: { memberId: 12, title: '千歌ちゃん、起きて！', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['event', 5] },
   136: { memberId: 28, title: '言葉に言い表せない魅力', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['event', 5] },
+
+  137: { memberId: 5, title: 'こっちこっち早くするにゃ！', awakenTitle: 'アフタースクールキャット', rarityId: 3, attributeId: 1, roleId: 1, fromId: ['gacha', 20004] },
+  138: { memberId: 13, title: 'ひと泳ぎしてたんだよ〜', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 4, roleId: 4, fromId: ['gacha', 20004] },
 };
 /* eslint-enable object-curly-newline, max-len */
 
@@ -292,43 +295,55 @@ export const PARAMETER: Parameter = {
   97: [{ appl: 1921, stam: 2238, tech: 2238 }, { appl: 2076, stam: 2419, tech: 2600 }, { appl: 2231, stam: 2781, tech: 2781 }, { appl: 2541, stam: 3143, tech: 2962 }, { appl: 2851, stam: 3505, tech: 3324 }, { appl: 3166, stam: 3693, tech: 3693 }],
   98: [{ appl: 2201, stam: 1835, tech: 3297 }, { appl: 2555, stam: 1983, tech: 3563 }, { appl: 2732, stam: 2131, tech: 4095 }, { appl: 2909, stam: 2427, tech: 4627 }, { appl: 3263, stam: 2723, tech: 5159 }, { appl: 3625, stam: 3020, tech: 5437 }],
   99: [{ appl: 3968, stam: 2976, tech: 2976 }, { appl: 4480, stam: 3360, tech: 3360 }, { appl: 4992, stam: 3744, tech: 3744 }, { appl: 5248, stam: 4128, tech: 4128 }, { appl: 5760, stam: 4320, tech: 4704 }, { appl: 6528, stam: 4896, tech: 4896 }],
+
   100: [{ appl: 6340, stam: 4223, tech: 4522 }, { appl: 6757, stam: 4779, tech: 5416 }, { appl: 8008, stam: 5613, tech: 5714 }, { appl: 9676, stam: 6169, tech: 6310 }, { appl: 10510, stam: 6725, tech: 7502 }, { appl: 11351, stam: 7568, tech: 8108 }],
   101: [{ appl: 4239, stam: 3024, tech: 2820 }, { appl: 4785, stam: 3414, tech: 3184 }, { appl: 5331, stam: 3804, tech: 3548 }, { appl: 5604, stam: 4194, tech: 3912 }, { appl: 6150, stam: 4389, tech: 4458 }, { appl: 6980, stam: 4987, tech: 4654 }],
   102: [{ appl: 4038, stam: 4038, tech: 4157 }, { appl: 4304, stam: 4836, tech: 4705 }, { appl: 5102, stam: 5102, tech: 5527 }, { appl: 6166, stam: 5634, tech: 6075 }, { appl: 6698, stam: 6698, tech: 6623 }, { appl: 7234, stam: 7234, tech: 7455 }],
   103: [{ appl: 2466, stam: 3292, tech: 2466 }, { appl: 2784, stam: 3716, tech: 2784 }, { appl: 3102, stam: 4140, tech: 3102 }, { appl: 3420, stam: 4352, tech: 3420 }, { appl: 3897, stam: 4776, tech: 3579 }, { appl: 4069, stam: 5426, tech: 4069 }],
   104: [{ appl: 1888, stam: 3044, tech: 3292 }, { appl: 2132, stam: 3436, tech: 3716 }, { appl: 2376, stam: 3828, tech: 4140 }, { appl: 2620, stam: 4220, tech: 4352 }, { appl: 2742, stam: 4808, tech: 4776 }, { appl: 3118, stam: 5018, tech: 5426 }],
+
   105: [{ appl: 4575, stam: 5989, tech: 4522 }, { appl: 5469, stam: 6783, tech: 4820 }, { appl: 5767, stam: 7974, tech: 5714 }, { appl: 6363, stam: 8768, tech: 6906 }, { appl: 7555, stam: 9562, tech: 7502 }, { appl: 8161, stam: 10759, tech: 8108 }],
   106: [{ appl: 3024, stam: 3024, tech: 4036 }, { appl: 3414, stam: 3414, tech: 4556 }, { appl: 3804, stam: 3804, tech: 5076 }, { appl: 4194, stam: 3999, tech: 5596 }, { appl: 4389, stam: 4389, tech: 6376 }, { appl: 4987, stam: 4987, tech: 6650 }],
+
   107: [{ appl: 4522, stam: 5275, tech: 5275 }, { appl: 4820, stam: 6316, tech: 5969 }, { appl: 5714, stam: 6663, tech: 7010 }, { appl: 6906, stam: 7357, tech: 7704 }, { appl: 7502, stam: 8745, tech: 8398 }, { appl: 8108, stam: 9458, tech: 9458 }],
   108: [{ appl: 3024, stam: 3535, tech: 3535 }, { appl: 3414, stam: 3991, tech: 3991 }, { appl: 3804, stam: 4447, tech: 4447 }, { appl: 4194, stam: 4675, tech: 4903 }, { appl: 4389, stam: 5131, tech: 5587 }, { appl: 4987, stam: 5818, tech: 5818 }],
   109: [{ appl: 4038, stam: 4038, tech: 4157 }, { appl: 4570, stam: 4304, tech: 4979 }, { appl: 5368, stam: 5102, tech: 5253 }, { appl: 5900, stam: 6166, tech: 5801 }, { appl: 6432, stam: 6698, tech: 6897 }, { appl: 7234, stam: 7234, tech: 7455 }],
   110: [{ appl: 2713, stam: 2713, tech: 2796 }, { appl: 3063, stam: 3063, tech: 3156 }, { appl: 3413, stam: 3413, tech: 3516 }, { appl: 3588, stam: 3763, tech: 3876 }, { appl: 3938, stam: 3938, tech: 4416 }, { appl: 4474, stam: 4474, tech: 4610 }],
   111: [{ appl: 2713, stam: 2879, tech: 2631 }, { appl: 3063, stam: 3251, tech: 2971 }, { appl: 3413, stam: 3623, tech: 3311 }, { appl: 3588, stam: 3995, tech: 3651 }, { appl: 3938, stam: 4181, tech: 4161 }, { appl: 4474, stam: 4747, tech: 4339 }],
+
   112: [{ appl: 6042, stam: 4522, tech: 4522 }, { appl: 6836, stam: 4820, tech: 5416 }, { appl: 8027, stam: 5714, tech: 5714 }, { appl: 8821, stam: 6906, tech: 6310 }, { appl: 9615, stam: 7502, tech: 7502 }, { appl: 10812, stam: 8108, tech: 8108 }],
   113: [{ appl: 3024, stam: 4036, tech: 3024 }, { appl: 3414, stam: 4556, tech: 3414 }, { appl: 3804, stam: 5076, tech: 3804 }, { appl: 4194, stam: 5336, tech: 4194 }, { appl: 4779, stam: 5856, tech: 4389 }, { appl: 4987, stam: 6650, tech: 4987 }],
   114: [{ appl: 4036, stam: 3024, tech: 3024 }, { appl: 4556, stam: 3414, tech: 3414 }, { appl: 5076, stam: 3804, tech: 3804 }, { appl: 5336, stam: 4194, tech: 4194 }, { appl: 5856, stam: 4389, tech: 4779 }, { appl: 6650, stam: 4987, tech: 4987 }],
+
   115: [{ appl: 4378, stam: 4677, tech: 6042 }, { appl: 4666, stam: 5601, tech: 6836 }, { appl: 5530, stam: 5909, tech: 8027 }, { appl: 6682, stam: 6525, tech: 8821 }, { appl: 7258, stam: 7757, tech: 9615 }, { appl: 7837, stam: 8377, tech: 10812 }],
   116: [{ appl: 3330, stam: 3330, tech: 3432 }, { appl: 3760, stam: 3760, tech: 3874 }, { appl: 4190, stam: 4190, tech: 4316 }, { appl: 4620, stam: 4405, tech: 4758 }, { appl: 4835, stam: 4835, tech: 5421 }, { appl: 5484, stam: 5484, tech: 5650 }],
   117: [{ appl: 3673, stam: 4287, tech: 4287 }, { appl: 3914, stam: 4851, tech: 5133 }, { appl: 4637, stam: 5697, tech: 5415 }, { appl: 5601, stam: 6261, tech: 5979 }, { appl: 6083, stam: 6825, tech: 7107 }, { appl: 6578, stam: 7674, tech: 7674 }],
   118: [{ appl: 2713, stam: 2713, tech: 2796 }, { appl: 3063, stam: 3063, tech: 3156 }, { appl: 3413, stam: 3413, tech: 3516 }, { appl: 3763, stam: 3588, tech: 3876 }, { appl: 4288, stam: 3938, tech: 4056 }, { appl: 4474, stam: 4474, tech: 4610 }],
   119: [{ appl: 2713, stam: 2713, tech: 2796 }, { appl: 3063, stam: 3063, tech: 3156 }, { appl: 3413, stam: 3413, tech: 3516 }, { appl: 3763, stam: 3763, tech: 3696 }, { appl: 3938, stam: 4288, tech: 4056 }, { appl: 4474, stam: 4474, tech: 4610 }],
+
   120: [{ appl: 4522, stam: 6042, tech: 4522 }, { appl: 4820, stam: 6836, tech: 5416 }, { appl: 5714, stam: 8027, tech: 5714 }, { appl: 6906, stam: 8821, tech: 6310 }, { appl: 7502, stam: 9615, tech: 7502 }, { appl: 8108, stam: 10812, tech: 8108 }],
   121: [{ appl: 4036, stam: 3024, tech: 3024 }, { appl: 4556, stam: 3414, tech: 3414 }, { appl: 5076, stam: 3804, tech: 3804 }, { appl: 5596, stam: 4194, tech: 3999 }, { appl: 5856, stam: 4779, tech: 4389 }, { appl: 6650, stam: 4987, tech: 4987 }],
+
   122: [{ appl: 6042, stam: 4522, tech: 4522 }, { appl: 6836, stam: 4820, tech: 5416 }, { appl: 8027, stam: 5714, tech: 5714 }, { appl: 8821, stam: 6906, tech: 6310 }, { appl: 9615, stam: 7502, tech: 7502 }, { appl: 10812, stam: 8108, tech: 8108 }],
   123: [{ appl: 3024, stam: 4036, tech: 3024 }, { appl: 3414, stam: 4556, tech: 3414 }, { appl: 3804, stam: 5076, tech: 3804 }, { appl: 4194, stam: 5336, tech: 4194 }, { appl: 4779, stam: 5856, tech: 4389 }, { appl: 4987, stam: 6650, tech: 4987 }],
   124: [{ appl: 4038, stam: 4038, tech: 4157 }, { appl: 4570, stam: 4304, tech: 4979 }, { appl: 5368, stam: 5102, tech: 5253 }, { appl: 5900, stam: 6166, tech: 5801 }, { appl: 6432, stam: 6698, tech: 6897 }, { appl: 7234, stam: 7234, tech: 7455 }],
   125: [{ appl: 2879, stam: 2713, tech: 2631 }, { appl: 3251, stam: 3063, tech: 2971 }, { appl: 3623, stam: 3413, tech: 3311 }, { appl: 3995, stam: 3763, tech: 3481 }, { appl: 4181, stam: 4288, tech: 3821 }, { appl: 4747, stam: 4474, tech: 4339 }],
   126: [{ appl: 2713, stam: 2713, tech: 2796 }, { appl: 3063, stam: 3063, tech: 3156 }, { appl: 3413, stam: 3413, tech: 3516 }, { appl: 3588, stam: 3763, tech: 3876 }, { appl: 3938, stam: 3938, tech: 4416 }, { appl: 4474, stam: 4474, tech: 4610 }],
+
   127: [{ appl: 3306, stam: 8259, tech: 4953 }, { appl: 3957, stam: 9345, tech: 5279 }, { appl: 4174, stam: 10974, tech: 6257 }, { appl: 4608, stam: 12060, tech: 7561 }, { appl: 5476, stam: 13146, tech: 8213 }, { appl: 5916, stam: 14790, tech: 8874 }],
   128: [{ appl: 6936, stam: 4628, tech: 4953 }, { appl: 7848, stam: 4932, tech: 5931 }, { appl: 9216, stam: 5844, tech: 6257 }, { appl: 10128, stam: 7060, tech: 6909 }, { appl: 11040, stam: 7668, tech: 8213 }, { appl: 12423, stam: 8282, tech: 8874 }],
   129: [{ appl: 7435, stam: 3306, tech: 5776 }, { appl: 7924, stam: 3957, tech: 6536 }, { appl: 9391, stam: 4174, tech: 7676 }, { appl: 11347, stam: 4608, tech: 8436 }, { appl: 12325, stam: 5476, tech: 9196 }, { appl: 13310, stam: 5916, tech: 10352 }],
   130: [{ appl: 5251, stam: 1910, tech: 2922 }, { appl: 5929, stam: 2156, tech: 3300 }, { appl: 6607, stam: 2402, tech: 3678 }, { appl: 6946, stam: 2648, tech: 4056 }, { appl: 7624, stam: 2771, tech: 4623 }, { appl: 8643, stam: 3157, tech: 4820 }],
   131: [{ appl: 3024, stam: 3535, tech: 3535 }, { appl: 3414, stam: 3991, tech: 3991 }, { appl: 3804, stam: 4447, tech: 4447 }, { appl: 4194, stam: 4903, tech: 4675 }, { appl: 4389, stam: 5587, tech: 5131 }, { appl: 4987, stam: 5818, tech: 5818 }],
+
   132: [{ appl: 6340, stam: 4522, tech: 4223 }, { appl: 7174, stam: 4820, tech: 5057 }, { appl: 8425, stam: 5714, tech: 5335 }, { appl: 9259, stam: 6906, tech: 5891 }, { appl: 10093, stam: 7502, tech: 7003 }, { appl: 11351, stam: 8108, tech: 7568 }],
   133: [{ appl: 2318, stam: 3729, tech: 4036 }, { appl: 2616, stam: 4211, tech: 4556 }, { appl: 2914, stam: 4693, tech: 5076 }, { appl: 3212, stam: 4934, tech: 5596 }, { appl: 3361, stam: 5416, tech: 6376 }, { appl: 3821, stam: 6150, tech: 6650 }],
   134: [{ appl: 3673, stam: 4287, tech: 4287 }, { appl: 3914, stam: 5133, tech: 4851 }, { appl: 4637, stam: 5415, tech: 5697 }, { appl: 5601, stam: 5979, tech: 6261 }, { appl: 6083, stam: 7107, tech: 6825 }, { appl: 6578, stam: 7674, tech: 7674 }],
   135: [{ appl: 2713, stam: 2713, tech: 2796 }, { appl: 3063, stam: 3063, tech: 3156 }, { appl: 3413, stam: 3413, tech: 3516 }, { appl: 3763, stam: 3588, tech: 3876 }, { appl: 4288, stam: 3938, tech: 4056 }, { appl: 4474, stam: 4474, tech: 4610 }],
   136: [{ appl: 2879, stam: 2713, tech: 2631 }, { appl: 3251, stam: 3063, tech: 2971 }, { appl: 3623, stam: 3413, tech: 3311 }, { appl: 3995, stam: 3588, tech: 3651 }, { appl: 4181, stam: 3938, tech: 4161 }, { appl: 4747, stam: 4474, tech: 4339 }],
+
+  137: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 11620, stam: 5406, tech: 10000 }],
+  138: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 6980, stam: 4654, tech: 4987 }],
 };
 /* eslint-enable object-curly-newline, max-len */
 
