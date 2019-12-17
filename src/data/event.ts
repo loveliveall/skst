@@ -1,6 +1,18 @@
+interface EventType {
+  readonly [id: number]: {
+    readonly type: string,
+    readonly krName: string,
+  },
+}
+
+export const EVENT_TYPE: EventType = {
+  1: { type: 'story', krName: '스토리 이벤트' },
+};
+
 interface Event {
   readonly [id: number]: {
     readonly name: string,
+    readonly eventTypeId: keyof EventType,
     readonly rankBorder: {
       readonly [rank: number]: number,
     },
@@ -16,6 +28,7 @@ interface Event {
 export const EVENT: Event = {
   1: {
     name: '秘密のパーティー！',
+    eventTypeId: 1,
     rankBorder: {
       1: 6369538,
       10: 3555553,
@@ -37,6 +50,7 @@ export const EVENT: Event = {
   },
   2: {
     name: '和装モデルはお任せあれ！',
+    eventTypeId: 1,
     rankBorder: {
       1: 6753742,
       10: 4382512,
@@ -61,6 +75,7 @@ export const EVENT: Event = {
   },
   3: {
     name: '下町巡り珍道中',
+    eventTypeId: 1,
     rankBorder: {
       1: 5300000,
       10: 3513421,
@@ -84,6 +99,7 @@ export const EVENT: Event = {
   },
   4: {
     name: 'ハイキングでリフレッシュ！',
+    eventTypeId: 1,
     rankBorder: {
       1: 5555555,
       10: 3828694,
@@ -107,7 +123,18 @@ export const EVENT: Event = {
   },
   5: {
     name: '素敵なところへご招待！',
-    rankBorder: {},
+    eventTypeId: 1,
+    rankBorder: {
+      1: 5103026,
+      10: 3718026,
+      50: 2083378,
+      100: 1766160,
+      1000: 522710,
+      3000: 313198,
+      10000: 221780,
+      30000: 171323,
+      50000: 151716,
+    },
     ingameInfo: [1000, 3000, 10000, 30000, 50000],
     rewardBorder: {
       100: [2, 2, 2],
