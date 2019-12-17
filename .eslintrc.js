@@ -23,6 +23,8 @@ module.exports = {
     'max-len': ['error', 120],
     'react/prop-types': 'off',
     'import/prefer-default-export': 'off',
+    'jsx-a11y/no-noninteractive-element-interactions': 'off',
+    'jsx-a11y/click-events-have-key-events': 'off',
     '@typescript-eslint/member-delimiter-style': ['error', {
       multiline: {
         delimiter: 'comma',
