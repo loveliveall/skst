@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Switch, Route, NavLink } from 'react-router-dom';
 
 import Home from '@/components/home/Home';
+import Cards from '@/components/cards/Cards';
 
 const FixedNav = styled.nav`
   height: 100%;
@@ -74,6 +75,7 @@ const App: React.FC = () => {
       <Main>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/cards" component={Cards} />
         </Switch>
       </Main>
       <FixedNav>
