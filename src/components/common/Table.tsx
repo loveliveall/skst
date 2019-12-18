@@ -45,6 +45,7 @@ const StyledTable = styled.table`
     text-align: center;
     padding: 4px;
     border: 1px solid black;
+    white-space: nowrap;
   }
 `;
 
