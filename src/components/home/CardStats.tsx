@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { RARITY, ATTRIBUTE, ROLE } from '@/data/cardMetadata';
 import { CARD, FROM_MAP, FromTag } from '@/data/cardList';
 
-import { FlexBox } from '@/components/Styles';
+import { FlexBox, FixedWrapper } from '@/components/Styles';
 
 function countCards(
   rarityIds: (keyof typeof RARITY)[],
@@ -21,11 +21,6 @@ function countCards(
     ),
   ).length;
 }
-
-const StyledDiv = styled.div`
-  overflow-x: auto;
-  max-width: calc(100vw - 20px);
-`;
 
 const StyledTable = styled.table`
   border-collapse: collapse;
@@ -58,7 +53,7 @@ const CardStats: React.FC = () => {
   const ROLE_IDS = Object.keys(ROLE).map(Number);
   const ATTRIBUTE_IDS = Object.keys(ATTRIBUTE).map(Number);
   return (
-    <StyledDiv>
+    <FixedWrapper>
       <FlexBox style={{ justifyContent: 'center' }}>
         <PaddedDiv>
           <PaddedDiv>레어도</PaddedDiv>
@@ -138,7 +133,7 @@ const CardStats: React.FC = () => {
           </StyledTr>
         </tbody>
       </StyledTable>
-    </StyledDiv>
+    </FixedWrapper>
   );
 };
 
