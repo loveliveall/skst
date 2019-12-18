@@ -357,3 +357,10 @@ Object.keys(PARAMETER).map(Number).forEach((id) => {
     throw Error(`ID ${id} does not exist in CARD`);
   }
 });
+
+export const FULL_CARD_LIST = Object.keys(CARD).map(Number).map((id) => PARAMETER[id].map((param, idx) => ({
+  id,
+  uncap: idx,
+  ...CARD[id],
+  ...param,
+}))).reduce((acc, val) => acc.concat(val), []);
