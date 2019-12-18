@@ -149,7 +149,7 @@ const Table: TableComp = ({
         <tbody>
           {orderedData.slice(PAGE_SIZE * (page - 1), PAGE_SIZE * page).map((d, dIdx) => (
             <tr key={Math.random()}>
-              <td>{dIdx + 1}</td>
+              <td>{(page - 1) * PAGE_SIZE + dIdx + 1}</td>
               {column.map((col) => (
                 <td key={Math.random()}>
                   {col.render(d)}
