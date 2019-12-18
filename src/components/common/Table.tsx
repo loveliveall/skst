@@ -38,7 +38,6 @@ const StyledButton = styled.button`
 `;
 
 const StyledTable = styled.table`
-  width: 100%;
   border: 1px solid black;
   border-collapse: collapse;
 
@@ -99,6 +98,7 @@ const Table: TableComp = ({
       <StyledTable>
         <thead>
           <tr>
+            <th>#</th>
             {column.map((col, idx) => {
               const sortFn = col.customSort;
               if (sortFn) {
@@ -146,8 +146,9 @@ const Table: TableComp = ({
           </tr>
         </thead>
         <tbody>
-          {orderedData.slice(PAGE_SIZE * (page - 1), PAGE_SIZE * page).map((d) => (
+          {orderedData.slice(PAGE_SIZE * (page - 1), PAGE_SIZE * page).map((d, dIdx) => (
             <tr key={Math.random()}>
+              <td>{dIdx + 1}</td>
               {column.map((col) => (
                 <td key={Math.random()}>
                   {col.render(d)}
