@@ -53,7 +53,7 @@ type TableComp = <RowData extends object>(props: TableProps<RowData>) => React.R
 const Table: TableComp = ({
   column, data, pageSize,
 }) => {
-  const MAX_PAGE = Math.floor(data.length / pageSize) + 1;
+  const MAX_PAGE = Math.floor((data.length - 1) / pageSize) + 1;
   const [orderedData, setOrderedData] = React.useState(data);
   const [page, setPage] = React.useState(1);
   const [sortBy, setSortBy] = React.useState<[number | undefined, 'asc' | 'desc']>([undefined, 'asc']);

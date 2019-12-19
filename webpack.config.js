@@ -17,7 +17,7 @@ module.exports = (_, argv) => {
     entry: path.resolve(__dirname, 'src/index'),
     output: {
       path: path.resolve(__dirname, 'build'),
-      filename: '[name].[chunkhash].bundle.js',
+      filename: '[name].[hash].bundle.js',
       chunkFilename: '[name].[chunkhash].bundle.js',
       publicPath: '/',
     },
