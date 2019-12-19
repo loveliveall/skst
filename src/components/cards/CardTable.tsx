@@ -82,7 +82,7 @@ const CardTable: React.FC = () => (
         customSort: (a, b) => a.tech - b.tech,
       },
       {
-        title: '출현',
+        title: '첫 출현',
         render: (rowData) => {
           if (rowData.fromId[0] === 'gacha') {
             const prefix = '가챠';
