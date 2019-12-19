@@ -45,15 +45,15 @@ interface OwnProps<RowData extends object> {
     customSort?: (a: RowData, b: RowData) => number,
   }[],
   data: RowData[],
+  pageSize: number,
 }
 type TableProps<RowData extends object> = OwnProps<RowData>;
 type TableComp = <RowData extends object>(props: TableProps<RowData>) => React.ReactElement;
 
 const Table: TableComp = ({
-  column, data,
+  column, data, pageSize,
 }) => {
-  const PAGE_SIZE = 100;
-  const MAX_PAGE = Math.floor(data.length / PAGE_SIZE) + 1;
+  const MAX_PAGE = Math.floor(data.length / pageSize) + 1;
   const [orderedData, setOrderedData] = React.useState(data);
   const [page, setPage] = React.useState(1);
   const [sortBy, setSortBy] = React.useState<[number | undefined, 'asc' | 'desc']>([undefined, 'asc']);
@@ -143,9 +143,9 @@ const Table: TableComp = ({
           </tr>
         </thead>
         <tbody>
-          {orderedData.slice(PAGE_SIZE * (page - 1), PAGE_SIZE * page).map((d, dIdx) => (
+          {orderedData.slice(pageSize * (page - 1), pageSize * page).map((d, dIdx) => (
             <tr key={Math.random()}>
-              <td>{(page - 1) * PAGE_SIZE + dIdx + 1}</td>
+              <td>{(page - 1) * pageSize + dIdx + 1}</td>
               {column.map((col) => (
                 <td key={Math.random()}>
                   {col.render(d)}
