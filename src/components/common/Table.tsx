@@ -58,6 +58,12 @@ const Table: TableComp = ({
   const [page, setPage] = React.useState(1);
   const [sortBy, setSortBy] = React.useState<[number | undefined, 'asc' | 'desc']>([undefined, 'asc']);
 
+  React.useEffect(() => {
+    setOrderedData(data);
+    setPage(1);
+    setSortBy([undefined, 'asc']);
+  }, [data]);
+
   return (
     <OuterDiv>
       <NavGroup>
