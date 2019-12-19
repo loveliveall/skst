@@ -1,13 +1,14 @@
 interface Group {
   readonly [id: number]: {
     readonly name: string,
+    readonly iconAssetPath: string,
   },
 }
 
 export const GROUP: Group = {
-  1: { name: 'μ\'s' },
-  2: { name: 'Aqours' },
-  3: { name: '니지동' },
+  1: { name: 'μ\'s', iconAssetPath: '/images/icons/group/us.png' },
+  2: { name: 'Aqours', iconAssetPath: '/images/icons/group/aqours.png' },
+  3: { name: '니지동', iconAssetPath: '/images/icons/group/niji.png' },
 };
 
 interface Unit {
