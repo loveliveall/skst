@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import { CARD, getCardIconAssetPath } from '@/data/cardList';
 
-import { FlexBox } from '@/components/Styles';
+import { FlexBox, StyledButton } from '@/components/Styles';
 import CardStats from '@/components/home/CardStats';
 import Timer from '@/components/home/Timer';
 
@@ -62,22 +62,6 @@ const CardImage = styled.img`
   width: 80px;
   height: 80px;
   padding: 8px;
-`;
-
-const StyledButton = styled.button`
-  border: 1px solid black;
-  background: none;
-  outline: none;
-  box-shadow: none;
-  border-radius: 4px;
-  font-size: 1em;
-  padding: 8px 16px 8px 16px;
-
-  &:hover {
-    cursor: pointer;
-    background: #111;
-    color: #f1f1f1;
-  }
 `;
 
 const MaxWidthFlex = styled(FlexBox)`

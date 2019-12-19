@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { FlexBox } from '@/components/Styles';
+import { FlexBox, StyledButton } from '@/components/Styles';
 
 const OuterDiv = styled.div`
   width: 100%;
@@ -18,23 +18,8 @@ const TextAlignDiv = styled.div`
   padding-right: 8px;
 `;
 
-const StyledButton = styled.button`
-  border: 1px solid black;
-  background: none;
-  outline: none;
-  box-shadow: none;
-  border-radius: 4px;
+const NavigationButton = styled(StyledButton)`
   font-size: 0.5em;
-  padding: 8px 16px 8px 16px;
-
-  &:hover:enabled {
-    cursor: pointer;
-    background: #111;
-    color: #f1f1f1;
-  }
-  &:disabled {
-    border-color: gray;
-  }
 `;
 
 const StyledTable = styled.table`
@@ -76,7 +61,7 @@ const Table: TableComp = ({
   return (
     <OuterDiv>
       <NavGroup>
-        <StyledButton
+        <NavigationButton
           disabled={page === 1}
           onClick={() => {
             if (page > 1) {
@@ -85,11 +70,11 @@ const Table: TableComp = ({
           }}
         >
           <i className="fas fa-chevron-left" />
-        </StyledButton>
+        </NavigationButton>
         <TextAlignDiv>
           {`${page}/${MAX_PAGE}`}
         </TextAlignDiv>
-        <StyledButton
+        <NavigationButton
           disabled={page === MAX_PAGE}
           onClick={() => {
             if (page < MAX_PAGE) {
@@ -98,7 +83,7 @@ const Table: TableComp = ({
           }}
         >
           <i className="fas fa-chevron-right" />
-        </StyledButton>
+        </NavigationButton>
       </NavGroup>
       <StyledTable>
         <thead>
