@@ -47,6 +47,10 @@ const StyledTable = styled.table`
     border: 1px solid black;
     white-space: nowrap;
   }
+
+  .clickable {
+    cursor: pointer;
+  }
 `;
 
 interface OwnProps<RowData extends object> {
@@ -117,6 +121,7 @@ const Table: TableComp = ({
                 return (
                   <th
                     key={Math.random()}
+                    className="clickable"
                     onClick={() => {
                       if ((sortBy[0] === undefined)
                       || (sortBy[0] !== idx)) {
