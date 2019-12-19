@@ -1,7 +1,11 @@
 import React from 'react';
+import { Dispatch } from 'redux';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import { FlexBox, FixedWrapper } from '@/components/Styles';
+import { AC } from '@/store';
+import { FlexBox, FixedWrapper, StyledButton } from '@/components/Styles';
+import CardFilter from '@/components/cards/CardFilter';
 import CardTable from '@/components/cards/CardTable';
 
 const VerticalFlex = styled(FlexBox)`
@@ -10,14 +14,37 @@ const VerticalFlex = styled(FlexBox)`
   align-items: center;
 `;
 
-type CardsProps = {};
+const FixedWithPad = styled(FixedWrapper)`
+  padding: 4px;
+`;
 
-const Cards: React.FC<CardsProps> = () => (
+interface PropsFromDispatch {
+  applySetting: () => void,
+}
+type CardsProps = PropsFromDispatch;
+
+const Cards: React.FC<CardsProps> = ({
+  applySetting,
+}) => (
   <VerticalFlex>
-    <FixedWrapper>
+    <FixedWithPad>
+      <CardFilter />
+    </FixedWithPad>
+    <StyledButton
+      onClick={() => applySetting()}
+    >
+      설정 적용
+    </StyledButton>
+    <FixedWithPad>
       <CardTable />
-    </FixedWrapper>
+    </FixedWithPad>
   </VerticalFlex>
 );
 
-export default Cards;
+const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
+  applySetting: () => {
+    dispatch(AC.cards.applySettings());
+  },
+});
+
+export default connect(null, mapDispatchToProps)(Cards);

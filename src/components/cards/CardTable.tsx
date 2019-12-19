@@ -1,9 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
+import { AppState, SEL } from '@/store';
 import Table from '@/components/common/Table';
 
-import { FULL_CARD_LIST, getCardIconAssetPath } from '@/data/cardList';
+import { getCardIconAssetPath } from '@/data/cardList';
 import { ATTRIBUTE, ROLE, RARITY } from '@/data/cardMetadata';
 import { MEMBER } from '@/data/memberMetadata';
 import { GACHA } from '@/data/gacha';
@@ -20,7 +22,12 @@ const SmallIconImg = styled.img`
   height: 32px;
 `;
 
-const CardTable: React.FC = () => (
+interface PropsFromState {
+  list: ReturnType<typeof SEL.cardsList>,
+}
+type CardTable = PropsFromState;
+
+const CardTable: React.FC<CardTable> = ({ list }) => (
   <Table
     column={[
       {
@@ -108,8 +115,13 @@ const CardTable: React.FC = () => (
         },
       },
     ]}
-    data={FULL_CARD_LIST.filter((x) => x.uncap === 5)}
+    data={list}
+    pageSize={50}
   />
 );
 
-export default CardTable;
+const mapStateToProps = (state: AppState): PropsFromState => ({
+  list: SEL.cardsList(state),
+});
+
+export default connect(mapStateToProps)(CardTable);
