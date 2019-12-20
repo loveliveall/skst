@@ -17,6 +17,7 @@ interface FilterState {
 
 interface BuffState {
   roleEffect: boolean,
+  attributeId: number | null,
 }
 
 interface CardsState {
@@ -62,9 +63,11 @@ const initialState: CardsState = {
   },
   buff: {
     roleEffect: false,
+    attributeId: null,
   },
   buffDraft: {
     roleEffect: false,
+    attributeId: null,
   },
   list: FULL_CARD_LIST.filter((card) => card.uncap === 5),
 };
@@ -120,12 +123,20 @@ export default function cardsReducer(
           uncap: action.payload.uncap,
         },
       };
-    case CardsActionTypes.ADJUST_BUFF_EFFECT_SET:
+    case CardsActionTypes.ADJUST_BUFF_ROLE_EFFECT_SET:
       return {
         ...state,
         buffDraft: {
           ...state.buffDraft,
           roleEffect: action.payload.value,
+        },
+      };
+    case CardsActionTypes.ADJUST_BUFF_ATTRIBUTE_ID_SET:
+      return {
+        ...state,
+        buffDraft: {
+          ...state.buffDraft,
+          attributeId: action.payload.id,
         },
       };
     case CardsActionTypes.SETTINGS_APPLY:
@@ -140,15 +151,24 @@ export default function cardsReducer(
           if (!state.filterDraft.member[card.memberId]) return false;
           return true;
         }).map((card) => {
+          const attributeBuff = (card.attributeId === state.buffDraft.attributeId) ? 1.2 : 1.0;
+
+          const appl = Math.floor(card.appl * attributeBuff);
+          const stam = Math.floor(card.stam * attributeBuff);
+          const tech = Math.floor(card.tech * attributeBuff);
+
           const voltageMul = (() => {
             if (!state.buffDraft.roleEffect) return 1; // Not applying role effect
             if (card.roleId === 1) return 1.05; // Vo
             if (card.roleId === 4) return 0.95; // Sk
             return 1;
           })();
-          const newVoltage = Math.floor(card.appl * voltageMul);
+          const newVoltage = Math.floor(appl * voltageMul);
           return {
             ...card,
+            appl,
+            stam,
+            tech,
             expectedVoltage: newVoltage,
           };
         }),
