@@ -20,6 +20,8 @@ const TextAlignDiv = styled.div`
 
 const NavigationButton = styled(StyledButton)`
   font-size: 0.5em;
+  margin-left: 2px;
+  margin-right: 2px;
 `;
 
 const StyledTable = styled.table`
@@ -54,6 +56,7 @@ const Table: TableComp = ({
   column, data, pageSize,
 }) => {
   const MAX_PAGE = Math.floor((data.length - 1) / pageSize) + 1;
+  const PAGE_JUMP = 5;
   const [orderedData, setOrderedData] = React.useState(data);
   const [page, setPage] = React.useState(1);
   const [sortBy, setSortBy] = React.useState<[number | undefined, 'asc' | 'desc']>([undefined, 'asc']);
@@ -64,33 +67,55 @@ const Table: TableComp = ({
     setSortBy([undefined, 'asc']);
   }, [data]);
 
+  const TableNavigation = (
+    <NavGroup>
+      <NavigationButton
+        disabled={page === 1}
+        onClick={() => {
+          const tmp = page - PAGE_JUMP;
+          setPage(tmp >= 1 ? tmp : 1);
+        }}
+      >
+        <i className="fas fa-angle-double-left" />
+      </NavigationButton>
+      <NavigationButton
+        disabled={page === 1}
+        onClick={() => {
+          if (page > 1) {
+            setPage(page - 1);
+          }
+        }}
+      >
+        <i className="fas fa-angle-left" />
+      </NavigationButton>
+      <TextAlignDiv>
+        {`${page}/${MAX_PAGE}`}
+      </TextAlignDiv>
+      <NavigationButton
+        disabled={page === MAX_PAGE}
+        onClick={() => {
+          if (page < MAX_PAGE) {
+            setPage(page + 1);
+          }
+        }}
+      >
+        <i className="fas fa-angle-right" />
+      </NavigationButton>
+      <NavigationButton
+        disabled={page === MAX_PAGE}
+        onClick={() => {
+          const tmp = page + PAGE_JUMP;
+          setPage(tmp <= MAX_PAGE ? tmp : MAX_PAGE);
+        }}
+      >
+        <i className="fas fa-angle-double-right" />
+      </NavigationButton>
+    </NavGroup>
+  );
+
   return (
     <OuterDiv>
-      <NavGroup>
-        <NavigationButton
-          disabled={page === 1}
-          onClick={() => {
-            if (page > 1) {
-              setPage(page - 1);
-            }
-          }}
-        >
-          <i className="fas fa-chevron-left" />
-        </NavigationButton>
-        <TextAlignDiv>
-          {`${page}/${MAX_PAGE}`}
-        </TextAlignDiv>
-        <NavigationButton
-          disabled={page === MAX_PAGE}
-          onClick={() => {
-            if (page < MAX_PAGE) {
-              setPage(page + 1);
-            }
-          }}
-        >
-          <i className="fas fa-chevron-right" />
-        </NavigationButton>
-      </NavGroup>
+      {TableNavigation}
       <StyledTable>
         <thead>
           <tr>
@@ -155,6 +180,7 @@ const Table: TableComp = ({
           ))}
         </tbody>
       </StyledTable>
+      {TableNavigation}
     </OuterDiv>
   );
 };
