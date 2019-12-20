@@ -2,24 +2,43 @@ import { CardsActionTypes, CardsActions } from './actions';
 
 import { FULL_CARD_LIST } from '@/data/cardList';
 
-interface CardsState {
-  filter: {
-    member: {
-      [memberId: number]: boolean,
-    },
-    attribute: {
-      [attributeId: number]: boolean,
-    },
-    role: {
-      [roleId: number]: boolean,
-    },
-    uncap: number | null,
+interface FilterState {
+  member: {
+    [memberId: number]: boolean,
   },
+  attribute: {
+    [attributeId: number]: boolean,
+  },
+  role: {
+    [roleId: number]: boolean,
+  },
+  uncap: number | null,
+}
+
+interface CardsState {
+  filter: FilterState,
+  filterDraft: FilterState,
   list: typeof FULL_CARD_LIST,
 }
 
 const initialState: CardsState = {
   filter: {
+    member: {
+      /* eslint-disable object-property-newline */
+      1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true,
+      11: true, 12: true, 13: true, 14: true, 15: true, 16: true, 17: true, 18: true, 19: true,
+      21: true, 22: true, 23: true, 24: true, 25: true, 26: true, 27: true, 28: true, 29: true,
+      /* eslint-enable object-property-newline */
+    },
+    attribute: {
+      1: true, 2: true, 3: true, 4: true, 5: true, 6: true,
+    },
+    role: {
+      1: true, 2: true, 3: true, 4: true,
+    },
+    uncap: 5,
+  },
+  filterDraft: {
     member: {
       /* eslint-disable object-property-newline */
       1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true,
@@ -50,10 +69,10 @@ export default function cardsReducer(
       }), {});
       return {
         ...state,
-        filter: {
-          ...state.filter,
+        filterDraft: {
+          ...state.filterDraft,
           member: {
-            ...state.filter.member,
+            ...state.filterDraft.member,
             ...newState,
           },
         },
@@ -62,10 +81,10 @@ export default function cardsReducer(
     case CardsActionTypes.FILTER_ATTRIBUTE_SET:
       return {
         ...state,
-        filter: {
-          ...state.filter,
+        filterDraft: {
+          ...state.filterDraft,
           attribute: {
-            ...state.filter.attribute,
+            ...state.filterDraft.attribute,
             [action.payload.attributeId]: action.payload.value,
           },
         },
@@ -73,10 +92,10 @@ export default function cardsReducer(
     case CardsActionTypes.FILTER_ROLE_SET:
       return {
         ...state,
-        filter: {
-          ...state.filter,
+        filterDraft: {
+          ...state.filterDraft,
           role: {
-            ...state.filter.role,
+            ...state.filterDraft.role,
             [action.payload.roleId]: action.payload.value,
           },
         },
@@ -84,21 +103,27 @@ export default function cardsReducer(
     case CardsActionTypes.FILTER_UNCAP_SET:
       return {
         ...state,
-        filter: {
-          ...state.filter,
+        filterDraft: {
+          ...state.filterDraft,
           uncap: action.payload.uncap,
         },
       };
     case CardsActionTypes.SETTINGS_APPLY:
       return {
         ...state,
+        filter: state.filterDraft,
         list: FULL_CARD_LIST.filter((card) => {
-          if (state.filter.uncap !== null && card.uncap !== state.filter.uncap) return false;
-          if (!state.filter.attribute[card.attributeId]) return false;
-          if (!state.filter.role[card.roleId]) return false;
-          if (!state.filter.member[card.memberId]) return false;
+          if (state.filterDraft.uncap !== null && card.uncap !== state.filterDraft.uncap) return false;
+          if (!state.filterDraft.attribute[card.attributeId]) return false;
+          if (!state.filterDraft.role[card.roleId]) return false;
+          if (!state.filterDraft.member[card.memberId]) return false;
           return true;
         }),
+      };
+    case CardsActionTypes.SETTINGS_RESET:
+      return {
+        ...state,
+        filterDraft: state.filter,
       };
     default:
       return state;

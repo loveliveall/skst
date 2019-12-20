@@ -7,6 +7,7 @@ export const CardsActionTypes = {
   FILTER_UNCAP_SET: 'CARDS_FILTER_UNCAP_SET',
 
   SETTINGS_APPLY: 'CARDS_SETTINGS_APPLY',
+  SETTINGS_RESET: 'CARDS_SETTINGS_RESET',
 } as const;
 
 export const CardsActionCreators = {
@@ -22,6 +23,7 @@ export const CardsActionCreators = {
   setUncapFilter: (uncap: number | null) => createFSA(CardsActionTypes.FILTER_UNCAP_SET, { uncap }),
 
   applySettings: () => createFSA(CardsActionTypes.SETTINGS_APPLY, {}),
+  resetSettings: () => createFSA(CardsActionTypes.SETTINGS_RESET, {}),
 };
 
 export type CardsActions = TActions<typeof CardsActionCreators>;
