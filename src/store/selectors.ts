@@ -7,6 +7,8 @@ export const SEL = {
   cardsAttributeFilter: (state: AppState) => state.cards.filterDraft.attribute,
   cardsRoleFilter: (state: AppState) => state.cards.filterDraft.role,
   cardsUncapFilter: (state: AppState) => state.cards.filterDraft.uncap,
+  cardsRoleEffectBuff: (state: AppState) => state.cards.buffDraft.roleEffect,
   cardsList: (state: AppState) => state.cards.list,
-  filterInSync: (state: AppState) => equal(state.cards.filter, state.cards.filterDraft),
+  filterInSync: (state: AppState) => equal(state.cards.filter, state.cards.filterDraft)
+    && equal(state.cards.buff, state.cards.buffDraft),
 };

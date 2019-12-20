@@ -363,4 +363,5 @@ export const FULL_CARD_LIST = Object.keys(CARD).map(Number).map((id) => PARAMETE
   uncap: idx,
   ...CARD[id],
   ...param,
+  expectedVoltage: param.appl,
 }))).reduce((acc, val) => acc.concat(val), []);

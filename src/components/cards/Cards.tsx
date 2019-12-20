@@ -5,7 +5,8 @@ import styled from 'styled-components';
 
 import { AppState, AC, SEL } from '@/store';
 import { FlexBox, FixedWrapper, StyledButton } from '@/components/Styles';
-import CardFilter from '@/components/cards/CardFilter';
+import CardFilterRows from '@/components/cards/CardFilterRows';
+import CardBuffRows from '@/components/cards/CardBuffRows';
 import CardTable from '@/components/cards/CardTable';
 
 const VerticalFlex = styled(FlexBox)`
@@ -16,6 +17,18 @@ const VerticalFlex = styled(FlexBox)`
 
 const FixedWithPad = styled(FixedWrapper)`
   padding: 4px;
+`;
+
+const StyledTable = styled.table`
+  border: 1px solid black;
+  border-collapse: collapse;
+
+  td, th {
+    text-align: center;
+    padding: 4px;
+    border: 1px solid black;
+    white-space: nowrap;
+  }
 `;
 
 const ActionButton = styled(StyledButton)`
@@ -41,7 +54,12 @@ const Cards: React.FC<CardsProps> = ({
 }) => (
   <VerticalFlex>
     <FixedWithPad>
-      <CardFilter />
+      <StyledTable>
+        <tbody>
+          <CardFilterRows />
+          <CardBuffRows />
+        </tbody>
+      </StyledTable>
     </FixedWithPad>
     <FlexBox>
       <ActionButton

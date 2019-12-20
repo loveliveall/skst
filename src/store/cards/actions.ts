@@ -6,6 +6,8 @@ export const CardsActionTypes = {
   FILTER_ROLE_SET: 'CARDS_FILTER_ROLE_SET',
   FILTER_UNCAP_SET: 'CARDS_FILTER_UNCAP_SET',
 
+  ADJUST_BUFF_EFFECT_SET: 'CARDS_BUFF_ROLE_EFFECT_SET',
+
   SETTINGS_APPLY: 'CARDS_SETTINGS_APPLY',
   SETTINGS_RESET: 'CARDS_SETTINGS_RESET',
 } as const;
@@ -21,6 +23,10 @@ export const CardsActionCreators = {
     CardsActionTypes.FILTER_ROLE_SET, { roleId, value },
   ),
   setUncapFilter: (uncap: number | null) => createFSA(CardsActionTypes.FILTER_UNCAP_SET, { uncap }),
+
+  setRoleEffectBuff: (value: boolean) => createFSA(
+    CardsActionTypes.ADJUST_BUFF_EFFECT_SET, { value },
+  ),
 
   applySettings: () => createFSA(CardsActionTypes.SETTINGS_APPLY, {}),
   resetSettings: () => createFSA(CardsActionTypes.SETTINGS_RESET, {}),

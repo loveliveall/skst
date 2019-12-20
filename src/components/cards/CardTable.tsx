@@ -90,8 +90,8 @@ const CardTable: React.FC<CardTable> = ({ list }) => (
       },
       {
         title: '기대 볼티지',
-        render: (rowData) => <span>{rowData.appl}</span>,
-        customSort: (a, b) => a.appl - b.appl,
+        render: (rowData) => <span>{rowData.expectedVoltage}</span>,
+        customSort: (a, b) => a.expectedVoltage - b.expectedVoltage,
       },
       {
         title: '첫 출현',

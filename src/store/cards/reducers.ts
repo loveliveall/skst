@@ -15,9 +15,15 @@ interface FilterState {
   uncap: number | null,
 }
 
+interface BuffState {
+  roleEffect: boolean,
+}
+
 interface CardsState {
   filter: FilterState,
   filterDraft: FilterState,
+  buff: BuffState,
+  buffDraft: BuffState,
   list: typeof FULL_CARD_LIST,
 }
 
@@ -53,6 +59,12 @@ const initialState: CardsState = {
       1: true, 2: true, 3: true, 4: true,
     },
     uncap: 5,
+  },
+  buff: {
+    roleEffect: false,
+  },
+  buffDraft: {
+    roleEffect: false,
   },
   list: FULL_CARD_LIST.filter((card) => card.uncap === 5),
 };
@@ -108,22 +120,44 @@ export default function cardsReducer(
           uncap: action.payload.uncap,
         },
       };
+    case CardsActionTypes.ADJUST_BUFF_EFFECT_SET:
+      return {
+        ...state,
+        buffDraft: {
+          ...state.buffDraft,
+          roleEffect: action.payload.value,
+        },
+      };
     case CardsActionTypes.SETTINGS_APPLY:
       return {
         ...state,
         filter: state.filterDraft,
+        buff: state.buffDraft,
         list: FULL_CARD_LIST.filter((card) => {
           if (state.filterDraft.uncap !== null && card.uncap !== state.filterDraft.uncap) return false;
           if (!state.filterDraft.attribute[card.attributeId]) return false;
           if (!state.filterDraft.role[card.roleId]) return false;
           if (!state.filterDraft.member[card.memberId]) return false;
           return true;
+        }).map((card) => {
+          const voltageMul = (() => {
+            if (!state.buffDraft.roleEffect) return 1; // Not applying role effect
+            if (card.roleId === 1) return 1.05; // Vo
+            if (card.roleId === 4) return 0.95; // Sk
+            return 1;
+          })();
+          const newVoltage = Math.floor(card.appl * voltageMul);
+          return {
+            ...card,
+            expectedVoltage: newVoltage,
+          };
         }),
       };
     case CardsActionTypes.SETTINGS_RESET:
       return {
         ...state,
         filterDraft: state.filter,
+        buffDraft: state.buff,
       };
     default:
       return state;
