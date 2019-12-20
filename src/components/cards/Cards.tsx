@@ -22,6 +22,11 @@ const ActionButton = styled(StyledButton)`
   margin: 2px;
 `;
 
+const AlignedP = styled.p`
+  text-align: center;
+  line-height: 1.5em;
+`;
+
 interface PropsFromState {
   inSync: ReturnType<typeof SEL.filterInSync>,
 }
@@ -52,6 +57,13 @@ const Cards: React.FC<CardsProps> = ({
         초기화
       </ActionButton>
     </FlexBox>
+    <AlignedP>
+      이 표에 있는 모든 기본 스탯 값은 만렙 및 해당 한돌 수치의 모든 특훈 개방 상태 스탯입니다.
+      <br />
+      실제 인게임에서는 인연 보정치 등의 다양한 원인으로 인해 표와 값이 다를 수 있습니다.
+      <br />
+      크리티컬에 관해 알려진 정보가 적어 기대 볼티지 계산에서 크리티컬은 배제되어 있습니다.
+    </AlignedP>
     <FixedWithPad>
       <CardTable />
     </FixedWithPad>

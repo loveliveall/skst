@@ -89,6 +89,11 @@ const CardTable: React.FC<CardTable> = ({ list }) => (
         customSort: (a, b) => a.tech - b.tech,
       },
       {
+        title: '기대 볼티지',
+        render: (rowData) => <span>{rowData.appl}</span>,
+        customSort: (a, b) => a.appl - b.appl,
+      },
+      {
         title: '첫 출현',
         render: (rowData) => {
           if (rowData.fromId[0] === 'gacha') {
