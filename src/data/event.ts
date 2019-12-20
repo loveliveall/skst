@@ -145,4 +145,13 @@ export const EVENT: Event = {
     startDate: '2019.12.06.',
     endDate: '2019.12.06.',
   },
+  6: {
+    name: 'スクールアイドルトレイン発車！',
+    eventTypeId: 1,
+    rankBorder: {},
+    ingameInfo: [],
+    rewardBorder: {},
+    startDate: '2019.12.23.',
+    endDate: '2019.12.31.',
+  },
 };

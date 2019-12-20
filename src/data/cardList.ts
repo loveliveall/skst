@@ -171,6 +171,12 @@ export const CARD: Card = {
 
   137: { memberId: 5, title: 'こっちこっち早くするにゃ！', awakenTitle: 'アフタースクールキャット', rarityId: 3, attributeId: 1, roleId: 1, fromId: ['gacha', 20004] },
   138: { memberId: 13, title: 'ひと泳ぎしてたんだよ〜', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 4, roleId: 4, fromId: ['gacha', 20004] },
+
+  139: { memberId: 9, title: 'ニコの特製お弁当いかがですかぁ', awakenTitle: '明星の汽笛', rarityId: 3, attributeId: 4, roleId: 4, fromId: ['gacha', 10006] },
+  140: { memberId: 14, title: '真面目なアナウンス', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 6, roleId: 1, fromId: ['gacha', 10006] },
+  141: { memberId: 18, title: 'それじゃ、レッツゴー♪', awakenTitle: '明星の汽笛', rarityId: 3, attributeId: 2, roleId: 3, fromId: ['event', 6] },
+  142: { memberId: 1, title: 'お荷物のせますね～', awakenTitle: 'Snow halation', rarityId: 2, attributeId: 1, roleId: 1, fromId: ['event', 6] },
+  143: { memberId: 29, title: 'にっこりんな飾りつけ', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['event', 6] },
 };
 /* eslint-enable object-curly-newline, max-len */
 
@@ -344,6 +350,12 @@ export const PARAMETER: Parameter = {
 
   137: [{ appl: 6483, stam: 3015, tech: 5587 }, { appl: 7337, stam: 3213, tech: 6688 }, { appl: 8618, stam: 3807, tech: 7055 }, { appl: 9472, stam: 4599, tech: 7789 }, { appl: 10326, stam: 4995, tech: 9257 }, { appl: 11620, stam: 5406, tech: 10000 }],
   138: [{ appl: 4239, stam: 2820, tech: 3024 }, { appl: 4785, stam: 3184, tech: 3414 }, { appl: 5331, stam: 3548, tech: 3804 }, { appl: 5877, stam: 3730, tech: 4194 }, { appl: 6150, stam: 4094, tech: 4779 }, { appl: 6980, stam: 4654, tech: 4987 }],
+
+  139: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 8649, stam: 7568, tech: 10812 }],
+  140: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 7813, stam: 3325, tech: 5484 }],
+  141: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 6578, stam: 8772, tech: 6578 }],
+  142: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 4747, stam: 4474, tech: 4339 }],
+  143: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 6103, stam: 2713, tech: 4747 }],
 };
 /* eslint-enable object-curly-newline, max-len */
 
@@ -364,4 +376,5 @@ export const FULL_CARD_LIST = Object.keys(CARD).map(Number).map((id) => PARAMETE
   ...CARD[id],
   ...param,
   expectedVoltage: param.appl,
-}))).reduce((acc, val) => acc.concat(val), []);
+}))).reduce((acc, val) => acc.concat(val), [])
+  .filter((card) => card.appl !== 0);
