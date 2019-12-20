@@ -12,6 +12,9 @@ interface FilterState {
   role: {
     [roleId: number]: boolean,
   },
+  rarity: {
+    [rarityId: number]: boolean,
+  },
   uncap: number | null,
 }
 
@@ -43,6 +46,9 @@ const initialState: CardsState = {
     role: {
       1: true, 2: true, 3: true, 4: true,
     },
+    rarity: {
+      1: true, 2: true, 3: true,
+    },
     uncap: 5,
   },
   filterDraft: {
@@ -58,6 +64,9 @@ const initialState: CardsState = {
     },
     role: {
       1: true, 2: true, 3: true, 4: true,
+    },
+    rarity: {
+      1: true, 2: true, 3: true,
     },
     uncap: 5,
   },
@@ -115,6 +124,17 @@ export default function cardsReducer(
           },
         },
       };
+    case CardsActionTypes.FILTER_RARITY_SET:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          rarity: {
+            ...state.filterDraft.rarity,
+            [action.payload.rarityId]: action.payload.value,
+          },
+        },
+      };
     case CardsActionTypes.FILTER_UNCAP_SET:
       return {
         ...state,
@@ -148,6 +168,7 @@ export default function cardsReducer(
           if (state.filterDraft.uncap !== null && card.uncap !== state.filterDraft.uncap) return false;
           if (!state.filterDraft.attribute[card.attributeId]) return false;
           if (!state.filterDraft.role[card.roleId]) return false;
+          if (!state.filterDraft.rarity[card.rarityId]) return false;
           if (!state.filterDraft.member[card.memberId]) return false;
           return true;
         }).map((card) => {

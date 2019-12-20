@@ -1,13 +1,14 @@
 interface Rarity {
   readonly [id: number]: {
     readonly symbol: string,
+    readonly iconAssetPath: string,
   },
 }
 
 export const RARITY: Rarity = {
-  1: { symbol: 'R' },
-  2: { symbol: 'SR' },
-  3: { symbol: 'UR' },
+  1: { symbol: 'R', iconAssetPath: '/images/icons/rarity/r.png' },
+  2: { symbol: 'SR', iconAssetPath: '/images/icons/rarity/sr.png' },
+  3: { symbol: 'UR', iconAssetPath: '/images/icons/rarity/ur.png' },
 };
 
 interface Attribute {

@@ -4,7 +4,7 @@ import { Dispatch } from 'redux';
 import styled from 'styled-components';
 import { AppState, AC, SEL } from '@/store';
 
-import { ATTRIBUTE, ROLE } from '@/data/cardMetadata';
+import { ATTRIBUTE, ROLE, RARITY } from '@/data/cardMetadata';
 import { GROUP, MEMBER } from '@/data/memberMetadata';
 
 const BorderlessTable = styled.table`
@@ -54,12 +54,14 @@ interface PropsFromState {
   member: ReturnType<typeof SEL.cardsMemberFilter>,
   attribute: ReturnType<typeof SEL.cardsAttributeFilter>,
   role: ReturnType<typeof SEL.cardsRoleFilter>,
+  rarity: ReturnType<typeof SEL.cardsRarityFilter>,
   uncap: ReturnType<typeof SEL.cardsUncapFilter>,
 }
 interface PropsFromDispatch {
   setMember: (ids: number[], value: boolean) => void,
   setAttribute: (id: number, value: boolean) => void,
   setRole: (id: number, value: boolean) => void,
+  setRarity: (id: number, value: boolean) => void,
   setUncap: (uncap: number | null) => void,
 }
 type CardFilterRows = PropsFromState & PropsFromDispatch;
@@ -69,11 +71,12 @@ function memberIdInGroup(gId: number) {
 }
 
 const CardFilterRows: React.FC<CardFilterRows> = ({
-  member, attribute, role, uncap, setMember, setAttribute, setRole, setUncap,
+  member, attribute, role, rarity, uncap,
+  setMember, setAttribute, setRole, setRarity, setUncap,
 }) => (
   <>
     <tr>
-      <td rowSpan={4}>필터</td>
+      <td rowSpan={5}>필터</td>
       <td>멤버</td>
       <td>
         <BorderlessTable>
@@ -137,6 +140,20 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
       </td>
     </tr>
     <tr>
+      <td>레어도</td>
+      <td>
+        {Object.keys(RARITY).map(Number).map((id) => (
+          <SmallImg
+            key={id}
+            className={rarity[id] ? 'on' : 'off'}
+            src={RARITY[id].iconAssetPath}
+            alt="rarity-icon"
+            onClick={() => setRarity(id, !rarity[id])}
+          />
+        ))}
+      </td>
+    </tr>
+    <tr>
       <td>한돌</td>
       <td>
         <select
@@ -164,6 +181,7 @@ const mapStateToProps = (state: AppState): PropsFromState => ({
   member: SEL.cardsMemberFilter(state),
   attribute: SEL.cardsAttributeFilter(state),
   role: SEL.cardsRoleFilter(state),
+  rarity: SEL.cardsRarityFilter(state),
   uncap: SEL.cardsUncapFilter(state),
 });
 
@@ -176,6 +194,9 @@ const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
   },
   setRole: (id, value) => {
     dispatch(AC.cards.setRoleFilter(id, value));
+  },
+  setRarity: (id, value) => {
+    dispatch(AC.cards.setRarityFilter(id, value));
   },
   setUncap: (uncap) => {
     dispatch(AC.cards.setUncapFilter(uncap));

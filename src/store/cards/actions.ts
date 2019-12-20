@@ -4,6 +4,7 @@ export const CardsActionTypes = {
   FILTER_MEMBERS_SET: 'CARDS_FILTER_MEMBERS_SET',
   FILTER_ATTRIBUTE_SET: 'CARDS_FILTER_ATTRIBUTE_SET',
   FILTER_ROLE_SET: 'CARDS_FILTER_ROLE_SET',
+  FILTER_RARITY_SET: 'CARDS_FILTER_RARITY_SET',
   FILTER_UNCAP_SET: 'CARDS_FILTER_UNCAP_SET',
 
   ADJUST_BUFF_ROLE_EFFECT_SET: 'CARDS_BUFF_ROLE_EFFECT_SET',
@@ -22,6 +23,9 @@ export const CardsActionCreators = {
   ),
   setRoleFilter: (roleId: number, value: boolean) => createFSA(
     CardsActionTypes.FILTER_ROLE_SET, { roleId, value },
+  ),
+  setRarityFilter: (rarityId: number, value: boolean) => createFSA(
+    CardsActionTypes.FILTER_RARITY_SET, { rarityId, value },
   ),
   setUncapFilter: (uncap: number | null) => createFSA(CardsActionTypes.FILTER_UNCAP_SET, { uncap }),
 
