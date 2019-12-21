@@ -2,9 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import styled from 'styled-components';
+import { FlexBox } from '@/components/Styles';
 import { AppState, AC, SEL } from '@/store';
 
 import { ATTRIBUTE } from '@/data/cardMetadata';
+
+const VerticalAlignedBox = styled(FlexBox)`
+  align-items: center;
+`;
 
 const StyledInput = styled.input`
   margin: 4px;
@@ -34,15 +39,18 @@ const SmallImg = styled.img`
 interface PropsFromState {
   roleEffect: ReturnType<typeof SEL.cardsRoleEffectBuff>,
   attributeId: ReturnType<typeof SEL.cardsAttributeBuff>,
+  diffAttrDebuf: ReturnType<typeof SEL.cardsDiffAttrDebuf>,
 }
 interface PropsFromDispatch {
   setRoleEffect: (value: boolean) => void,
   setAttributeId: (id: number | null) => void,
+  setDiffAttrDebuf: (percent: number) => void,
 }
 type CardEffectRows = PropsFromState & PropsFromDispatch;
 
 const CardEffectRows: React.FC<CardEffectRows> = ({
-  roleEffect, attributeId, setRoleEffect, setAttributeId,
+  roleEffect, attributeId, diffAttrDebuf,
+  setRoleEffect, setAttributeId, setDiffAttrDebuf,
 }) => (
   <>
     <tr>
@@ -58,23 +66,35 @@ const CardEffectRows: React.FC<CardEffectRows> = ({
       </td>
     </tr>
     <tr>
-      <td>동속성</td>
+      <td>곡속성</td>
       <td>
-        <SmallImg
-          className={attributeId === null ? 'on' : 'off'}
-          src="/images/icons/null.png"
-          alt="null-icon"
-          onClick={() => setAttributeId(null)}
-        />
-        {Object.keys(ATTRIBUTE).map(Number).map((id) => (
+        <VerticalAlignedBox>
           <SmallImg
-            key={id}
-            className={attributeId === id ? 'on' : 'off'}
-            src={ATTRIBUTE[id].iconAssetPath}
-            alt="attribute-icon"
-            onClick={() => setAttributeId(id)}
+            className={attributeId === null ? 'on' : 'off'}
+            src="/images/icons/null.png"
+            alt="null-icon"
+            onClick={() => setAttributeId(null)}
           />
-        ))}
+          {Object.keys(ATTRIBUTE).map(Number).map((id) => (
+            <SmallImg
+              key={id}
+              className={attributeId === id ? 'on' : 'off'}
+              src={ATTRIBUTE[id].iconAssetPath}
+              alt="attribute-icon"
+              onClick={() => setAttributeId(id)}
+            />
+          ))}
+          <span>(타속성 어필</span>
+          <input
+            type="number"
+            min="0"
+            max="100"
+            disabled={attributeId === null}
+            value={diffAttrDebuf}
+            onChange={(event) => setDiffAttrDebuf(Number(event.target.value))}
+          />
+          <span>% 감소)</span>
+        </VerticalAlignedBox>
       </td>
     </tr>
   </>
@@ -83,6 +103,7 @@ const CardEffectRows: React.FC<CardEffectRows> = ({
 const mapStateToProps = (state: AppState): PropsFromState => ({
   roleEffect: SEL.cardsRoleEffectBuff(state),
   attributeId: SEL.cardsAttributeBuff(state),
+  diffAttrDebuf: SEL.cardsDiffAttrDebuf(state),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
@@ -91,6 +112,9 @@ const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
   },
   setAttributeId: (id) => {
     dispatch(AC.cards.setBuffAttributeId(id));
+  },
+  setDiffAttrDebuf: (percent) => {
+    dispatch(AC.cards.setDiffAttrDebuff(percent));
   },
 });
 

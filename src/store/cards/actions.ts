@@ -7,8 +7,9 @@ export const CardsActionTypes = {
   FILTER_RARITY_SET: 'CARDS_FILTER_RARITY_SET',
   FILTER_UNCAP_SET: 'CARDS_FILTER_UNCAP_SET',
 
-  ADJUST_BUFF_ROLE_EFFECT_SET: 'CARDS_BUFF_ROLE_EFFECT_SET',
-  ADJUST_BUFF_ATTRIBUTE_ID_SET: 'CARDS_BUFF_ATTRIBUTE_ID_SET',
+  BUFF_ROLE_EFFECT_SET: 'CARDS_BUFF_ROLE_EFFECT_SET',
+  BUFF_ATTRIBUTE_ID_SET: 'CARDS_BUFF_ATTRIBUTE_ID_SET',
+  BUFF_DIFF_ATTR_DEBUF_SET: 'CARDS_BUFF_DIFF_ATTR_DEBUF_SET',
 
   SETTINGS_APPLY: 'CARDS_SETTINGS_APPLY',
   SETTINGS_RESET: 'CARDS_SETTINGS_RESET',
@@ -30,10 +31,13 @@ export const CardsActionCreators = {
   setUncapFilter: (uncap: number | null) => createFSA(CardsActionTypes.FILTER_UNCAP_SET, { uncap }),
 
   setRoleEffectBuff: (value: boolean) => createFSA(
-    CardsActionTypes.ADJUST_BUFF_ROLE_EFFECT_SET, { value },
+    CardsActionTypes.BUFF_ROLE_EFFECT_SET, { value },
   ),
   setBuffAttributeId: (id: number | null) => createFSA(
-    CardsActionTypes.ADJUST_BUFF_ATTRIBUTE_ID_SET, { id },
+    CardsActionTypes.BUFF_ATTRIBUTE_ID_SET, { id },
+  ),
+  setDiffAttrDebuff: (percent: number) => createFSA(
+    CardsActionTypes.BUFF_DIFF_ATTR_DEBUF_SET, { percent },
   ),
 
   applySettings: () => createFSA(CardsActionTypes.SETTINGS_APPLY, {}),

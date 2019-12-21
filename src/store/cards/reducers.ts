@@ -41,11 +41,13 @@ const initialFilter: FilterState = {
 interface BuffState {
   roleEffect: boolean,
   attributeId: number | null,
+  diffAttrDebuf: number, // Maybe this will be changed. Currently it only supports appeal debuf
 }
 
 const initialBuff: BuffState = {
   roleEffect: false,
   attributeId: null,
+  diffAttrDebuf: 0,
 };
 
 interface CardsState {
@@ -126,7 +128,7 @@ export default function cardsReducer(
           uncap: action.payload.uncap,
         },
       };
-    case CardsActionTypes.ADJUST_BUFF_ROLE_EFFECT_SET:
+    case CardsActionTypes.BUFF_ROLE_EFFECT_SET:
       return {
         ...state,
         buffDraft: {
@@ -134,12 +136,20 @@ export default function cardsReducer(
           roleEffect: action.payload.value,
         },
       };
-    case CardsActionTypes.ADJUST_BUFF_ATTRIBUTE_ID_SET:
+    case CardsActionTypes.BUFF_ATTRIBUTE_ID_SET:
       return {
         ...state,
         buffDraft: {
           ...state.buffDraft,
           attributeId: action.payload.id,
+        },
+      };
+    case CardsActionTypes.BUFF_DIFF_ATTR_DEBUF_SET:
+      return {
+        ...state,
+        buffDraft: {
+          ...state.buffDraft,
+          diffAttrDebuf: action.payload.percent,
         },
       };
     case CardsActionTypes.SETTINGS_APPLY:
@@ -155,9 +165,12 @@ export default function cardsReducer(
           if (!state.filterDraft.member[card.memberId]) return false;
           return true;
         }).map((card) => {
-          const attributeBuff = (card.attributeId === state.buffDraft.attributeId) ? 1.2 : 1.0;
+          const attributeBuff = (state.buffDraft.attributeId === card.attributeId) ? 1.2 : 1.0;
+          const applAttrDebuff = (
+            state.buffDraft.attributeId !== null && state.buffDraft.attributeId !== card.attributeId
+          ) ? 1 - (state.buffDraft.diffAttrDebuf / 100) : 1.0;
 
-          const appl = Math.floor(card.appl * attributeBuff);
+          const appl = Math.floor(card.appl * attributeBuff * applAttrDebuff);
           const stam = Math.floor(card.stam * attributeBuff);
           const tech = Math.floor(card.tech * attributeBuff);
 
