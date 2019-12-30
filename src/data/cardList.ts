@@ -351,11 +351,11 @@ export const PARAMETER: Parameter = {
   137: [{ appl: 6483, stam: 3015, tech: 5587 }, { appl: 7337, stam: 3213, tech: 6688 }, { appl: 8618, stam: 3807, tech: 7055 }, { appl: 9472, stam: 4599, tech: 7789 }, { appl: 10326, stam: 4995, tech: 9257 }, { appl: 11620, stam: 5406, tech: 10000 }],
   138: [{ appl: 4239, stam: 2820, tech: 3024 }, { appl: 4785, stam: 3184, tech: 3414 }, { appl: 5331, stam: 3548, tech: 3804 }, { appl: 5877, stam: 3730, tech: 4194 }, { appl: 6150, stam: 4094, tech: 4779 }, { appl: 6980, stam: 4654, tech: 4987 }],
 
-  139: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 8649, stam: 7568, tech: 10812 }],
-  140: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 7813, stam: 3325, tech: 5484 }],
-  141: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 6578, stam: 8772, tech: 6578 }],
-  142: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 4747, stam: 4474, tech: 4339 }],
-  143: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 6103, stam: 2713, tech: 4747 }],
+  139: [{ appl: 4833, stam: 4223, tech: 6042 }, { appl: 5151, stam: 4779, tech: 7233 }, { appl: 6105, stam: 5613, tech: 7630 }, { appl: 7377, stam: 6169, tech: 8424 }, { appl: 8013, stam: 6725, tech: 10012 }, { appl: 8649, stam: 7568, tech: 10812 }],
+  140: [{ appl: 4741, stam: 2013, tech: 3330 }, { appl: 5353, stam: 2273, tech: 3760 }, { appl: 5965, stam: 2533, tech: 4190 }, { appl: 6271, stam: 2793, tech: 4620 }, { appl: 6883, stam: 2923, tech: 5265 }, { appl: 7813, stam: 3325, tech: 5484 }],
+  141: [{ appl: 3673, stam: 4902, tech: 3673 }, { appl: 4396, stam: 5546, tech: 3914 }, { appl: 4637, stam: 6512, tech: 4637 }, { appl: 5119, stam: 7156, tech: 5601 }, { appl: 6083, stam: 7800, tech: 6083 }, { appl: 6578, stam: 8772, tech: 6578 }],
+  142: [{ appl: 2879, stam: 2713, tech: 2631 }, { appl: 3251, stam: 3063, tech: 2971 }, { appl: 3623, stam: 3413, tech: 3311 }, { appl: 3809, stam: 3763, tech: 3651 }, { appl: 4181, stam: 3938, tech: 4161 }, { appl: 4747, stam: 4474, tech: 4339 }],
+  143: [{ appl: 3704, stam: 1641, tech: 2879 }, { appl: 4182, stam: 1853, tech: 3251 }, { appl: 4660, stam: 2065, tech: 3623 }, { appl: 5138, stam: 2277, tech: 3809 }, { appl: 5377, stam: 2595, tech: 4181 }, { appl: 6103, stam: 2713, tech: 4747 }],
 };
 /* eslint-enable object-curly-newline, max-len */
 
