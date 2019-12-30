@@ -12,6 +12,7 @@ export const GACHA: Gacha = {
   1: { type: 'normal', name: 'リリース記念ガチャ', startDate: '2019.09.26.', endDate: '2019.10.31.' },
   2: { type: 'normal', name: 'オールスターガチャ', startDate: '2019.10.31.', endDate: '2019.11.30.' },
   3: { type: 'normal', name: 'オールスターガチャ', startDate: '2019.11.30.', endDate: '2019.12.31.' },
+  4: { type: 'normal', name: 'オールスターガチャ', startDate: '2019.12.31.', endDate: '' },
 
   10001: { type: 'event', name: '秘密のパーティー！ガチャ', startDate: '2019.10.03.', endDate: '2019.10.15.' },
   10002: { type: 'event', name: '和装モデルはお任せあれ！ガチャ', startDate: '2019.10.21.', endDate: '2019.10.31.' },
@@ -26,5 +27,6 @@ export const GACHA: Gacha = {
   20004: { type: 'pickup', name: 'ピックアップガチャ (UR 린)', startDate: '2019.12.16.', endDate: '2019.12.23.' },
 
   30001: { type: 'fes', name: 'スクスタフェス', startDate: '2019.11.30.', endDate: '2019.12.06.' },
+  30002: { type: 'fes', name: 'スクスタフェス', startDate: '2019.12.31.', endDate: '2020.01.06.' },
 };
 /* eslint-enable object-curly-newline, max-len */
