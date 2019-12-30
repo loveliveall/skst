@@ -7,8 +7,9 @@ import { AppState, AC, SEL } from '@/store';
 
 import { ATTRIBUTE } from '@/data/cardMetadata';
 
-const VerticalAlignedBox = styled(FlexBox)`
+const CentralizedBox = styled(FlexBox)`
   align-items: center;
+  justify-content: center;
 `;
 
 const StyledInput = styled.input`
@@ -68,7 +69,7 @@ const CardEffectRows: React.FC<CardEffectRows> = ({
     <tr>
       <td>곡속성</td>
       <td>
-        <VerticalAlignedBox>
+        <CentralizedBox>
           <SmallImg
             className={attributeId === null ? 'on' : 'off'}
             src="/images/icons/null.png"
@@ -84,17 +85,19 @@ const CardEffectRows: React.FC<CardEffectRows> = ({
               onClick={() => setAttributeId(id)}
             />
           ))}
-          <span>(타속성 어필</span>
-          <input
-            type="number"
-            min="0"
-            max="100"
-            disabled={attributeId === null}
-            value={diffAttrDebuf}
-            onChange={(event) => setDiffAttrDebuf(Number(event.target.value))}
-          />
-          <span>% 감소)</span>
-        </VerticalAlignedBox>
+          <div>
+            <span>(타속성 어필</span>
+            <input
+              type="number"
+              min="0"
+              max="100"
+              disabled={attributeId === null}
+              value={diffAttrDebuf}
+              onChange={(event) => setDiffAttrDebuf(Number(event.target.value))}
+            />
+            <span>% 감소)</span>
+          </div>
+        </CentralizedBox>
       </td>
     </tr>
   </>
