@@ -177,6 +177,12 @@ export const CARD: Card = {
   141: { memberId: 18, title: 'それじゃ、レッツゴー♪', awakenTitle: '明星の汽笛', rarityId: 3, attributeId: 2, roleId: 3, fromId: ['event', 6] },
   142: { memberId: 1, title: 'お荷物のせますね～', awakenTitle: 'Snow halation', rarityId: 2, attributeId: 1, roleId: 1, fromId: ['event', 6] },
   143: { memberId: 29, title: 'にっこりんな飾りつけ', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['event', 6] },
+
+  144: { memberId: 3, title: 'この水着すごくお気に入りなんだ', awakenTitle: 'ハミングエンジェル', rarityId: 3, attributeId: 6, roleId: 2, fromId: ['gacha', 30002] },
+  145: { memberId: 16, title: 'あなたが一緒なら', awakenTitle: 'デビルロッカー', rarityId: 3, attributeId: 5, roleId: 4, fromId: ['gacha', 30002] },
+  146: { memberId: 27, title: 'えへへ……嬉しいです！', awakenTitle: 'スカーレットカレッジ', rarityId: 3, attributeId: 4, roleId: 1, fromId: ['gacha', 30002] },
+  147: { memberId: 1, title: 'あなたには特別おまけしちゃうよ', awakenTitle: '僕らのLIVE君とのLIFE', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['gacha', 30002] },
+  148: { memberId: 11, title: '旅館のお手伝い', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 30002] },
 };
 /* eslint-enable object-curly-newline, max-len */
 
@@ -356,6 +362,12 @@ export const PARAMETER: Parameter = {
   141: [{ appl: 3673, stam: 4902, tech: 3673 }, { appl: 4396, stam: 5546, tech: 3914 }, { appl: 4637, stam: 6512, tech: 4637 }, { appl: 5119, stam: 7156, tech: 5601 }, { appl: 6083, stam: 7800, tech: 6083 }, { appl: 6578, stam: 8772, tech: 6578 }],
   142: [{ appl: 2879, stam: 2713, tech: 2631 }, { appl: 3251, stam: 3063, tech: 2971 }, { appl: 3623, stam: 3413, tech: 3311 }, { appl: 3809, stam: 3763, tech: 3651 }, { appl: 4181, stam: 3938, tech: 4161 }, { appl: 4747, stam: 4474, tech: 4339 }],
   143: [{ appl: 3704, stam: 1641, tech: 2879 }, { appl: 4182, stam: 1853, tech: 3251 }, { appl: 4660, stam: 2065, tech: 3623 }, { appl: 5138, stam: 2277, tech: 3809 }, { appl: 5377, stam: 2595, tech: 4181 }, { appl: 6103, stam: 2713, tech: 4747 }],
+
+  144: [{ appl: 6210, stam: 3859, tech: 6726 }, { appl: 6619, stam: 4621, tech: 7610 }, { appl: 7846, stam: 4875, tech: 8936 }, { appl: 9482, stam: 5383, tech: 9820 }, { appl: 10300, stam: 6399, tech: 10704 }, { appl: 11131, stam: 6919, tech: 12036 }],
+  145: [{ appl: 5883, stam: 5543, tech: 5380 }, { appl: 6270, stam: 6273, tech: 6442 }, { appl: 7431, stam: 7368, tech: 6796 }, { appl: 8979, stam: 8098, tech: 7504 }, { appl: 9753, stam: 8828, tech: 8920 }, { appl: 10530, stam: 9927, tech: 9628 }],
+  146: [{ appl: 7759, stam: 3306, tech: 5451 }, { appl: 8781, stam: 3523, tech: 6525 }, { appl: 10314, stam: 4174, tech: 6883 }, { appl: 11336, stam: 5042, tech: 7599 }, { appl: 12358, stam: 5476, tech: 9031 }, { appl: 13901, stam: 5916, tech: 9760 }],
+  147: [{ appl: 3392, stam: 3392, tech: 3495 }, { appl: 3830, stam: 3830, tech: 3945 }, { appl: 4268, stam: 4268, tech: 4395 }, { appl: 4487, stam: 4706, tech: 4845 }, { appl: 4925, stam: 4925, tech: 5520 }, { appl: 5586, stam: 5586, tech: 5755 }],
+  148: [{ appl: 2876, stam: 2773, tech: 4630 }, { appl: 3246, stam: 3131, tech: 5226 }, { appl: 3616, stam: 3489, tech: 5822 }, { appl: 3986, stam: 3847, tech: 6120 }, { appl: 4171, stam: 4384, tech: 6716 }, { appl: 4739, stam: 4569, tech: 7619 }],
 };
 /* eslint-enable object-curly-newline, max-len */
 
