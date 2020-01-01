@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import { AppState, SEL } from '@/store';
 import Table from '@/components/common/Table';
+import { FlexBox } from '@/components/Styles';
 
 import { getCardIconAssetPath } from '@/data/cardList';
 import { ATTRIBUTE, ROLE, RARITY } from '@/data/cardMetadata';
@@ -20,6 +21,17 @@ const SmallIconImg = styled.img`
   padding: 4px;
   width: 32px;
   height: 32px;
+`;
+
+const VerticalFlex = styled(FlexBox)`
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const ToolTipText = styled.div`
+  font-size: 0.8em;
+  color: gray;
 `;
 
 interface PropsFromState {
@@ -46,7 +58,15 @@ const CardTable: React.FC<CardTable> = ({ list }) => (
       },
       {
         title: '이름',
-        render: (rowData) => <span>{MEMBER[rowData.memberId].name}</span>,
+        render: (rowData) => (
+          <VerticalFlex>
+            <VerticalFlex style={{ paddingBottom: '4px' }}>
+              <ToolTipText>{rowData.title}</ToolTipText>
+              <ToolTipText>{rowData.awakenTitle}</ToolTipText>
+            </VerticalFlex>
+            <div>{MEMBER[rowData.memberId].name}</div>
+          </VerticalFlex>
+        ),
         customSort: (a, b) => a.memberId - b.memberId,
       },
       {
