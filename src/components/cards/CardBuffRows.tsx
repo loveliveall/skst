@@ -12,6 +12,12 @@ const CentralizedBox = styled(FlexBox)`
   justify-content: center;
 `;
 
+const VerticalFlex = styled(FlexBox)`
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+`;
+
 const StyledInput = styled.input`
   margin: 4px;
 `;
@@ -67,7 +73,12 @@ const CardEffectRows: React.FC<CardEffectRows> = ({
       </td>
     </tr>
     <tr>
-      <td>곡속성</td>
+      <td>
+        <VerticalFlex>
+          <div>곡속성</div>
+          <div>(동속 +20%)</div>
+        </VerticalFlex>
+      </td>
       <td>
         <CentralizedBox>
           <SmallImg
