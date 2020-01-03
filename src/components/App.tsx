@@ -4,6 +4,7 @@ import { Switch, Route, NavLink } from 'react-router-dom';
 
 import Home from '@/components/home/Home';
 import Cards from '@/components/cards/Cards';
+import Gachas from '@/components/gachas/Gachas';
 
 const FixedNav = styled.nav`
   height: 100%;
@@ -68,6 +69,12 @@ const App: React.FC = () => {
       title: '카드 목록',
       exact: false,
     },
+    {
+      key: 'gachas',
+      path: '/gachas',
+      title: '가챠 목록',
+      exact: false,
+    },
   ];
 
   return (
@@ -76,6 +83,7 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/cards" component={Cards} />
+          <Route path="/gachas" component={Gachas} />
         </Switch>
       </Main>
       <FixedNav>
