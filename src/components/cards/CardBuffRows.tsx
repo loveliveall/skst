@@ -9,7 +9,6 @@ import { ATTRIBUTE } from '@/data/cardMetadata';
 
 const CentralizedBox = styled(FlexBox)`
   align-items: center;
-  justify-content: center;
 `;
 
 const VerticalFlex = styled(FlexBox)`

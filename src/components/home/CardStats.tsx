@@ -54,7 +54,7 @@ const CardStats: React.FC = () => {
   const ATTRIBUTE_IDS = Object.keys(ATTRIBUTE).map(Number);
   return (
     <FixedWrapper>
-      <FlexBox style={{ justifyContent: 'center' }}>
+      <FlexBox>
         <PaddedDiv>
           <PaddedDiv>레어도</PaddedDiv>
           <div>
