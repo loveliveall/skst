@@ -45,6 +45,7 @@ interface OwnProps<RowData extends object> {
     title: string,
     render: (rowData: RowData) => JSX.Element,
     customSort?: (a: RowData, b: RowData) => number,
+    defaultSort?: 'asc' | 'desc',
   }[],
   data: RowData[],
   pageSize: number,
@@ -57,14 +58,28 @@ const Table: TableComp = ({
 }) => {
   const MAX_PAGE = Math.floor((data.length - 1) / pageSize) + 1;
   const PAGE_JUMP = 5;
-  const [orderedData, setOrderedData] = React.useState(data);
   const [page, setPage] = React.useState(1);
-  const [sortBy, setSortBy] = React.useState<[number | undefined, 'asc' | 'desc']>([undefined, 'asc']);
+  const defaultSortIdx = column.findIndex((col) => col.defaultSort !== undefined);
+  const defaultSortBy: [number | undefined, 'asc' | 'desc'] = defaultSortIdx === -1 ? [undefined, 'asc'] : (
+    [defaultSortIdx, column[defaultSortIdx].defaultSort as 'asc' | 'desc']
+  );
+  const [sortBy, setSortBy] = React.useState(defaultSortBy);
+
+  const sortIdx = sortBy[0];
+  const sortedData = sortIdx === undefined ? data : (
+    [...data].sort((a, b) => {
+      const sortFn = column[sortIdx].customSort;
+      if (sortFn) {
+        return (sortBy[1] === 'desc' ? -1 : 1) * sortFn(a, b);
+      }
+      console.error('Cannot sort with this column');
+      return 0;
+    })
+  );
 
   React.useEffect(() => {
-    setOrderedData(data);
     setPage(1);
-    setSortBy([undefined, 'asc']);
+    setSortBy(defaultSortBy);
   }, [data]);
 
   const TableNavigation = (
@@ -142,13 +157,10 @@ const Table: TableComp = ({
                       if ((sortBy[0] === undefined)
                       || (sortBy[0] !== idx)) {
                         setSortBy([idx, 'asc']);
-                        setOrderedData([...orderedData].sort(sortFn));
                       } else if (sortBy[0] === idx && sortBy[1] === 'asc') {
                         setSortBy([idx, 'desc']);
-                        setOrderedData([...orderedData].sort((a, b) => -sortFn(a, b)));
                       } else {
                         setSortBy([undefined, 'asc']);
-                        setOrderedData(data);
                       }
                     }}
                     style={{
@@ -168,7 +180,7 @@ const Table: TableComp = ({
           </tr>
         </thead>
         <tbody>
-          {orderedData.slice(pageSize * (page - 1), pageSize * page).map((d, dIdx) => (
+          {sortedData.slice(pageSize * (page - 1), pageSize * page).map((d, dIdx) => (
             <tr key={Math.random()}>
               <td>{(page - 1) * pageSize + dIdx + 1}</td>
               {column.map((col) => (
