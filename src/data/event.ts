@@ -7,6 +7,7 @@ interface EventType {
 
 export const EVENT_TYPE: EventType = {
   1: { type: 'story', krName: '스토리 이벤트' },
+  2: { type: 'exchange', krName: '교환소 이벤트' },
 };
 
 interface Event {
@@ -168,5 +169,14 @@ export const EVENT: Event = {
     },
     startDate: '2019.12.23.',
     endDate: '2019.12.31.',
+  },
+  7: {
+    name: '海の上の大熱戦',
+    eventTypeId: 2,
+    rankBorder: {},
+    ingameInfo: [],
+    rewardBorder: {},
+    startDate: '2020.01.06.',
+    endDate: '2020.01.15.',
   },
 };

@@ -181,8 +181,15 @@ export const CARD: Card = {
   144: { memberId: 3, title: 'この水着すごくお気に入りなんだ', awakenTitle: 'ハミングエンジェル', rarityId: 3, attributeId: 6, roleId: 2, fromId: ['gacha', 30002] },
   145: { memberId: 16, title: 'あなたが一緒なら', awakenTitle: 'デビルロッカー', rarityId: 3, attributeId: 5, roleId: 4, fromId: ['gacha', 30002] },
   146: { memberId: 27, title: 'えへへ……嬉しいです！', awakenTitle: 'スカーレットカレッジ', rarityId: 3, attributeId: 4, roleId: 1, fromId: ['gacha', 30002] },
-  147: { memberId: 1, title: 'あなたには特別おまけしちゃうよ', awakenTitle: '僕らのLIVE君とのLIFE', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['gacha', 30002] },
+  147: { memberId: 1, title: 'あなたには特別おまけしちゃうよ', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['gacha', 30002] },
   148: { memberId: 11, title: '旅館のお手伝い', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 30002] },
+
+  149: { memberId: 15, title: 'このアトラクション、面白ーい♪', awakenTitle: 'Miracle voyage', rarityId: 3, attributeId: 1, roleId: 2, fromId: ['gacha', 10007] },
+  150: { memberId: 23, title: 'ここで転ぶわけにはいきません！', awakenTitle: 'Miracle voyage', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['gacha', 10008] },
+  151: { memberId: 24, title: 'ほかのみんなには悪いけど', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['gacha', 10007] },
+  152: { memberId: 4, title: '水上アスレチックで決めましょう', awakenTitle: 'Miracle voyage', rarityId: 3, attributeId: 5, roleId: 3, fromId: ['event', 7] },
+  153: { memberId: 6, title: '……ふふふ♪やっほ―――♪', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 1, roleId: 3, fromId: ['event', 7] },
+  154: { memberId: 17, title: 'いただたきまーす♪', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['event', 7] },
 };
 /* eslint-enable object-curly-newline, max-len */
 
@@ -368,6 +375,13 @@ export const PARAMETER: Parameter = {
   146: [{ appl: 7759, stam: 3306, tech: 5451 }, { appl: 8781, stam: 3523, tech: 6525 }, { appl: 10314, stam: 4174, tech: 6883 }, { appl: 11336, stam: 5042, tech: 7599 }, { appl: 12358, stam: 5476, tech: 9031 }, { appl: 13901, stam: 5916, tech: 9760 }],
   147: [{ appl: 3392, stam: 3392, tech: 3495 }, { appl: 3830, stam: 3830, tech: 3945 }, { appl: 4268, stam: 4268, tech: 4395 }, { appl: 4487, stam: 4706, tech: 4845 }, { appl: 4925, stam: 4925, tech: 5520 }, { appl: 5586, stam: 5586, tech: 5755 }],
   148: [{ appl: 2876, stam: 2773, tech: 4630 }, { appl: 3246, stam: 3131, tech: 5226 }, { appl: 3616, stam: 3489, tech: 5822 }, { appl: 3986, stam: 3847, tech: 6120 }, { appl: 4171, stam: 4384, tech: 6716 }, { appl: 4739, stam: 4569, tech: 7619 }],
+
+  149: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 9638, stam: 8812, tech: 9087 }],
+  150: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 11351, stam: 7568, tech: 8108 }],
+  151: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 4987, stam: 5818, tech: 5818 }],
+  152: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 6283, stam: 10546, tech: 5610 }],
+  153: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 4576, stam: 4576, tech: 4715 }],
+  154: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 5548, stam: 4161, tech: 4161 }],
 };
 /* eslint-enable object-curly-newline, max-len */
 
