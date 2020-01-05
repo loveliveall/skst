@@ -115,7 +115,7 @@ const Gachas: React.FC = () => {
                   return (
                     <VerticalFlex>
                       <div><strong>관련 이벤트</strong></div>
-                      <div>{EVENT[rowData.id - 10000].name}</div>
+                      <div>{EVENT[rowData.eventId].name}</div>
                     </VerticalFlex>
                   );
                 }
