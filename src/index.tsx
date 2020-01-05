@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import App from '@/components/App';
 import { store } from '@/store';
 
+import '@/data/_validator'; // Validating data
+
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
