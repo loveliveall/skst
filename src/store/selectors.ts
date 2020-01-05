@@ -1,6 +1,7 @@
 import equal from 'fast-deep-equal';
 
 import { AppState } from './reducer';
+import { initialFilter, initialBuff } from './cards/reducers';
 
 export const SEL = {
   cardsMemberFilter: (state: AppState) => state.cards.filterDraft.member,
@@ -14,4 +15,6 @@ export const SEL = {
   cardsList: (state: AppState) => state.cards.list,
   filterInSync: (state: AppState) => equal(state.cards.filter, state.cards.filterDraft)
     && equal(state.cards.buff, state.cards.buffDraft),
+  filterInitial: (state: AppState) => equal(state.cards.filter, initialFilter)
+    && equal(state.cards.buff, initialBuff),
 };

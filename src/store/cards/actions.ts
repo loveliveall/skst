@@ -12,6 +12,7 @@ export const CardsActionTypes = {
   BUFF_DIFF_ATTR_DEBUF_SET: 'CARDS_BUFF_DIFF_ATTR_DEBUF_SET',
 
   SETTINGS_APPLY: 'CARDS_SETTINGS_APPLY',
+  SETTINGS_ROLLBACK: 'CARDS_SETTINGS_ROLLBACK',
   SETTINGS_RESET: 'CARDS_SETTINGS_RESET',
 } as const;
 
@@ -41,6 +42,7 @@ export const CardsActionCreators = {
   ),
 
   applySettings: () => createFSA(CardsActionTypes.SETTINGS_APPLY, {}),
+  rollbackSettings: () => createFSA(CardsActionTypes.SETTINGS_ROLLBACK, {}),
   resetSettings: () => createFSA(CardsActionTypes.SETTINGS_RESET, {}),
 };
 

@@ -42,15 +42,17 @@ const AlignedP = styled.p`
 
 interface PropsFromState {
   inSync: ReturnType<typeof SEL.filterInSync>,
+  isInitial: ReturnType<typeof SEL.filterInitial>,
 }
 interface PropsFromDispatch {
   applySetting: () => void,
+  rollbackSetting: () => void,
   resetSetting: () => void,
 }
 type CardsProps = PropsFromState & PropsFromDispatch;
 
 const Cards: React.FC<CardsProps> = ({
-  inSync, applySetting, resetSetting,
+  inSync, isInitial, applySetting, rollbackSetting, resetSetting,
 }) => (
   <VerticalFlex>
     <FixedWithPad>
@@ -70,6 +72,12 @@ const Cards: React.FC<CardsProps> = ({
       </ActionButton>
       <ActionButton
         disabled={inSync}
+        onClick={() => rollbackSetting()}
+      >
+        되돌리기
+      </ActionButton>
+      <ActionButton
+        disabled={isInitial}
         onClick={() => resetSetting()}
       >
         초기화
@@ -90,11 +98,15 @@ const Cards: React.FC<CardsProps> = ({
 
 const mapStateToProps = (state: AppState): PropsFromState => ({
   inSync: SEL.filterInSync(state),
+  isInitial: SEL.filterInitial(state),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
   applySetting: () => {
     dispatch(AC.cards.applySettings());
+  },
+  rollbackSetting: () => {
+    dispatch(AC.cards.rollbackSettings());
   },
   resetSetting: () => {
     dispatch(AC.cards.resetSettings());

@@ -18,7 +18,7 @@ interface FilterState {
   uncap: number | null,
 }
 
-const initialFilter: FilterState = {
+export const initialFilter: FilterState = {
   member: {
     /* eslint-disable object-property-newline */
     1: true, 2: true, 3: true, 4: true, 5: true, 6: true, 7: true, 8: true, 9: true,
@@ -44,7 +44,7 @@ interface BuffState {
   diffAttrDebuf: number, // Maybe this will be changed. Currently it only supports appeal debuf
 }
 
-const initialBuff: BuffState = {
+export const initialBuff: BuffState = {
   roleEffect: false,
   attributeId: null,
   diffAttrDebuf: 0,
@@ -190,11 +190,17 @@ export default function cardsReducer(
           };
         }),
       };
-    case CardsActionTypes.SETTINGS_RESET:
+    case CardsActionTypes.SETTINGS_ROLLBACK:
       return {
         ...state,
         filterDraft: state.filter,
         buffDraft: state.buff,
+      };
+    case CardsActionTypes.SETTINGS_RESET:
+      return {
+        ...state,
+        filterDraft: initialState.filter,
+        buffDraft: initialState.buff,
       };
     default:
       return state;
