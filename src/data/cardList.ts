@@ -186,9 +186,9 @@ export const CARD: Card = {
   148: { memberId: 11, title: '旅館のお手伝い', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 30002] },
 
   149: { memberId: 15, title: 'このアトラクション、面白ーい♪', awakenTitle: 'Miracle voyage', rarityId: 3, attributeId: 1, roleId: 2, fromId: ['gacha', 10007] },
-  150: { memberId: 23, title: 'ここで転ぶわけにはいきません！', awakenTitle: 'Miracle voyage', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['gacha', 10008] },
-  151: { memberId: 24, title: 'ほかのみんなには悪いけど', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['gacha', 10007] },
-  152: { memberId: 4, title: '水上アスレチックで決めましょう', awakenTitle: 'Miracle voyage', rarityId: 3, attributeId: 5, roleId: 3, fromId: ['event', 7] },
+  150: { memberId: 24, title: 'ほかのみんなには悪いけど', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['gacha', 10007] },
+  151: { memberId: 4, title: '水上アスレチックで決めましょう', awakenTitle: 'Miracle voyage', rarityId: 3, attributeId: 5, roleId: 3, fromId: ['event', 7] },
+  152: { memberId: 23, title: 'ここで転ぶわけにはいきません！', awakenTitle: 'Miracle voyage', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['gacha', 10008] },
   153: { memberId: 6, title: '……ふふふ♪やっほ―――♪', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 1, roleId: 3, fromId: ['event', 7] },
   154: { memberId: 17, title: 'いただたきまーす♪', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['event', 7] },
 };
