@@ -11,21 +11,33 @@ export const EVENT_TYPE: EventType = {
 };
 
 interface Event {
-  readonly [id: number]: {
-    readonly name: string,
-    readonly eventTypeId: keyof EventType,
-    readonly rankBorder: {
-      readonly [rank: number]: number,
-    },
-    readonly ingameInfo: number[],
-    readonly rewardBorder: {
-      readonly [rank: number]: number[],
-    },
-    readonly startDate: string,
-    readonly endDate: string,
-  },
+  readonly [id: number]: (
+    {
+      readonly name: string,
+      readonly rankBorder: {
+        readonly [rank: number]: number,
+      },
+      readonly ingameInfo: number[],
+      readonly rewardBorder: {
+        readonly [rank: number]: number[],
+      },
+      readonly startDate: string,
+      readonly endDate: string,
+    }
+  ) & (
+    {
+      readonly eventTypeId: 1,
+    } | {
+      readonly eventTypeId: 2,
+      readonly voltageRankBorder: {
+        readonly [voltageRank: number]: number,
+      },
+      readonly voltageRankBorderIngameInfo: number[],
+    }
+  ),
 }
 
+/* eslint-disable max-len */
 export const EVENT: Event = {
   1: {
     name: '秘密のパーティー！',
@@ -173,10 +185,58 @@ export const EVENT: Event = {
   7: {
     name: '海の上の大熱戦',
     eventTypeId: 2,
-    rankBorder: {},
-    ingameInfo: [],
-    rewardBorder: {},
+    rankBorder: {
+      1: 0,
+      10: 0,
+      50: 0,
+      100: 0,
+      500: 0,
+      1000: 0,
+      2000: 0,
+      3000: 0,
+      4000: 0,
+      5000: 0,
+      6000: 0,
+      7000: 0,
+      8000: 0,
+      9000: 0,
+      10000: 0,
+      20000: 0,
+      30000: 0,
+      40000: 0,
+      50000: 0,
+    },
+    ingameInfo: [500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 20000, 30000, 40000, 50000],
+    voltageRankBorder: {
+      1: 0,
+      10: 0,
+      50: 0,
+      100: 0,
+      300: 0,
+      500: 0,
+      1000: 0,
+      2000: 0,
+      3000: 0,
+      4000: 0,
+      5000: 0,
+      6000: 0,
+      7000: 0,
+      8000: 0,
+      9000: 0,
+      10000: 0,
+      15000: 0,
+      20000: 0,
+      25000: 0,
+    },
+    voltageRankBorderIngameInfo: [50, 100, 300, 500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 15000, 20000, 25000],
+    rewardBorder: {
+      100: [2, 2, 2],
+      3000: [1, 2, 2],
+      10000: [1, 1, 2],
+      50000: [1, 1, 1],
+    },
     startDate: '2020.01.06.',
     endDate: '2020.01.15.',
   },
 };
+/* eslint-enable max-len */
