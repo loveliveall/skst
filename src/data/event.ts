@@ -33,6 +33,7 @@ interface Event {
         readonly [voltageRank: number]: number,
       },
       readonly voltageRankBorderIngameInfo: number[],
+      readonly voltageRankSongs: string[], // TODO: Let it link with songs table
     }
   ),
 }
@@ -148,6 +149,7 @@ export const EVENT: Event = {
       6000: 0, 7000: 0, 8000: 0, 9000: 0, 10000: 0, 15000: 0, 20000: 0, 25000: 0,
     },
     voltageRankBorderIngameInfo: [50, 100, 300, 500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 15000, 20000, 25000],
+    voltageRankSongs: ['あなたの理想のヒロイン', '青空Jumping Heart', 'それは僕たちの奇跡'],
     rewardBorder: {
       100: [2, 2, 2],
       3000: [1, 2, 2],
