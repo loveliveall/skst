@@ -158,6 +158,7 @@ const CardTable: React.FC<CardTable> = ({ list }) => (
     ]}
     data={list}
     pageSize={50}
+    maxWidth="calc(100vw - 20px)"
   />
 );
 

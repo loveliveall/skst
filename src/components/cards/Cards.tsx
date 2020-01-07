@@ -90,9 +90,7 @@ const Cards: React.FC<CardsProps> = ({
       <br />
       크리티컬에 관해 알려진 정보가 적어 기대 볼티지 계산에서 크리티컬은 배제되어 있습니다.
     </AlignedP>
-    <FixedWithPad>
-      <CardTable />
-    </FixedWithPad>
+    <CardTable />
   </VerticalFlex>
 );
 
