@@ -90,7 +90,8 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
                     <GroupImg
                       className={selected ? 'on' : 'off'}
                       src={GROUP[gId].iconAssetPath}
-                      alt="group-icon"
+                      alt={`${GROUP[gId].symbol}-icon`}
+                      title={GROUP[gId].name}
                       onClick={() => setMember(mIds, !selected)}
                     />
                   </td>
@@ -99,7 +100,8 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
                       <TinyImg
                         className={member[mId] ? 'on' : 'off'}
                         src={MEMBER[mId].iconAssetPath}
-                        alt="member-icon"
+                        alt={`${MEMBER[mId].enName}-icon`}
+                        title={MEMBER[mId].name}
                         onClick={() => setMember([mId], !member[mId])}
                       />
                     </td>
@@ -119,7 +121,8 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
             key={id}
             className={attribute[id] ? 'on' : 'off'}
             src={ATTRIBUTE[id].iconAssetPath}
-            alt="attribute-icon"
+            alt={`${ATTRIBUTE[id].symbol}-icon`}
+            title={ATTRIBUTE[id].name}
             onClick={() => setAttribute(id, !attribute[id])}
           />
         ))}
@@ -133,7 +136,8 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
             key={id}
             className={role[id] ? 'on' : 'off'}
             src={ROLE[id].iconAssetPath}
-            alt="type-icon"
+            alt={`${ROLE[id].symbol}-icon`}
+            title={ROLE[id].name}
             onClick={() => setRole(id, !role[id])}
           />
         ))}
@@ -147,7 +151,8 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
             key={id}
             className={rarity[id] ? 'on' : 'off'}
             src={RARITY[id].iconAssetPath}
-            alt="rarity-icon"
+            alt={`${RARITY[id].symbol}`}
+            title={RARITY[id].symbol}
             onClick={() => setRarity(id, !rarity[id])}
           />
         ))}

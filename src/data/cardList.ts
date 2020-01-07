@@ -206,6 +206,14 @@ export function getCardIconAssetPath(id: number, isAwaken: boolean): string {
   return `${base}.png`;
 }
 
+export function getCardSymbol(id: number, isAwaken: boolean): string {
+  const card = CARD[id];
+  const lowerSymbol = RARITY[card.rarityId].symbol.toLowerCase();
+  const { enName } = MEMBER[card.memberId];
+  const base = `${id}-${lowerSymbol}-${enName}`;
+  return isAwaken ? `${base}-awaken` : base;
+}
+
 export const FULL_CARD_LIST = Object.keys(CARD).map(Number).map((id) => PARAMETER[id].map((param, idx) => ({
   id,
   uncap: idx,

@@ -111,13 +111,25 @@ const CardStats: React.FC = () => {
           <StyledTr>
             <StyledTd>-</StyledTd>
             {ROLE_IDS.map((id) => (
-              <StyledTd key={id}><Icon src={ROLE[id].iconAssetPath} /></StyledTd>
+              <StyledTd key={id}>
+                <Icon
+                  src={ROLE[id].iconAssetPath}
+                  alt={`${ROLE[id].symbol}-icon`}
+                  title={ROLE[id].name}
+                />
+              </StyledTd>
             ))}
             <StyledTd>합</StyledTd>
           </StyledTr>
           {ATTRIBUTE_IDS.map((id) => (
             <StyledTr key={id}>
-              <StyledTd><Icon src={ATTRIBUTE[id].iconAssetPath} /></StyledTd>
+              <StyledTd>
+                <Icon
+                  src={ATTRIBUTE[id].iconAssetPath}
+                  alt={`${ATTRIBUTE[id].symbol}-icon`}
+                  title={ATTRIBUTE[id].name}
+                />
+              </StyledTd>
               {ROLE_IDS.map((roleId) => (
                 <StyledTd key={roleId}>{countCards(showRarity, id, roleId, showFromTag)}</StyledTd>
               ))}

@@ -84,6 +84,7 @@ const CardEffectRows: React.FC<CardEffectRows> = ({
             className={attributeId === null ? 'on' : 'off'}
             src="/images/icons/null.png"
             alt="null-icon"
+            title="속성 없음"
             onClick={() => setAttributeId(null)}
           />
           {Object.keys(ATTRIBUTE).map(Number).map((id) => (
@@ -91,7 +92,8 @@ const CardEffectRows: React.FC<CardEffectRows> = ({
               key={id}
               className={attributeId === id ? 'on' : 'off'}
               src={ATTRIBUTE[id].iconAssetPath}
-              alt="attribute-icon"
+              alt={`${ATTRIBUTE[id].symbol}-icon`}
+              title={ATTRIBUTE[id].name}
               onClick={() => setAttributeId(id)}
             />
           ))}

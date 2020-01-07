@@ -4,7 +4,9 @@ import styled from 'styled-components';
 import Table from '@/components/common/Table';
 import { FlexBox, FixedWrapper } from '@/components/Styles';
 
-import { CARD, getCardIconAssetPath } from '@/data/cardList';
+import { CARD, getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
+import { MEMBER } from '@/data/memberMetadata';
+import { RARITY } from '@/data/cardMetadata';
 import { GACHA } from '@/data/gacha';
 import { EVENT } from '@/data/event';
 
@@ -98,7 +100,8 @@ const Gachas: React.FC = () => {
                           <CardIconImg
                             key={id}
                             src={getCardIconAssetPath(id, awaken)}
-                            alt="card-icon"
+                            alt={`${getCardSymbol(id, awaken)}-icon`}
+                            title={`${RARITY[CARD[id].rarityId].symbol} ${MEMBER[CARD[id].memberId].shortName}`}
                           />
                         ))}
                       </FlexBox>

@@ -6,7 +6,7 @@ import { AppState, SEL } from '@/store';
 import Table from '@/components/common/Table';
 import { FlexBox } from '@/components/Styles';
 
-import { getCardIconAssetPath } from '@/data/cardList';
+import { getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
 import { ATTRIBUTE, ROLE, RARITY } from '@/data/cardMetadata';
 import { MEMBER } from '@/data/memberMetadata';
 import { GACHA } from '@/data/gacha';
@@ -51,8 +51,16 @@ const CardTable: React.FC<CardTable> = ({ list }) => (
         title: '아이콘',
         render: (rowData) => (
           <>
-            <CardIconImg src={getCardIconAssetPath(rowData.id, false)} alt="normal-icon" />
-            <CardIconImg src={getCardIconAssetPath(rowData.id, true)} alt="awaken-icon" />
+            <CardIconImg
+              src={getCardIconAssetPath(rowData.id, false)}
+              alt={`${getCardSymbol(rowData.id, false)}-icon`}
+              title={`${RARITY[rowData.rarityId].symbol} ${MEMBER[rowData.memberId].shortName}`}
+            />
+            <CardIconImg
+              src={getCardIconAssetPath(rowData.id, true)}
+              alt={`${getCardSymbol(rowData.id, true)}-icon`}
+              title={`${RARITY[rowData.rarityId].symbol} ${MEMBER[rowData.memberId].shortName}`}
+            />
           </>
         ),
       },
@@ -77,14 +85,22 @@ const CardTable: React.FC<CardTable> = ({ list }) => (
       {
         title: '속성',
         render: (rowData) => (
-          <SmallIconImg src={ATTRIBUTE[rowData.attributeId].iconAssetPath} alt="attribute-icon" />
+          <SmallIconImg
+            src={ATTRIBUTE[rowData.attributeId].iconAssetPath}
+            alt={`${ATTRIBUTE[rowData.attributeId].symbol}-icon`}
+            title={ATTRIBUTE[rowData.attributeId].name}
+          />
         ),
         customSort: (a, b) => a.attributeId - b.attributeId,
       },
       {
         title: '타입',
         render: (rowData) => (
-          <SmallIconImg src={ROLE[rowData.roleId].iconAssetPath} alt="type-icon" />
+          <SmallIconImg
+            src={ROLE[rowData.roleId].iconAssetPath}
+            alt={`${ROLE[rowData.roleId].symbol}-icon`}
+            title={ROLE[rowData.roleId].name}
+          />
         ),
         customSort: (a, b) => a.roleId - b.roleId,
       },

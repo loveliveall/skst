@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { CARD, getCardIconAssetPath } from '@/data/cardList';
+import { CARD, getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
+import { MEMBER } from '@/data/memberMetadata';
+import { RARITY } from '@/data/cardMetadata';
 
 import { FlexBox, StyledButton } from '@/components/Styles';
 import CardStats from '@/components/home/CardStats';
@@ -101,7 +103,8 @@ const Home: React.FC = () => {
             <CardImage
               key={`${id}-${Math.random()}`}
               src={getCardIconAssetPath(id, false)}
-              alt="card-icon"
+              alt={`${getCardSymbol(id, false)}-icon`}
+              title={`${RARITY[CARD[id].rarityId].symbol} ${MEMBER[CARD[id].memberId].shortName}`}
             />
           ))}
         </MaxWidthFlex>

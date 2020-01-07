@@ -1,35 +1,37 @@
 interface Group {
   readonly [id: number]: {
     readonly name: string,
+    readonly symbol: string,
     readonly iconAssetPath: string,
   },
 }
 
 export const GROUP: Group = {
-  1: { name: 'μ\'s', iconAssetPath: '/images/icons/group/us.png' },
-  2: { name: 'Aqours', iconAssetPath: '/images/icons/group/aqours.png' },
-  3: { name: '니지동', iconAssetPath: '/images/icons/group/niji.png' },
+  1: { name: 'μ\'s', symbol: 'muse', iconAssetPath: '/images/icons/group/us.png' },
+  2: { name: 'Aqours', symbol: 'aqours', iconAssetPath: '/images/icons/group/aqours.png' },
+  3: { name: '니지동', symbol: 'niji', iconAssetPath: '/images/icons/group/niji.png' },
 };
 
 interface Unit {
   readonly [id: number]: {
     readonly name: string,
+    readonly symbol: string,
   },
 }
 
 export const UNIT: Unit = {
   // Group 1
-  1: { name: 'Printemps' },
-  2: { name: 'lily white' },
-  3: { name: 'BiBi' },
+  1: { name: 'Printemps', symbol: 'printemps' },
+  2: { name: 'lily white', symbol: 'lily-white' },
+  3: { name: 'BiBi', symbol: 'bibi' },
   // Group 2
-  4: { name: 'CYaRon!' },
-  5: { name: 'Guilty Kiss' },
-  6: { name: 'AZALEA' },
+  4: { name: 'CYaRon!', symbol: 'cyaron' },
+  5: { name: 'Guilty Kiss', symbol: 'guilty-kiss' },
+  6: { name: 'AZALEA', symbol: 'azalea' },
   // Group 3
-  7: { name: 'DiverDiva' },
-  8: { name: 'A·ZU·NA' },
-  9: { name: 'QU4RTZ' },
+  7: { name: 'DiverDiva', symbol: 'diverdiva' },
+  8: { name: 'A·ZU·NA', symbol: 'azuna' },
+  9: { name: 'QU4RTZ', symbol: 'qu4rtz' },
 };
 
 interface Member {
