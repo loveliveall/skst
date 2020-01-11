@@ -118,7 +118,7 @@ export const EVENT: Event = {
       50000: [1, 1, 1],
     },
     startDate: '2019.12.06.',
-    endDate: '2019.12.06.',
+    endDate: '2019.12.16.',
   },
   6: {
     name: 'スクールアイドルトレイン発車！',
