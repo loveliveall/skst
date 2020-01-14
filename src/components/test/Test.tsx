@@ -20,7 +20,9 @@ const Test: React.FC = () => {
       }
       const base = `${skill.triggerProb / 100}% 확률:
         ${SKILL_EFFECT_TYPE[skill.effectTypeId].desc}
-        (${skill.effectValue.join(', ')}),
+        (${skill.effectValue.map((v) => (
+    SKILL_EFFECT_TYPE[skill.effectTypeId].scaleType === 'percent' ? v / 100 : v
+  )).join(', ')}),
         대상: ${SKILL_TARGET[skill.skillTargetId].krName}`;
       if (skill.timing === 'onTrigger') {
         return `${base}, ${skill.triggerValue} ${SKILL_TRIGGER_TYPE[skill.triggerTypeId].krDesc}`;
