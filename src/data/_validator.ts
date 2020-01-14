@@ -15,7 +15,7 @@ Object.keys(PARAMETER).map(Number).forEach((id) => {
 
 Object.keys(SKILL).map(Number).forEach((id) => {
   const { maxLevel, detail } = SKILL[id];
-  const allLevelInfoExists = Object.keys(detail).map((field) => {
+  const allLevelInfoExists = Object.keys(detail).every((field) => {
     const v = detail[field as keyof typeof detail];
     if (Array.isArray(v)) {
       return v.length === maxLevel;
