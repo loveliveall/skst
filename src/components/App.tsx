@@ -6,6 +6,7 @@ import Home from '@/components/home/Home';
 import Cards from '@/components/cards/Cards';
 import Gachas from '@/components/gachas/Gachas';
 import Events from '@/components/events/Events';
+import Test from '@/components/test/Test';
 
 const FixedNav = styled.nav`
   height: 100%;
@@ -87,6 +88,9 @@ const App: React.FC = () => {
   return (
     <>
       <Main>
+        {window.location.hostname === 'localhost' && (
+          <Test />
+        )}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/cards" component={Cards} />
