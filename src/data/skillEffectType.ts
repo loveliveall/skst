@@ -27,7 +27,7 @@ export const SKILL_EFFECT_CATEGORY: SkillEffectCategory = {
   2003: { desc: '기본 테크닉 추가', iconAssetPath: '/images/icons/skill/passive_tech.png' },
 };
 
-export const SPEC_CATEGORIES = [1001, 1002, 1004, 1005, 1009, 1010, 1011, 1014];
+export const SPEC_CATEGORIES = [1001, 1002, 1003, 1004, 1005, 1007, 1009, 1010, 1011, 1013, 1014];
 export const INDIV_LIVE_CATEGORIES = [1001, 1005, 1006, 1008, 1014];
 export const INDIV_PASSIVE_CATEGORIES = [2001, 2002, 2003];
 
@@ -42,13 +42,17 @@ interface SkillEffectType {
 export const SKILL_EFFECT_TYPE: SkillEffectType = {
   100101: { desc: '어필 추가 (%)', ingameText: 'アピールUP', effectCategoryId: 1001 },
   100201: { desc: '크리티컬률 상승 (%)', ingameText: '', effectCategoryId: 1002 },
+  100301: { desc: '크리티컬치 상승 (%)', ingameText: '', effectCategoryId: 1003 },
   100401: { desc: '대미지 감소 (%)', ingameText: '', effectCategoryId: 1004 },
   100501: { desc: '스태미너 회복 (자신 스태미너 %)', ingameText: 'スタミナ回復', effectCategoryId: 1005 },
   100601: { desc: '스태미너가 0이되면 회복하며 부활하는 효과 부여 (%)', ingameText: '復活', effectCategoryId: 1006 },
+  100701: { desc: '쉴드 획득 (고정 수치)', ingameText: '', effectCategoryId: 1007 },
+  100702: { desc: '쉴드 획득 (자신 스태미너 %)', ingameText: '', effectCategoryId: 1007 },
   100801: { desc: '특기발동률 상승 (%)', ingameText: '特技発動率UP', effectCategoryId: 1008 },
   100901: { desc: 'SP 게이지 획득량 상승 (%)', ingameText: '', effectCategoryId: 1009 },
   101001: { desc: 'SP 게이지 획득 (고정 수치)', ingameText: '', effectCategoryId: 1010 },
   101101: { desc: 'SP 볼티지 획득량 상승 (자신 어필 %)', ingameText: '', effectCategoryId: 1011 },
+  101301: { desc: '볼티지 획득량 상승 (%)', ingameText: '', effectCategoryId: 1013 },
   101401: { desc: '볼티지 획득 (고정 수치)', ingameText: '', effectCategoryId: 1014 },
   101402: { desc: '볼티지 획득 (자신 어필 %)', ingameText: 'ボルテージ獲得', effectCategoryId: 1014 },
 

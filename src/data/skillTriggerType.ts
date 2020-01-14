@@ -1,15 +1,18 @@
 interface SkillTriggerType {
   readonly [id: number]: {
-    readonly krName: string,
-    readonly jpName: string,
+    readonly krDesc: string,
+    readonly jpDesc: string,
     readonly ingameText: string,
   },
 }
 
 export const SKILL_TRIGGER_TYPE: SkillTriggerType = {
-  0: { krName: '조건 없음', jpName: '', ingameText: '' },
-  1: { krName: '어필 찬스(AC) 성공시', jpName: 'アピールチャンス(AC)成功時', ingameText: 'AC成功時' },
-  2: { krName: '어필 찬스(AC) 개시시', jpName: 'アピールチャンス(AC)開始時', ingameText: 'AC時' },
-  3: { krName: '악곡 개시시', jpName: '楽曲開始時', ingameText: '曲開始時' },
-  4: { krName: '작전 변경시', jpName: '作戦変更時', ingameText: '作戦切替時' },
+  0: { krDesc: '조건 없음', jpDesc: '', ingameText: '' },
+  1: { krDesc: '어필 찬스(AC) 성공시', jpDesc: 'アピールチャンス(AC)成功時', ingameText: 'AC成功時' },
+  2: { krDesc: '어필 찬스(AC) 개시시', jpDesc: 'アピールチャンス(AC)開始時', ingameText: 'AC時' },
+  3: { krDesc: '악곡 개시시', jpDesc: '楽曲開始時', ingameText: '曲開始時' },
+  4: { krDesc: '작전 변경시', jpDesc: '作戦変更時', ingameText: '作戦切替時' },
+  5: { krDesc: 'SP특기 발동시', jpDesc: 'SP特技発動時', ingameText: 'SP特技発動時' },
+  // Need value
+  1001: { krDesc: '데미지 이상을 받았을 시', jpDesc: 'ダメージ以上受けた時', ingameText: 'ダメージ時' }, // 고정 수치 데미지 이상 받았을 경우
 };
