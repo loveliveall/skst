@@ -14,5 +14,5 @@ export const SKILL_TRIGGER_TYPE: SkillTriggerType = {
   4: { krDesc: '작전 변경시', jpDesc: '作戦変更時', ingameText: '作戦切替時' },
   5: { krDesc: 'SP특기 발동시', jpDesc: 'SP特技発動時', ingameText: 'SP特技発動時' },
   // Need value
-  1001: { krDesc: '데미지 이상을 받았을 시', jpDesc: 'ダメージ以上受けた時', ingameText: 'ダメージ時' }, // 고정 수치 데미지 이상 받았을 경우
+  1001: { krDesc: '대미지 이상을 받았을 시', jpDesc: 'ダメージ以上受けた時', ingameText: 'ダメージ時' }, // 고정 수치 대미지 이상 받았을 경우
 };
