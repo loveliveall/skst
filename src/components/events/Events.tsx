@@ -117,6 +117,40 @@ const Events: React.FC = () => {
               ),
             },
             {
+              title: '볼티지 랭킹 주요 보더',
+              render: (rowData) => {
+                if (rowData.eventTypeId === 1) return <PaddedSpan>없음</PaddedSpan>;
+                return (
+                  <VerticalFlex>
+                    {[1, 100, 1000, 10000].map((rank) => {
+                      const border = rowData.voltageRankBorder[rank];
+                      const displayBorder = `${border === 0 || border === undefined ? '?' : border}pt`;
+                      return (
+                        <PaddedSpan key={rank}>
+                          {`${rank}위: ${displayBorder}`}
+                        </PaddedSpan>
+                      );
+                    })}
+                  </VerticalFlex>
+                );
+              },
+            },
+            {
+              title: '볼티지 랭킹 대상 악곡',
+              render: (rowData) => {
+                if (rowData.eventTypeId === 1) return <PaddedSpan>없음</PaddedSpan>;
+                return (
+                  <VerticalFlex>
+                    {rowData.voltageRankSongs.map((songName) => (
+                      <PaddedSpan key={songName}>
+                        {songName}
+                      </PaddedSpan>
+                    ))}
+                  </VerticalFlex>
+                );
+              },
+            },
+            {
               title: '관련 가챠',
               render: (rowData) => (
                 <VerticalFlex>
