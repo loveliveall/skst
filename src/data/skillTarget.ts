@@ -16,4 +16,5 @@ export const SKILL_TARGET: SkillTarget = {
   6: { krName: '동학교', jpName: '同学校', ingameText: '同学校' },
   7: { krName: '동학년', jpName: '同学年', ingameText: '同学年' },
   8: { krName: '동유닛', jpName: '同ユニット', ingameText: 'ユニット' },
+  9: { krName: '자신', jpName: '自身', ingameText: '' },
 };

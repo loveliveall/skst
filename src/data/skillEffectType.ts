@@ -55,6 +55,7 @@ export const SKILL_EFFECT_TYPE: SkillEffectType = {
   101001: { desc: 'SP 게이지 획득 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1010 },
   101101: { desc: 'SP 볼티지 획득량 상승 (자신 어필 %)', scaleType: 'percent', ingameText: '', effectCategoryId: 1011 },
   101301: { desc: '볼티지 획득량 상승 (%)', scaleType: 'percent', ingameText: '', effectCategoryId: 1013 },
+  101302: { desc: '볼티지 획득량 상승 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1013 },
   101401: { desc: '볼티지 획득 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1014 },
   101402: { desc: '볼티지 획득 (자신 어필 %)', scaleType: 'percent', ingameText: 'ボルテージ獲得', effectCategoryId: 1014 },
 
@@ -86,6 +87,7 @@ export const SKILL_EFFECT_STRING: SkillEffectString = {
   101001: { beforeValue: 'SP 게이지', afterValue: '획득' },
   101101: { beforeValue: 'SP 특기로 획득하는 볼티지가 자신 어필의', afterValue: '% 추가' },
   101301: { beforeValue: '획득 볼티지', afterValue: '% 추가' },
+  101302: { beforeValue: '획득 볼티지', afterValue: '추가' },
   101401: { beforeValue: '볼티지', afterValue: '획득' },
   101402: { beforeValue: '자신 어필의', afterValue: '% 볼티지 획득' },
 
