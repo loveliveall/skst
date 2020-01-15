@@ -3,37 +3,33 @@ import React from 'react';
 import Table from '@/components/common/Table';
 import { CARD, getCardIconAssetPath } from '@/data/cardList';
 import { CARD_SKILL } from '@/data/cardSkill';
-import { SKILL } from '@/data/skill';
-import { SKILL_EFFECT_TYPE } from '@/data/skillEffectType';
-import { SKILL_TARGET } from '@/data/skillTarget';
-import { SKILL_TRIGGER_TYPE } from '@/data/skillTriggerType';
+import { getSkillInfoKR } from '@/data/skill';
 
 const Test: React.FC = () => {
   const data = Object.keys(CARD).map(Number).filter((id) => CARD_SKILL[id] !== undefined).map((id) => {
-    const active = SKILL[CARD_SKILL[id].specialityId].detail;
-    const passive = SKILL[CARD_SKILL[id].individuality.passiveId].detail;
-    const liveId = CARD_SKILL[id].individuality?.liveId;
-    const live = liveId === undefined ? liveId : SKILL[liveId].detail;
-    const getString = (skill: typeof active | undefined) => {
-      if (skill === undefined) {
-        return 'No live skill';
-      }
-      const base = `${skill.triggerProb / 100}% 확률:
-        ${SKILL_EFFECT_TYPE[skill.effectTypeId].desc}
-        (${skill.effectValue.map((v) => (
-    SKILL_EFFECT_TYPE[skill.effectTypeId].scaleType === 'percent' ? v / 100 : v
-  )).join(', ')}),
-        대상: ${SKILL_TARGET[skill.skillTargetId].krName}`;
-      if (skill.timing === 'onTrigger') {
-        return `${base}, ${skill.triggerValue} ${SKILL_TRIGGER_TYPE[skill.triggerTypeId].krDesc}`;
-      }
-      return base;
+    const activeInfo = getSkillInfoKR(CARD_SKILL[id].specialityId);
+    const passiveInfo = getSkillInfoKR(CARD_SKILL[id].individuality.passiveId);
+    const { liveId } = CARD_SKILL[id].individuality;
+    const liveInfo = liveId !== undefined ? getSkillInfoKR(liveId) : undefined;
+    const getString = (info: typeof activeInfo) => {
+      if (info === undefined) return '';
+      const prob = info.probString === '' ? '' : `발동확률: ${info.probString}`;
+      return [prob, info.triggerString, info.effectString, `대상: ${info.targetString}`].join('. ');
     };
     return {
       id,
-      active: getString(active),
-      passive: getString(passive),
-      live: getString(live),
+      active: {
+        iconAssetPath: activeInfo?.iconAssetPath,
+        str: getString(activeInfo),
+      },
+      passive: {
+        iconAssetPath: passiveInfo?.iconAssetPath,
+        str: getString(passiveInfo),
+      },
+      live: {
+        iconAssetPath: liveInfo?.iconAssetPath,
+        str: getString(liveInfo),
+      },
     };
   });
   return (
@@ -46,12 +42,37 @@ const Test: React.FC = () => {
             <img
               src={getCardIconAssetPath(rowData.id, false)}
               alt="icon"
+              width="64px"
             />
           ),
         },
-        { title: '특기', render: (rowData) => <span>{rowData.active}</span> },
-        { title: '패시브', render: (rowData) => <span>{rowData.passive}</span> },
-        { title: '라이브', render: (rowData) => <span>{rowData.live}</span> },
+        {
+          title: '특기',
+          render: (rowData) => (
+            <span>
+              <img src={rowData.active.iconAssetPath} alt="img" width="64px" />
+              {rowData.active.str}
+            </span>
+          ),
+        },
+        {
+          title: '패시브',
+          render: (rowData) => (
+            <span>
+              <img src={rowData.passive.iconAssetPath} alt="img" width="64px" />
+              {rowData.passive.str}
+            </span>
+          ),
+        },
+        {
+          title: '라이브',
+          render: (rowData) => (
+            <span>
+              <img src={rowData.live.iconAssetPath} alt="img" width="64px" />
+              {rowData.live.str}
+            </span>
+          ),
+        },
       ]}
       data={data}
       pageSize={50}

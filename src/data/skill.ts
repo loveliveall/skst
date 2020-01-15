@@ -1,3 +1,7 @@
+import { SKILL_EFFECT_TYPE, SKILL_EFFECT_CATEGORY, SKILL_EFFECT_STRING } from './skillEffectType';
+import { SKILL_TARGET } from './skillTarget';
+import { SKILL_TRIGGER_TYPE } from './skillTriggerType';
+
 type SkillDetail = {
   readonly triggerProb: number,
   readonly skillTargetId: number,
@@ -65,3 +69,50 @@ export const SKILL: Skill = {
   300156: { maxLevel: 1, detail: { triggerProb: 2000, skillTargetId: 0, effectTypeId: 101402, effectValue: [3000], finishType: 'instant', finishValue: 0, timing: 'onTrigger', triggerTypeId: 4, triggerValue: 0, conditionId: 0 } },
 };
 /* eslint-enable object-curly-newline, max-len */
+
+export function getSkillInfoKR(skillId: number) {
+  const skill = SKILL[skillId];
+  // TODO: Remove this after complete skill info
+  if (skill === undefined) {
+    return undefined;
+  }
+  // Get skill icon asset path
+  const iconAssetPath = (() => {
+    const { effectTypeId } = skill.detail;
+    const effectCategory = SKILL_EFFECT_CATEGORY[SKILL_EFFECT_TYPE[effectTypeId].effectCategoryId];
+    return effectCategory.iconAssetPath;
+  })();
+  // Get skill effect string
+  const effectString = (() => {
+    const prefix = (() => {
+      if (skill.detail.finishType === 'duration') return `${skill.detail.finishValue} 노트 동안`;
+      if (skill.detail.finishType === 'spFire') return `다음 ${skill.detail.finishValue}번의`;
+      return '';
+    })();
+    const effectStr = SKILL_EFFECT_STRING[skill.detail.effectTypeId];
+    const effect = SKILL_EFFECT_TYPE[skill.detail.effectTypeId];
+    const value = skill.detail.effectValue.map((v) => (effect.scaleType === 'percent' ? v / 100 : v)).join('/');
+    return [prefix, effectStr.beforeValue, value, effectStr.afterValue].join(' ');
+  })();
+  // Get target string
+  const targetString = SKILL_TARGET[skill.detail.skillTargetId].krName;
+  // Get trigger string
+  // TODO: Fix this string
+  const triggerString = (() => {
+    if (skill.detail.timing === 'onTrigger') {
+      const skillTrigger = SKILL_TRIGGER_TYPE[skill.detail.triggerTypeId];
+      if (skill.detail.triggerValue === 0) return skillTrigger.krDesc;
+      return `${skill.detail.triggerValue} ${skillTrigger.krDesc}`;
+    }
+    return '어필 시';
+  })();
+  // Get trigger probability string
+  const probString = skill.detail.triggerProb === 10000 ? '' : `${skill.detail.triggerProb / 100}%`;
+  return {
+    iconAssetPath,
+    probString,
+    effectString,
+    targetString,
+    triggerString,
+  };
+}

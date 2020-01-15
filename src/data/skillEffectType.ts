@@ -24,7 +24,7 @@ export const SKILL_EFFECT_CATEGORY: SkillEffectCategory = {
 
   2001: { desc: '기본 어필 추가', iconAssetPath: '/images/icons/skill/passive_appl_inc.png' },
   2002: { desc: '기본 스태미너 추가', iconAssetPath: '/images/icons/skill/passive_stam_inc.png' },
-  2003: { desc: '기본 테크닉 추가', iconAssetPath: '/images/icons/skill/passive_tech.png' },
+  2003: { desc: '기본 테크닉 추가', iconAssetPath: '/images/icons/skill/passive_tech_inc.png' },
 };
 
 export const SPEC_CATEGORIES = [1001, 1002, 1003, 1004, 1005, 1007, 1009, 1010, 1011, 1013, 1014];
@@ -63,3 +63,33 @@ export const SKILL_EFFECT_TYPE: SkillEffectType = {
   200301: { desc: '기본 테크닉 추가 (%)', scaleType: 'percent', ingameText: 'テクニック＋', effectCategoryId: 2003 },
 };
 /* eslint-enable object-curly-newline, max-len */
+
+interface SkillEffectString {
+  readonly [id: number]: {
+    readonly beforeValue: string,
+    readonly afterValue: string,
+  },
+}
+
+/* eslint-disable object-curly-newline, max-len */
+export const SKILL_EFFECT_STRING: SkillEffectString = {
+  100101: { beforeValue: '어필', afterValue: '% 추가' },
+  100201: { beforeValue: '크리티컬률', afterValue: '% 상승' },
+  100301: { beforeValue: '크리티컬치', afterValue: '% 상승' },
+  100401: { beforeValue: '스태미너 대미지', afterValue: '% 감소' },
+  100501: { beforeValue: '자신 스태미너의', afterValue: '% 스태미너 회복' },
+  100601: { beforeValue: '스태미너가 0이 되면', afterValue: '% 회복하며 부활하는 효과를 부여' },
+  100701: { beforeValue: '쉴드', afterValue: '획득' },
+  100702: { beforeValue: '자신 스태미너의', afterValue: '% 쉴드 획득' },
+  100801: { beforeValue: '특기발동률', afterValue: '% 상승' },
+  100901: { beforeValue: 'SP 게이지 획득량', afterValue: '% 상승' },
+  101001: { beforeValue: 'SP 게이지', afterValue: '획득' },
+  101101: { beforeValue: 'SP 특기로 획득하는 볼티지가 자신 어필의', afterValue: '% 추가' },
+  101301: { beforeValue: '획득 볼티지', afterValue: '% 추가' },
+  101401: { beforeValue: '볼티지', afterValue: '획득' },
+  101402: { beforeValue: '자신 어필의', afterValue: '% 볼티지 획득' },
+
+  200101: { beforeValue: '기본 어필', afterValue: '% 추가' },
+  200201: { beforeValue: '기본 스태미너', afterValue: '% 추가' },
+  200301: { beforeValue: '기본 테크닉', afterValue: '% 추가' },
+};
