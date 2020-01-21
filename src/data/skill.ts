@@ -54,8 +54,8 @@ export const SKILL: Skill = {
   100022: { maxLevel: 5, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 100502, effectValue: [200, 250, 300, 350, 400], finishType: 'instant', finishValue: 0, timing: 'onAppeal' } },
   100023: { maxLevel: 5, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 101002, effectValue: [500, 550, 600, 650, 700], finishType: 'instant', finishValue: 0, timing: 'onAppeal' } },
   100024: { maxLevel: 5, detail: { triggerProb: 3300, skillTargetId: 1, effectTypeId: 100101, effectValue: [500, 530, 560, 590, 620], finishType: 'duration', finishValue: 5, timing: 'onAppeal' } },
-  100155: { maxLevel: 5, detail: { triggerProb: 3300, skillTargetId: 7, effectTypeId: 100101, effectValue: [0, 0, 0, 0, 720], finishType: 'duration', finishValue: 5, timing: 'onAppeal' } },
-  100156: { maxLevel: 5, detail: { triggerProb: 3000, skillTargetId: 5, effectTypeId: 100101, effectValue: [0, 0, 0, 0, 700], finishType: 'duration', finishValue: 5, timing: 'onAppeal' } },
+  100155: { maxLevel: 5, detail: { triggerProb: 3300, skillTargetId: 7, effectTypeId: 100101, effectValue: [600, 630, 660, 690, 720], finishType: 'duration', finishValue: 5, timing: 'onAppeal' } },
+  100156: { maxLevel: 5, detail: { triggerProb: 3000, skillTargetId: 5, effectTypeId: 100101, effectValue: [500, 550, 600, 650, 700], finishType: 'duration', finishValue: 5, timing: 'onAppeal' } },
 
   200001: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 3, effectTypeId: 200301, effectValue: [100, 130, 160, 190, 220], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
   200002: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 6, effectTypeId: 200301, effectValue: [150, 180, 210, 240, 270], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
@@ -81,8 +81,8 @@ export const SKILL: Skill = {
   200022: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 6, effectTypeId: 200101, effectValue: [150, 180, 210, 240, 270], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
   200023: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 4, effectTypeId: 200301, effectValue: [300, 330, 360, 390, 420], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
   200024: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 3, effectTypeId: 200101, effectValue: [400, 430, 460, 490, 520], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
-  200155: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 1, effectTypeId: 200201, effectValue: [0, 0, 0, 0, 420], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
-  200156: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 5, effectTypeId: 200201, effectValue: [0, 0, 0, 0, 500], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
+  200155: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 1, effectTypeId: 200201, effectValue: [300, 330, 360, 390, 420], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
+  200156: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 5, effectTypeId: 200201, effectValue: [300, 350, 400, 450, 500], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
 
   300003: { maxLevel: 1, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 101402, effectValue: [3000], finishType: 'instant', finishValue: 0, timing: 'onTrigger', triggerTypeId: 1, triggerValue: 0, conditionId: 0 } },
   300004: { maxLevel: 1, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 100501, effectValue: [2000], finishType: 'instant', finishValue: 0, timing: 'onTrigger', triggerTypeId: 2, triggerValue: 0, conditionId: 0 } },
