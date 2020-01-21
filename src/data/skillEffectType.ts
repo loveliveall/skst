@@ -30,7 +30,7 @@ export const SKILL_EFFECT_CATEGORY: SkillEffectCategory = {
 };
 
 export const SPEC_CATEGORIES = [1001, 1002, 1003, 1004, 1005, 1007, 1009, 1010, 1011, 1013, 1014];
-export const INDIV_LIVE_CATEGORIES = [1001, 1005, 1006, 1008, 1009, 1014, 1016, 1017];
+export const INDIV_LIVE_CATEGORIES = [1001, 1002, 1005, 1006, 1007, 1008, 1009, 1010, 1014, 1016, 1017];
 export const INDIV_PASSIVE_CATEGORIES = [2001, 2002, 2003];
 
 interface SkillEffectType {
@@ -46,18 +46,19 @@ interface SkillEffectType {
 export const SKILL_EFFECT_TYPE: SkillEffectType = {
   100101: { desc: '어필 추가 (%)', scaleType: 'percent', ingameText: 'アピールUP', effectCategoryId: 1001 },
   100102: { desc: '어필 추가 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1001 },
-  100201: { desc: '크리티컬률 상승 (%)', scaleType: 'percent', ingameText: '', effectCategoryId: 1002 },
+  100201: { desc: '크리티컬률 상승 (%)', scaleType: 'percent', ingameText: 'クリティカルUP', effectCategoryId: 1002 },
   100301: { desc: '크리티컬치 상승 (%)', scaleType: 'percent', ingameText: '', effectCategoryId: 1003 },
   100401: { desc: '대미지 감소 (%)', scaleType: 'percent', ingameText: '', effectCategoryId: 1004 },
   100501: { desc: '스태미너 회복 (자신 스태미너 %)', scaleType: 'percent', ingameText: 'スタミナ回復', effectCategoryId: 1005 },
   100502: { desc: '스태미너 회복 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1005 },
   100601: { desc: '스태미너가 0이되면 회복하며 부활하는 효과 부여 (%)', scaleType: 'percent', ingameText: '復活', effectCategoryId: 1006 },
   100701: { desc: '쉴드 획득 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1007 },
-  100702: { desc: '쉴드 획득 (자신 스태미너 %)', scaleType: 'percent', ingameText: '', effectCategoryId: 1007 },
+  100702: { desc: '쉴드 획득 (자신 스태미너 %)', scaleType: 'percent', ingameText: 'シールド獲得', effectCategoryId: 1007 },
   100801: { desc: '특기발동률 상승 (%)', scaleType: 'percent', ingameText: '特技発動率UP', effectCategoryId: 1008 },
   100901: { desc: 'SP 게이지 획득량 상승 (%)', scaleType: 'percent', ingameText: 'SPゲージ獲得UP', effectCategoryId: 1009 },
   101001: { desc: 'SP 게이지 획득 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1010 },
   101002: { desc: 'SP 게이지 획득 (%)', scaleType: 'percent', ingameText: '', effectCategoryId: 1010 },
+  101003: { desc: 'SP 게이지 획득 (자신 테크닉 %)', scaleType: 'percent', ingameText: 'SPゲージ獲得', effectCategoryId: 1010 },
   101101: { desc: 'SP 볼티지 획득량 상승 (자신 어필 %)', scaleType: 'percent', ingameText: '', effectCategoryId: 1011 },
   101102: { desc: 'SP 볼티지 획득량 상승 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1011 },
   101301: { desc: '볼티지 획득량 상승 (%)', scaleType: 'percent', ingameText: '', effectCategoryId: 1013 },
@@ -96,6 +97,7 @@ export const SKILL_EFFECT_STRING: SkillEffectString = {
   100901: { beforeValue: 'SP 게이지 획득량', afterValue: '% 상승' },
   101001: { beforeValue: 'SP 게이지', afterValue: '획득' },
   101002: { beforeValue: '최대 SP의', afterValue: '% SP 게이지를 획득' },
+  101003: { beforeValue: '자신 테크닉의', afterValue: '% SP 게이지를 획득' },
   101101: { beforeValue: 'SP 특기로 획득하는 볼티지가 자신 어필의', afterValue: '% 추가' },
   101102: { beforeValue: 'SP 특기로 획득하는 볼티지가', afterValue: '추가' },
   101301: { beforeValue: '획득 볼티지', afterValue: '% 추가' },

@@ -159,5 +159,14 @@ export const EVENT: Event = {
     startDate: '2020.01.06.',
     endDate: '2020.01.15.',
   },
+  8: {
+    name: 'スペシャルスイーツを召し上がれ♡',
+    eventTypeId: 1,
+    rankBorder: {},
+    ingameInfo: [],
+    rewardBorder: {},
+    startDate: '2020.01.22.',
+    endDate: '2020.01.31.',
+  },
 };
 /* eslint-enable max-len, object-property-newline */

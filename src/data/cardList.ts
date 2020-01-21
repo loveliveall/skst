@@ -194,6 +194,13 @@ export const CARD: Card = {
 
   155: { memberId: 8, title: 'もうかわいすぎるから、ぎゅ～', awakenTitle: 'ハッピーパレード', rarityId: 3, attributeId: 1, roleId: 1, fromId: ['gacha', 20005] },
   156: { memberId: 14, title: '浦の星女学院の生徒として', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 5, roleId: 4, fromId: ['gacha', 20005] },
+
+  157: { memberId: 19, title: 'ほっぺた落ちちゃいそう', awakenTitle: 'Sweets Deco', rarityId: 3, attributeId: 2, roleId: 2, fromId: ['gacha', 10009] },
+  158: { memberId: 27, title: '作り立ての私の自信作です♪', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['gacha', 10009] },
+  159: { memberId: 2, title: 'いや、私は本当にいいから！', awakenTitle: 'Sweets Deco', rarityId: 3, attributeId: 3, roleId: 4, fromId: ['event', 8] },
+  160: { memberId: 21, title: 'あっ、みんな来てくれたの？', awakenTitle: 'Sweets Deco', rarityId: 3, attributeId: 4, roleId: 3, fromId: ['gacha', 10010] },
+  161: { memberId: 13, title: 'ほら、早く早く', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 2, roleId: 1, fromId: ['event', 8] },
+  162: { memberId: 7, title: 'ウチが占ってあげる', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 5, roleId: 3, fromId: ['event', 8] },
 };
 /* eslint-enable object-curly-newline, max-len */
 
