@@ -7,7 +7,6 @@ import { RARITY } from '@/data/cardMetadata';
 
 import { FlexBox, StyledButton } from '@/components/Styles';
 import CardStats from '@/components/home/CardStats';
-import Timer from '@/components/home/Timer';
 
 function pickRandom<T>(array: T[]): T {
   return array[Math.floor(Math.random() * array.length)];
@@ -44,22 +43,6 @@ const VerticalFlex = styled(FlexBox)`
   align-items: center;
 `;
 
-const BorderedDiv = styled.div`
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 1px solid black;
-  & * {
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-`;
-
-const DenseH3 = styled.h3`
-  margin-bottom: 0px;
-`;
-
 const CardImage = styled.img`
   width: 80px;
   height: 80px;
@@ -72,17 +55,8 @@ const MaxWidthFlex = styled(FlexBox)`
 
 const Home: React.FC = () => {
   const [gachaResult, setGachaResult] = React.useState(tenGachaResultIDs());
-  const FES_TIME = new Date(Date.UTC(2020, 0, 18, 9, 0, 0));
   return (
     <VerticalFlex>
-      <BorderedDiv>
-        <div>
-          <DenseH3>페스 1일차까지 남은 시간은...</DenseH3>
-        </div>
-        <p>
-          <Timer targetTime={FES_TIME} />
-        </p>
-      </BorderedDiv>
       <VerticalFlex>
         <h2>오늘의 운세</h2>
         <p style={{ marginTop: 0, textAlign: 'center' }}>
