@@ -23,6 +23,7 @@ export const SKILL_EFFECT_CATEGORY: SkillEffectCategory = {
   1015: { desc: '작전 변경 보너스 상승 (Gd)', iconAssetPath: '/images/icons/skill/live_switch_bonus_gd.png' },
   1016: { desc: '기본 SP 게이지 획득량 상승', iconAssetPath: '/images/icons/skill/live_sp_gain_inc.png' },
   1017: { desc: '기본 특기 발동률 상승', iconAssetPath: '/images/icons/skill/live_skill_prob_inc.png' },
+  1018: { desc: '기본 어필 추가', iconAssetPath: '/images/icons/skill/live_appl_inc.png' },
 
   2001: { desc: '기본 어필 추가', iconAssetPath: '/images/icons/skill/passive_appl_inc.png' },
   2002: { desc: '기본 스태미너 추가', iconAssetPath: '/images/icons/skill/passive_stam_inc.png' },
@@ -30,7 +31,7 @@ export const SKILL_EFFECT_CATEGORY: SkillEffectCategory = {
 };
 
 export const SPEC_CATEGORIES = [1001, 1002, 1003, 1004, 1005, 1007, 1008, 1009, 1010, 1011, 1013, 1014];
-export const INDIV_LIVE_CATEGORIES = [1001, 1002, 1005, 1006, 1007, 1008, 1009, 1010, 1014, 1016, 1017];
+export const INDIV_LIVE_CATEGORIES = [1001, 1002, 1005, 1006, 1007, 1008, 1009, 1010, 1012, 1014, 1016, 1017, 1018];
 export const INDIV_PASSIVE_CATEGORIES = [2001, 2002, 2003];
 
 interface SkillEffectType {
@@ -62,12 +63,14 @@ export const SKILL_EFFECT_TYPE: SkillEffectType = {
   101004: { desc: 'SP 게이지 획득 (자신 어필 %)', scaleType: 'percent', ingameText: 'SPゲージ獲得', effectCategoryId: 1010 },
   101101: { desc: 'SP 볼티지 획득량 상승 (자신 어필 %)', scaleType: 'percent', ingameText: '', effectCategoryId: 1011 },
   101102: { desc: 'SP 볼티지 획득량 상승 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1011 },
+  101201: { desc: '저하효과 해제', scaleType: 'fixed', ingameText: '効果解除', effectCategoryId: 1012 },
   101301: { desc: '볼티지 획득량 상승 (%)', scaleType: 'percent', ingameText: '', effectCategoryId: 1013 },
   101302: { desc: '볼티지 획득량 상승 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1013 },
   101401: { desc: '볼티지 획득 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1014 },
   101402: { desc: '볼티지 획득 (자신 어필 %)', scaleType: 'percent', ingameText: 'ボルテージ獲得', effectCategoryId: 1014 },
   101601: { desc: '기본 SP 게이지 획득량 상승 (%)', scaleType: 'percent', ingameText: 'SPゲージ獲得＋', effectCategoryId: 1016 },
   101701: { desc: '기본 특기 발동률 상승 (%)', scaleType: 'percent', ingameText: '特技発動率＋', effectCategoryId: 1017 },
+  101801: { desc: '기본 어필 추가 (%)', scaleType: 'percent', ingameText: 'アピール＋', effectCategoryId: 1018 },
 
   200101: { desc: '기본 어필 추가 (%)', scaleType: 'percent', ingameText: 'アピール＋', effectCategoryId: 2001 },
   200201: { desc: '기본 스태미너 추가 (%)', scaleType: 'percent', ingameText: 'スタミナ＋', effectCategoryId: 2002 },
@@ -102,12 +105,14 @@ export const SKILL_EFFECT_STRING: SkillEffectString = {
   101004: { beforeValue: '자신 어필의', afterValue: '% SP 게이지를 획득' },
   101101: { beforeValue: 'SP 특기로 획득하는 볼티지가 자신 어필의', afterValue: '% 추가' },
   101102: { beforeValue: 'SP 특기로 획득하는 볼티지가', afterValue: '추가' },
+  101201: { beforeValue: '모든 저하/감소 효과를 해제 (기본 저하/기본 감소는 제외)', afterValue: '' },
   101301: { beforeValue: '획득 볼티지', afterValue: '% 추가' },
   101302: { beforeValue: '획득 볼티지', afterValue: '추가' },
   101401: { beforeValue: '볼티지', afterValue: '획득' },
   101402: { beforeValue: '자신 어필의', afterValue: '% 볼티지 획득' },
   101601: { beforeValue: '기본 SP 게이지 획득량', afterValue: '% 상승' },
   101701: { beforeValue: '기본 특기 발동률이', afterValue: '% 상승' },
+  101801: { beforeValue: '기본 어필', afterValue: '% 추가' },
 
   200101: { beforeValue: '기본 어필', afterValue: '% 추가' },
   200201: { beforeValue: '기본 스태미너', afterValue: '% 추가' },
