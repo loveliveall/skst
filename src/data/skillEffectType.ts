@@ -32,7 +32,7 @@ export const SKILL_EFFECT_CATEGORY: SkillEffectCategory = {
 
 export const SPEC_CATEGORIES = [1001, 1002, 1003, 1004, 1005, 1007, 1008, 1009, 1010, 1011, 1013, 1014];
 export const INDIV_LIVE_CATEGORIES = [
-  1001, 1002, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1012, 1014, 1016, 1017, 1018,
+  1001, 1002, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1014, 1016, 1017, 1018,
 ];
 export const INDIV_PASSIVE_CATEGORIES = [2001, 2002, 2003];
 
@@ -63,7 +63,7 @@ export const SKILL_EFFECT_TYPE: SkillEffectType = {
   101002: { desc: 'SP 게이지 획득 (%)', scaleType: 'percent', ingameText: '', effectCategoryId: 1010 },
   101003: { desc: 'SP 게이지 획득 (자신 테크닉 %)', scaleType: 'percent', ingameText: 'SPゲージ獲得', effectCategoryId: 1010 },
   101004: { desc: 'SP 게이지 획득 (자신 어필 %)', scaleType: 'percent', ingameText: 'SPゲージ獲得', effectCategoryId: 1010 },
-  101101: { desc: 'SP 볼티지 획득량 상승 (자신 어필 %)', scaleType: 'percent', ingameText: '', effectCategoryId: 1011 },
+  101101: { desc: 'SP 볼티지 획득량 상승 (자신 어필 %)', scaleType: 'percent', ingameText: 'SP特技UP', effectCategoryId: 1011 },
   101102: { desc: 'SP 볼티지 획득량 상승 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1011 },
   101201: { desc: '저하효과 해제', scaleType: 'fixed', ingameText: '効果解除', effectCategoryId: 1012 },
   101301: { desc: '볼티지 획득량 상승 (%)', scaleType: 'percent', ingameText: '', effectCategoryId: 1013 },
