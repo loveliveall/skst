@@ -31,7 +31,9 @@ export const SKILL_EFFECT_CATEGORY: SkillEffectCategory = {
 };
 
 export const SPEC_CATEGORIES = [1001, 1002, 1003, 1004, 1005, 1007, 1008, 1009, 1010, 1011, 1013, 1014];
-export const INDIV_LIVE_CATEGORIES = [1001, 1002, 1005, 1006, 1007, 1008, 1009, 1010, 1012, 1014, 1016, 1017, 1018];
+export const INDIV_LIVE_CATEGORIES = [
+  1001, 1002, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1012, 1014, 1016, 1017, 1018,
+];
 export const INDIV_PASSIVE_CATEGORIES = [2001, 2002, 2003];
 
 interface SkillEffectType {
@@ -49,7 +51,7 @@ export const SKILL_EFFECT_TYPE: SkillEffectType = {
   100102: { desc: '어필 추가 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1001 },
   100201: { desc: '크리티컬률 상승 (%)', scaleType: 'percent', ingameText: 'クリティカルUP', effectCategoryId: 1002 },
   100301: { desc: '크리티컬치 상승 (%)', scaleType: 'percent', ingameText: '', effectCategoryId: 1003 },
-  100401: { desc: '대미지 감소 (%)', scaleType: 'percent', ingameText: '', effectCategoryId: 1004 },
+  100401: { desc: '대미지 감소 (%)', scaleType: 'percent', ingameText: 'ダメージ軽減', effectCategoryId: 1004 },
   100501: { desc: '스태미너 회복 (자신 스태미너 %)', scaleType: 'percent', ingameText: 'スタミナ回復', effectCategoryId: 1005 },
   100502: { desc: '스태미너 회복 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1005 },
   100601: { desc: '스태미너가 0이되면 회복하며 부활하는 효과 부여 (%)', scaleType: 'percent', ingameText: '復活', effectCategoryId: 1006 },
