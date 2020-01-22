@@ -162,9 +162,16 @@ export const EVENT: Event = {
   8: {
     name: 'スペシャルスイーツを召し上がれ♡',
     eventTypeId: 1,
-    rankBorder: {},
-    ingameInfo: [],
-    rewardBorder: {},
+    rankBorder: {
+      1: 0, 10: 0, 50: 0, 100: 0, 1000: 0, 3000: 0, 10000: 0, 30000: 0, 50000: 0,
+    },
+    ingameInfo: [1000, 3000, 10000, 30000, 50000],
+    rewardBorder: {
+      100: [2, 2, 2],
+      3000: [1, 2, 2],
+      10000: [1, 1, 2],
+      50000: [1, 1, 1],
+    },
     startDate: '2020.01.22.',
     endDate: '2020.01.31.',
   },
