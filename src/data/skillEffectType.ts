@@ -24,6 +24,7 @@ export const SKILL_EFFECT_CATEGORY: SkillEffectCategory = {
   1016: { desc: '기본 SP 게이지 획득량 상승', iconAssetPath: '/images/icons/skill/live_sp_gain_inc.png' },
   1017: { desc: '기본 특기 발동률 상승', iconAssetPath: '/images/icons/skill/live_skill_prob_inc.png' },
   1018: { desc: '기본 어필 추가', iconAssetPath: '/images/icons/skill/live_appl_inc.png' },
+  1019: { desc: '기본 크리티컬치 상승', iconAssetPath: '/images/icons/skill/live_crit_vo_inc.png' },
 
   2001: { desc: '기본 어필 추가', iconAssetPath: '/images/icons/skill/passive_appl_inc.png' },
   2002: { desc: '기본 스태미너 추가', iconAssetPath: '/images/icons/skill/passive_stam_inc.png' },
@@ -32,7 +33,7 @@ export const SKILL_EFFECT_CATEGORY: SkillEffectCategory = {
 
 export const SPEC_CATEGORIES = [1001, 1002, 1003, 1004, 1005, 1007, 1008, 1009, 1010, 1011, 1013, 1014];
 export const INDIV_LIVE_CATEGORIES = [
-  1001, 1002, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1014, 1016, 1017, 1018,
+  1001, 1002, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1014, 1016, 1017, 1018, 1019,
 ];
 export const INDIV_PASSIVE_CATEGORIES = [2001, 2002, 2003];
 
@@ -73,6 +74,7 @@ export const SKILL_EFFECT_TYPE: SkillEffectType = {
   101601: { desc: '기본 SP 게이지 획득량 상승 (%)', scaleType: 'percent', ingameText: 'SPゲージ獲得＋', effectCategoryId: 1016 },
   101701: { desc: '기본 특기 발동률 상승 (%)', scaleType: 'percent', ingameText: '特技発動率＋', effectCategoryId: 1017 },
   101801: { desc: '기본 어필 추가 (%)', scaleType: 'percent', ingameText: 'アピール＋', effectCategoryId: 1018 },
+  101901: { desc: '기본 크리티컬치 상승 (%)', scaleType: 'percent', ingameText: 'クリティカル＋', effectCategoryId: 1019 },
 
   200101: { desc: '기본 어필 추가 (%)', scaleType: 'percent', ingameText: 'アピール＋', effectCategoryId: 2001 },
   200201: { desc: '기본 스태미너 추가 (%)', scaleType: 'percent', ingameText: 'スタミナ＋', effectCategoryId: 2002 },
@@ -115,6 +117,7 @@ export const SKILL_EFFECT_STRING: SkillEffectString = {
   101601: { beforeValue: '기본 SP 게이지 획득량', afterValue: '% 상승' },
   101701: { beforeValue: '기본 특기 발동률이', afterValue: '% 상승' },
   101801: { beforeValue: '기본 어필', afterValue: '% 추가' },
+  101901: { beforeValue: '기본 크리티컬치', afterValue: '% 추가' },
 
   200101: { beforeValue: '기본 어필', afterValue: '% 추가' },
   200201: { beforeValue: '기본 스태미너', afterValue: '% 추가' },
