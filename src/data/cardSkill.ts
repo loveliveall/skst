@@ -111,6 +111,74 @@ export const CARD_SKILL: CardSkill = {
   98: { specialityId: 100098, individuality: { passiveId: 200098 } },
   99: { specialityId: 100099, individuality: { passiveId: 200099, liveId: 300099 } },
 
+  100: { specialityId: 100100, individuality: { passiveId: 200100, liveId: 300100 } },
+  101: { specialityId: 100101, individuality: { passiveId: 200101, liveId: 300101 } },
+  102: { specialityId: 100102, individuality: { passiveId: 200102, liveId: 300102 } },
+  103: { specialityId: 100103, individuality: { passiveId: 200103, liveId: 300103 } },
+  104: { specialityId: 100104, individuality: { passiveId: 200104, liveId: 300104 } },
+
+  105: { specialityId: 100105, individuality: { passiveId: 200105, liveId: 300105 } },
+  106: { specialityId: 100106, individuality: { passiveId: 200106, liveId: 300106 } },
+
+  107: { specialityId: 100107, individuality: { passiveId: 200107, liveId: 300107 } },
+  108: { specialityId: 100108, individuality: { passiveId: 200108, liveId: 300108 } },
+  109: { specialityId: 100109, individuality: { passiveId: 200109, liveId: 300109 } },
+  110: { specialityId: 100110, individuality: { passiveId: 200110, liveId: 300110 } },
+  111: { specialityId: 100111, individuality: { passiveId: 200111, liveId: 300111 } },
+
+  112: { specialityId: 100112, individuality: { passiveId: 200112, liveId: 300112 } },
+  113: { specialityId: 100113, individuality: { passiveId: 200113, liveId: 300113 } },
+  114: { specialityId: 100114, individuality: { passiveId: 200114, liveId: 300114 } },
+
+  115: { specialityId: 100115, individuality: { passiveId: 200115, liveId: 300115 } },
+  116: { specialityId: 100116, individuality: { passiveId: 200116, liveId: 300116 } },
+  117: { specialityId: 100117, individuality: { passiveId: 200117, liveId: 300117 } },
+  118: { specialityId: 100118, individuality: { passiveId: 200118, liveId: 300118 } },
+  119: { specialityId: 100119, individuality: { passiveId: 200119, liveId: 300119 } },
+
+  120: { specialityId: 100120, individuality: { passiveId: 200120, liveId: 300120 } },
+  121: { specialityId: 100121, individuality: { passiveId: 200121, liveId: 300121 } },
+
+  122: { specialityId: 100122, individuality: { passiveId: 200122, liveId: 300122 } },
+  123: { specialityId: 100123, individuality: { passiveId: 200123, liveId: 300123 } },
+  124: { specialityId: 100124, individuality: { passiveId: 200124, liveId: 300124 } },
+  125: { specialityId: 100125, individuality: { passiveId: 200125, liveId: 300125 } },
+  126: { specialityId: 100126, individuality: { passiveId: 200126, liveId: 300126 } },
+
+  127: { specialityId: 100127, individuality: { passiveId: 200127, liveId: 300127 } },
+  128: { specialityId: 100128, individuality: { passiveId: 200128, liveId: 300128 } },
+  129: { specialityId: 100129, individuality: { passiveId: 200129, liveId: 300129 } },
+  130: { specialityId: 100130, individuality: { passiveId: 200130, liveId: 300130 } },
+  131: { specialityId: 100131, individuality: { passiveId: 200131, liveId: 300131 } },
+
+  132: { specialityId: 100132, individuality: { passiveId: 200132, liveId: 300132 } },
+  133: { specialityId: 100133, individuality: { passiveId: 200133, liveId: 300133 } },
+  134: { specialityId: 100134, individuality: { passiveId: 200134, liveId: 300134 } },
+  135: { specialityId: 100135, individuality: { passiveId: 200135, liveId: 300135 } },
+  136: { specialityId: 100136, individuality: { passiveId: 200136, liveId: 300136 } },
+
+  137: { specialityId: 100137, individuality: { passiveId: 200137, liveId: 300137 } },
+  138: { specialityId: 100138, individuality: { passiveId: 200138, liveId: 300138 } },
+
+  139: { specialityId: 100139, individuality: { passiveId: 200139, liveId: 300139 } },
+  140: { specialityId: 100140, individuality: { passiveId: 200140, liveId: 300140 } },
+  141: { specialityId: 100141, individuality: { passiveId: 200141, liveId: 300141 } },
+  142: { specialityId: 100142, individuality: { passiveId: 200142, liveId: 300142 } },
+  143: { specialityId: 100143, individuality: { passiveId: 200143, liveId: 300143 } },
+
+  144: { specialityId: 100144, individuality: { passiveId: 200144, liveId: 300144 } },
+  145: { specialityId: 100145, individuality: { passiveId: 200145, liveId: 300145 } },
+  146: { specialityId: 100146, individuality: { passiveId: 200146, liveId: 300146 } },
+  147: { specialityId: 100147, individuality: { passiveId: 200147, liveId: 300147 } },
+  148: { specialityId: 100148, individuality: { passiveId: 200148, liveId: 300148 } },
+
+  149: { specialityId: 100149, individuality: { passiveId: 200149, liveId: 300149 } },
+  150: { specialityId: 100150, individuality: { passiveId: 200150, liveId: 300150 } },
+  151: { specialityId: 100151, individuality: { passiveId: 200151, liveId: 300151 } },
+  152: { specialityId: 100152, individuality: { passiveId: 200152, liveId: 300152 } },
+  153: { specialityId: 100153, individuality: { passiveId: 200153, liveId: 300153 } },
+  154: { specialityId: 100154, individuality: { passiveId: 200154, liveId: 300154 } },
+
   155: { specialityId: 100155, individuality: { passiveId: 200155, liveId: 300155 } },
   156: { specialityId: 100156, individuality: { passiveId: 200156, liveId: 300156 } },
 
