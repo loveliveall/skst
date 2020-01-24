@@ -10,6 +10,10 @@ import { getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
 import { ATTRIBUTE, ROLE, RARITY } from '@/data/cardMetadata';
 import { MEMBER } from '@/data/memberMetadata';
 import { GACHA } from '@/data/gacha';
+import { CARD_SKILL } from '@/data/cardSkill';
+import { SKILL_LEVEL_MAP } from '@/data/cardSkillLevelMap';
+import { SKILL, shortSkillTextKr, skillTargetTextKr } from '@/data/skill';
+import { SKILL_EFFECT_CATEGORY, SKILL_EFFECT_TYPE } from '@/data/skillEffectType';
 
 const CardIconImg = styled.img`
   padding: 4px;
@@ -27,6 +31,11 @@ const VerticalFlex = styled(FlexBox)`
   width: 100%;
   flex-direction: column;
   align-items: center;
+`;
+
+const DetailText = styled.div`
+  padding: 1px;
+  font-size: 0.7em;
 `;
 
 const ToolTipText = styled.div`
@@ -128,6 +137,88 @@ const CardTable: React.FC<CardTable> = ({ list }) => (
         title: '기대 볼티지',
         render: (rowData) => <span>{rowData.expectedVoltage}</span>,
         customSort: (a, b) => a.expectedVoltage - b.expectedVoltage,
+      },
+      {
+        title: '특기',
+        render: (rowData) => {
+          const levelMap = SKILL_LEVEL_MAP[rowData.id].speciality;
+          const specialityDetail = SKILL[CARD_SKILL[rowData.id].specialityId].detail;
+          const { effectTypeId } = specialityDetail;
+          const categoryId = SKILL_EFFECT_TYPE[effectTypeId].effectCategoryId;
+          return (
+            <VerticalFlex>
+              <div>
+                <SmallIconImg
+                  src={SKILL_EFFECT_CATEGORY[categoryId].iconAssetPath}
+                  alt={SKILL_EFFECT_CATEGORY[categoryId].desc}
+                  title={SKILL_EFFECT_CATEGORY[categoryId].desc}
+                />
+              </div>
+              <DetailText>
+                {shortSkillTextKr(specialityDetail, levelMap[rowData.uncap])}
+              </DetailText>
+              <DetailText>
+                {skillTargetTextKr(specialityDetail)}
+              </DetailText>
+            </VerticalFlex>
+          );
+        },
+        customSort: (a, b) => {
+          const aDetail = SKILL[CARD_SKILL[a.id].specialityId].detail;
+          const aEffect = SKILL_EFFECT_TYPE[aDetail.effectTypeId];
+          const bDetail = SKILL[CARD_SKILL[b.id].specialityId].detail;
+          const bEffect = SKILL_EFFECT_TYPE[bDetail.effectTypeId];
+          if (aEffect.effectCategoryId - bEffect.effectCategoryId !== 0) {
+            return aEffect.effectCategoryId - bEffect.effectCategoryId;
+          }
+          if (aEffect.scaleType !== bEffect.scaleType) {
+            return aEffect.scaleType === 'percent' ? 1 : -1;
+          }
+          const aLevel = SKILL_LEVEL_MAP[a.id].speciality[a.uncap];
+          const bLevel = SKILL_LEVEL_MAP[b.id].speciality[b.uncap];
+          return aDetail.effectValue[aLevel - 1] - bDetail.effectValue[bLevel - 1];
+        },
+      },
+      {
+        title: '개성 (패시브)',
+        render: (rowData) => {
+          const levelMap = SKILL_LEVEL_MAP[rowData.id].individuality.passive;
+          const passiveDetail = SKILL[CARD_SKILL[rowData.id].individuality.passiveId].detail;
+          const { effectTypeId } = passiveDetail;
+          const categoryId = SKILL_EFFECT_TYPE[effectTypeId].effectCategoryId;
+          return (
+            <VerticalFlex>
+              <div>
+                <SmallIconImg
+                  src={SKILL_EFFECT_CATEGORY[categoryId].iconAssetPath}
+                  alt={SKILL_EFFECT_CATEGORY[categoryId].desc}
+                  title={SKILL_EFFECT_CATEGORY[categoryId].desc}
+                />
+              </div>
+              <DetailText>
+                {shortSkillTextKr(passiveDetail, levelMap[rowData.uncap])}
+              </DetailText>
+              <DetailText>
+                {skillTargetTextKr(passiveDetail)}
+              </DetailText>
+            </VerticalFlex>
+          );
+        },
+        customSort: (a, b) => {
+          const aDetail = SKILL[CARD_SKILL[a.id].individuality.passiveId].detail;
+          const aEffect = SKILL_EFFECT_TYPE[aDetail.effectTypeId];
+          const bDetail = SKILL[CARD_SKILL[b.id].individuality.passiveId].detail;
+          const bEffect = SKILL_EFFECT_TYPE[bDetail.effectTypeId];
+          if (aEffect.effectCategoryId - bEffect.effectCategoryId !== 0) {
+            return aEffect.effectCategoryId - bEffect.effectCategoryId;
+          }
+          if (aEffect.scaleType !== bEffect.scaleType) {
+            return aEffect.scaleType === 'percent' ? 1 : -1;
+          }
+          const aLevel = SKILL_LEVEL_MAP[a.id].individuality.passive[a.uncap];
+          const bLevel = SKILL_LEVEL_MAP[b.id].individuality.passive[b.uncap];
+          return aDetail.effectValue[aLevel - 1] - bDetail.effectValue[bLevel - 1];
+        },
       },
       {
         title: '첫 출현',

@@ -467,6 +467,18 @@ export const SKILL: Skill = {
 };
 /* eslint-enable object-curly-newline, max-len */
 
+export function shortSkillTextKr(skillDetail: SkillDetail, level: number) {
+  const effectType = SKILL_EFFECT_TYPE[skillDetail.effectTypeId];
+  const value = skillDetail.effectValue[level - 1] / (effectType.scaleType === 'percent' ? 100 : 1);
+  return `${effectType.desc}: ${value}${effectType.scaleType === 'percent' ? '%' : ''}`;
+}
+
+export function skillTargetTextKr(skillDetail: SkillDetail) {
+  const { skillTargetId } = skillDetail;
+  const targetText = SKILL_TARGET[skillTargetId].krName;
+  return skillTargetId === 0 ? '' : `대상: ${targetText}`;
+}
+
 export function getSkillInfoKR(skillId: number) {
   const skill = SKILL[skillId];
   // TODO: Remove this after complete skill info
