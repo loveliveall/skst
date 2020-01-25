@@ -69,118 +69,138 @@ type CardFilterRows = PropsFromState & PropsFromDispatch;
 function memberIdInGroup(gId: number) {
   return Object.keys(MEMBER).map(Number).filter((id) => MEMBER[id].groupId === gId);
 }
+const attributeAllIds = Object.keys(ATTRIBUTE).map(Number);
+const roleAllIds = Object.keys(ROLE).map(Number);
 
 const CardFilterRows: React.FC<CardFilterRows> = ({
   member, attribute, role, rarity, uncap,
   setMember, setAttribute, setRole, setRarity, setUncap,
-}) => (
-  <>
-    <tr>
-      <td rowSpan={5}>필터</td>
-      <td>멤버</td>
-      <td>
-        <BorderlessTable>
-          <tbody>
-            {Object.keys(GROUP).map(Number).map((gId) => {
-              const mIds = memberIdInGroup(gId);
-              const selected = mIds.every((mId) => member[mId]);
-              return (
-                <tr key={Math.random()}>
-                  <td>
-                    <GroupImg
-                      className={selected ? 'on' : 'off'}
-                      src={GROUP[gId].iconAssetPath}
-                      alt={`${GROUP[gId].symbol}-icon`}
-                      title={GROUP[gId].name}
-                      onClick={() => setMember(mIds, !selected)}
-                    />
-                  </td>
-                  {mIds.map((mId) => (
-                    <td key={Math.random()}>
-                      <TinyImg
-                        className={member[mId] ? 'on' : 'off'}
-                        src={MEMBER[mId].iconAssetPath}
-                        alt={`${MEMBER[mId].enName}-icon`}
-                        title={MEMBER[mId].name}
-                        onClick={() => setMember([mId], !member[mId])}
+}) => {
+  const attributeAll = attributeAllIds.every((id) => attribute[id]);
+  const roleAll = roleAllIds.every((id) => role[id]);
+  return (
+    <>
+      <tr>
+        <td rowSpan={5}>필터</td>
+        <td>멤버</td>
+        <td>
+          <BorderlessTable>
+            <tbody>
+              {Object.keys(GROUP).map(Number).map((gId) => {
+                const mIds = memberIdInGroup(gId);
+                const selected = mIds.every((mId) => member[mId]);
+                return (
+                  <tr key={Math.random()}>
+                    <td>
+                      <GroupImg
+                        className={selected ? 'on' : 'off'}
+                        src={GROUP[gId].iconAssetPath}
+                        alt={`${GROUP[gId].symbol}-icon`}
+                        title={GROUP[gId].name}
+                        onClick={() => setMember(mIds, !selected)}
                       />
                     </td>
-                  ))}
-                </tr>
-              );
-            })}
-          </tbody>
-        </BorderlessTable>
-      </td>
-    </tr>
-    <tr>
-      <td>속성</td>
-      <td>
-        {Object.keys(ATTRIBUTE).map(Number).map((id) => (
+                    {mIds.map((mId) => (
+                      <td key={Math.random()}>
+                        <TinyImg
+                          className={member[mId] ? 'on' : 'off'}
+                          src={MEMBER[mId].iconAssetPath}
+                          alt={`${MEMBER[mId].enName}-icon`}
+                          title={MEMBER[mId].name}
+                          onClick={() => setMember([mId], !member[mId])}
+                        />
+                      </td>
+                    ))}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </BorderlessTable>
+        </td>
+      </tr>
+      <tr>
+        <td>속성</td>
+        <td>
           <SmallImg
-            key={id}
-            className={attribute[id] ? 'on' : 'off'}
-            src={ATTRIBUTE[id].iconAssetPath}
-            alt={`${ATTRIBUTE[id].symbol}-icon`}
-            title={ATTRIBUTE[id].name}
-            onClick={() => setAttribute([id], !attribute[id])}
+            className={attributeAll ? 'on' : 'off'}
+            src="/images/icons/all.png"
+            alt="all-icon"
+            title="전체 선택"
+            onClick={() => setAttribute(attributeAllIds, !attributeAll)}
           />
-        ))}
-      </td>
-    </tr>
-    <tr>
-      <td>타입</td>
-      <td>
-        {Object.keys(ROLE).map(Number).map((id) => (
+          {Object.keys(ATTRIBUTE).map(Number).map((id) => (
+            <SmallImg
+              key={id}
+              className={attribute[id] ? 'on' : 'off'}
+              src={ATTRIBUTE[id].iconAssetPath}
+              alt={`${ATTRIBUTE[id].symbol}-icon`}
+              title={ATTRIBUTE[id].name}
+              onClick={() => setAttribute([id], !attribute[id])}
+            />
+          ))}
+        </td>
+      </tr>
+      <tr>
+        <td>타입</td>
+        <td>
           <SmallImg
-            key={id}
-            className={role[id] ? 'on' : 'off'}
-            src={ROLE[id].iconAssetPath}
-            alt={`${ROLE[id].symbol}-icon`}
-            title={ROLE[id].name}
-            onClick={() => setRole([id], !role[id])}
+            className={roleAll ? 'on' : 'off'}
+            src="/images/icons/all.png"
+            alt="all-icon"
+            title="전체 선택"
+            onClick={() => setRole(roleAllIds, !roleAll)}
           />
-        ))}
-      </td>
-    </tr>
-    <tr>
-      <td>레어도</td>
-      <td>
-        {Object.keys(RARITY).map(Number).map((id) => (
-          <SmallImg
-            key={id}
-            className={rarity[id] ? 'on' : 'off'}
-            src={RARITY[id].iconAssetPath}
-            alt={`${RARITY[id].symbol}`}
-            title={RARITY[id].symbol}
-            onClick={() => setRarity(id, !rarity[id])}
-          />
-        ))}
-      </td>
-    </tr>
-    <tr>
-      <td>한돌</td>
-      <td>
-        <select
-          id="uncap-filter"
-          value={uncap === null ? 'all' : uncap}
-          onChange={(event) => {
-            const selected = event.target.value;
-            if (selected === 'all') setUncap(null);
-            else setUncap(Number(event.target.value));
-          }}
-        >
-          <option value="all">모두</option>
-          {
-            new Array(6).fill(null).map((_, idx) => (
-              <option key={Math.random()} value={idx}>{idx}</option>
-            ))
-          }
-        </select>
-      </td>
-    </tr>
-  </>
-);
+          {Object.keys(ROLE).map(Number).map((id) => (
+            <SmallImg
+              key={id}
+              className={role[id] ? 'on' : 'off'}
+              src={ROLE[id].iconAssetPath}
+              alt={`${ROLE[id].symbol}-icon`}
+              title={ROLE[id].name}
+              onClick={() => setRole([id], !role[id])}
+            />
+          ))}
+        </td>
+      </tr>
+      <tr>
+        <td>레어도</td>
+        <td>
+          {Object.keys(RARITY).map(Number).map((id) => (
+            <SmallImg
+              key={id}
+              className={rarity[id] ? 'on' : 'off'}
+              src={RARITY[id].iconAssetPath}
+              alt={`${RARITY[id].symbol}`}
+              title={RARITY[id].symbol}
+              onClick={() => setRarity(id, !rarity[id])}
+            />
+          ))}
+        </td>
+      </tr>
+      <tr>
+        <td>한돌</td>
+        <td>
+          <select
+            id="uncap-filter"
+            value={uncap === null ? 'all' : uncap}
+            onChange={(event) => {
+              const selected = event.target.value;
+              if (selected === 'all') setUncap(null);
+              else setUncap(Number(event.target.value));
+            }}
+          >
+            <option value="all">모두</option>
+            {
+              new Array(6).fill(null).map((_, idx) => (
+                <option key={Math.random()} value={idx}>{idx}</option>
+              ))
+            }
+          </select>
+        </td>
+      </tr>
+    </>
+  );
+};
 
 const mapStateToProps = (state: AppState): PropsFromState => ({
   member: SEL.cardsMemberFilter(state),
