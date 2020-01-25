@@ -221,6 +221,50 @@ const CardTable: React.FC<CardTable> = ({ list }) => (
         },
       },
       {
+        title: '개성 (라이브)',
+        render: (rowData) => {
+          const { liveId } = CARD_SKILL[rowData.id].individuality;
+          if (liveId === undefined) return <span />;
+          const liveDetail = SKILL[liveId].detail;
+          const { effectTypeId } = liveDetail;
+          const categoryId = SKILL_EFFECT_TYPE[effectTypeId].effectCategoryId;
+          return (
+            <VerticalFlex>
+              <div>
+                <SmallIconImg
+                  src={SKILL_EFFECT_CATEGORY[categoryId].iconAssetPath}
+                  alt={SKILL_EFFECT_CATEGORY[categoryId].desc}
+                  title={SKILL_EFFECT_CATEGORY[categoryId].desc}
+                />
+              </div>
+              <DetailText>
+                {SKILL_EFFECT_CATEGORY[categoryId].desc}
+              </DetailText>
+              <DetailText>
+                {skillTargetTextKr(liveDetail)}
+              </DetailText>
+            </VerticalFlex>
+          );
+        },
+        customSort: (a, b) => {
+          const aLiveId = CARD_SKILL[a.id].individuality.liveId;
+          const bLiveId = CARD_SKILL[b.id].individuality.liveId;
+          if (aLiveId === undefined) return -1;
+          if (bLiveId === undefined) return 1;
+          const aDetail = SKILL[aLiveId].detail;
+          const aEffect = SKILL_EFFECT_TYPE[aDetail.effectTypeId];
+          const bDetail = SKILL[bLiveId].detail;
+          const bEffect = SKILL_EFFECT_TYPE[bDetail.effectTypeId];
+          if (aEffect.effectCategoryId - bEffect.effectCategoryId !== 0) {
+            return aEffect.effectCategoryId - bEffect.effectCategoryId;
+          }
+          if (aEffect.scaleType !== bEffect.scaleType) {
+            return aEffect.scaleType === 'percent' ? 1 : -1;
+          }
+          return aDetail.effectValue[0] - bDetail.effectValue[0];
+        },
+      },
+      {
         title: '첫 출현',
         render: (rowData) => {
           if (rowData.fromId[0] === 'gacha') {
