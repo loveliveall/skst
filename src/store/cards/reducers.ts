@@ -87,28 +87,38 @@ export default function cardsReducer(
         },
       };
     }
-    case CardsActionTypes.FILTER_ATTRIBUTE_SET:
+    case CardsActionTypes.FILTER_ATTRIBUTE_SET: {
+      const newState = action.payload.attributeIds.reduce((acc, cur) => ({
+        ...acc,
+        [cur]: action.payload.value,
+      }), {});
       return {
         ...state,
         filterDraft: {
           ...state.filterDraft,
           attribute: {
             ...state.filterDraft.attribute,
-            [action.payload.attributeId]: action.payload.value,
+            ...newState,
           },
         },
       };
-    case CardsActionTypes.FILTER_ROLE_SET:
+    }
+    case CardsActionTypes.FILTER_ROLE_SET: {
+      const newState = action.payload.roleIds.reduce((acc, cur) => ({
+        ...acc,
+        [cur]: action.payload.value,
+      }), {});
       return {
         ...state,
         filterDraft: {
           ...state.filterDraft,
           role: {
             ...state.filterDraft.role,
-            [action.payload.roleId]: action.payload.value,
+            ...newState,
           },
         },
       };
+    }
     case CardsActionTypes.FILTER_RARITY_SET:
       return {
         ...state,

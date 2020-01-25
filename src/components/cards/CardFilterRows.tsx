@@ -59,8 +59,8 @@ interface PropsFromState {
 }
 interface PropsFromDispatch {
   setMember: (ids: number[], value: boolean) => void,
-  setAttribute: (id: number, value: boolean) => void,
-  setRole: (id: number, value: boolean) => void,
+  setAttribute: (id: number[], value: boolean) => void,
+  setRole: (id: number[], value: boolean) => void,
   setRarity: (id: number, value: boolean) => void,
   setUncap: (uncap: number | null) => void,
 }
@@ -123,7 +123,7 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
             src={ATTRIBUTE[id].iconAssetPath}
             alt={`${ATTRIBUTE[id].symbol}-icon`}
             title={ATTRIBUTE[id].name}
-            onClick={() => setAttribute(id, !attribute[id])}
+            onClick={() => setAttribute([id], !attribute[id])}
           />
         ))}
       </td>
@@ -138,7 +138,7 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
             src={ROLE[id].iconAssetPath}
             alt={`${ROLE[id].symbol}-icon`}
             title={ROLE[id].name}
-            onClick={() => setRole(id, !role[id])}
+            onClick={() => setRole([id], !role[id])}
           />
         ))}
       </td>
@@ -194,11 +194,11 @@ const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
   setMember: (ids, value) => {
     dispatch(AC.cards.setMemberFilter(ids, value));
   },
-  setAttribute: (id, value) => {
-    dispatch(AC.cards.setAttributeFilter(id, value));
+  setAttribute: (ids, value) => {
+    dispatch(AC.cards.setAttributeFilter(ids, value));
   },
-  setRole: (id, value) => {
-    dispatch(AC.cards.setRoleFilter(id, value));
+  setRole: (ids, value) => {
+    dispatch(AC.cards.setRoleFilter(ids, value));
   },
   setRarity: (id, value) => {
     dispatch(AC.cards.setRarityFilter(id, value));

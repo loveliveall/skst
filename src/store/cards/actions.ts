@@ -20,11 +20,11 @@ export const CardsActionCreators = {
   setMemberFilter: (memberIds: number[], value: boolean) => createFSA(
     CardsActionTypes.FILTER_MEMBERS_SET, { memberIds, value },
   ),
-  setAttributeFilter: (attributeId: number, value: boolean) => createFSA(
-    CardsActionTypes.FILTER_ATTRIBUTE_SET, { attributeId, value },
+  setAttributeFilter: (attributeIds: number[], value: boolean) => createFSA(
+    CardsActionTypes.FILTER_ATTRIBUTE_SET, { attributeIds, value },
   ),
-  setRoleFilter: (roleId: number, value: boolean) => createFSA(
-    CardsActionTypes.FILTER_ROLE_SET, { roleId, value },
+  setRoleFilter: (roleIds: number[], value: boolean) => createFSA(
+    CardsActionTypes.FILTER_ROLE_SET, { roleIds, value },
   ),
   setRarityFilter: (rarityId: number, value: boolean) => createFSA(
     CardsActionTypes.FILTER_RARITY_SET, { rarityId, value },
