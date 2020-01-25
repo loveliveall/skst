@@ -7,8 +7,8 @@ interface SkillEffectCategory {
 
 export const SKILL_EFFECT_CATEGORY: SkillEffectCategory = {
   1001: { desc: '어필 추가', iconAssetPath: '/images/icons/skill/live_appl_inc.png' },
-  1002: { desc: '크리티컬률 증가', iconAssetPath: '/images/icons/skill/live_crit_prob_inc.png' },
-  1003: { desc: '크리티컬치 증가', iconAssetPath: '/images/icons/skill/live_crit_vo_inc.png' },
+  1002: { desc: '크리티컬률 상승', iconAssetPath: '/images/icons/skill/live_crit_prob_inc.png' },
+  1003: { desc: '크리티컬치 상승', iconAssetPath: '/images/icons/skill/live_crit_vo_inc.png' },
   1004: { desc: '대미지 감소', iconAssetPath: '/images/icons/skill/live_dmg_dec.png' },
   1005: { desc: '스태미너 회복', iconAssetPath: '/images/icons/skill/live_heal.png' },
   1006: { desc: '부활', iconAssetPath: '/images/icons/skill/live_resurrect.png' },
