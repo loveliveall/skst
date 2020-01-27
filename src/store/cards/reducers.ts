@@ -293,8 +293,8 @@ export default function cardsReducer(
           const baseTechMul = 100;
           // Stat Multiplier (%)
           let applMul = 100;
-          const stamMul = 100;
-          const techMul = 100;
+          let stamMul = 100;
+          let techMul = 100;
           if (state.buffDraft.attributeId !== null && state.buffDraft.attributeId !== card.attributeId) {
             if (state.buffDraft.diffAttrDebuf.targetParam === 'baseAppl') {
               baseApplMul -= state.buffDraft.diffAttrDebuf.value;
@@ -304,6 +304,8 @@ export default function cardsReducer(
           }
           if (state.buffDraft.attributeId === card.attributeId) {
             applMul += 20;
+            stamMul += 20;
+            techMul += 20;
           }
 
           const appl = Math.floor(card.appl * (baseApplMul / 100) * (applMul / 100));
