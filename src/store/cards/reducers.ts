@@ -1,6 +1,18 @@
 import { CardsActionTypes, CardsActions } from './actions';
+import {
+  SkillTargetInfo,
+  isAttributeTarget,
+  isRoleTarget,
+  isGroupTarget,
+  isGradeTarget,
+  isUnitTarget,
+} from './types';
 
+import { MEMBER } from '@/data/memberMetadata';
 import { FULL_CARD_LIST } from '@/data/cardList';
+import { SKILL } from '@/data/skill';
+import { CARD_SKILL } from '@/data/cardSkill';
+import { SKILL_EFFECT_TYPE } from '@/data/skillEffectType';
 
 interface FilterState {
   member: {
@@ -15,6 +27,14 @@ interface FilterState {
   rarity: {
     [rarityId: number]: boolean,
   },
+  indivPCategory: {
+    key: number,
+    categoryId: number,
+  }[],
+  indivPTarget: {
+    key: number,
+    target: SkillTargetInfo,
+  }[],
   uncap: number | null,
 }
 
@@ -35,6 +55,8 @@ export const initialFilter: FilterState = {
   rarity: {
     1: true, 2: true, 3: true,
   },
+  indivPCategory: [],
+  indivPTarget: [],
   uncap: 5,
 };
 
@@ -130,6 +152,58 @@ export default function cardsReducer(
           },
         },
       };
+    case CardsActionTypes.FILTER_INDIV_P_CAT_ADD:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivPCategory: [...state.filterDraft.indivPCategory, action.payload],
+        },
+      };
+    case CardsActionTypes.FILTER_INDIV_P_CAT_EDIT:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivPCategory: state.filterDraft.indivPCategory.map((item) => (
+            item.key === action.payload.key ? action.payload : item
+          )),
+        },
+      };
+    case CardsActionTypes.FILTER_INDIV_P_CAT_REMOVE:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivPCategory: state.filterDraft.indivPCategory.filter((item) => item.key !== action.payload.key),
+        },
+      };
+    case CardsActionTypes.FILTER_INDIV_P_TARGET_ADD:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivPTarget: [...state.filterDraft.indivPTarget, action.payload],
+        },
+      };
+    case CardsActionTypes.FILTER_INDIV_P_TARGET_EDIT:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivPTarget: state.filterDraft.indivPTarget.map((item) => (
+            item.key === action.payload.key ? action.payload : item
+          )),
+        },
+      };
+    case CardsActionTypes.FILTER_INDIV_P_TARGET_REMOVE:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivPTarget: state.filterDraft.indivPTarget.filter((item) => item.key !== action.payload.key),
+        },
+      };
     case CardsActionTypes.FILTER_UNCAP_SET:
       return {
         ...state,
@@ -173,6 +247,35 @@ export default function cardsReducer(
           if (!state.filterDraft.role[card.roleId]) return false;
           if (!state.filterDraft.rarity[card.rarityId]) return false;
           if (!state.filterDraft.member[card.memberId]) return false;
+
+          // Passive skill filtering
+          const ipDetail = SKILL[CARD_SKILL[card.id].individuality.passiveId].detail;
+          // Filter by skill category
+          const { indivPCategory } = state.filterDraft;
+          if (indivPCategory.length !== 0) {
+            const ipCategoryId = SKILL_EFFECT_TYPE[ipDetail.effectTypeId].effectCategoryId;
+            const sat = indivPCategory.some((item) => item.categoryId === ipCategoryId);
+            if (!sat) return false;
+          }
+          // Filter by skill target
+          const { indivPTarget } = state.filterDraft;
+          if (indivPTarget.length !== 0) {
+            const ipTargetId = ipDetail.skillTargetId;
+            const sat = indivPTarget.some((item) => {
+              const { target } = item;
+              if (target.id !== ipTargetId) return false;
+              /* eslint-disable max-len */
+              if (isAttributeTarget(target) && target.attributeId !== null && target.attributeId !== card.attributeId) return false;
+              if (isRoleTarget(target) && target.roleId !== null && target.roleId !== card.roleId) return false;
+              if (isGroupTarget(target) && target.groupId !== null && target.groupId !== MEMBER[card.memberId].groupId) return false;
+              if (isGradeTarget(target) && target.grade !== null && target.grade !== MEMBER[card.memberId].grade) return false;
+              if (isUnitTarget(target) && target.unitId !== null && target.unitId !== MEMBER[card.memberId].unitId) return false;
+              /* eslint-enable max-len */
+              return true;
+            });
+            if (!sat) return false;
+          }
+
           return true;
         }).map((card) => {
           const attributeBuff = (state.buffDraft.attributeId === card.attributeId) ? 1.2 : 1.0;

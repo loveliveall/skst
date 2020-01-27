@@ -31,11 +31,11 @@ export const SKILL_EFFECT_CATEGORY: SkillEffectCategory = {
   2003: { desc: '기본 테크닉 추가', iconAssetPath: '/images/icons/skill/passive_tech_inc.png' },
 };
 
-export const SPEC_CATEGORIES = [1001, 1002, 1003, 1004, 1005, 1007, 1008, 1009, 1010, 1011, 1013, 1014];
-export const INDIV_LIVE_CATEGORIES = [
-  1001, 1002, 1004, 1005, 1006, 1007, 1008, 1009, 1010, 1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019,
+export const LIVE_SKILL_CATEGORIES = [
+  1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010,
+  1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019,
 ];
-export const INDIV_PASSIVE_CATEGORIES = [2001, 2002, 2003];
+export const PASSIVE_SKILL_CATEGORIES = [2001, 2002, 2003];
 
 interface SkillEffectType {
   readonly [id: number]: {
