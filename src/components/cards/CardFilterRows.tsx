@@ -181,7 +181,7 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
         </td>
       </tr>
       <tr>
-        <td>개성 (패시브)</td>
+        <td>개성(패시브)</td>
         <td>
           <BorderlessTable>
             <tbody>

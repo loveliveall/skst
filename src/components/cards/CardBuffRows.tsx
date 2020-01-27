@@ -44,23 +44,25 @@ const SmallImg = styled.img`
 
 interface PropsFromState {
   roleEffect: ReturnType<typeof SEL.cardsRoleEffectBuff>,
+  indivPEffect: ReturnType<typeof SEL.cardsIndivPEffectBuff>,
   attributeId: ReturnType<typeof SEL.cardsAttributeBuff>,
   diffAttrDebuf: ReturnType<typeof SEL.cardsDiffAttrDebuf>,
 }
 interface PropsFromDispatch {
   setRoleEffect: (value: boolean) => void,
+  setIndivPEffect: (value: boolean) => void,
   setAttributeId: (id: number | null) => void,
   setDiffAttrDebuf: (targetParam: 'appl' | 'baseAppl', percent: number) => void,
 }
 type CardEffectRows = PropsFromState & PropsFromDispatch;
 
 const CardEffectRows: React.FC<CardEffectRows> = ({
-  roleEffect, attributeId, diffAttrDebuf,
-  setRoleEffect, setAttributeId, setDiffAttrDebuf,
+  roleEffect, indivPEffect, attributeId, diffAttrDebuf,
+  setRoleEffect, setIndivPEffect, setAttributeId, setDiffAttrDebuf,
 }) => (
   <>
     <tr>
-      <td rowSpan={3}>효과</td>
+      <td rowSpan={4}>효과</td>
       <td>타입 효과</td>
       <td>
         <StyledInput
@@ -69,6 +71,17 @@ const CardEffectRows: React.FC<CardEffectRows> = ({
           onChange={() => setRoleEffect(!roleEffect)}
         />
         Vo +5%, Sk -5% 볼티지
+      </td>
+    </tr>
+    <tr>
+      <td>개성(패시브)</td>
+      <td>
+        <StyledInput
+          type="checkbox"
+          checked={indivPEffect}
+          onChange={() => setIndivPEffect(!indivPEffect)}
+        />
+        개성(패시브)에 의한 스탯 버프 적용
       </td>
     </tr>
     <tr>
@@ -134,6 +147,7 @@ const CardEffectRows: React.FC<CardEffectRows> = ({
 
 const mapStateToProps = (state: AppState): PropsFromState => ({
   roleEffect: SEL.cardsRoleEffectBuff(state),
+  indivPEffect: SEL.cardsIndivPEffectBuff(state),
   attributeId: SEL.cardsAttributeBuff(state),
   diffAttrDebuf: SEL.cardsDiffAttrDebuf(state),
 });
@@ -141,6 +155,9 @@ const mapStateToProps = (state: AppState): PropsFromState => ({
 const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
   setRoleEffect: (value) => {
     dispatch(AC.cards.setRoleEffectBuff(value));
+  },
+  setIndivPEffect: (value) => {
+    dispatch(AC.cards.setIndivPEffectBuff(value));
   },
   setAttributeId: (id) => {
     dispatch(AC.cards.setBuffAttributeId(id));

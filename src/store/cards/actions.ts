@@ -15,6 +15,7 @@ export const CardsActionTypes = {
   FILTER_UNCAP_SET: 'CARDS_FILTER_UNCAP_SET',
 
   BUFF_ROLE_EFFECT_SET: 'CARDS_BUFF_ROLE_EFFECT_SET',
+  BUFF_INDIV_P_EFFECT_SET: 'CARDS_BUFF_INDIV_P_EFFECT_SET',
   BUFF_ATTRIBUTE_ID_SET: 'CARDS_BUFF_ATTRIBUTE_ID_SET',
   BUFF_DIFF_ATTR_DEBUF_SET: 'CARDS_BUFF_DIFF_ATTR_DEBUF_SET',
 
@@ -58,6 +59,9 @@ export const CardsActionCreators = {
 
   setRoleEffectBuff: (value: boolean) => createFSA(
     CardsActionTypes.BUFF_ROLE_EFFECT_SET, { value },
+  ),
+  setIndivPEffectBuff: (value: boolean) => createFSA(
+    CardsActionTypes.BUFF_INDIV_P_EFFECT_SET, { value },
   ),
   setBuffAttributeId: (id: number | null) => createFSA(
     CardsActionTypes.BUFF_ATTRIBUTE_ID_SET, { id },

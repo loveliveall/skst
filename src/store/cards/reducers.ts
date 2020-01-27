@@ -13,6 +13,7 @@ import { FULL_CARD_LIST } from '@/data/cardList';
 import { SKILL } from '@/data/skill';
 import { CARD_SKILL } from '@/data/cardSkill';
 import { SKILL_EFFECT_TYPE } from '@/data/skillEffectType';
+import { SKILL_LEVEL_MAP } from '@/data/cardSkillLevelMap';
 
 interface FilterState {
   member: {
@@ -62,6 +63,7 @@ export const initialFilter: FilterState = {
 
 interface BuffState {
   roleEffect: boolean,
+  indivPEffect: boolean,
   attributeId: number | null,
   diffAttrDebuf: {
     targetParam: 'appl' | 'baseAppl',
@@ -71,6 +73,7 @@ interface BuffState {
 
 export const initialBuff: BuffState = {
   roleEffect: false,
+  indivPEffect: false,
   attributeId: null,
   diffAttrDebuf: {
     targetParam: 'appl',
@@ -226,6 +229,14 @@ export default function cardsReducer(
           roleEffect: action.payload.value,
         },
       };
+    case CardsActionTypes.BUFF_INDIV_P_EFFECT_SET:
+      return {
+        ...state,
+        buffDraft: {
+          ...state.buffDraft,
+          indivPEffect: action.payload.value,
+        },
+      };
     case CardsActionTypes.BUFF_ATTRIBUTE_ID_SET:
       return {
         ...state,
@@ -289,12 +300,13 @@ export default function cardsReducer(
         }).map((card) => {
           // Base Stat Multiplier (%)
           let baseApplMul = 100;
-          const baseStamMul = 100;
-          const baseTechMul = 100;
+          let baseStamMul = 100;
+          let baseTechMul = 100;
           // Stat Multiplier (%)
           let applMul = 100;
           let stamMul = 100;
           let techMul = 100;
+          // Different attribute debuf
           if (state.buffDraft.attributeId !== null && state.buffDraft.attributeId !== card.attributeId) {
             if (state.buffDraft.diffAttrDebuf.targetParam === 'baseAppl') {
               baseApplMul -= state.buffDraft.diffAttrDebuf.value;
@@ -302,15 +314,37 @@ export default function cardsReducer(
               applMul -= state.buffDraft.diffAttrDebuf.value;
             }
           }
+          // Same attribute buff
           if (state.buffDraft.attributeId === card.attributeId) {
             applMul += 20;
             stamMul += 20;
             techMul += 20;
           }
+          // Individuality passive effect
+          if (state.buffDraft.indivPEffect) {
+            const ipDetail = SKILL[CARD_SKILL[card.id].individuality.passiveId].detail;
+            const ipLevel = SKILL_LEVEL_MAP[card.id].individuality.passive[card.uncap];
+            if (ipDetail.skillTargetId !== 2) { // Exclude itself
+              const amount = ipDetail.effectValue[ipLevel - 1] / 100;
+              switch (ipDetail.effectTypeId) {
+                case 200101:
+                  baseApplMul += amount;
+                  break;
+                case 200201:
+                  baseStamMul += amount;
+                  break;
+                case 200301:
+                  baseTechMul += amount;
+                  break;
+                default:
+                  console.error('Should not reach here');
+              }
+            }
+          }
 
-          const appl = Math.floor(card.appl * (baseApplMul / 100) * (applMul / 100));
-          const stam = Math.floor(card.stam * (baseStamMul / 100) * (stamMul / 100));
-          const tech = Math.floor(card.tech * (baseTechMul / 100) * (techMul / 100));
+          const appl = Math.floor(Math.floor(card.appl * (baseApplMul / 100)) * (applMul / 100));
+          const stam = Math.floor(Math.floor(card.stam * (baseStamMul / 100)) * (stamMul / 100));
+          const tech = Math.floor(Math.floor(card.tech * (baseTechMul / 100)) * (techMul / 100));
 
           const voltageMul = (() => {
             if (!state.buffDraft.roleEffect) return 1; // Not applying role effect

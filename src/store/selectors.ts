@@ -12,6 +12,7 @@ export const SEL = {
   cardsIndivPTargetFilter: (state: AppState) => state.cards.filterDraft.indivPTarget,
   cardsUncapFilter: (state: AppState) => state.cards.filterDraft.uncap,
   cardsRoleEffectBuff: (state: AppState) => state.cards.buffDraft.roleEffect,
+  cardsIndivPEffectBuff: (state: AppState) => state.cards.buffDraft.indivPEffect,
   cardsAttributeBuff: (state: AppState) => state.cards.buffDraft.attributeId,
   cardsDiffAttrDebuf: (state: AppState) => state.cards.buffDraft.diffAttrDebuf,
   cardsList: (state: AppState) => state.cards.list,
