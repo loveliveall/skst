@@ -63,13 +63,19 @@ export const initialFilter: FilterState = {
 interface BuffState {
   roleEffect: boolean,
   attributeId: number | null,
-  diffAttrDebuf: number, // Maybe this will be changed. Currently it only supports appeal debuf
+  diffAttrDebuf: {
+    targetParam: 'appl' | 'baseAppl',
+    value: number,
+  },
 }
 
 export const initialBuff: BuffState = {
   roleEffect: false,
   attributeId: null,
-  diffAttrDebuf: 0,
+  diffAttrDebuf: {
+    targetParam: 'appl',
+    value: 0,
+  },
 };
 
 interface CardsState {
@@ -233,7 +239,10 @@ export default function cardsReducer(
         ...state,
         buffDraft: {
           ...state.buffDraft,
-          diffAttrDebuf: action.payload.percent,
+          diffAttrDebuf: {
+            targetParam: action.payload.targetParam,
+            value: action.payload.percent,
+          },
         },
       };
     case CardsActionTypes.SETTINGS_APPLY:
@@ -278,14 +287,28 @@ export default function cardsReducer(
 
           return true;
         }).map((card) => {
-          const attributeBuff = (state.buffDraft.attributeId === card.attributeId) ? 1.2 : 1.0;
-          const applAttrDebuff = (
-            state.buffDraft.attributeId !== null && state.buffDraft.attributeId !== card.attributeId
-          ) ? 1 - (state.buffDraft.diffAttrDebuf / 100) : 1.0;
+          // Base Stat Multiplier (%)
+          let baseApplMul = 100;
+          const baseStamMul = 100;
+          const baseTechMul = 100;
+          // Stat Multiplier (%)
+          let applMul = 100;
+          const stamMul = 100;
+          const techMul = 100;
+          if (state.buffDraft.attributeId !== null && state.buffDraft.attributeId !== card.attributeId) {
+            if (state.buffDraft.diffAttrDebuf.targetParam === 'baseAppl') {
+              baseApplMul -= state.buffDraft.diffAttrDebuf.value;
+            } else {
+              applMul -= state.buffDraft.diffAttrDebuf.value;
+            }
+          }
+          if (state.buffDraft.attributeId === card.attributeId) {
+            applMul += 20;
+          }
 
-          const appl = Math.floor(card.appl * attributeBuff * applAttrDebuff);
-          const stam = Math.floor(card.stam * attributeBuff);
-          const tech = Math.floor(card.tech * attributeBuff);
+          const appl = Math.floor(card.appl * (baseApplMul / 100) * (applMul / 100));
+          const stam = Math.floor(card.stam * (baseStamMul / 100) * (stamMul / 100));
+          const tech = Math.floor(card.tech * (baseTechMul / 100) * (techMul / 100));
 
           const voltageMul = (() => {
             if (!state.buffDraft.roleEffect) return 1; // Not applying role effect

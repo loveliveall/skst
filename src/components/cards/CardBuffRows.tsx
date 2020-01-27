@@ -50,7 +50,7 @@ interface PropsFromState {
 interface PropsFromDispatch {
   setRoleEffect: (value: boolean) => void,
   setAttributeId: (id: number | null) => void,
-  setDiffAttrDebuf: (percent: number) => void,
+  setDiffAttrDebuf: (targetParam: 'appl' | 'baseAppl', percent: number) => void,
 }
 type CardEffectRows = PropsFromState & PropsFromDispatch;
 
@@ -60,7 +60,7 @@ const CardEffectRows: React.FC<CardEffectRows> = ({
 }) => (
   <>
     <tr>
-      <td rowSpan={2}>효과</td>
+      <td rowSpan={3}>효과</td>
       <td>타입 효과</td>
       <td>
         <StyledInput
@@ -97,17 +97,34 @@ const CardEffectRows: React.FC<CardEffectRows> = ({
               onClick={() => setAttributeId(id)}
             />
           ))}
+        </CentralizedBox>
+      </td>
+    </tr>
+    <tr>
+      <td>타속성 디버프</td>
+      <td>
+        <CentralizedBox>
           <div>
-            <span>(타속성 어필</span>
+            <select
+              id="diff-attr-debuf-param"
+              value={diffAttrDebuf.targetParam}
+              disabled={attributeId === null}
+              onChange={(event) => setDiffAttrDebuf(event.target.value as 'appl' | 'baseAppl', diffAttrDebuf.value)}
+            >
+              <option value="appl">어필 감소</option>
+              <option value="baseAppl">기본 어필 감소</option>
+            </select>
+          </div>
+          <div>
             <input
               type="number"
               min="0"
               max="100"
               disabled={attributeId === null}
-              value={diffAttrDebuf}
-              onChange={(event) => setDiffAttrDebuf(Number(event.target.value))}
+              value={diffAttrDebuf.value}
+              onChange={(event) => setDiffAttrDebuf(diffAttrDebuf.targetParam, Number(event.target.value))}
             />
-            <span>% 감소)</span>
+            <span>%</span>
           </div>
         </CentralizedBox>
       </td>
@@ -128,8 +145,8 @@ const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
   setAttributeId: (id) => {
     dispatch(AC.cards.setBuffAttributeId(id));
   },
-  setDiffAttrDebuf: (percent) => {
-    dispatch(AC.cards.setDiffAttrDebuff(percent));
+  setDiffAttrDebuf: (targetParam, percent) => {
+    dispatch(AC.cards.setDiffAttrDebuff(targetParam, percent));
   },
 });
 

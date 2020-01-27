@@ -62,8 +62,8 @@ export const CardsActionCreators = {
   setBuffAttributeId: (id: number | null) => createFSA(
     CardsActionTypes.BUFF_ATTRIBUTE_ID_SET, { id },
   ),
-  setDiffAttrDebuff: (percent: number) => createFSA(
-    CardsActionTypes.BUFF_DIFF_ATTR_DEBUF_SET, { percent },
+  setDiffAttrDebuff: (targetParam: 'appl' | 'baseAppl', percent: number) => createFSA(
+    CardsActionTypes.BUFF_DIFF_ATTR_DEBUF_SET, { targetParam, percent },
   ),
 
   applySettings: () => createFSA(CardsActionTypes.SETTINGS_APPLY, {}),
