@@ -89,12 +89,14 @@ const Events: React.FC = () => {
                     {Object.keys(CARD).map(Number).filter((id) => (
                       CARD[id].fromId[0] === 'event' && CARD[id].fromId[1] === rowData.id
                     )).map((id) => (
-                      <CardIconImg
-                        key={id}
-                        src={getCardIconAssetPath(id, awaken)}
-                        alt={`${getCardSymbol(id, awaken)}-icon`}
-                        title={`${RARITY[CARD[id].rarityId].symbol} ${MEMBER[CARD[id].memberId].shortName}`}
-                      />
+                      <a href={`card/${id}`}>
+                        <CardIconImg
+                          key={id}
+                          src={getCardIconAssetPath(id, awaken)}
+                          alt={`${getCardSymbol(id, awaken)}-icon`}
+                          title={`${RARITY[CARD[id].rarityId].symbol} ${MEMBER[CARD[id].memberId].shortName}`}
+                        />
+                      </a>
                     ))}
                   </FlexBox>
                 </VerticalFlex>

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Switch, Route, NavLink } from 'react-router-dom';
 
 import Home from '@/components/home/Home';
+import Card from '@/components/card/Card';
 import Cards from '@/components/cards/Cards';
 import Gachas from '@/components/gachas/Gachas';
 import Events from '@/components/events/Events';
@@ -88,11 +89,12 @@ const App: React.FC = () => {
   return (
     <>
       <Main>
-        {window.location.hostname === 'localhost' && (
+        {window.location.hostname === 'localhost' && false && (
           <Test />
         )}
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route path="/card/:id" component={Card} />
           <Route path="/cards" component={Cards} />
           <Route path="/gachas" component={Gachas} />
           <Route path="/events" component={Events} />

@@ -74,12 +74,14 @@ const Home: React.FC = () => {
         </div>
         <MaxWidthFlex>
           {gachaResult.map((id) => (
-            <CardImage
-              key={`${id}-${Math.random()}`}
-              src={getCardIconAssetPath(id, false)}
-              alt={`${getCardSymbol(id, false)}-icon`}
-              title={`${RARITY[CARD[id].rarityId].symbol} ${MEMBER[CARD[id].memberId].shortName}`}
-            />
+            <a href={`card/${id}`}>
+              <CardImage
+                key={`${id}-${Math.random()}`}
+                src={getCardIconAssetPath(id, false)}
+                alt={`${getCardSymbol(id, false)}-icon`}
+                title={`${RARITY[CARD[id].rarityId].symbol} ${MEMBER[CARD[id].memberId].shortName}`}
+              />
+            </a>
           ))}
         </MaxWidthFlex>
       </VerticalFlex>

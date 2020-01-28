@@ -60,16 +60,20 @@ const CardTable: React.FC<CardTable> = ({ list }) => (
         title: '아이콘',
         render: (rowData) => (
           <>
-            <CardIconImg
-              src={getCardIconAssetPath(rowData.id, false)}
-              alt={`${getCardSymbol(rowData.id, false)}-icon`}
-              title={`${RARITY[rowData.rarityId].symbol} ${MEMBER[rowData.memberId].shortName}`}
-            />
-            <CardIconImg
-              src={getCardIconAssetPath(rowData.id, true)}
-              alt={`${getCardSymbol(rowData.id, true)}-icon`}
-              title={`${RARITY[rowData.rarityId].symbol} ${MEMBER[rowData.memberId].shortName}`}
-            />
+            <a href={`card/${rowData.id}`}>
+              <CardIconImg
+                src={getCardIconAssetPath(rowData.id, false)}
+                alt={`${getCardSymbol(rowData.id, false)}-icon`}
+                title={`${RARITY[rowData.rarityId].symbol} ${MEMBER[rowData.memberId].shortName}`}
+              />
+            </a>
+            <a href={`card/${rowData.id}`}>
+              <CardIconImg
+                src={getCardIconAssetPath(rowData.id, true)}
+                alt={`${getCardSymbol(rowData.id, true)}-icon`}
+                title={`${RARITY[rowData.rarityId].symbol} ${MEMBER[rowData.memberId].shortName}`}
+              />
+            </a>
           </>
         ),
       },
