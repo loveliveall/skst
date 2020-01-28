@@ -59,6 +59,8 @@ module.exports = (_, argv) => {
     devServer: {
       contentBase: './build',
       hot: true,
+      compress: true,
+      historyApiFallback: true,
     },
   };
-}
+};
