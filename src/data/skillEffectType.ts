@@ -64,7 +64,7 @@ export const SKILL_EFFECT_TYPE: SkillEffectType = {
   100704: { desc: '쉴드 획득 (자신 테크닉 %)', scaleType: 'percent', ingameText: '', effectCategoryId: 1007 },
   100801: { desc: '특기발동률 상승 (%)', scaleType: 'percent', ingameText: '特技発動率UP', effectCategoryId: 1008 },
   100901: { desc: 'SP 게이지 획득량 상승 (%)', scaleType: 'percent', ingameText: 'SPゲージ獲得UP', effectCategoryId: 1009 },
-  101001: { desc: 'SP 게이지 획득 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1010 },
+  101001: { desc: 'SP 게이지 획득 (고정 수치)', scaleType: 'fixed', ingameText: 'SPゲージ獲得', effectCategoryId: 1010 },
   101002: { desc: 'SP 게이지 획득 (%)', scaleType: 'percent', ingameText: '', effectCategoryId: 1010 },
   101003: { desc: 'SP 게이지 획득 (자신 테크닉 %)', scaleType: 'percent', ingameText: 'SPゲージ獲得', effectCategoryId: 1010 },
   101004: { desc: 'SP 게이지 획득 (자신 어필 %)', scaleType: 'percent', ingameText: 'SPゲージ獲得', effectCategoryId: 1010 },
