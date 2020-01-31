@@ -202,8 +202,8 @@ export const CARD: Card = {
   161: { memberId: 13, title: 'ほら、早く早く', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 2, roleId: 1, fromId: ['event', 8] },
   162: { memberId: 7, title: 'ウチが占ってあげる', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 5, roleId: 3, fromId: ['event', 8] },
 
-  163: { memberId: 9, title: '……ありがと。', awakenTitle: 'スマイリーエンジェル', rarityId: 3, attributeId: 1, roleId: 3, fromId: ['gacha', 30003] },
-  164: { memberId: 28, title: 'お花の冠？　あなたが作ったの？', awakenTitle: 'Delightful Waltz', rarityId: 3, attributeId: 5, roleId: 2, fromId: ['gacha', 30003] },
+  163: { memberId: 28, title: 'お花の冠？　あなたが作ったの？', awakenTitle: 'Delightful Waltz', rarityId: 3, attributeId: 5, roleId: 2, fromId: ['gacha', 30003] },
+  164: { memberId: 9, title: '……ありがと。', awakenTitle: 'スマイリーエンジェル', rarityId: 3, attributeId: 1, roleId: 3, fromId: ['gacha', 30003] },
   165: { memberId: 22, title: '食べる人の顔が楽しみですね〜♡', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 5, roleId: 2, fromId: ['gacha', 30003] },
   166: { memberId: 29, title: '一番気に入った璃奈ちゃんボード', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['gacha', 30003] },
 };

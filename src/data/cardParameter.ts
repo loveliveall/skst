@@ -186,8 +186,8 @@ export const PARAMETER: Parameter = {
   161: [{ appl: 2358, stam: 2692, tech: 3370 }, { appl: 2662, stam: 3040, tech: 3804 }, { appl: 2966, stam: 3388, tech: 4238 }, { appl: 3118, stam: 3736, tech: 4672 }, { appl: 3422, stam: 3910, tech: 5323 }, { appl: 3883, stam: 4437, tech: 5548 }],
   162: [{ appl: 2775, stam: 2943, tech: 2692 }, { appl: 3133, stam: 3323, tech: 3040 }, { appl: 3491, stam: 3703, tech: 3388 }, { appl: 3849, stam: 3893, tech: 3736 }, { appl: 4386, stam: 4273, tech: 3910 }, { appl: 4576, stam: 4855, tech: 4437 }],
 
-  163: [{ appl: 4702, stam: 7895, tech: 4198 }, { appl: 5629, stam: 8933, tech: 4474 }, { appl: 5938, stam: 10490, tech: 5302 }, { appl: 6556, stam: 11528, tech: 6406 }, { appl: 7792, stam: 12566, tech: 6958 }, { appl: 8425, stam: 14141, tech: 7520 }],
-  164: [{ appl: 5289, stam: 3306, tech: 7934 }, { appl: 5637, stam: 3957, tech: 8978 }, { appl: 6681, stam: 4174, tech: 10544 }, { appl: 8073, stam: 4608, tech: 11588 }, { appl: 8769, stam: 5476, tech: 12632 }, { appl: 9465, stam: 5916, tech: 14198 }],
+  163: [{ appl: 5289, stam: 3306, tech: 7934 }, { appl: 5637, stam: 3957, tech: 8978 }, { appl: 6681, stam: 4174, tech: 10544 }, { appl: 8073, stam: 4608, tech: 11588 }, { appl: 8769, stam: 5476, tech: 12632 }, { appl: 9465, stam: 5916, tech: 14198 }],
+  164: [{ appl: 4702, stam: 7895, tech: 4198 }, { appl: 5629, stam: 8933, tech: 4474 }, { appl: 5938, stam: 10490, tech: 5302 }, { appl: 6556, stam: 11528, tech: 6406 }, { appl: 7792, stam: 12566, tech: 6958 }, { appl: 8425, stam: 14141, tech: 7520 }],
   165: [{ appl: 4320, stam: 2876, tech: 3083 }, { appl: 4876, stam: 3246, tech: 3481 }, { appl: 5432, stam: 3616, tech: 3879 }, { appl: 5988, stam: 3986, tech: 4078 }, { appl: 6266, stam: 4541, tech: 4476 }, { appl: 7109, stam: 4739, tech: 5079 }],
   166: [{ appl: 3083, stam: 3908, tech: 3289 }, { appl: 3481, stam: 4412, tech: 3713 }, { appl: 3879, stam: 4916, tech: 4137 }, { appl: 4277, stam: 5168, tech: 4561 }, { appl: 4476, stam: 5672, tech: 5197 }, { appl: 5079, stam: 6433, tech: 5416 }],
 };
