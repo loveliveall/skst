@@ -15,7 +15,7 @@ const StyledTable = styled.table`
 `;
 
 const SmallFont = styled.td`
-  font-size: 0.6em;
+  font-size: 0.7em;
 `;
 
 interface OwnProps {
