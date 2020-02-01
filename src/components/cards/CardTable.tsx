@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { AppState, SEL } from '@/store';
@@ -60,20 +61,20 @@ const CardTable: React.FC<CardTable> = ({ list }) => (
         title: '아이콘',
         render: (rowData) => (
           <>
-            <a href={`card/${rowData.id}`}>
+            <Link to={`card/${rowData.id}`}>
               <CardIconImg
                 src={getCardIconAssetPath(rowData.id, false)}
                 alt={`${getCardSymbol(rowData.id, false)}-icon`}
                 title={`${RARITY[rowData.rarityId].symbol} ${MEMBER[rowData.memberId].shortName}`}
               />
-            </a>
-            <a href={`card/${rowData.id}`}>
+            </Link>
+            <Link to={`card/${rowData.id}`}>
               <CardIconImg
                 src={getCardIconAssetPath(rowData.id, true)}
                 alt={`${getCardSymbol(rowData.id, true)}-icon`}
                 title={`${RARITY[rowData.rarityId].symbol} ${MEMBER[rowData.memberId].shortName}`}
               />
-            </a>
+            </Link>
           </>
         ),
       },

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { CARD, getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
@@ -74,14 +75,14 @@ const Home: React.FC = () => {
         </div>
         <MaxWidthFlex>
           {gachaResult.map((id) => (
-            <a href={`card/${id}`}>
+            <Link to={`card/${id}`}>
               <CardImage
                 key={`${id}-${Math.random()}`}
                 src={getCardIconAssetPath(id, false)}
                 alt={`${getCardSymbol(id, false)}-icon`}
                 title={`${RARITY[CARD[id].rarityId].symbol} ${MEMBER[CARD[id].memberId].shortName}`}
               />
-            </a>
+            </Link>
           ))}
         </MaxWidthFlex>
       </VerticalFlex>

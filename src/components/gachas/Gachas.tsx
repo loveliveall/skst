@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import Table from '@/components/common/Table';
@@ -97,14 +98,14 @@ const Gachas: React.FC = () => {
                         {Object.keys(CARD).map(Number).filter((id) => (
                           CARD[id].fromId[0] === 'gacha' && CARD[id].fromId[1] === rowData.id
                         )).map((id) => (
-                          <a href={`card/${id}`}>
+                          <Link to={`card/${id}`}>
                             <CardIconImg
                               key={id}
                               src={getCardIconAssetPath(id, awaken)}
                               alt={`${getCardSymbol(id, awaken)}-icon`}
                               title={`${RARITY[CARD[id].rarityId].symbol} ${MEMBER[CARD[id].memberId].shortName}`}
                             />
-                          </a>
+                          </Link>
                         ))}
                       </FlexBox>
                     </VerticalFlex>
