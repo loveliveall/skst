@@ -1,4 +1,4 @@
-import { SKILL_EFFECT_TYPE, SKILL_EFFECT_CATEGORY, SKILL_EFFECT_STRING } from './skillEffectType';
+import { SKILL_EFFECT_TYPE, SKILL_EFFECT_STRING } from './skillEffectType';
 import { SKILL_TARGET } from './skillTarget';
 import { SKILL_TRIGGER_TYPE } from './skillTriggerType';
 import { SKILL_CONDITION } from './skillCondition';
@@ -511,41 +511,45 @@ export function skillTargetTextKr(skillDetail: SkillDetail) {
 
 export function getSkillInfoKR(skillId: number) {
   const skill = SKILL[skillId];
-  // TODO: Remove this after complete skill info
-  if (skill === undefined) {
-    return undefined;
-  }
-  // Get skill icon asset path
-  const iconAssetPath = (() => {
-    const { effectTypeId } = skill.detail;
-    const effectCategory = SKILL_EFFECT_CATEGORY[SKILL_EFFECT_TYPE[effectTypeId].effectCategoryId];
-    return effectCategory.iconAssetPath;
-  })();
+  // Get effect catagory ID
+  const { effectCategoryId } = SKILL_EFFECT_TYPE[skill.detail.effectTypeId];
   // Get skill effect string
   const effectString = (() => {
     const prefix = (() => {
       if (skill.detail.finishType === 'duration') return `${skill.detail.finishValue} 노트 동안`;
-      if (skill.detail.finishType === 'spFire') return `다음 ${skill.detail.finishValue}번의`;
+      if (skill.detail.finishType === 'spFire') {
+        if (skill.detail.finishValue === 1) return '다음';
+        return `다음 ${skill.detail.finishValue}번의`;
+      }
       if (skill.detail.finishType === 'tillEnd') return '게임 종료까지';
       if (skill.detail.finishType === 'tillACEnd') return '어필 찬스 종료까지';
       return '';
     })();
     const effectStr = SKILL_EFFECT_STRING[skill.detail.effectTypeId];
     const effect = SKILL_EFFECT_TYPE[skill.detail.effectTypeId];
-    const value = skill.detail.effectValue.map((v) => (effect.scaleType === 'percent' ? v / 100 : v)).join('/');
+    const value = skill.detail.effectValue.map((v) => {
+      if (v === 0) return '?';
+      if (effect.scaleType === 'percent') return v / 100;
+      return v;
+    }).join(' / ');
+
+    // Debuff clear does not need value
+    if (skill.detail.effectTypeId === 101201) return [prefix, effectStr.beforeValue].join(' ');
     return [prefix, effectStr.beforeValue, value, effectStr.afterValue].join(' ');
   })();
   // Get target string
-  const targetString = SKILL_TARGET[skill.detail.skillTargetId].krName;
+  const targetString = (() => {
+    if (skill.detail.skillTargetId === 0) return '';
+    return SKILL_TARGET[skill.detail.skillTargetId].krName;
+  })();
   // Get trigger string
-  // TODO: Fix this string
   const triggerString = (() => {
     if (skill.detail.timing === 'onTrigger') {
       const skillTrigger = SKILL_TRIGGER_TYPE[skill.detail.triggerTypeId];
       const { triggerValue, conditionId } = skill.detail;
       let ret = '';
       if (triggerValue !== 0) ret += `${triggerValue} `;
-      ret += `${skillTrigger.krDesc}`;
+      if (skill.detail.triggerTypeId !== 0) ret += `${skillTrigger.krDesc}`;
       if (conditionId !== 0) ret += ` ${SKILL_CONDITION[conditionId].desc}`;
       return ret;
     }
@@ -554,7 +558,7 @@ export function getSkillInfoKR(skillId: number) {
   // Get trigger probability string
   const probString = skill.detail.triggerProb === 10000 ? '' : `${skill.detail.triggerProb / 100}%`;
   return {
-    iconAssetPath,
+    effectCategoryId,
     probString,
     effectString,
     targetString,

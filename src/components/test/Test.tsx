@@ -4,6 +4,7 @@ import Table from '@/components/common/Table';
 import { CARD, getCardIconAssetPath } from '@/data/cardList';
 import { CARD_SKILL } from '@/data/cardSkill';
 import { getSkillInfoKR } from '@/data/skill';
+import { SKILL_EFFECT_CATEGORY } from '@/data/skillEffectType';
 
 const Test: React.FC = () => {
   const data = Object.keys(CARD).map(Number).filter((id) => CARD_SKILL[id] !== undefined).map((id) => {
@@ -12,23 +13,23 @@ const Test: React.FC = () => {
     const { liveId } = CARD_SKILL[id].individuality;
     const liveInfo = liveId !== undefined ? getSkillInfoKR(liveId) : undefined;
     const getString = (info: typeof activeInfo) => {
-      if (info === undefined) return '';
       const prob = info.probString === '' ? '' : `발동확률: ${info.probString}`;
-      return [prob, info.triggerString, info.effectString, `대상: ${info.targetString}`].join('. ');
+      const target = info.targetString === '' ? '' : `대상: ${info.targetString}`;
+      return [prob, info.triggerString, info.effectString, target].join('. ');
     };
     return {
       id,
       active: {
-        iconAssetPath: activeInfo?.iconAssetPath,
+        iconAssetPath: SKILL_EFFECT_CATEGORY[activeInfo.effectCategoryId].iconAssetPath,
         str: getString(activeInfo),
       },
       passive: {
-        iconAssetPath: passiveInfo?.iconAssetPath,
+        iconAssetPath: SKILL_EFFECT_CATEGORY[passiveInfo.effectCategoryId].iconAssetPath,
         str: getString(passiveInfo),
       },
       live: {
-        iconAssetPath: liveInfo?.iconAssetPath,
-        str: getString(liveInfo),
+        iconAssetPath: liveInfo === undefined ? '' : SKILL_EFFECT_CATEGORY[liveInfo.effectCategoryId].iconAssetPath,
+        str: liveInfo === undefined ? '' : getString(liveInfo),
       },
     };
   });
