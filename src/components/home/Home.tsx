@@ -89,9 +89,8 @@ const Home: React.FC = () => {
         </div>
         <MaxWidthFlex>
           {gachaResult.map((id) => (
-            <Link to={`card/${id}`}>
+            <Link key={`${id}-${Math.random()}`} to={`card/${id}`}>
               <CardImage
-                key={`${id}-${Math.random()}`}
                 src={getCardIconAssetPath(id, false)}
                 alt={`${getCardSymbol(id, false)}-icon`}
                 title={`${RARITY[CARD[id].rarityId].symbol} ${MEMBER[CARD[id].memberId].shortName}`}
