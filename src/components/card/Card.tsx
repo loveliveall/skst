@@ -30,6 +30,8 @@ const CardIconImg = styled.img`
 
 const PaddedDiv = styled.div`
   padding: 4px;
+  text-align: center;
+  word-break: keep-all;
 `;
 
 interface MatchProps {
@@ -79,7 +81,12 @@ const Card: React.FC<CardProps> = ({
         <CardInfoTable id={cardId} />
       </RowWrapper>
       <RowWrapper>
-        <PaddedDiv><strong>한계돌파별 스탯표 (만렙 및 모든 특훈 개방 기준)</strong></PaddedDiv>
+        <PaddedDiv>
+          <FlexBox>
+            <strong>한계돌파별 스탯표</strong>
+            <strong>(만렙 및 모든 특훈 개방 기준)</strong>
+          </FlexBox>
+        </PaddedDiv>
       </RowWrapper>
       <RowWrapper>
         <StatTable id={cardId} />
@@ -88,7 +95,7 @@ const Card: React.FC<CardProps> = ({
         <VerticalFlex>
           <PaddedDiv><strong>스탯 순위표</strong></PaddedDiv>
           <PaddedDiv>동일 한돌 대상 카드 중 특정 스탯이 전체에서 몇 위를 차지하는지에 대한 표입니다</PaddedDiv>
-          <PaddedDiv>괄호 안은 동일 스탯을 가진 카드의 수 입니다</PaddedDiv>
+          <PaddedDiv>괄호 안은 동일 스탯을 가진 카드의 수입니다</PaddedDiv>
         </VerticalFlex>
       </RowWrapper>
       <RowWrapper>
