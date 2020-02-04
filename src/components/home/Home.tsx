@@ -55,8 +55,13 @@ const MaxWidthFlex = styled(FlexBox)`
 `;
 
 const Home: React.FC = () => {
-  const [gachaResult, setGachaResult] = React.useState(tenGachaResultIDs());
-  const [gachaAcc, setGachaAcc] = React.useState([0, 0, 0]);
+  const initialResult = tenGachaResultIDs();
+  const initialRCount = initialResult.filter((id) => CARD[id].rarityId === 1).length;
+  const initialSRCount = initialResult.filter((id) => CARD[id].rarityId === 2).length;
+  const initialURCount = initialResult.filter((id) => CARD[id].rarityId === 3).length;
+
+  const [gachaResult, setGachaResult] = React.useState(initialResult);
+  const [gachaAcc, setGachaAcc] = React.useState([initialRCount, initialSRCount, initialURCount]);
   const totalCount = gachaAcc.reduce((acc, curr) => acc + curr, 0);
   return (
     <VerticalFlex>
