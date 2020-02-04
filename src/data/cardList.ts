@@ -206,6 +206,13 @@ export const CARD: Card = {
   164: { memberId: 9, title: '……ありがと。', awakenTitle: 'スマイリーエンジェル', rarityId: 3, attributeId: 1, roleId: 3, fromId: ['gacha', 30003] },
   165: { memberId: 22, title: '食べる人の顔が楽しみですね〜♡', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 5, roleId: 2, fromId: ['gacha', 30003] },
   166: { memberId: 29, title: '一番気に入った璃奈ちゃんボード', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['gacha', 30003] },
+
+  167: { memberId: 22, title: 'お待たせしましたぁ', awakenTitle: 'フラワーシンフォニー', rarityId: 3, attributeId: 1, roleId: 4, fromId: ['gacha', 10011] },
+  168: { memberId: 2, title: 'まあっ……すごく綺麗なお花！', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 10011] },
+  169: { memberId: 12, title: '今日だけしかできない二人の音', awakenTitle: 'フラワーシンフォニー', rarityId: 3, attributeId: 6, roleId: 1, fromId: ['event', 9] },
+  170: { memberId: 6, title: '私の……誕生花だもの', awakenTitle: 'フラワーシンフォニー', rarityId: 3, attributeId: 4, roleId: 2, fromId: ['gacha', 10012] },
+  171: { memberId: 16, title: 'ふっふっふ……待っててリリー！', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['event', 9] },
+  172: { memberId: 24, title: '私についていらっしゃい♪', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 6, roleId: 3, fromId: ['event', 9] },
 };
 /* eslint-enable object-curly-newline, max-len */
 

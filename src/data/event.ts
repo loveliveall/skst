@@ -175,5 +175,17 @@ export const EVENT: Event = {
     startDate: '2020.01.22.',
     endDate: '2020.01.31.',
   },
+  9: {
+    name: '二人の奏でる音',
+    eventTypeId: 2,
+    rankBorder: {},
+    ingameInfo: [],
+    voltageRankBorder: {},
+    voltageRankBorderIngameInfo: [],
+    voltageRankSongs: ['PSYCHIC FIRE', '未來の僕らは知ってるよ', 'ダイアモンド'],
+    rewardBorder: {},
+    startDate: '2020.02.06.',
+    endDate: '2020.02.14.',
+  },
 };
 /* eslint-enable max-len, object-property-newline */

@@ -33,6 +33,8 @@ export const GACHA: Gacha = {
   10008: { type: 'event', name: '海の上の大熱戦ガチャ後編', startDate: '2020.01.10.', endDate: '2020.01.15.', eventId: 7 },
   10009: { type: 'event', name: 'スペシャルスイーツを召し上がれ♡ガチャ前編', startDate: '2020.01.22.', endDate: '2020.01.26.', eventId: 8 },
   10010: { type: 'event', name: 'スペシャルスイーツを召し上がれ♡ガチャ後編', startDate: '2020.01.26.', endDate: '2020.01.31.', eventId: 8 },
+  10011: { type: 'event', name: '二人の奏でる音ガチャ前編', startDate: '2020.02.06.', endDate: '2020.02.10.', eventId: 9 },
+  10012: { type: 'event', name: '二人の奏でる音ガチャ後編', startDate: '2020.02.10.', endDate: '2020.02.14.', eventId: 9 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },

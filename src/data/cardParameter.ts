@@ -190,5 +190,12 @@ export const PARAMETER: Parameter = {
   164: [{ appl: 4702, stam: 7895, tech: 4198 }, { appl: 5629, stam: 8933, tech: 4474 }, { appl: 5938, stam: 10490, tech: 5302 }, { appl: 6556, stam: 11528, tech: 6406 }, { appl: 7792, stam: 12566, tech: 6958 }, { appl: 8425, stam: 14141, tech: 7520 }],
   165: [{ appl: 4320, stam: 2876, tech: 3083 }, { appl: 4876, stam: 3246, tech: 3481 }, { appl: 5432, stam: 3616, tech: 3879 }, { appl: 5988, stam: 3986, tech: 4078 }, { appl: 6266, stam: 4541, tech: 4476 }, { appl: 7109, stam: 4739, tech: 5079 }],
   166: [{ appl: 3083, stam: 3908, tech: 3289 }, { appl: 3481, stam: 4412, tech: 3713 }, { appl: 3879, stam: 4916, tech: 4137 }, { appl: 4277, stam: 5168, tech: 4561 }, { appl: 4476, stam: 5672, tech: 5197 }, { appl: 5079, stam: 6433, tech: 5416 }],
+
+  167: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 8649, stam: 5675, tech: 12702 }],
+  168: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 5079, stam: 6772, tech: 5079 }],
+  169: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 8527, stam: 6732, tech: 7180 }],
+  170: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 10465, stam: 8812, tech: 8262 }],
+  171: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 4161, stam: 4855, tech: 4855 }],
+  172: [{ appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 0, stam: 0, tech: 0 }, { appl: 4437, stam: 5270, tech: 4161 }],
 };
 /* eslint-enable object-curly-newline, max-len */
