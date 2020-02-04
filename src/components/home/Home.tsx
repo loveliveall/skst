@@ -56,6 +56,8 @@ const MaxWidthFlex = styled(FlexBox)`
 
 const Home: React.FC = () => {
   const [gachaResult, setGachaResult] = React.useState(tenGachaResultIDs());
+  const [gachaAcc, setGachaAcc] = React.useState([0, 0, 0]);
+  const totalCount = gachaAcc.reduce((acc, curr) => acc + curr, 0);
   return (
     <VerticalFlex>
       <VerticalFlex>
@@ -68,7 +70,14 @@ const Home: React.FC = () => {
         <div style={{ paddingBottom: '8px' }}>
           <StyledButton
             type="button"
-            onClick={() => setGachaResult(tenGachaResultIDs())}
+            onClick={() => {
+              const result = tenGachaResultIDs();
+              const rCount = result.filter((id) => CARD[id].rarityId === 1).length;
+              const srCount = result.filter((id) => CARD[id].rarityId === 2).length;
+              const urCount = result.filter((id) => CARD[id].rarityId === 3).length;
+              setGachaAcc([gachaAcc[0] + rCount, gachaAcc[1] + srCount, gachaAcc[2] + urCount]);
+              setGachaResult(result);
+            }}
           >
             한번 더?
           </StyledButton>
@@ -85,6 +94,12 @@ const Home: React.FC = () => {
             </Link>
           ))}
         </MaxWidthFlex>
+        <div>
+          {`총 뽑은 수: ${totalCount}, SR: ${gachaAcc[1]}개, UR: ${gachaAcc[2]}개`}
+        </div>
+        <div>
+          {`UR 확률: ${totalCount === 0 ? 0 : Math.round((gachaAcc[2] / totalCount + Number.EPSILON) * 10000) / 100}%`}
+        </div>
       </VerticalFlex>
 
       <VerticalFlex>
