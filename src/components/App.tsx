@@ -6,6 +6,7 @@ import Home from '@/components/home/Home';
 import Card from '@/components/card/Card';
 import Cards from '@/components/cards/Cards';
 import Gachas from '@/components/gachas/Gachas';
+import Event from '@/components/event/Event';
 import Events from '@/components/events/Events';
 import Test from '@/components/test/Test';
 
@@ -97,6 +98,7 @@ const App: React.FC = () => {
           <Route path="/card/:id" component={Card} />
           <Route path="/cards" component={Cards} />
           <Route path="/gachas" component={Gachas} />
+          <Route path="/event/:id" component={Event} />
           <Route path="/events" component={Events} />
         </Switch>
       </Main>

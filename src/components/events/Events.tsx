@@ -54,7 +54,11 @@ const Events: React.FC = () => {
           column={[
             {
               title: '제목',
-              render: (rowData) => <PaddedSpan>{rowData.name}</PaddedSpan>,
+              render: (rowData) => (
+                <Link to={`/event/${rowData.id}`}>
+                  <PaddedSpan>{rowData.name}</PaddedSpan>
+                </Link>
+              ),
               customSort: (a, b) => {
                 if (a.name > b.name) return 1;
                 if (a.name === b.name) return 0;
