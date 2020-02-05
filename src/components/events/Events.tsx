@@ -11,6 +11,8 @@ import { MEMBER } from '@/data/memberMetadata';
 import { EVENT, EVENT_TYPE } from '@/data/event';
 import { GACHA } from '@/data/gacha';
 
+import { numberRepr } from '@/utils/utils';
+
 const VerticalFlex = styled(FlexBox)`
   width: 100%;
   flex-direction: column;
@@ -109,10 +111,10 @@ const Events: React.FC = () => {
                 <VerticalFlex>
                   {Object.keys(rowData.rewardBorder).map(Number).map((rank) => {
                     const border = rowData.rankBorder[rank];
-                    const displayBorder = `${border === 0 || border === undefined ? '?' : border}pt`;
+                    const displayBorder = `${border === 0 || border === undefined ? '?' : numberRepr(border)}pt`;
                     return (
                       <PaddedSpan key={rank}>
-                        {`${rank}위: ${displayBorder}`}
+                        {`${numberRepr(rank)}위: ${displayBorder}`}
                       </PaddedSpan>
                     );
                   })}
@@ -127,10 +129,10 @@ const Events: React.FC = () => {
                   <VerticalFlex>
                     {[1, 100, 1000, 10000].map((rank) => {
                       const border = rowData.voltageRankBorder[rank];
-                      const displayBorder = `${border === 0 || border === undefined ? '?' : border}pt`;
+                      const displayBorder = `${border === 0 || border === undefined ? '?' : numberRepr(border)}pt`;
                       return (
                         <PaddedSpan key={rank}>
-                          {`${rank}위: ${displayBorder}`}
+                          {`${numberRepr(rank)}위: ${displayBorder}`}
                         </PaddedSpan>
                       );
                     })}
