@@ -92,7 +92,7 @@ const Events: React.FC = () => {
                     {Object.keys(CARD).map(Number).filter((id) => (
                       CARD[id].fromId[0] === 'event' && CARD[id].fromId[1] === rowData.id
                     )).map((id) => (
-                      <Link to={`card/${id}`}>
+                      <Link key={id} to={`card/${id}`}>
                         <CardIconImg
                           key={id}
                           src={getCardIconAssetPath(id, awaken)}
