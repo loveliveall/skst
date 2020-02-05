@@ -98,11 +98,11 @@ const CardInfoTable: React.FC<CardInfoTableProps> = ({
       <tbody>
         <tr>
           <TitleTh>각성 전</TitleTh>
-          <SingleTd colSpan={3} style={{ width: '85%' }}>{card.title}</SingleTd>
+          <SingleTd colSpan={3}>{card.title}</SingleTd>
         </tr>
         <tr>
           <TitleTh>각성 후</TitleTh>
-          <SingleTd colSpan={3} style={{ width: '85%' }}>{card.awakenTitle}</SingleTd>
+          <SingleTd colSpan={3}>{card.awakenTitle}</SingleTd>
         </tr>
         <tr>
           <TitleTh>레어도</TitleTh>
