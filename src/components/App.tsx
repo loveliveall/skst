@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Switch, Route, NavLink } from 'react-router-dom';
+import { FlexBox } from '@/components/Styles';
 
 import Home from '@/components/home/Home';
 import Card from '@/components/card/Card';
@@ -10,7 +11,7 @@ import Event from '@/components/event/Event';
 import Events from '@/components/events/Events';
 import Test from '@/components/test/Test';
 
-const FixedNav = styled.nav`
+const FixedNavDesktop = styled.nav`
   height: 100%;
   width: 160px;
   position: fixed;
@@ -22,12 +23,37 @@ const FixedNav = styled.nav`
   padding-top: 20px;
   padding-bottom: 20px;
 
-  // Mobile UI
+  // Hide on mobile
   @media screen and (max-width: 768px) {
-    height: auto;
-    width: 100%;
-    position: static;
+    display: none;
   }
+`;
+
+const FixedNavMobile = styled.nav`
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  // Hide on desktop
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
+`;
+
+const TransparentButton = styled.button`
+  width: 100%;
+  color: #f1f1f1;
+  border: 0px solid black;
+  background: none;
+  outline: none;
+  box-shadow: none;
+  font-size: 20px;
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -60,6 +86,8 @@ interface PageInfo {
 }
 
 const App: React.FC = () => {
+  const [openNav, setOpenNav] = React.useState(false);
+
   const pages: PageInfo[] = [
     {
       key: 'home',
@@ -89,6 +117,41 @@ const App: React.FC = () => {
 
   return (
     <>
+      <FixedNavDesktop>
+        {pages.map((page) => (
+          <StyledNavLink
+            key={page.key}
+            exact={page.exact}
+            to={page.path}
+            activeStyle={{ color: '#f1f1f1' }}
+          >
+            {page.title}
+          </StyledNavLink>
+        ))}
+      </FixedNavDesktop>
+      <FixedNavMobile>
+        <FlexBox>
+          <TransparentButton
+            type="button"
+            onClick={() => setOpenNav(!openNav)}
+            style={{
+              paddingBottom: openNav ? '8px' : '0px',
+            }}
+          >
+            {openNav ? '메뉴 닫기' : '메뉴 열기'}
+          </TransparentButton>
+        </FlexBox>
+        {openNav && pages.map((page) => (
+          <StyledNavLink
+            key={page.key}
+            exact={page.exact}
+            to={page.path}
+            activeStyle={{ color: '#f1f1f1' }}
+          >
+            {page.title}
+          </StyledNavLink>
+        ))}
+      </FixedNavMobile>
       <Main>
         {window.location.hostname === 'localhost' && false && (
           <Test />
@@ -102,18 +165,6 @@ const App: React.FC = () => {
           <Route path="/events" component={Events} />
         </Switch>
       </Main>
-      <FixedNav>
-        {pages.map((page) => (
-          <StyledNavLink
-            key={page.key}
-            exact={page.exact}
-            to={page.path}
-            activeStyle={{ color: '#f1f1f1' }}
-          >
-            {page.title}
-          </StyledNavLink>
-        ))}
-      </FixedNav>
     </>
   );
 };
