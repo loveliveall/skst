@@ -213,6 +213,9 @@ export const CARD: Card = {
   170: { memberId: 6, title: '私の……誕生花だもの', awakenTitle: 'フラワーシンフォニー', rarityId: 3, attributeId: 4, roleId: 2, fromId: ['gacha', 10012] },
   171: { memberId: 16, title: 'ふっふっふ……待っててリリー！', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['event', 9] },
   172: { memberId: 24, title: '私についていらっしゃい♪', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 6, roleId: 3, fromId: ['event', 9] },
+
+  173: { memberId: 29, title: '絶対クリアする……！', awakenTitle: 'フィーリングシグナル', rarityId: 3, attributeId: 6, roleId: 2, fromId: ['gacha', 20006] },
+  174: { memberId: 9, title: 'ワン、ツー、スリー、フォー', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 3, roleId: 4, fromId: ['gacha', 20006] },
 };
 /* eslint-enable object-curly-newline, max-len */
 
