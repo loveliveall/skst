@@ -94,7 +94,7 @@ const Card: React.FC<CardProps> = ({
       <RowWrapper>
         <VerticalFlex>
           <PaddedDiv><strong>스탯 순위표</strong></PaddedDiv>
-          <PaddedDiv>동일 한돌 대상 카드 중 특정 스탯이 전체에서 몇 위를 차지하는지에 대한 표입니다</PaddedDiv>
+          <PaddedDiv>특정 스탯이 동일 한돌 대상 카드 중 몇 위를 차지하는지에 대한 표입니다</PaddedDiv>
           <PaddedDiv>괄호 안은 동일 스탯을 가진 카드의 수입니다</PaddedDiv>
         </VerticalFlex>
       </RowWrapper>
