@@ -198,5 +198,14 @@ export const EVENT: Event = {
     startDate: '2020.02.06.',
     endDate: '2020.02.14.',
   },
+  10: {
+    name: 'それゆけUMA捜索隊',
+    eventTypeId: 1,
+    rankBorder: {},
+    ingameInfo: [],
+    rewardBorder: {},
+    startDate: '2020.02.20.',
+    endDate: '2020.02.28.',
+  },
 };
 /* eslint-enable max-len, object-property-newline */
