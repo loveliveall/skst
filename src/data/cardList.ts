@@ -219,10 +219,10 @@ export const CARD: Card = {
 
   175: { memberId: 1, title: 'ちょっと待って……ひゃあああっ', awakenTitle: '竜宮城の姫君', rarityId: 3, attributeId: 2, roleId: 1, fromId: ['gacha', 10013] },
   176: { memberId: 21, title: '明日もまた会いに来るね', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['gacha', 10013] },
-  177: { memberId: 13, title: 'もう少し深く潜ってみようかな', awakenTitle: '竜宮城の姫君', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['event', 10] },
-  178: { memberId: 25, title: 'UMAも絶対食いつくよ！', awakenTitle: '竜宮城の姫君', rarityId: 3, attributeId: 6, roleId: 3, fromId: ['gacha', 10014] },
-  179: { memberId: 15, title: '水平線の先まで見渡せるよ！', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 1, roleId: 3, fromId: ['event', 10] },
-  180: { memberId: 8, title: '役に立てることがあるなら', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['event', 10] },
+  177: { memberId: 25, title: 'UMAも絶対食いつくよ！', awakenTitle: '竜宮城の姫君', rarityId: 3, attributeId: 6, roleId: 3, fromId: ['gacha', 10014] },
+  178: { memberId: 13, title: 'もう少し深く潜ってみようかな', awakenTitle: '竜宮城の姫君', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['event', 10] },
+  179: { memberId: 8, title: '役に立てることがあるなら', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['event', 10] },
+  180: { memberId: 15, title: '水平線の先まで見渡せるよ！', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 1, roleId: 3, fromId: ['event', 10] },
 };
 /* eslint-enable object-curly-newline, max-len */
 
