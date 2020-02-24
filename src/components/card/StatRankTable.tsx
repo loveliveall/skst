@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PARAMETER } from '@/data/cardParameter';
-import { FULL_CARD_LIST, CARD } from '@/data/cardList';
+import { CARD, FULL_CARD_LIST } from '@/data/cardList';
 
 const StyledTable = styled.table`
   border: 1px solid black;

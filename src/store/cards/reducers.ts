@@ -1,19 +1,5 @@
 import { CardsActionTypes, CardsActions } from './actions';
-import {
-  SkillTargetInfo,
-  isAttributeTarget,
-  isRoleTarget,
-  isGroupTarget,
-  isGradeTarget,
-  isUnitTarget,
-} from './types';
-
-import { MEMBER } from '@/data/memberMetadata';
-import { FULL_CARD_LIST } from '@/data/cardList';
-import { SKILL } from '@/data/skill';
-import { CARD_SKILL } from '@/data/cardSkill';
-import { SKILL_EFFECT_TYPE } from '@/data/skillEffectType';
-import { SKILL_LEVEL_MAP } from '@/data/cardSkillLevelMap';
+import { SkillTargetInfo } from './types';
 
 interface FilterState {
   member: {
@@ -86,7 +72,6 @@ interface CardsState {
   filterDraft: FilterState,
   buff: BuffState,
   buffDraft: BuffState,
-  list: typeof FULL_CARD_LIST,
 }
 
 const initialState: CardsState = {
@@ -94,7 +79,6 @@ const initialState: CardsState = {
   filterDraft: initialFilter,
   buff: initialBuff,
   buffDraft: initialBuff,
-  list: FULL_CARD_LIST.filter((card) => card.uncap === 5),
 };
 
 export default function cardsReducer(
@@ -261,106 +245,6 @@ export default function cardsReducer(
         ...state,
         filter: state.filterDraft,
         buff: state.buffDraft,
-        list: FULL_CARD_LIST.filter((card) => {
-          if (state.filterDraft.uncap !== null && card.uncap !== state.filterDraft.uncap) return false;
-          if (!state.filterDraft.attribute[card.attributeId]) return false;
-          if (!state.filterDraft.role[card.roleId]) return false;
-          if (!state.filterDraft.rarity[card.rarityId]) return false;
-          if (!state.filterDraft.member[card.memberId]) return false;
-
-          // Passive skill filtering
-          const ipDetail = SKILL[CARD_SKILL[card.id].individuality.passiveId].detail;
-          // Filter by skill category
-          const { indivPCategory } = state.filterDraft;
-          if (indivPCategory.length !== 0) {
-            const ipCategoryId = SKILL_EFFECT_TYPE[ipDetail.effectTypeId].effectCategoryId;
-            const sat = indivPCategory.some((item) => item.categoryId === ipCategoryId);
-            if (!sat) return false;
-          }
-          // Filter by skill target
-          const { indivPTarget } = state.filterDraft;
-          if (indivPTarget.length !== 0) {
-            const ipTargetId = ipDetail.skillTargetId;
-            const sat = indivPTarget.some((item) => {
-              const { target } = item;
-              if (target.id !== ipTargetId) return false;
-              /* eslint-disable max-len */
-              if (isAttributeTarget(target) && target.attributeId !== null && target.attributeId !== card.attributeId) return false;
-              if (isRoleTarget(target) && target.roleId !== null && target.roleId !== card.roleId) return false;
-              if (isGroupTarget(target) && target.groupId !== null && target.groupId !== MEMBER[card.memberId].groupId) return false;
-              if (isGradeTarget(target) && target.grade !== null && target.grade !== MEMBER[card.memberId].grade) return false;
-              if (isUnitTarget(target) && target.unitId !== null && target.unitId !== MEMBER[card.memberId].unitId) return false;
-              /* eslint-enable max-len */
-              return true;
-            });
-            if (!sat) return false;
-          }
-
-          return true;
-        }).map((card) => {
-          // Base Stat Multiplier (%)
-          let baseApplMul = 100;
-          let baseStamMul = 100;
-          let baseTechMul = 100;
-          // Stat Multiplier (%)
-          let applMul = 100;
-          let stamMul = 100;
-          let techMul = 100;
-          // Different attribute debuf
-          if (state.buffDraft.attributeId !== null && state.buffDraft.attributeId !== card.attributeId) {
-            if (state.buffDraft.diffAttrDebuf.targetParam === 'baseAppl') {
-              baseApplMul -= state.buffDraft.diffAttrDebuf.value;
-            } else {
-              applMul -= state.buffDraft.diffAttrDebuf.value;
-            }
-          }
-          // Same attribute buff
-          if (state.buffDraft.attributeId === card.attributeId) {
-            applMul += 20;
-            stamMul += 20;
-            techMul += 20;
-          }
-          // Individuality passive effect
-          if (state.buffDraft.indivPEffect) {
-            const ipDetail = SKILL[CARD_SKILL[card.id].individuality.passiveId].detail;
-            const ipLevel = SKILL_LEVEL_MAP[card.id].individuality.passive[card.uncap];
-            if (ipDetail.skillTargetId !== 2) { // Exclude itself
-              const amount = ipDetail.effectValue[ipLevel - 1] / 100;
-              switch (ipDetail.effectTypeId) {
-                case 200101:
-                  baseApplMul += amount;
-                  break;
-                case 200201:
-                  baseStamMul += amount;
-                  break;
-                case 200301:
-                  baseTechMul += amount;
-                  break;
-                default:
-                  console.error('Should not reach here');
-              }
-            }
-          }
-
-          const appl = Math.floor(Math.floor(card.appl * (baseApplMul / 100)) * (applMul / 100));
-          const stam = Math.floor(Math.floor(card.stam * (baseStamMul / 100)) * (stamMul / 100));
-          const tech = Math.floor(Math.floor(card.tech * (baseTechMul / 100)) * (techMul / 100));
-
-          const voltageMul = (() => {
-            if (!state.buffDraft.roleEffect) return 1; // Not applying role effect
-            if (card.roleId === 1) return 1.05; // Vo
-            if (card.roleId === 4) return 0.95; // Sk
-            return 1;
-          })();
-          const newVoltage = Math.floor(appl * voltageMul);
-          return {
-            ...card,
-            appl,
-            stam,
-            tech,
-            expectedVoltage: newVoltage,
-          };
-        }),
       };
     case CardsActionTypes.SETTINGS_ROLLBACK:
       return {

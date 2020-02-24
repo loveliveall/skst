@@ -15,9 +15,12 @@ export const SEL = {
   cardsIndivPEffectBuff: (state: AppState) => state.cards.buffDraft.indivPEffect,
   cardsAttributeBuff: (state: AppState) => state.cards.buffDraft.attributeId,
   cardsDiffAttrDebuf: (state: AppState) => state.cards.buffDraft.diffAttrDebuf,
-  cardsList: (state: AppState) => state.cards.list,
   filterInSync: (state: AppState) => equal(state.cards.filter, state.cards.filterDraft)
     && equal(state.cards.buff, state.cards.buffDraft),
   filterInitial: (state: AppState) => equal(state.cards.filter, initialFilter)
     && equal(state.cards.buff, initialBuff),
+  cardsFilter: (state: AppState) => state.cards.filter,
+  cardsBuff: (state: AppState) => state.cards.buff,
+
+  settingsIsJPEdition: (state: AppState) => state.settings.isJPEdition,
 };
