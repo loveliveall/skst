@@ -1,14 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { CARD } from '@/data/cardList';
+import { AppState, SEL } from '@/store';
 import { ATTRIBUTE, ROLE, RARITY } from '@/data/cardMetadata';
 import { MEMBER, GROUP, UNIT } from '@/data/memberMetadata';
 import { getSkillInfoKR } from '@/data/skill';
 import { CARD_SKILL } from '@/data/cardSkill';
 import { FlexBox } from '../Styles';
 import { SKILL_EFFECT_CATEGORY } from '@/data/skillEffectType';
-import { GACHA } from '@/data/gacha';
-import { EVENT } from '@/data/event';
 
 const VerticalFlex = styled(FlexBox)`
   width: 100%;
@@ -64,12 +63,17 @@ const DoubleTd = styled.td`
 interface OwnProps {
   id: number,
 }
-type CardInfoTableProps = OwnProps;
+interface PropsFromState {
+  cardTable: ReturnType<typeof SEL.dbCardTable>,
+  gachaTable: ReturnType<typeof SEL.dbGachaTable>,
+  eventTable: ReturnType<typeof SEL.dbEventTable>,
+}
+type CardInfoTableProps = OwnProps & PropsFromState;
 
 const CardInfoTable: React.FC<CardInfoTableProps> = ({
-  id,
+  id, cardTable, gachaTable, eventTable,
 }) => {
-  const card = CARD[id];
+  const card = cardTable[id];
   const attribute = ATTRIBUTE[card.attributeId];
   const role = ROLE[card.roleId];
   const rarity = RARITY[card.rarityId];
@@ -86,10 +90,10 @@ const CardInfoTable: React.FC<CardInfoTableProps> = ({
 
   const fromString = (() => {
     if (card.fromId[0] === 'gacha') {
-      const gacha = GACHA[card.fromId[1]];
+      const gacha = gachaTable[card.fromId[1]];
       return `가챠: ${gacha.name} (${gacha.startDate} - ${gacha.endDate})`;
     }
-    const event = EVENT[card.fromId[1]];
+    const event = eventTable[card.fromId[1]];
     return `이벤트: ${event.name} (${event.startDate} - ${event.endDate})`;
   })();
 
@@ -211,4 +215,10 @@ const CardInfoTable: React.FC<CardInfoTableProps> = ({
   );
 };
 
-export default CardInfoTable;
+const mapStateToProps = (state: AppState): PropsFromState => ({
+  cardTable: SEL.dbCardTable(state),
+  gachaTable: SEL.dbGachaTable(state),
+  eventTable: SEL.dbEventTable(state),
+});
+
+export default connect(mapStateToProps)(CardInfoTable);

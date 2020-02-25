@@ -14,10 +14,11 @@ import {
 import Table from '@/components/common/Table';
 import { FlexBox } from '@/components/Styles';
 
-import { getCardIconAssetPath, getCardSymbol, FULL_CARD_LIST } from '@/data/cardList';
+import {
+  getCardIconAssetPath, getCardSymbol, getFullCardList,
+} from '@/data/cardList';
 import { ATTRIBUTE, ROLE, RARITY } from '@/data/cardMetadata';
 import { MEMBER } from '@/data/memberMetadata';
-import { GACHA } from '@/data/gacha';
 import { CARD_SKILL } from '@/data/cardSkill';
 import { SKILL_LEVEL_MAP } from '@/data/cardSkillLevelMap';
 import { SKILL, shortSkillTextKr, skillTargetTextKr } from '@/data/skill';
@@ -54,13 +55,15 @@ const ToolTipText = styled.div`
 interface PropsFromState {
   filter: ReturnType<typeof SEL.cardsFilter>,
   buff: ReturnType<typeof SEL.cardsBuff>,
+  cardTable: ReturnType<typeof SEL.dbCardTable>,
+  gachaTable: ReturnType<typeof SEL.dbGachaTable>,
 }
 type CardTableProps = PropsFromState;
 
 const CardTable: React.FC<CardTableProps> = ({
-  filter, buff,
+  filter, buff, cardTable, gachaTable,
 }) => {
-  const list = FULL_CARD_LIST.filter((card) => {
+  const list = getFullCardList(cardTable).filter((card) => {
     if (filter.uncap !== null && card.uncap !== filter.uncap) return false;
     if (!filter.attribute[card.attributeId]) return false;
     if (!filter.role[card.roleId]) return false;
@@ -383,7 +386,7 @@ const CardTable: React.FC<CardTableProps> = ({
           render: (rowData) => {
             if (rowData.fromId[0] === 'gacha') {
               const prefix = '가챠';
-              const gachaType = GACHA[rowData.fromId[1]].type;
+              const gachaType = gachaTable[rowData.fromId[1]].type;
               if (gachaType === 'normal') return <span>{`${prefix} (일반)`}</span>;
               if (gachaType === 'event') return <span>{`${prefix} (이벤트)`}</span>;
               if (gachaType === 'pickup') return <span>{`${prefix} (픽업)`}</span>;
@@ -415,6 +418,8 @@ const CardTable: React.FC<CardTableProps> = ({
 const mapStateToProps = (state: AppState): PropsFromState => ({
   filter: SEL.cardsFilter(state),
   buff: SEL.cardsBuff(state),
+  cardTable: SEL.dbCardTable(state),
+  gachaTable: SEL.dbGachaTable(state),
 });
 
 export default connect(mapStateToProps)(CardTable);

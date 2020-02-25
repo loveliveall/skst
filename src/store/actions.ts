@@ -1,7 +1,7 @@
 import { CardsActionCreators } from './cards/actions';
-import { SettingsActionCreators } from './settings/actions';
+import { DBActionCreators } from './db/actions';
 
 export const AC = {
   cards: CardsActionCreators,
-  settings: SettingsActionCreators,
+  db: DBActionCreators,
 };

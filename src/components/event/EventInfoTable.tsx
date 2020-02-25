@@ -1,8 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { FlexBox } from '../Styles';
-import { CARD } from '@/data/cardList';
-import { EVENT, EVENT_TYPE } from '@/data/event';
+import { AppState, SEL } from '@/store';
+import { EVENT_TYPE } from '@/data/event';
 import { numberRepr } from '@/utils/utils';
 import { RARITY } from '@/data/cardMetadata';
 
@@ -41,14 +42,18 @@ const TextDiv = styled.div`
 interface OwnProps {
   id: number,
 }
-type EventInfoTableProps = OwnProps;
+interface PropsFromState {
+  cardTable: ReturnType<typeof SEL.dbCardTable>,
+  eventTable: ReturnType<typeof SEL.dbEventTable>,
+}
+type EventInfoTableProps = OwnProps & PropsFromState;
 
 const EventInfoTable: React.FC<EventInfoTableProps> = ({
-  id,
+  id, cardTable, eventTable,
 }) => {
-  const event = EVENT[id];
-  const eventCardIds = Object.keys(CARD).map(Number).filter(
-    (cardId) => CARD[cardId].fromId[0] === 'event' && CARD[cardId].fromId[1] === id,
+  const event = eventTable[id];
+  const eventCardIds = Object.keys(cardTable).map(Number).filter(
+    (cardId) => cardTable[cardId].fromId[0] === 'event' && cardTable[cardId].fromId[1] === id,
   );
 
   return (
@@ -73,7 +78,7 @@ const EventInfoTable: React.FC<EventInfoTableProps> = ({
               {Object.keys(event.rewardBorder).map(Number).map((rank) => (
                 <TextDiv key={rank}>
                   {`${numberRepr(rank)}위: ${event.rewardBorder[rank].map(
-                    (v, idx) => `${v} ${RARITY[CARD[eventCardIds[idx]].rarityId].symbol}`,
+                    (v, idx) => `${v} ${RARITY[cardTable[eventCardIds[idx]].rarityId].symbol}`,
                   ).join(', ')}`}
                 </TextDiv>
               ))}
@@ -101,4 +106,9 @@ const EventInfoTable: React.FC<EventInfoTableProps> = ({
   );
 };
 
-export default EventInfoTable;
+const mapStateToProps = (state: AppState): PropsFromState => ({
+  cardTable: SEL.dbCardTable(state),
+  eventTable: SEL.dbEventTable(state),
+});
+
+export default connect(mapStateToProps)(EventInfoTable);

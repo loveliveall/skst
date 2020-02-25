@@ -1,9 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { RouteComponentProps, withRouter, Link } from 'react-router-dom';
+import { AppState, SEL } from '@/store';
 import { FixedWrapper, FlexBox } from '@/components/Styles';
-import { EVENT } from '@/data/event';
-import { CARD, getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
+import { getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
 import { RARITY } from '@/data/cardMetadata';
 import { MEMBER } from '@/data/memberMetadata';
 import { numberRepr } from '@/utils/utils';
@@ -53,17 +54,21 @@ const TitleTh = styled.th`
 interface MatchProps {
   id: string,
 }
-type EventProps = RouteComponentProps<MatchProps>;
+interface PropsFromState {
+  cardTable: ReturnType<typeof SEL.dbCardTable>,
+  eventTable: ReturnType<typeof SEL.dbEventTable>,
+}
+type EventProps = RouteComponentProps<MatchProps> & PropsFromState;
 
 const Event: React.FC<EventProps> = ({
-  match,
+  match, cardTable, eventTable,
 }) => {
   window.scrollTo(0, 0);
   const eventId = Number(match.params.id);
-  const event = EVENT[eventId];
+  const event = eventTable[eventId];
   if (event === undefined) return null;
-  const eventCardIds = Object.keys(CARD).map(Number).filter(
-    (id) => CARD[id].fromId[0] === 'event' && CARD[id].fromId[1] === eventId,
+  const eventCardIds = Object.keys(cardTable).map(Number).filter(
+    (id) => cardTable[id].fromId[0] === 'event' && cardTable[id].fromId[1] === eventId,
   );
   return (
     <VerticalFlex>
@@ -82,14 +87,14 @@ const Event: React.FC<EventProps> = ({
                   <CardIconImg
                     src={getCardIconAssetPath(id, false)}
                     alt={`${getCardSymbol(id, false)}-icon`}
-                    title={`${RARITY[CARD[id].rarityId].symbol} ${MEMBER[CARD[id].memberId].shortName}`}
+                    title={`${RARITY[cardTable[id].rarityId].symbol} ${MEMBER[cardTable[id].memberId].shortName}`}
                   />
                 </Link>
                 <Link to={`/card/${id}`}>
                   <CardIconImg
                     src={getCardIconAssetPath(id, true)}
                     alt={`${getCardSymbol(id, true)}-icon`}
-                    title={`${RARITY[CARD[id].rarityId].symbol} ${MEMBER[CARD[id].memberId].shortName}`}
+                    title={`${RARITY[cardTable[id].rarityId].symbol} ${MEMBER[cardTable[id].memberId].shortName}`}
                   />
                 </Link>
               </VerticalFlex>
@@ -154,4 +159,9 @@ const Event: React.FC<EventProps> = ({
   );
 };
 
-export default withRouter(Event);
+const mapStateToProps = (state: AppState): PropsFromState => ({
+  cardTable: SEL.dbCardTable(state),
+  eventTable: SEL.dbEventTable(state),
+});
+
+export default withRouter(connect(mapStateToProps)(Event));

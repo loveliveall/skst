@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import { CARD, getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
+import { AppState, SEL } from '@/store';
+import { getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
 import { MEMBER } from '@/data/memberMetadata';
 import { RARITY } from '@/data/cardMetadata';
 
@@ -11,31 +13,6 @@ import CardStats from '@/components/home/CardStats';
 
 function pickRandom<T>(array: T[]): T {
   return array[Math.floor(Math.random() * array.length)];
-}
-
-function rarityCardIDs(rarityId: number) {
-  return Object.keys(CARD).map(Number).filter(
-    (id) => CARD[id].rarityId === rarityId && CARD[id].fromId[0] === 'gacha',
-  );
-}
-
-function tenGachaResultIDs() {
-  return Array(10).fill(null).map((_, idx) => {
-    const rarityPick = Math.random();
-    if (idx !== 9) {
-      if (rarityPick < 0.05) {
-        return pickRandom(rarityCardIDs(3));
-      }
-      if (rarityPick < 0.15) {
-        return pickRandom(rarityCardIDs(2));
-      }
-      return pickRandom(rarityCardIDs(1));
-    }
-    if (rarityPick < 0.05) {
-      return pickRandom(rarityCardIDs(3));
-    }
-    return pickRandom(rarityCardIDs(2));
-  });
 }
 
 const VerticalFlex = styled(FlexBox)`
@@ -54,14 +31,52 @@ const MaxWidthFlex = styled(FlexBox)`
   max-width: 480px; // (80 + 8 + 8) * 5. So maximum 5 card-icons in one row
 `;
 
-const Home: React.FC = () => {
+interface PropsFromState {
+  isJPEdition: ReturnType<typeof SEL.dbIsJPEdition>,
+  cardTable: ReturnType<typeof SEL.dbCardTable>,
+}
+type HomeProps = PropsFromState;
+
+const Home: React.FC<HomeProps> = ({
+  isJPEdition, cardTable,
+}) => {
+  const rarityCardIDs = (rarityId: number) => Object.keys(cardTable).map(Number).filter(
+    (id) => cardTable[id].rarityId === rarityId && cardTable[id].fromId[0] === 'gacha',
+  );
+  const tenGachaResultIDs = () => Array(10).fill(null).map((_, idx) => {
+    const rarityPick = Math.random();
+    if (idx !== 9) {
+      if (rarityPick < 0.05) {
+        return pickRandom(rarityCardIDs(3));
+      }
+      if (rarityPick < 0.15) {
+        return pickRandom(rarityCardIDs(2));
+      }
+      return pickRandom(rarityCardIDs(1));
+    }
+    if (rarityPick < 0.05) {
+      return pickRandom(rarityCardIDs(3));
+    }
+    return pickRandom(rarityCardIDs(2));
+  });
+
   const initialResult = tenGachaResultIDs();
-  const initialRCount = initialResult.filter((id) => CARD[id].rarityId === 1).length;
-  const initialSRCount = initialResult.filter((id) => CARD[id].rarityId === 2).length;
-  const initialURCount = initialResult.filter((id) => CARD[id].rarityId === 3).length;
+  const initialRCount = initialResult.filter((id) => cardTable[id].rarityId === 1).length;
+  const initialSRCount = initialResult.filter((id) => cardTable[id].rarityId === 2).length;
+  const initialURCount = initialResult.filter((id) => cardTable[id].rarityId === 3).length;
 
   const [gachaResult, setGachaResult] = React.useState(initialResult);
   const [gachaAcc, setGachaAcc] = React.useState([initialRCount, initialSRCount, initialURCount]);
+
+  React.useEffect(() => {
+    const result = tenGachaResultIDs();
+    const rCount = result.filter((id) => cardTable[id].rarityId === 1).length;
+    const srCount = result.filter((id) => cardTable[id].rarityId === 2).length;
+    const urCount = result.filter((id) => cardTable[id].rarityId === 3).length;
+    setGachaResult(result);
+    setGachaAcc([rCount, srCount, urCount]);
+  }, [cardTable, isJPEdition]);
+
   const totalCount = gachaAcc.reduce((acc, curr) => acc + curr, 0);
   return (
     <VerticalFlex>
@@ -77,9 +92,9 @@ const Home: React.FC = () => {
             type="button"
             onClick={() => {
               const result = tenGachaResultIDs();
-              const rCount = result.filter((id) => CARD[id].rarityId === 1).length;
-              const srCount = result.filter((id) => CARD[id].rarityId === 2).length;
-              const urCount = result.filter((id) => CARD[id].rarityId === 3).length;
+              const rCount = result.filter((id) => cardTable[id].rarityId === 1).length;
+              const srCount = result.filter((id) => cardTable[id].rarityId === 2).length;
+              const urCount = result.filter((id) => cardTable[id].rarityId === 3).length;
               setGachaAcc([gachaAcc[0] + rCount, gachaAcc[1] + srCount, gachaAcc[2] + urCount]);
               setGachaResult(result);
             }}
@@ -88,12 +103,12 @@ const Home: React.FC = () => {
           </StyledButton>
         </div>
         <MaxWidthFlex>
-          {gachaResult.map((id) => (
+          {gachaResult.filter((id) => id in cardTable).map((id) => (
             <Link key={`${id}-${Math.random()}`} to={`card/${id}`}>
               <CardImage
                 src={getCardIconAssetPath(id, false)}
                 alt={`${getCardSymbol(id, false)}-icon`}
-                title={`${RARITY[CARD[id].rarityId].symbol} ${MEMBER[CARD[id].memberId].shortName}`}
+                title={`${RARITY[cardTable[id].rarityId].symbol} ${MEMBER[cardTable[id].memberId].shortName}`}
               />
             </Link>
           ))}
@@ -114,4 +129,9 @@ const Home: React.FC = () => {
   );
 };
 
-export default Home;
+const mapStateToProps = (state: AppState): PropsFromState => ({
+  cardTable: SEL.dbCardTable(state),
+  isJPEdition: SEL.dbIsJPEdition(state),
+});
+
+export default connect(mapStateToProps)(Home);

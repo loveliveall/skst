@@ -70,6 +70,7 @@ const StyledButton = styled.button`
   font-size: 20px;
   text-decoration: none;
   color: #818181;
+  cursor: pointer;
 
   &:hover {
     color: #f1f1f1;
@@ -106,7 +107,7 @@ interface PageInfo {
 }
 
 interface PropsFromState {
-  isJPEdition: ReturnType<typeof SEL.settingsIsJPEdition>,
+  isJPEdition: ReturnType<typeof SEL.dbIsJPEdition>,
 }
 interface PropsFromDispatch {
   toggleEdition: () => void,
@@ -215,12 +216,12 @@ const App: React.FC<AppProps> = ({
 };
 
 const mapStateToProps = (state: AppState): PropsFromState => ({
-  isJPEdition: SEL.settingsIsJPEdition(state),
+  isJPEdition: SEL.dbIsJPEdition(state),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
   toggleEdition: () => {
-    dispatch(AC.settings.toggleEdition());
+    dispatch(AC.db.toggleEdition());
   },
 });
 

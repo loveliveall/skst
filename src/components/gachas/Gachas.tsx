@@ -1,15 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { AppState, SEL } from '@/store';
 import Table from '@/components/common/Table';
 import { FlexBox, FixedWrapper } from '@/components/Styles';
 
-import { CARD, getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
+import { getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
 import { MEMBER } from '@/data/memberMetadata';
 import { RARITY } from '@/data/cardMetadata';
-import { GACHA } from '@/data/gacha';
-import { EVENT } from '@/data/event';
 
 const VerticalFlex = styled(FlexBox)`
   width: 100%;
@@ -35,7 +35,16 @@ const CardIconImg = styled.img`
   height: 64px;
 `;
 
-const Gachas: React.FC = () => {
+interface PropsFromState {
+  cardTable: ReturnType<typeof SEL.dbCardTable>,
+  gachaTable: ReturnType<typeof SEL.dbGachaTable>,
+  eventTable: ReturnType<typeof SEL.dbEventTable>,
+}
+type GachasProps = PropsFromState;
+
+const Gachas: React.FC<GachasProps> = ({
+  cardTable, gachaTable, eventTable,
+}) => {
   const [awaken, setAwaken] = React.useState(false);
   return (
     <VerticalFlex>
@@ -95,15 +104,17 @@ const Gachas: React.FC = () => {
                   return (
                     <VerticalFlex>
                       <FlexBox>
-                        {Object.keys(CARD).map(Number).filter((id) => (
-                          CARD[id].fromId[0] === 'gacha' && CARD[id].fromId[1] === rowData.id
+                        {Object.keys(cardTable).map(Number).filter((id) => (
+                          cardTable[id].fromId[0] === 'gacha' && cardTable[id].fromId[1] === rowData.id
                         )).map((id) => (
                           <Link key={id} to={`card/${id}`}>
                             <CardIconImg
                               key={id}
                               src={getCardIconAssetPath(id, awaken)}
                               alt={`${getCardSymbol(id, awaken)}-icon`}
-                              title={`${RARITY[CARD[id].rarityId].symbol} ${MEMBER[CARD[id].memberId].shortName}`}
+                              title={
+                                `${RARITY[cardTable[id].rarityId].symbol} ${MEMBER[cardTable[id].memberId].shortName}`
+                              }
                             />
                           </Link>
                         ))}
@@ -121,7 +132,7 @@ const Gachas: React.FC = () => {
                   return (
                     <VerticalFlex>
                       <div><strong>관련 이벤트</strong></div>
-                      <div>{EVENT[rowData.eventId].name}</div>
+                      <div>{eventTable[rowData.eventId].name}</div>
                     </VerticalFlex>
                   );
                 }
@@ -129,9 +140,9 @@ const Gachas: React.FC = () => {
               },
             },
           ]}
-          data={Object.keys(GACHA).map(Number).map((id) => ({
+          data={Object.keys(gachaTable).map(Number).map((id) => ({
             id,
-            ...GACHA[id],
+            ...gachaTable[id],
           }))}
           pageSize={50}
         />
@@ -140,4 +151,10 @@ const Gachas: React.FC = () => {
   );
 };
 
-export default Gachas;
+const mapStateToProps = (state: AppState): PropsFromState => ({
+  cardTable: SEL.dbCardTable(state),
+  gachaTable: SEL.dbGachaTable(state),
+  eventTable: SEL.dbEventTable(state),
+});
+
+export default connect(mapStateToProps)(Gachas);

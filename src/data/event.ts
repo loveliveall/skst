@@ -10,7 +10,7 @@ export const EVENT_TYPE: EventType = {
   2: { type: 'exchange', krName: '교환소 이벤트' },
 };
 
-interface Event {
+export interface Event {
   readonly [id: number]: (
     {
       readonly name: string,

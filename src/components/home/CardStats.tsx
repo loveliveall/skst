@@ -1,26 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
+import { AppState, SEL } from '@/store';
 import { RARITY, ATTRIBUTE, ROLE } from '@/data/cardMetadata';
-import { CARD, FROM_MAP, FromTag } from '@/data/cardList';
+import { FROM_MAP, FromTag } from '@/data/cardList';
 
 import { FlexBox, FixedWrapper } from '@/components/Styles';
-
-function countCards(
-  rarityIds: (keyof typeof RARITY)[],
-  attributeId: keyof typeof ATTRIBUTE | null,
-  roleId: keyof typeof ROLE | null,
-  fromTag: FromTag[],
-) {
-  return Object.keys(CARD).map(Number).filter(
-    (id) => (
-      rarityIds.includes(CARD[id].rarityId)
-      && (attributeId === null || CARD[id].attributeId === attributeId)
-      && (roleId === null || CARD[id].roleId === roleId)
-      && (fromTag.includes(CARD[id].fromId[0]))
-    ),
-  ).length;
-}
 
 const StyledTable = styled.table`
   border-collapse: collapse;
@@ -47,7 +33,27 @@ const PaddedDiv = styled.div`
   padding: 4px;
 `;
 
-const CardStats: React.FC = () => {
+interface PropsFromState {
+  cardTable: ReturnType<typeof SEL.dbCardTable>,
+}
+type CardStatsProps = PropsFromState;
+
+const CardStats: React.FC<CardStatsProps> = ({
+  cardTable,
+}) => {
+  const countCards = (
+    rarityIds: (keyof typeof RARITY)[],
+    attributeId: keyof typeof ATTRIBUTE | null,
+    roleId: keyof typeof ROLE | null,
+    fromTag: FromTag[],
+  ) => Object.keys(cardTable).map(Number).filter(
+    (id) => (
+      rarityIds.includes(cardTable[id].rarityId)
+      && (attributeId === null || cardTable[id].attributeId === attributeId)
+      && (roleId === null || cardTable[id].roleId === roleId)
+      && (fromTag.includes(cardTable[id].fromId[0]))
+    ),
+  ).length;
   const [showRarity, setShowRarity] = React.useState(Object.keys(RARITY).map(Number));
   const [showFromTag, setShowFromTag] = React.useState(Object.keys(FROM_MAP) as FromTag[]);
   const ROLE_IDS = Object.keys(ROLE).map(Number);
@@ -149,4 +155,8 @@ const CardStats: React.FC = () => {
   );
 };
 
-export default CardStats;
+const mapStateToProps = (state: AppState): PropsFromState => ({
+  cardTable: SEL.dbCardTable(state),
+});
+
+export default connect(mapStateToProps)(CardStats);

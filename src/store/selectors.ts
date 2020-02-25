@@ -22,5 +22,8 @@ export const SEL = {
   cardsFilter: (state: AppState) => state.cards.filter,
   cardsBuff: (state: AppState) => state.cards.buff,
 
-  settingsIsJPEdition: (state: AppState) => state.settings.isJPEdition,
+  dbIsJPEdition: (state: AppState) => state.db.isJPEdition,
+  dbCardTable: (state: AppState) => state.db.cardTable,
+  dbGachaTable: (state: AppState) => state.db.gachaTable,
+  dbEventTable: (state: AppState) => state.db.eventTable,
 };

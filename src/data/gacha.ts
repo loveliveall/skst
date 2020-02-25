@@ -1,4 +1,4 @@
-interface Gacha {
+export interface Gacha {
   readonly [id: number]: (
     {
       name: string,

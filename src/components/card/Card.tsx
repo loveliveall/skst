@@ -1,9 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
+import { AppState, SEL } from '@/store';
 import { FixedWrapper, FlexBox } from '@/components/Styles';
 
-import { CARD, getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
+import { getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
 import { MEMBER } from '@/data/memberMetadata';
 import { RARITY, ATTRIBUTE, ROLE } from '@/data/cardMetadata';
 
@@ -37,14 +39,17 @@ const PaddedDiv = styled.div`
 interface MatchProps {
   id: string,
 }
-type CardProps = RouteComponentProps<MatchProps>;
+interface PropsFromState {
+  cardTable: ReturnType<typeof SEL.dbCardTable>,
+}
+type CardProps = RouteComponentProps<MatchProps> & PropsFromState;
 
 const Card: React.FC<CardProps> = ({
-  match,
+  match, cardTable,
 }) => {
   window.scrollTo(0, 0);
   const cardId = Number(match.params.id);
-  const card = CARD[cardId];
+  const card = cardTable[cardId];
   if (card === undefined) return null;
   const member = MEMBER[card.memberId];
   const rarity = RARITY[card.rarityId];
@@ -132,4 +137,8 @@ const Card: React.FC<CardProps> = ({
   );
 };
 
-export default withRouter(Card);
+const mapStateToProps = (state: AppState): PropsFromState => ({
+  cardTable: SEL.dbCardTable(state),
+});
+
+export default withRouter(connect(mapStateToProps)(Card));

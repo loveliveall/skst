@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { AppState, SEL } from '@/store';
 import { PARAMETER } from '@/data/cardParameter';
-import { CARD, FULL_CARD_LIST } from '@/data/cardList';
+import { getFullCardList } from '@/data/cardList';
 
 const StyledTable = styled.table`
   border: 1px solid black;
@@ -20,13 +22,16 @@ interface OwnProps {
   sameAttribute: boolean,
   sameRole: boolean,
 }
-type StatRankTableProps = OwnProps;
+interface PropsFromState {
+  cardTable: ReturnType<typeof SEL.dbCardTable>,
+}
+type StatRankTableProps = OwnProps & PropsFromState;
 
 const StatRankTable: React.FC<StatRankTableProps> = ({
-  id, sameAttribute, sameRole,
+  id, sameAttribute, sameRole, cardTable,
 }) => {
-  const card = CARD[id];
-  const targetCardList = FULL_CARD_LIST.filter((c) => (
+  const card = cardTable[id];
+  const targetCardList = getFullCardList(cardTable).filter((c) => (
     (!sameAttribute || card.attributeId === c.attributeId)
     && (!sameRole || card.roleId === c.roleId)
   ));
@@ -94,4 +99,8 @@ const StatRankTable: React.FC<StatRankTableProps> = ({
   );
 };
 
-export default StatRankTable;
+const mapStateToProps = (state: AppState): PropsFromState => ({
+  cardTable: SEL.dbCardTable(state),
+});
+
+export default connect(mapStateToProps)(StatRankTable);

@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 
 import cardsReducer from './cards/reducers';
-import settingsReducer from './settings/reducers';
+import dbReducer from './db/reducers';
 
 export const rootReducer = combineReducers({
   cards: cardsReducer,
-  settings: settingsReducer,
+  db: dbReducer,
 });
 
 export type AppState = ReturnType<typeof rootReducer>;

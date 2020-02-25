@@ -8,7 +8,7 @@ export const FROM_MAP = {
 } as const;
 export type FromTag = keyof typeof FROM_MAP;
 
-type Card = {
+export type Card = {
   readonly [id: number]: {
     readonly memberId: keyof typeof MEMBER,
     readonly title: string,
@@ -72,7 +72,7 @@ export const CARD: Card = {
   47: { memberId: 13, title: '大切な思い出', awakenTitle: 'ハピネスチアガール', rarityId: 2, attributeId: 3, roleId: 2, fromId: ['gacha', 1] },
   48: { memberId: 13, title: 'そろそろ一緒に潜ってみる？', awakenTitle: '海神の巫女', rarityId: 3, attributeId: 5, roleId: 1, fromId: ['gacha', 1] },
   49: { memberId: 14, title: '浦の星女学院3年生', awakenTitle: '浦の星の生徒会長', rarityId: 1, attributeId: 3, roleId: 1, fromId: ['gacha', 1] },
-  50: { memberId: 14, title: 'Aqoursのツッコミ担当', awakenTitle: 'スクールアイドルアニマ', rarityId: 1, attributeId: 5, roleId: 2, fromId: ['gacha', 1] },
+  50: { memberId: 14, title: 'Aqoursのツッコミ担当', awakenTitle: 'スクールアイドルマニア', rarityId: 1, attributeId: 5, roleId: 2, fromId: ['gacha', 1] },
   51: { memberId: 14, title: 'あなたという人は！', awakenTitle: 'ハピネスチアガール', rarityId: 2, attributeId: 1, roleId: 3, fromId: ['gacha', 1] },
   52: { memberId: 14, title: '内緒ですわよ', awakenTitle: '巫女舞ステップ', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['gacha', 1] },
   53: { memberId: 15, title: '浦の星女学院2年生', awakenTitle: '陽気な人気者', rarityId: 1, attributeId: 4, roleId: 1, fromId: ['gacha', 1] },
@@ -246,11 +246,13 @@ export function getCardSymbol(id: number, isAwaken: boolean): string {
   return isAwaken ? `${base}-awaken` : base;
 }
 
-export const FULL_CARD_LIST = Object.keys(CARD).map(Number).map((id) => PARAMETER[id].map((param, idx) => ({
-  id,
-  uncap: idx,
-  ...CARD[id],
-  ...param,
-  expectedVoltage: param.appl,
-}))).reduce((acc, val) => acc.concat(val), [])
-  .filter((card) => card.appl !== 0);
+export function getFullCardList(cardTable: Card) {
+  return Object.keys(cardTable).map(Number).map((id) => PARAMETER[id].map((param, idx) => ({
+    id,
+    uncap: idx,
+    ...cardTable[id],
+    ...param,
+    expectedVoltage: param.appl,
+  }))).reduce((acc, val) => acc.concat(val), [])
+    .filter((card) => card.appl !== 0);
+}
