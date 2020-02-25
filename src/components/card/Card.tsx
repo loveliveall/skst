@@ -36,6 +36,10 @@ const PaddedDiv = styled.div`
   word-break: keep-all;
 `;
 
+const StyledInput = styled.input`
+  margin-right: 4px;
+`;
+
 interface MatchProps {
   id: string,
 }
@@ -47,12 +51,16 @@ type CardProps = RouteComponentProps<MatchProps> & PropsFromState;
 const Card: React.FC<CardProps> = ({
   match, cardTable,
 }) => {
-  window.scrollTo(0, 0);
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [match.params.id]);
   const cardId = Number(match.params.id);
   const card = cardTable[cardId];
   if (card === undefined) return null;
   const member = MEMBER[card.memberId];
   const rarity = RARITY[card.rarityId];
+
+  const [onlySameRarity, setOnlySameRarity] = React.useState(false);
   return (
     <VerticalFlex>
       <RowWrapper>
@@ -101,13 +109,20 @@ const Card: React.FC<CardProps> = ({
           <PaddedDiv><strong>스탯 순위표</strong></PaddedDiv>
           <PaddedDiv>특정 스탯이 동일 한돌 대상 카드 중 몇 위를 차지하는지에 대한 표입니다</PaddedDiv>
           <PaddedDiv>괄호 안은 동일 스탯을 가진 카드의 수입니다</PaddedDiv>
+          <PaddedDiv>
+            <StyledInput
+              type="checkbox"
+              onClick={() => setOnlySameRarity(!onlySameRarity)}
+            />
+            {`동일 레어도(${rarity.symbol})만 대상으로 하기`}
+          </PaddedDiv>
         </VerticalFlex>
       </RowWrapper>
       <RowWrapper>
         <PaddedDiv style={{ paddingBottom: '0px' }}>모든 카드 대상 순위표</PaddedDiv>
       </RowWrapper>
       <RowWrapper>
-        <StatRankTable id={cardId} sameAttribute={false} sameRole={false} />
+        <StatRankTable id={cardId} sameAttribute={false} sameRole={false} sameRarity={onlySameRarity} />
       </RowWrapper>
       <RowWrapper>
         <PaddedDiv style={{ paddingBottom: '0px' }}>
@@ -115,7 +130,7 @@ const Card: React.FC<CardProps> = ({
         </PaddedDiv>
       </RowWrapper>
       <RowWrapper>
-        <StatRankTable id={cardId} sameAttribute sameRole={false} />
+        <StatRankTable id={cardId} sameAttribute sameRole={false} sameRarity={onlySameRarity} />
       </RowWrapper>
       <RowWrapper>
         <PaddedDiv style={{ paddingBottom: '0px' }}>
@@ -123,7 +138,7 @@ const Card: React.FC<CardProps> = ({
         </PaddedDiv>
       </RowWrapper>
       <RowWrapper>
-        <StatRankTable id={cardId} sameAttribute={false} sameRole />
+        <StatRankTable id={cardId} sameAttribute={false} sameRole sameRarity={onlySameRarity} />
       </RowWrapper>
       <RowWrapper>
         <PaddedDiv style={{ paddingBottom: '0px' }}>
@@ -131,7 +146,7 @@ const Card: React.FC<CardProps> = ({
         </PaddedDiv>
       </RowWrapper>
       <RowWrapper>
-        <StatRankTable id={cardId} sameAttribute sameRole />
+        <StatRankTable id={cardId} sameAttribute sameRole sameRarity={onlySameRarity} />
       </RowWrapper>
     </VerticalFlex>
   );

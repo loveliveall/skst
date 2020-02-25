@@ -21,6 +21,7 @@ interface OwnProps {
   id: number,
   sameAttribute: boolean,
   sameRole: boolean,
+  sameRarity: boolean,
 }
 interface PropsFromState {
   cardTable: ReturnType<typeof SEL.dbCardTable>,
@@ -28,12 +29,13 @@ interface PropsFromState {
 type StatRankTableProps = OwnProps & PropsFromState;
 
 const StatRankTable: React.FC<StatRankTableProps> = ({
-  id, sameAttribute, sameRole, cardTable,
+  id, sameAttribute, sameRole, sameRarity, cardTable,
 }) => {
   const card = cardTable[id];
   const targetCardList = getFullCardList(cardTable).filter((c) => (
     (!sameAttribute || card.attributeId === c.attributeId)
     && (!sameRole || card.roleId === c.roleId)
+    && (!sameRarity || card.rarityId === c.rarityId)
   ));
   const parameter = PARAMETER[id];
   const maxUncap = parameter.length - 1;
