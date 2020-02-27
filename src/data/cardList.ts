@@ -223,6 +223,11 @@ export const CARD: Card = {
   178: { memberId: 13, title: 'もう少し深く潜ってみようかな', awakenTitle: '竜宮城の姫君', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['event', 10] },
   179: { memberId: 8, title: '役に立てることがあるなら', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['event', 10] },
   180: { memberId: 15, title: '水平線の先まで見渡せるよ！', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 1, roleId: 3, fromId: ['event', 10] },
+
+  181: { memberId: 18, title: '私がサポートしてあげる♪', awakenTitle: 'ロイヤルプリンセス', rarityId: 3, attributeId: 3, roleId: 4, fromId: ['gacha', 30004] },
+  182: { memberId: 26, title: '次は彼方ちゃんの番で〜す♪', awakenTitle: '天使の子守歌', rarityId: 3, attributeId: 6, roleId: 1, fromId: ['gacha', 30004] },
+  183: { memberId: 5, title: 'むにゃむにゃ……うへへ', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['gacha', 30004] },
+  184: { memberId: 28, title: 'どれもこれも美味しそう', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['gacha', 30004] },
 };
 /* eslint-enable object-curly-newline, max-len */
 

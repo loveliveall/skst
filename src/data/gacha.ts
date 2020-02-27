@@ -48,5 +48,6 @@ export const GACHA: Gacha = {
   30001: { type: 'fes', name: 'スクスタフェス', startDate: '2019.11.30.', endDate: '2019.12.06.' },
   30002: { type: 'fes', name: 'スクスタフェス', startDate: '2019.12.31.', endDate: '2020.01.06.' },
   30003: { type: 'fes', name: 'スクスタフェス', startDate: '2020.01.31.', endDate: '2020.02.06.' },
+  30004: { type: 'fes', name: 'スクスタフェス', startDate: '2020.02.28.', endDate: '2020.03.06.' },
 };
 /* eslint-enable object-curly-newline, max-len */
