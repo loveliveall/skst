@@ -226,8 +226,8 @@ export const CARD: Card = {
 
   181: { memberId: 18, title: '私がサポートしてあげる♪', awakenTitle: 'ロイヤルプリンセス', rarityId: 3, attributeId: 3, roleId: 4, fromId: ['gacha', 30004] },
   182: { memberId: 26, title: '次は彼方ちゃんの番で〜す♪', awakenTitle: '天使の子守歌', rarityId: 3, attributeId: 6, roleId: 1, fromId: ['gacha', 30004] },
-  183: { memberId: 5, title: 'むにゃむにゃ……うへへ', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['gacha', 30004] },
-  184: { memberId: 28, title: 'どれもこれも美味しそう', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['gacha', 30004] },
+  183: { memberId: 28, title: 'どれもこれも美味しそう', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['gacha', 30004] },
+  184: { memberId: 5, title: 'むにゃむにゃ……うへへ', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['gacha', 30004] },
 };
 /* eslint-enable object-curly-newline, max-len */
 
