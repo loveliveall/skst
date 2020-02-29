@@ -6,6 +6,12 @@ export const CardsActionTypes = {
   FILTER_ATTRIBUTE_SET: 'CARDS_FILTER_ATTRIBUTE_SET',
   FILTER_ROLE_SET: 'CARDS_FILTER_ROLE_SET',
   FILTER_RARITY_SET: 'CARDS_FILTER_RARITY_SET',
+  FILTER_SPEC_CAT_ADD: 'CARDS_FILTER_SPEC_CAT_ADD',
+  FILTER_SPEC_CAT_EDIT: 'CARDS_FILTER_SPEC_CAT_EDIT',
+  FILTER_SPEC_CAT_REMOVE: 'CARDS_FILTER_SPEC_CAT_REMOVE',
+  FILTER_SPEC_TARGET_ADD: 'CARDS_FILTER_SPEC_TARGET_ADD',
+  FILTER_SPEC_TARGET_EDIT: 'CARDS_FILTER_SPEC_TARGET_EDIT',
+  FILTER_SPEC_TARGET_REMOVE: 'CARDS_FILTER_SPEC_TARGET_REMOVE',
   FILTER_INDIV_P_CAT_ADD: 'CARDS_FILTER_INDIV_P_CAT_ADD',
   FILTER_INDIV_P_CAT_EDIT: 'CARDS_FILTER_INDIV_P_CAT_EDIT',
   FILTER_INDIV_P_CAT_REMOVE: 'CARDS_FILTER_INDIV_P_CAT_REMOVE',
@@ -36,6 +42,24 @@ export const CardsActionCreators = {
   ),
   setRarityFilter: (rarityId: number, value: boolean) => createFSA(
     CardsActionTypes.FILTER_RARITY_SET, { rarityId, value },
+  ),
+  addSpecCategoryFilter: (key: number, categoryId: number) => createFSA(
+    CardsActionTypes.FILTER_SPEC_CAT_ADD, { key, categoryId },
+  ),
+  editSpecCategoryFilter: (key: number, categoryId: number) => createFSA(
+    CardsActionTypes.FILTER_SPEC_CAT_EDIT, { key, categoryId },
+  ),
+  removeSpecCategoryFilter: (key: number) => createFSA(
+    CardsActionTypes.FILTER_SPEC_CAT_REMOVE, { key },
+  ),
+  addSpecTargetFilter: (key: number, target: SkillTargetInfo) => createFSA(
+    CardsActionTypes.FILTER_SPEC_TARGET_ADD, { key, target },
+  ),
+  editSpecTargetFilter: (key: number, target: SkillTargetInfo) => createFSA(
+    CardsActionTypes.FILTER_SPEC_TARGET_EDIT, { key, target },
+  ),
+  removeSpecTargetFilter: (key: number) => createFSA(
+    CardsActionTypes.FILTER_SPEC_TARGET_REMOVE, { key },
   ),
   addIndivPCategoryFilter: (key: number, categoryId: number) => createFSA(
     CardsActionTypes.FILTER_INDIV_P_CAT_ADD, { key, categoryId },

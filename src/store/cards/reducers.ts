@@ -14,6 +14,14 @@ interface FilterState {
   rarity: {
     [rarityId: number]: boolean,
   },
+  specCategory: {
+    key: number,
+    categoryId: number,
+  }[],
+  specTarget: {
+    key: number,
+    target: SkillTargetInfo,
+  }[],
   indivPCategory: {
     key: number,
     categoryId: number,
@@ -42,6 +50,8 @@ export const initialFilter: FilterState = {
   rarity: {
     1: true, 2: true, 3: true,
   },
+  specCategory: [],
+  specTarget: [],
   indivPCategory: [],
   indivPTarget: [],
   uncap: 5,
@@ -143,6 +153,58 @@ export default function cardsReducer(
             ...state.filterDraft.rarity,
             [action.payload.rarityId]: action.payload.value,
           },
+        },
+      };
+    case CardsActionTypes.FILTER_SPEC_CAT_ADD:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          specCategory: [...state.filterDraft.specCategory, action.payload],
+        },
+      };
+    case CardsActionTypes.FILTER_SPEC_CAT_EDIT:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          specCategory: state.filterDraft.specCategory.map((item) => (
+            item.key === action.payload.key ? action.payload : item
+          )),
+        },
+      };
+    case CardsActionTypes.FILTER_SPEC_CAT_REMOVE:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          specCategory: state.filterDraft.specCategory.filter((item) => item.key !== action.payload.key),
+        },
+      };
+    case CardsActionTypes.FILTER_SPEC_TARGET_ADD:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          specTarget: [...state.filterDraft.specTarget, action.payload],
+        },
+      };
+    case CardsActionTypes.FILTER_SPEC_TARGET_EDIT:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          specTarget: state.filterDraft.specTarget.map((item) => (
+            item.key === action.payload.key ? action.payload : item
+          )),
+        },
+      };
+    case CardsActionTypes.FILTER_SPEC_TARGET_REMOVE:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          specTarget: state.filterDraft.specTarget.filter((item) => item.key !== action.payload.key),
         },
       };
     case CardsActionTypes.FILTER_INDIV_P_CAT_ADD:

@@ -6,6 +6,8 @@ import { AppState, AC, SEL } from '@/store';
 
 import { ATTRIBUTE, ROLE, RARITY } from '@/data/cardMetadata';
 import { GROUP, MEMBER } from '@/data/memberMetadata';
+import SpecCategoryFilter from './filters/SpecCategoryFilter';
+import SpecTargetFilter from './filters/SpecTargetFilter';
 import IndivPCategoryFilter from './filters/IndivPCategoryFilter';
 import IndivPTargetFilter from './filters/IndivPTargetFilter';
 
@@ -84,7 +86,7 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
   return (
     <>
       <tr>
-        <td rowSpan={6}>필터</td>
+        <td rowSpan={7}>필터</td>
         <td>멤버</td>
         <td>
           <BorderlessTable>
@@ -178,6 +180,23 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
               onClick={() => setRarity(id, !rarity[id])}
             />
           ))}
+        </td>
+      </tr>
+      <tr>
+        <td>특기</td>
+        <td>
+          <BorderlessTable>
+            <tbody>
+              <tr>
+                <td>스킬 종류</td>
+                <td>스킬 대상</td>
+              </tr>
+              <tr>
+                <td style={{ padding: '4px' }}><SpecCategoryFilter /></td>
+                <td style={{ padding: '4px' }}><SpecTargetFilter /></td>
+              </tr>
+            </tbody>
+          </BorderlessTable>
         </td>
       </tr>
       <tr>
