@@ -26,16 +26,17 @@ const StyledSelect = styled.select`
 `;
 const Button = styled(StyledButton)`
   padding: 4px 8px 4px 8px;
+  margin: 2px;
 `;
 const FlexItem = styled.div`
   padding: 2px;
   white-space: nowrap;
 `;
-const SingleFlex = styled.div`
-  display: flex;
+const VerticalFlex = styled(FlexBox)`
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 2px;
 `;
 const IconImgButton = styled.img`
   padding: 4px;
@@ -66,6 +67,7 @@ interface PropsFromState {
 interface PropsFromDispatch {
   openCardSelectModal: (slotIdx: number) => void,
   removeDeck: () => void,
+  duplicateDeck: () => void,
   editDeckSlotSpecLv: (slotIdx: number, specLv: number) => void,
   editDeckSlotAppl: (slotIdx: number, appl: number) => void,
   editDeckSlotStam: (slotIdx: number, stam: number) => void,
@@ -75,7 +77,7 @@ type SingleDeckInfoProps = OwnProps & PropsFromState & PropsFromDispatch;
 
 const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
   cardTable, openCardSelectModal,
-  deckInfo, removeDeck, editDeckSlotSpecLv,
+  deckInfo, removeDeck, duplicateDeck, editDeckSlotSpecLv,
   editDeckSlotAppl, editDeckSlotStam, editDeckSlotTech,
   songAttributeId, liveEffect,
 }) => {
@@ -286,9 +288,12 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
           </tbody>
         </StyledTable>
       </FlexItem>
-      <SingleFlex>
-        <Button onClick={removeDeck}>제거</Button>
-      </SingleFlex>
+      <FlexItem>
+        <VerticalFlex>
+          <Button onClick={duplicateDeck}>복제</Button>
+          <Button onClick={removeDeck}>제거</Button>
+        </VerticalFlex>
+      </FlexItem>
     </NoWrapFlexBox>
   );
 };
@@ -306,6 +311,9 @@ const mapDispatchToProps = (dispatch: Dispatch, ownProps: OwnProps): PropsFromDi
   },
   removeDeck: () => {
     dispatch(AC.deckSimulator.removeDeck(ownProps.deckKey));
+  },
+  duplicateDeck: () => {
+    dispatch(AC.deckSimulator.duplicateDeck(ownProps.deckKey));
   },
   editDeckSlotSpecLv: (slotIdx, specLv) => {
     dispatch(AC.deckSimulator.editDeckSlotSpecLv(ownProps.deckKey, slotIdx, specLv));

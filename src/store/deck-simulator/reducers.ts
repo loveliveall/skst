@@ -229,6 +229,14 @@ export default function deckSimulatorReducer(
         ...state,
         deckSettings: state.deckSettings.filter((item) => item.key !== action.payload.key),
       };
+    case DeckSimulatorActionTypes.DECK_DUPLICATE: {
+      const dupDeck = state.deckSettings.find((item) => item.key === action.payload.key);
+      if (dupDeck === undefined) throw Error('Duplication MUST have original');
+      return {
+        ...state,
+        deckSettings: [...state.deckSettings, { key: new Date().getTime(), deck: [...dupDeck.deck] }],
+      };
+    }
     case DeckSimulatorActionTypes.CARD_SELECT_MODAL_OPEN:
       return {
         ...state,

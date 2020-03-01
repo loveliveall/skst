@@ -14,6 +14,7 @@ export const DeckSimulatorActionTypes = {
   DECK_SLOT_STAM_EDIT: 'DECK_SIMULATOR_DECK_SLOT_STAM_EDIT',
   DECK_SLOT_TECH_EDIT: 'DECK_SIMULATOR_DECK_SLOT_TECH_EDIT',
   DECK_REMOVE: 'DECK_SIMULATOR_DECK_REMOVE',
+  DECK_DUPLICATE: 'DECK_SIMULATOR_DECK_DUPLICATE',
   CARD_SELECT_MODAL_OPEN: 'DECK_SIMULATOR_CARD_SELECT_MODAL_OPEN',
   CARD_SELECT_MODAL_CLOSE: 'DECK_SIMULATOR_CARD_SELECT_MODAL_CLOSE',
 } as const;
@@ -59,6 +60,9 @@ export const DeckSimulatorActionCreators = {
   ),
   removeDeck: (key: number) => createFSA(
     DeckSimulatorActionTypes.DECK_REMOVE, { key },
+  ),
+  duplicateDeck: (key: number) => createFSA(
+    DeckSimulatorActionTypes.DECK_DUPLICATE, { key },
   ),
   openCardSelectModal: (key: number, slotIdx: number) => createFSA(
     DeckSimulatorActionTypes.CARD_SELECT_MODAL_OPEN, { key, slotIdx },
