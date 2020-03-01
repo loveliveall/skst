@@ -20,6 +20,11 @@ interface DeckSimulatorState {
     key: number,
     deck: DeckSetting,
   }[],
+  cardSelectModal: {
+    open: boolean,
+    key: number,
+    slotIdx: number,
+  },
 }
 
 /* eslint-disable object-curly-newline */
@@ -43,6 +48,11 @@ const initialState: DeckSimulatorState = {
     key: new Date().getTime(),
     deck: defaultDeck,
   }],
+  cardSelectModal: {
+    open: false,
+    key: 0,
+    slotIdx: 0,
+  },
 };
 
 export default function deckSimulatorReducer(
@@ -218,6 +228,24 @@ export default function deckSimulatorReducer(
       return {
         ...state,
         deckSettings: state.deckSettings.filter((item) => item.key !== action.payload.key),
+      };
+    case DeckSimulatorActionTypes.CARD_SELECT_MODAL_OPEN:
+      return {
+        ...state,
+        cardSelectModal: {
+          open: true,
+          key: action.payload.key,
+          slotIdx: action.payload.slotIdx,
+        },
+      };
+    case DeckSimulatorActionTypes.CARD_SELECT_MODAL_CLOSE:
+      return {
+        ...state,
+        cardSelectModal: {
+          open: false,
+          key: 0,
+          slotIdx: 0,
+        },
       };
     default:
       return state;

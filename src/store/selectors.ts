@@ -35,4 +35,5 @@ export const SEL = {
   simulatorSingleDeck: (state: AppState, key: number) => state.deckSimulator.deckSettings.find(
     (item) => item.key === key,
   ),
+  simulatorCardSelectModal: (state: AppState) => state.deckSimulator.cardSelectModal,
 };

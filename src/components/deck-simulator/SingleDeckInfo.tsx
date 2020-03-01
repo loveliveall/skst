@@ -64,6 +64,7 @@ interface PropsFromState {
   liveEffect: ReturnType<typeof SEL.simulatorLiveEffect>,
 }
 interface PropsFromDispatch {
+  openCardSelectModal: (slotIdx: number) => void,
   removeDeck: () => void,
   editDeckSlotSpecLv: (slotIdx: number, specLv: number) => void,
   editDeckSlotAppl: (slotIdx: number, appl: number) => void,
@@ -73,7 +74,7 @@ interface PropsFromDispatch {
 type SingleDeckInfoProps = OwnProps & PropsFromState & PropsFromDispatch;
 
 const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
-  cardTable,
+  cardTable, openCardSelectModal,
   deckInfo, removeDeck, editDeckSlotSpecLv,
   editDeckSlotAppl, editDeckSlotStam, editDeckSlotTech,
   songAttributeId, liveEffect,
@@ -179,17 +180,18 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
           </thead>
           <tbody>
             <tr>
-              <td>캐릭터</td>
+              <td>카드</td>
               {deck.map((slot, slotIdx) => (
                 // eslint-disable-next-line react/no-array-index-key
                 <td key={`${deckInfo.key}-${slotIdx}-char`}>
                   {slot.cardId === null ? (
-                    <Button>선택</Button>
+                    <Button onClick={() => openCardSelectModal(slotIdx)}>선택</Button>
                   ) : (
                     <IconImgButton
                       src={getCardIconAssetPath(slot.cardId, true)}
                       alt={`${getCardSymbol(slot.cardId, true)}-icon`}
-                      title={`Card #${slot.cardId}`}
+                      title={getCardSymbol(slot.cardId, false)}
+                      onClick={() => openCardSelectModal(slotIdx)}
                     />
                   )}
                 </td>
@@ -299,6 +301,9 @@ const mapStateToProps = (state: AppState, ownProps: OwnProps): PropsFromState =>
 });
 
 const mapDispatchToProps = (dispatch: Dispatch, ownProps: OwnProps): PropsFromDispatch => ({
+  openCardSelectModal: (slotIdx) => {
+    dispatch(AC.deckSimulator.openCardSelectModal(ownProps.deckKey, slotIdx));
+  },
   removeDeck: () => {
     dispatch(AC.deckSimulator.removeDeck(ownProps.deckKey));
   },
