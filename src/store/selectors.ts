@@ -28,4 +28,11 @@ export const SEL = {
   dbCardTable: (state: AppState) => state.db.cardTable,
   dbGachaTable: (state: AppState) => state.db.gachaTable,
   dbEventTable: (state: AppState) => state.db.eventTable,
+
+  simulatorSongAttributeId: (state: AppState) => state.deckSimulator.songAttributeId,
+  simulatorLiveEffect: (state: AppState) => state.deckSimulator.liveEffect,
+  simulatorDeckSettings: (state: AppState) => state.deckSimulator.deckSettings,
+  simulatorSingleDeck: (state: AppState, key: number) => state.deckSimulator.deckSettings.find(
+    (item) => item.key === key,
+  ),
 };

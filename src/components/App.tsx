@@ -14,6 +14,7 @@ import Cards from '@/components/cards/Cards';
 import Gachas from '@/components/gachas/Gachas';
 import Event from '@/components/event/Event';
 import Events from '@/components/events/Events';
+import DeckSimulator from '@/components/deck-simulator/DeckSimulator';
 import Test from '@/components/test/Test';
 
 const FixedNavDesktop = styled.nav`
@@ -144,6 +145,12 @@ const App: React.FC<AppProps> = ({
       title: '이벤트 목록',
       exact: false,
     },
+    {
+      key: 'deck-simulator',
+      path: '/deck-simulator',
+      title: '덱 비교기',
+      exact: false,
+    },
   ];
 
   return (
@@ -209,6 +216,7 @@ const App: React.FC<AppProps> = ({
           <Route path="/gachas" component={Gachas} />
           <Route path="/event/:id" component={Event} />
           <Route path="/events" component={Events} />
+          <Route path="/deck-simulator" component={DeckSimulator} />
         </Switch>
       </Main>
     </>
