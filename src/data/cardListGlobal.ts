@@ -108,5 +108,11 @@ export const PARTIAL_CARD_GLOBAL: PartialCard = {
   97: { title: '니지가사키 학원 1학년', awakenTitle: '숨겨진 얼굴' },
   98: { title: '얼굴 비공개 스쿨 아이돌', awakenTitle: '리나 보드' },
   99: { title: '자, 치~즈!', awakenTitle: 'Dokipipo☆Emotion' },
+
+  100: { title: '이것 좀 도와줄래?', awakenTitle: 'welcome to the party' },
+  101: { title: '집어먹으면 안 돼~', awakenTitle: 'Kimino Kokorowa Kagayaiterukai?' },
+  102: { title: '오늘은 마음껏 즐기자!', awakenTitle: 'welcome to the party' },
+  103: { title: '누마즈의 특산품', awakenTitle: 'Kimino Kokorowa Kagayaiterukai?' },
+  104: { title: '다들 마음에 들어 할까?', awakenTitle: '두근두근 애니멀' },
 };
 /* eslint-enable object-curly-newline, max-len */
