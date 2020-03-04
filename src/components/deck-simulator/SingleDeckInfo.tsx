@@ -7,6 +7,9 @@ import { AppState, SEL, AC } from '@/store';
 import { FlexBox, StyledButton } from '@/components/Styles';
 
 import { getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
+import { CARD_SKILL } from '@/data/cardSkill';
+import { SKILL } from '@/data/skill';
+import { SKILL_EFFECT_TYPE, SKILL_EFFECT_CATEGORY } from '@/data/skillEffectType';
 import { LIVE_EFFECT_TARGET } from '@/data/liveEffectTarget';
 import { LIVE_EFFECT_TYPE } from '@/data/liveEffectType';
 import { MEMBER } from '@/data/memberMetadata';
@@ -43,6 +46,11 @@ const IconImgButton = styled.img`
   width: 60px;
   height: 60px;
   cursor: pointer;
+`;
+const SmallImg = styled.img`
+  padding: 4px;
+  width: 24px;
+  height: 24px;
 `;
 const StyledTable = styled.table`
   border: 1px solid black;
@@ -248,9 +256,50 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
             ))}
             <tr>
               <td>
+                보정 특기 효과량
+                <br />
+                (작전 효과 미반영)
+              </td>
+              {deck.map((slot, slotIdx) => {
+                const key = `${deckInfo.key}-${slotIdx}`;
+                const { cardId } = slot;
+                if (cardId === null) return <td key={key} />;
+                const adjustedStat = adjustedStats[slotIdx];
+                const speciality = SKILL[CARD_SKILL[cardId].specialityId].detail;
+                const specType = SKILL_EFFECT_TYPE[speciality.effectTypeId];
+                const effectValue = speciality.effectValue[slot.specialityLv - 1];
+                const displayStr = (() => {
+                  if (specType.scaleType === 'fixed') return `${effectValue}`;
+                  if (specType.scaleType === 'percent') {
+                    if (specType.baseStat === undefined) {
+                      return `${effectValue / 100}%`;
+                    }
+                    return `${Math.floor(adjustedStat[specType.baseStat] * (effectValue / 10000))}`;
+                  }
+                  return '';
+                })();
+                return (
+                  // eslint-disable-next-line react/no-array-index-key
+                  <td key={key}>
+                    <div>
+                      <SmallImg
+                        src={SKILL_EFFECT_CATEGORY[specType.effectCategoryId].iconAssetPath}
+                        alt={specType.desc}
+                        title={specType.desc}
+                      />
+                    </div>
+                    <div>
+                      {displayStr}
+                    </div>
+                  </td>
+                );
+              })}
+            </tr>
+            <tr>
+              <td>
                 보정 볼티지
                 <br />
-                (작전 효과 고려)
+                (작전 효과 반영)
               </td>
               {otherStats.map((stat, slotIdx) => (
                 // eslint-disable-next-line react/no-array-index-key
@@ -260,7 +309,11 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
               ))}
             </tr>
             <tr>
-              <td>작전 평균 볼티지</td>
+              <td>
+                작전 평균 볼티지
+                <br />
+                (작전 효과 반영)
+              </td>
               {[0, 1, 2].map((id) => (
                 <td key={id} colSpan={3}>
                   {otherStats.slice(3 * id, 3 * id + 3).reduce((acc, curr) => acc + curr.voltage, 0) / 3}
