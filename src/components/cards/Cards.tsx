@@ -36,7 +36,6 @@ const ActionButton = styled(StyledButton)`
 `;
 
 const AlignedP = styled.p`
-  text-align: center;
   line-height: 1.5em;
 `;
 
@@ -84,11 +83,26 @@ const Cards: React.FC<CardsProps> = ({
       </ActionButton>
     </FlexBox>
     <AlignedP>
-      이 표에 있는 모든 기본 스탯 값은 만렙 및 해당 한돌 수치의 모든 특훈 개방 상태 스탯입니다.
-      <br />
-      실제 인게임에서는 인연 보정치 등의 다양한 원인으로 인해 표와 값이 다를 수 있습니다.
-      <br />
-      크리티컬에 관해 알려진 정보가 적어 기대 볼티지 계산에서 크리티컬은 배제되어 있습니다.
+      <ul>
+        <li>
+          이 표에 있는 모든 기본 스탯 값은 만렙 및 해당 한돌 수치의 모든 특훈 개방 상태 스탯입니다.
+        </li>
+        <li>
+          실제 인게임에서는 인연 보정치 등의 다양한 원인으로 인해 표와 값이 다를 수 있습니다.
+        </li>
+        <li>
+          크리티컬에 관한 정보는 명확히 알려진 것이 없으나,&nbsp;
+          <a href="https://twitter.com/mmthom35/status/1189561036912783360" target="_blank" rel="noopener noreferrer">
+            이 트윗
+          </a>
+          의 추정에 따라
+          <br />
+          어필 &gt; 테크닉일 경우 (테크닉/340)%, 그 외의 경우 (테크닉/200)% 식을 사용하고 있습니다.
+        </li>
+        <li>
+          기대 볼티지는 위 크리티컬률 추정에 기본 크리 배수인 1.5배를 가정해 산출한 기댓값 입니다.
+        </li>
+      </ul>
     </AlignedP>
     <CardTable />
   </VerticalFlex>

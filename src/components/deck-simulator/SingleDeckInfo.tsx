@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Dispatch } from 'redux';
 import { connect } from 'react-redux';
-
+import { critProb } from '@/utils/utils';
 import { AppState, SEL, AC } from '@/store';
 import { FlexBox, StyledButton } from '@/components/Styles';
 
@@ -61,6 +61,9 @@ const StyledTable = styled.table`
     padding: 4px;
     white-space: nowrap;
   }
+`;
+const DimTd = styled.td`
+  color: #777;
 `;
 
 interface OwnProps {
@@ -172,10 +175,15 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
     }
     return acc;
   }, 100));
-  const otherStats = adjustedStats.map((stat, slotIdx) => ({
-    voltage: Math.floor(stat.appl * (subUnitVoMul[Math.floor(slotIdx / 3)] / 100)),
-    spDamage: Math.floor(stat.appl + 1.2 * stat.tech),
-  }));
+  const otherStats = adjustedStats.map((stat, slotIdx) => {
+    const voMul = subUnitVoMul[Math.floor(slotIdx / 3)];
+    const crit = critProb(stat.appl, stat.tech) / 100;
+    return {
+      voltage: Math.floor(stat.appl * (voMul / 100)),
+      voltageInCrit: Math.floor((stat.appl + 0.5 * stat.appl * crit) * (voMul / 100)),
+      spDamage: Math.floor(stat.appl + 1.2 * stat.tech),
+    };
+  });
   return (
     <NoWrapFlexBox>
       <FlexItem>
@@ -279,7 +287,6 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
                   return '';
                 })();
                 return (
-                  // eslint-disable-next-line react/no-array-index-key
                   <td key={key}>
                     <div>
                       <SmallImg
@@ -309,6 +316,15 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
               ))}
             </tr>
             <tr>
+              <DimTd>(크리티컬 추정 추가)</DimTd>
+              {otherStats.map((stat, slotIdx) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <DimTd key={`${deckInfo.key}-${slotIdx}`}>
+                  {stat.voltageInCrit}
+                </DimTd>
+              ))}
+            </tr>
+            <tr>
               <td>
                 작전 평균 볼티지
                 <br />
@@ -318,6 +334,14 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
                 <td key={id} colSpan={3}>
                   {otherStats.slice(3 * id, 3 * id + 3).reduce((acc, curr) => acc + curr.voltage, 0) / 3}
                 </td>
+              ))}
+            </tr>
+            <tr>
+              <DimTd>(크리티컬 추정 추가)</DimTd>
+              {[0, 1, 2].map((id) => (
+                <DimTd key={id} colSpan={3}>
+                  {otherStats.slice(3 * id, 3 * id + 3).reduce((acc, curr) => acc + curr.voltageInCrit, 0) / 3}
+                </DimTd>
               ))}
             </tr>
             <tr>

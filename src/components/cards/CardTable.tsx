@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { critProb } from '@/utils/utils';
 
 import { AppState, SEL } from '@/store';
 import {
@@ -178,13 +179,15 @@ const CardTable: React.FC<CardTableProps> = ({
       if (card.roleId === 4) return 0.95; // Sk
       return 1;
     })();
-    const newVoltage = Math.floor(appl * voltageMul);
+    const critPercent = critProb(appl, tech);
+    const newVoltage = Math.floor((appl + 0.5 * appl * (critPercent / 100)) * voltageMul);
     return {
       ...card,
       appl,
       stam,
       tech,
       expectedVoltage: newVoltage,
+      critProb: critPercent,
     };
   });
   return (
@@ -267,7 +270,7 @@ const CardTable: React.FC<CardTableProps> = ({
           customSort: (a, b) => a.appl - b.appl,
         },
         {
-          title: '스태미너',
+          title: '스태',
           render: (rowData) => <span>{rowData.stam}</span>,
           customSort: (a, b) => a.stam - b.stam,
         },
@@ -277,8 +280,17 @@ const CardTable: React.FC<CardTableProps> = ({
           customSort: (a, b) => a.tech - b.tech,
         },
         {
+          title: '크리율',
+          render: (rowData) => (
+            <span style={{ color: '#777' }}>
+              {`${rowData.critProb.toFixed(2)}%`}
+            </span>
+          ),
+          customSort: (a, b) => a.critProb - b.critProb,
+        },
+        {
           title: '기대 볼티지',
-          render: (rowData) => <span>{rowData.expectedVoltage}</span>,
+          render: (rowData) => <span style={{ color: '#777' }}>{rowData.expectedVoltage}</span>,
           customSort: (a, b) => a.expectedVoltage - b.expectedVoltage,
         },
         {

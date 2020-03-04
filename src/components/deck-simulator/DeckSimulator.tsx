@@ -50,6 +50,14 @@ const DeckSimulator: React.FC = () => (
           라이브 편성에서 보이는 각 카드의 스탯을 입력하고 곡의 속성과 원하는 라이브 곡 효과들을 설정해 주세요.
           <br />
           설정한 곡 속성 및 라이브 곡 효과가 적용된 상태의 보정 스탯(추정)이 계산됩니다.
+          <br />
+          <strong>
+            크리티컬 관련 추정은&nbsp;
+            <a href="/cards">
+              카드 목록
+            </a>
+            에 있는 가정을 그대로 적용한 수치입니다.
+          </strong>
         </CenterP>
       </RowWrapper>
       <RowWrapper style={{ border: '1px solid black' }}>
