@@ -42,9 +42,10 @@ const CardSelectModal: React.FC<CardSelectModalProps> = ({
     isOpen={cardSelectModal.open}
     style={{
       overlay: {
-        marginLeft: '160px',
+        zIndex: 10,
       },
     }}
+    ariaHideApp={false}
   >
     <VFlexBox>
       <FlexItem>
