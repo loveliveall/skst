@@ -26,6 +26,7 @@ const IconImgButton = styled.img`
 `;
 
 interface PropsFromState {
+  decks: ReturnType<typeof SEL.simulatorDeckSettings>,
   cardSelectModal: ReturnType<typeof SEL.simulatorCardSelectModal>,
   cardTable: ReturnType<typeof SEL.dbCardTable>,
 }
@@ -36,51 +37,59 @@ interface PropsFromDispatch {
 type CardSelectModalProps = PropsFromState & PropsFromDispatch;
 
 const CardSelectModal: React.FC<CardSelectModalProps> = ({
-  cardSelectModal, cardTable, applyCardSelection, closeModal,
-}) => (
-  <Modal
-    isOpen={cardSelectModal.open}
-    style={{
-      overlay: {
-        zIndex: 10,
-      },
-    }}
-    ariaHideApp={false}
-  >
-    <VFlexBox>
-      <FlexItem>
-        <StyledButton
-          onClick={closeModal}
-          style={{ float: 'right' }}
-        >
-          닫기
-        </StyledButton>
-      </FlexItem>
-      {Object.keys(MEMBER).map(Number).map((id) => (
-        <FlexItem key={id}>
-          <FlexBox>
-            {Object.keys(RARITY).map(Number).map((rarityId) => Object.keys(cardTable).map(Number).filter(
-              (cardId) => cardTable[cardId].memberId === id && cardTable[cardId].rarityId === rarityId,
-            ).map((cardId) => (
-              <IconImgButton
-                key={cardId}
-                src={getCardIconAssetPath(cardId, true)}
-                alt={`${getCardSymbol(cardId, true)}-icon`}
-                title={getCardSymbol(cardId, false)}
-                onClick={() => {
-                  applyCardSelection(cardSelectModal.key, cardSelectModal.slotIdx, cardId);
-                  closeModal();
-                }}
-              />
-            )))}
-          </FlexBox>
+  cardSelectModal, cardTable, applyCardSelection, closeModal, decks,
+}) => {
+  const targetDeck = decks.find((deck) => deck.key === cardSelectModal.key);
+  const oriCardId = targetDeck?.deck[cardSelectModal.slotIdx].cardId;
+  return (
+    <Modal
+      isOpen={cardSelectModal.open}
+      style={{
+        overlay: {
+          zIndex: 10,
+        },
+      }}
+      ariaHideApp={false}
+    >
+      <VFlexBox>
+        <FlexItem>
+          <StyledButton
+            onClick={closeModal}
+            style={{ float: 'right' }}
+          >
+            닫기
+          </StyledButton>
         </FlexItem>
-      ))}
-    </VFlexBox>
-  </Modal>
-);
+        {Object.keys(MEMBER).map(Number).map((id) => (
+          <FlexItem key={id}>
+            <FlexBox>
+              {Object.keys(RARITY).map(Number).map((rarityId) => Object.keys(cardTable).map(Number).filter(
+                (cardId) => cardTable[cardId].memberId === id && cardTable[cardId].rarityId === rarityId,
+              ).map((cardId) => (
+                <IconImgButton
+                  key={cardId}
+                  src={getCardIconAssetPath(cardId, true)}
+                  alt={`${getCardSymbol(cardId, true)}-icon`}
+                  title={getCardSymbol(cardId, false)}
+                  onClick={() => {
+                    applyCardSelection(cardSelectModal.key, cardSelectModal.slotIdx, cardId);
+                    closeModal();
+                  }}
+                  style={{
+                    filter: oriCardId === cardId ? 'grayscale(100%)' : 'grayscale(0%)',
+                  }}
+                />
+              )))}
+            </FlexBox>
+          </FlexItem>
+        ))}
+      </VFlexBox>
+    </Modal>
+  );
+};
 
 const mapStateToProps = (state: AppState): PropsFromState => ({
+  decks: SEL.simulatorDeckSettings(state),
   cardSelectModal: SEL.simulatorCardSelectModal(state),
   cardTable: SEL.dbCardTable(state),
 });
