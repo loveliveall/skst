@@ -119,27 +119,42 @@ export default function deckSimulatorReducer(
         ...state,
         deckSettings: [...state.deckSettings, { key: action.payload.key, deck: defaultDeck }],
       };
-    case DeckSimulatorActionTypes.DECK_SLOT_CARD_ID_EDIT:
+    case DeckSimulatorActionTypes.DECK_SLOT_CARD_ID_EDIT: {
+      const target = state.deckSettings.find((item) => item.key === action.payload.key);
+      if (target === undefined) throw Error('There MUST exist deck with given key');
+      const targetDeck = target.deck;
+      // Check if we need swap
+      const existIdx = targetDeck.findIndex((slot) => slot.cardId === action.payload.cardId);
+      const targetSlot = targetDeck[action.payload.slotIdx];
+      const editedDeckSetting = targetDeck.map((slot, slotIdx) => {
+        if (slotIdx === action.payload.slotIdx) {
+          return {
+            ...slot,
+            cardId: action.payload.cardId,
+          };
+        }
+        if (slotIdx === existIdx) {
+          // Need to swap
+          return {
+            ...slot,
+            cardId: targetSlot.cardId,
+          };
+        }
+        return slot;
+      });
       return {
         ...state,
         deckSettings: state.deckSettings.map((item) => {
           if (item.key === action.payload.key) {
             return {
               ...item,
-              deck: item.deck.map((slot, idx) => {
-                if (idx === action.payload.slotIdx) {
-                  return {
-                    ...slot,
-                    cardId: action.payload.cardId,
-                  };
-                }
-                return slot;
-              }),
+              deck: editedDeckSetting,
             };
           }
           return item;
         }),
       };
+    }
     case DeckSimulatorActionTypes.DECK_SLOT_SPEC_LV_EDIT:
       return {
         ...state,
