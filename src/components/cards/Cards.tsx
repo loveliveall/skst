@@ -110,7 +110,9 @@ const Cards: React.FC<CardsProps> = ({
         </li>
       </ul>
     </AlignedP>
-    <CardTable />
+    <FixedWithPad>
+      <CardTable />
+    </FixedWithPad>
   </VerticalFlex>
 );
 

@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const FixedWrapper = styled.div`
   overflow-x: auto;
   max-width: calc(100vw - 20px);
+  // Desktop
+  @media screen and (min-width: 769px) {
+    max-width: calc(100vw - 20px - 160px);
+  }
 `;
 
 export const FlexBox = styled.div`
