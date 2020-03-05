@@ -98,6 +98,12 @@ const Cards: React.FC<CardsProps> = ({
           의 추정에 따라
           <br />
           어필 &gt; 테크닉일 경우 (테크닉/340)%, 그 외의 경우 (테크닉/200)% 식을 사용하고 있습니다.
+          <br />
+          역시나&nbsp;
+          <a href="https://gall.dcinside.com/sunshine/3107809" target="_blank" rel="noopener noreferrer">
+            이 글
+          </a>
+          에서 아닌 것이 증명 되었지만 별 수 있겠습니까 다른 추정 식이 없는데. 대충 주의해서 씁시다.
         </li>
         <li>
           기대 볼티지는 위 크리티컬률 추정에 기본 크리 배수인 1.5배를 가정해 산출한 기댓값 입니다.
