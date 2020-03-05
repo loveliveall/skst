@@ -214,5 +214,17 @@ export const EVENT: Event = {
     startDate: '2020.02.20.',
     endDate: '2020.02.28.',
   },
+  11: {
+    name: 'いたずらオオカミを捕まえろ！',
+    eventTypeId: 2,
+    rankBorder: {},
+    ingameInfo: [],
+    voltageRankBorder: {},
+    voltageRankBorderIngameInfo: [],
+    voltageRankSongs: [],
+    rewardBorder: {},
+    startDate: '2020.03.06.',
+    endDate: '2020.03.16.',
+  },
 };
 /* eslint-enable max-len, object-property-newline */
