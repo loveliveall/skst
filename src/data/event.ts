@@ -221,7 +221,7 @@ export const EVENT: Event = {
     ingameInfo: [],
     voltageRankBorder: {},
     voltageRankBorderIngameInfo: [],
-    voltageRankSongs: [],
+    voltageRankSongs: ['Evergreen', 'KOKORO Magic "A to Z"', 'Snow halation'],
     rewardBorder: {},
     startDate: '2020.03.06.',
     endDate: '2020.03.16.',
