@@ -31,6 +31,7 @@ interface FilterState {
     target: SkillTargetInfo,
   }[],
   uncap: number | null,
+  outfitSeriesId: number | null,
 }
 
 export const initialFilter: FilterState = {
@@ -55,6 +56,7 @@ export const initialFilter: FilterState = {
   indivPCategory: [],
   indivPTarget: [],
   uncap: 5,
+  outfitSeriesId: null,
 };
 
 interface BuffState {
@@ -265,6 +267,14 @@ export default function cardsReducer(
         filterDraft: {
           ...state.filterDraft,
           uncap: action.payload.uncap,
+        },
+      };
+    case CardsActionTypes.FILTER_OUTFIT_ID_SET:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          outfitSeriesId: action.payload.id,
         },
       };
     case CardsActionTypes.BUFF_ROLE_EFFECT_SET:

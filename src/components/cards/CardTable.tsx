@@ -66,6 +66,7 @@ const CardTable: React.FC<CardTableProps> = ({
 }) => {
   const list = getFullCardList(cardTable).filter((card) => {
     if (filter.uncap !== null && card.uncap !== filter.uncap) return false;
+    if (filter.outfitSeriesId !== null && card.outfitSeriesId !== filter.outfitSeriesId) return false;
     if (!filter.attribute[card.attributeId]) return false;
     if (!filter.role[card.roleId]) return false;
     if (!filter.rarity[card.rarityId]) return false;

@@ -13,6 +13,7 @@ export const SEL = {
   cardsIndivPCategoryFilter: (state: AppState) => state.cards.filterDraft.indivPCategory,
   cardsIndivPTargetFilter: (state: AppState) => state.cards.filterDraft.indivPTarget,
   cardsUncapFilter: (state: AppState) => state.cards.filterDraft.uncap,
+  cardsOutfitFilter: (state: AppState) => state.cards.filterDraft.outfitSeriesId,
   cardsRoleEffectBuff: (state: AppState) => state.cards.buffDraft.roleEffect,
   cardsIndivPEffectBuff: (state: AppState) => state.cards.buffDraft.indivPEffect,
   cardsAttributeBuff: (state: AppState) => state.cards.buffDraft.attributeId,

@@ -6,6 +6,7 @@ import { AppState, AC, SEL } from '@/store';
 
 import { ATTRIBUTE, ROLE, RARITY } from '@/data/cardMetadata';
 import { GROUP, MEMBER } from '@/data/memberMetadata';
+import { OUTFIT_SERIES } from '@/data/outfitSeries';
 import SpecCategoryFilter from './filters/SpecCategoryFilter';
 import SpecTargetFilter from './filters/SpecTargetFilter';
 import IndivPCategoryFilter from './filters/IndivPCategoryFilter';
@@ -56,11 +57,13 @@ const GroupImg = styled(TinyImg)`
 `;
 
 interface PropsFromState {
+  isJPEdition: ReturnType<typeof SEL.dbIsJPEdition>,
   member: ReturnType<typeof SEL.cardsMemberFilter>,
   attribute: ReturnType<typeof SEL.cardsAttributeFilter>,
   role: ReturnType<typeof SEL.cardsRoleFilter>,
   rarity: ReturnType<typeof SEL.cardsRarityFilter>,
   uncap: ReturnType<typeof SEL.cardsUncapFilter>,
+  outfitId: ReturnType<typeof SEL.cardsOutfitFilter>,
 }
 interface PropsFromDispatch {
   setMember: (ids: number[], value: boolean) => void,
@@ -68,6 +71,7 @@ interface PropsFromDispatch {
   setRole: (id: number[], value: boolean) => void,
   setRarity: (id: number, value: boolean) => void,
   setUncap: (uncap: number | null) => void,
+  setOutfit: (id: number | null) => void,
 }
 type CardFilterRows = PropsFromState & PropsFromDispatch;
 
@@ -78,15 +82,16 @@ const attributeAllIds = Object.keys(ATTRIBUTE).map(Number);
 const roleAllIds = Object.keys(ROLE).map(Number);
 
 const CardFilterRows: React.FC<CardFilterRows> = ({
-  member, attribute, role, rarity, uncap,
-  setMember, setAttribute, setRole, setRarity, setUncap,
+  isJPEdition,
+  member, attribute, role, rarity, uncap, outfitId,
+  setMember, setAttribute, setRole, setRarity, setUncap, setOutfit,
 }) => {
   const attributeAll = attributeAllIds.every((id) => attribute[id]);
   const roleAll = roleAllIds.every((id) => role[id]);
   return (
     <>
       <tr>
-        <td rowSpan={7}>필터</td>
+        <td rowSpan={8}>필터</td>
         <td>멤버</td>
         <td>
           <BorderlessTable>
@@ -237,16 +242,39 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
           </select>
         </td>
       </tr>
+      <tr>
+        <td>의상</td>
+        <td>
+          <select
+            id="outfit-filter"
+            value={outfitId === null ? 'all' : outfitId}
+            onChange={(event) => {
+              const selected = event.target.value;
+              if (selected === 'all') setOutfit(null);
+              else setOutfit(Number(event.target.value));
+            }}
+          >
+            <option value="all">모두</option>
+            {Object.keys(OUTFIT_SERIES).map(Number).map((id) => (
+              <option key={Math.random()} value={id}>
+                {isJPEdition ? OUTFIT_SERIES[id].name : (OUTFIT_SERIES[id].nameGlobal || '미출시')}
+              </option>
+            ))}
+          </select>
+        </td>
+      </tr>
     </>
   );
 };
 
 const mapStateToProps = (state: AppState): PropsFromState => ({
+  isJPEdition: SEL.dbIsJPEdition(state),
   member: SEL.cardsMemberFilter(state),
   attribute: SEL.cardsAttributeFilter(state),
   role: SEL.cardsRoleFilter(state),
   rarity: SEL.cardsRarityFilter(state),
   uncap: SEL.cardsUncapFilter(state),
+  outfitId: SEL.cardsOutfitFilter(state),
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
@@ -264,6 +292,9 @@ const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
   },
   setUncap: (uncap) => {
     dispatch(AC.cards.setUncapFilter(uncap));
+  },
+  setOutfit: (id) => {
+    dispatch(AC.cards.setOutfitSeriesId(id));
   },
 });
 

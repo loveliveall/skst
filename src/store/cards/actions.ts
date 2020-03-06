@@ -19,6 +19,7 @@ export const CardsActionTypes = {
   FILTER_INDIV_P_TARGET_EDIT: 'CARDS_FILTER_INDIV_P_TARGET_EDIT',
   FILTER_INDIV_P_TARGET_REMOVE: 'CARDS_FILTER_INDIV_P_TARGET_REMOVE',
   FILTER_UNCAP_SET: 'CARDS_FILTER_UNCAP_SET',
+  FILTER_OUTFIT_ID_SET: 'CARDS_FILTER_OUTFIT_ID_SET',
 
   BUFF_ROLE_EFFECT_SET: 'CARDS_BUFF_ROLE_EFFECT_SET',
   BUFF_INDIV_P_EFFECT_SET: 'CARDS_BUFF_INDIV_P_EFFECT_SET',
@@ -80,6 +81,7 @@ export const CardsActionCreators = {
     CardsActionTypes.FILTER_INDIV_P_TARGET_REMOVE, { key },
   ),
   setUncapFilter: (uncap: number | null) => createFSA(CardsActionTypes.FILTER_UNCAP_SET, { uncap }),
+  setOutfitSeriesId: (id: number | null) => createFSA(CardsActionTypes.FILTER_OUTFIT_ID_SET, { id }),
 
   setRoleEffectBuff: (value: boolean) => createFSA(
     CardsActionTypes.BUFF_ROLE_EFFECT_SET, { value },
