@@ -108,6 +108,9 @@ const Cards: React.FC<CardsProps> = ({
         <li>
           기대 볼티지는 위 크리티컬률 추정에 기본 크리 배수인 1.5배를 가정해 산출한 기댓값 입니다.
         </li>
+        <li>
+          <strong>카드 아이콘을 클릭해 상세 정보를 볼 수 있습니다.</strong>
+        </li>
       </ul>
     </AlignedP>
     <FixedWithPad>
