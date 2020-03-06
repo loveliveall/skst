@@ -231,10 +231,10 @@ export const CARD: Card = {
 
   185: { memberId: 28, title: '持ってきたんだよ', awakenTitle: '無邪気な赤ずきん', rarityId: 3, attributeId: 2, roleId: 3, fromId: ['gacha', 10015] },
   186: { memberId: 4, title: '全く、あなた達は……', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['gacha', 10015] },
-  187: { memberId: 5, title: '全速力で行くにゃ〜♪', awakenTitle: '森のハンターガール', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['gacha', 10016] },
-  188: { memberId: 11, title: '結構上手くない？', awakenTitle: 'ミッドナイトウルフ', rarityId: 3, attributeId: 3, roleId: 2, fromId: ['event', 11] },
-  189: { memberId: 27, title: '気を付けてくださいね〜！', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 1, roleId: 1, fromId: ['event', 11] },
-  190: { memberId: 19, title: 'いいなぁ、食べたい……！', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 4, roleId: 3, fromId: ['event', 11] },
+  187: { memberId: 11, title: '結構上手くない？', awakenTitle: 'ミッドナイトウルフ', rarityId: 3, attributeId: 3, roleId: 2, fromId: ['event', 11] },
+  188: { memberId: 5, title: '全速力で行くにゃ〜♪', awakenTitle: '森のハンターガール', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['gacha', 10016] },
+  189: { memberId: 19, title: 'いいなぁ、食べたい……！', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 4, roleId: 3, fromId: ['event', 11] },
+  190: { memberId: 27, title: '気を付けてくださいね〜！', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 1, roleId: 1, fromId: ['event', 11] },
 };
 /* eslint-enable object-curly-newline, max-len */
 
