@@ -290,8 +290,9 @@
   }
 `,La=Object(s.a)(Se)`
   margin: 2px;
-`,Aa=s.a.p`
+`,Aa=s.a.div`
   line-height: 1.5em;
+  word-break: keep-all;
 `;var _a=Object(p.b)(e=>({inSync:fe(e),isInitial:Ie(e)}),e=>({applySetting:()=>{e(J.applySettings())},rollbackSetting:()=>{e(J.rollbackSettings())},resetSetting:()=>{e(J.resetSettings())}}))(({inSync:e,isInitial:t,applySetting:a,rollbackSetting:i,resetSetting:r})=>l.a.createElement(Ea,null,l.a.createElement(xa,null,l.a.createElement(Pa,null,l.a.createElement("tbody",null,l.a.createElement(aa,null),l.a.createElement(da,null)))),l.a.createElement(De,null,l.a.createElement(La,{disabled:e,onClick:()=>a()},"설정 적용"),l.a.createElement(La,{disabled:e,onClick:()=>i()},"되돌리기"),l.a.createElement(La,{disabled:t,onClick:()=>r()},"초기화")),l.a.createElement(Aa,null,l.a.createElement("ul",null,l.a.createElement("li",null,"이 표에 있는 모든 기본 스탯 값은 만렙 및 해당 한돌 수치의 모든 특훈 개방 상태 스탯입니다."),l.a.createElement("li",null,"실제 인게임에서는 인연 보정치 등의 다양한 원인으로 인해 표와 값이 다를 수 있습니다."),l.a.createElement("li",null,"크리티컬에 관한 정보는 명확히 알려진 것이 없으나, ",l.a.createElement("a",{href:"https://gall.dcinside.com/sunshine/3111751",target:"_blank",rel:"noopener noreferrer"},"이 글"),"에 따라 ((테크닉 / 340) + (보정치))% 식을 사용하고 있습니다."),l.a.createElement("li",null,"기대 볼티지는 위 크리티컬률 추정에 기본 크리 배수인 1.5배를 가정해 산출한 기댓값 입니다."),l.a.createElement("li",null,"크리티컬 보정치 값 및 한돌별 스탯 값의 작성에는 ",l.a.createElement("a",{href:"http://kachagain.com/sifas/cards.php",target:"_blank",rel:"noopener noreferrer"},"이 사이트"),"를 참고하고 있습니다."),l.a.createElement("li",null,l.a.createElement("strong",null,"카드 아이콘을 클릭해 상세 정보를 볼 수 있습니다.")))),l.a.createElement(xa,null,l.a.createElement(ka,null))));const Da=Object(s.a)(De)`
   width: 100%;
   flex-direction: column;
@@ -461,6 +462,7 @@
 `,ji=s.a.p`
   text-align: center;
   line-height: 1.6em;
+  word-break: keep-all;
 `;var Ri=()=>l.a.createElement(l.a.Fragment,null,l.a.createElement(Ci,null,l.a.createElement(Oi,null,l.a.createElement(wi,null,l.a.createElement("h3",{style:{wordBreak:"keep-all",textAlign:"center"}},"본 화면은 PC 환경에 최적화 되어 있습니다."))),l.a.createElement(wi,null,l.a.createElement(ji,null,"여기서 계산되는 보정 스탯은 추정치이니 참고용으로만 사용해 주세요.",l.a.createElement("br",null),"보정 스탯은 (편성 스탯) * (기본 스탯 증감치) * (스탯 증감치) * (동속성 효과)로 계산됩니다."),l.a.createElement(ji,null,l.a.createElement("strong",null,"사용방법"),l.a.createElement("br",null),"라이브 편성에서 보이는 각 카드의 스탯을 입력하고 곡의 속성과 원하는 라이브 곡 효과들을 설정해 주세요.",l.a.createElement("br",null),"설정한 곡 속성 및 라이브 곡 효과가 적용된 상태의 보정 스탯(추정)이 계산됩니다.",l.a.createElement("br",null),l.a.createElement("strong",null,"크리티컬 관련 추정은 ",l.a.createElement("a",{href:"/cards"},"카드 목록"),"에 있는 가정을 그대로 적용한 수치입니다."))),l.a.createElement(wi,{style:{border:"1px solid black"}},l.a.createElement(pi,null)),l.a.createElement(wi,null,l.a.createElement(Ei,null))),l.a.createElement(Si,null));const Ni={1:0,2:100,3:187,4:231,5:264,6:290,7:313,8:333,9:351,10:367,11:382,12:396,13:409,14:422,15:433,16:445,17:455,18:466,19:475,20:485,21:494,22:503,23:512,24:520,25:528,26:536,27:543,28:551,29:558,30:565,31:572,32:579,33:586,34:592,35:598,36:605,37:611,38:617,39:623,40:629,41:634,42:640,43:645,44:651,45:656,46:662,47:667,48:672,49:677,50:682,51:687,52:692,53:696,54:701,55:706,56:710,57:715,58:720,59:724,60:728,61:733,62:737,63:741,64:746,65:750,66:754,67:758,68:762,69:766,70:770,71:774,72:778,73:782,74:785,75:789,76:793,77:797,78:800,79:804,80:808},Fi=Object(s.a)(De)`
   width: 100%;
   flex-direction: column;
@@ -499,7 +501,11 @@
 `,Yi=Object(s.a)(_e)`
   padding-top: 4px;
   padding-bottom: 4px;
-`;var Zi=()=>l.a.createElement(l.a.Fragment,null,l.a.createElement(Ji,null,l.a.createElement(Yi,{style:{border:"1px solid black"}},l.a.createElement(pi,null)),l.a.createElement(Yi,null,l.a.createElement(qi,null))),l.a.createElement(Hi,null));const Qi=s.a.nav`
+`,Zi=s.a.p`
+  text-align: center;
+  line-height: 1.6em;
+  word-break: keep-all;
+`;var Qi=()=>l.a.createElement(l.a.Fragment,null,l.a.createElement(Ji,null,l.a.createElement(Yi,null,l.a.createElement(Zi,null,"여기서 계산되는 스탯은 아래 식을 통해 계산됩니다:",l.a.createElement("br",null),"(카드 기본 스탯) * (인연 버프) * (기본 스탯 증감) * (스탯 증감) * (동속성 효과)",l.a.createElement("br",null),"카드 자체의 특기, 개성(패시브), 타입 등은 계산에 영향을 미치지 않습니다! 주의해주세요.",l.a.createElement("br",null),l.a.createElement("strong",null,"크리티컬 관련 추정은 ",l.a.createElement("a",{href:"/cards"},"카드 목록"),"에 있는 가정을 그대로 적용한 수치입니다."))),l.a.createElement(Yi,{style:{border:"1px solid black"}},l.a.createElement(pi,null)),l.a.createElement(Yi,null,l.a.createElement(qi,null))),l.a.createElement(Hi,null));const Wi=s.a.nav`
   height: 100%;
   width: 160px;
   position: fixed;
@@ -515,7 +521,7 @@
   @media screen and (max-width: 768px) {
     display: none;
   }
-`,Wi=s.a.nav`
+`,Xi=s.a.nav`
   width: 100%;
   position: relative;
   z-index: 1;
@@ -530,7 +536,7 @@
   @media screen and (min-width: 769px) {
     display: none;
   }
-`,Xi=s.a.button`
+`,el=s.a.button`
   width: 100%;
   color: #f1f1f1;
   border: 0px solid black;
@@ -538,7 +544,7 @@
   outline: none;
   box-shadow: none;
   font-size: 20px;
-`,el=s.a.button`
+`,tl=s.a.button`
   width: 100%;
   border: 0px solid black;
   background: none;
@@ -552,7 +558,7 @@
   &:hover {
     color: #f1f1f1;
   }
-`,tl=Object(s.a)(d.c)`
+`,al=Object(s.a)(d.c)`
   display: block;
   padding: 6px 16px 6px 16px;
   text-decoration: none;
@@ -562,7 +568,7 @@
   &:hover {
     color: #f1f1f1;
   }
-`,al=s.a.div`
+`,il=s.a.div`
   margin-left: 160px;
   padding: 12px 10px;
 
@@ -570,4 +576,4 @@
   @media screen and (max-width: 768px) {
     margin-left: 0px;
   }
-`;var il=Object(p.b)(e=>({isJPEdition:Te(e)}),e=>({toggleEdition:()=>{e(Z.toggleEdition())}}))(({isJPEdition:e,toggleEdition:t})=>{const[a,i]=l.a.useState(!1),r=[{key:"home",path:"/",title:"홈",exact:!0},{key:"cards",path:"/cards",title:"카드 목록",exact:!1},{key:"gachas",path:"/gachas",title:"가챠 목록",exact:!1},{key:"events",path:"/events",title:"이벤트 목록",exact:!1},{key:"deck-simulator",path:"/deck-simulator",title:"덱 비교기",exact:!1},{key:"card-comparator",path:"/card-comparator",title:"카드 비교기",exact:!1}];return l.a.createElement(l.a.Fragment,null,l.a.createElement(Qi,null,l.a.createElement(el,{type:"button",onClick:()=>t()},e?"일본판":"글로벌판"),r.map(e=>l.a.createElement(tl,{key:e.key,exact:e.exact,to:e.path,activeStyle:{color:"#f1f1f1"}},e.title))),l.a.createElement(Wi,null,l.a.createElement(De,null,l.a.createElement(Xi,{type:"button",onClick:()=>t(),style:{paddingBottom:"8px"}},e?"일본판":"글로벌판"),l.a.createElement(Xi,{type:"button",onClick:()=>i(!a),style:{paddingBottom:a?"8px":"0px"}},a?"메뉴 닫기":"메뉴 열기")),a&&r.map(e=>l.a.createElement(tl,{key:e.key,exact:e.exact,to:e.path,activeStyle:{color:"#f1f1f1"}},e.title))),l.a.createElement(al,null,"localhost"===window.location.hostname&&!1,l.a.createElement(c.c,null,l.a.createElement(c.a,{exact:!0,path:"/",component:Ke}),l.a.createElement(c.a,{path:"/card/:id",component:kt}),l.a.createElement(c.a,{path:"/cards",component:_a}),l.a.createElement(c.a,{path:"/gachas",component:ja}),l.a.createElement(c.a,{path:"/event/:id",component:Ja}),l.a.createElement(c.a,{path:"/events",component:ei}),l.a.createElement(c.a,{path:"/deck-simulator",component:Ri}),l.a.createElement(c.a,{path:"/card-comparator",component:Zi}))))});Object.keys(_).map(Number).forEach(e=>{if(6!==_[e].length)throw Error(`ID ${e} does not have 6 parameter state`);if(void 0===S[e])throw Error(`ID ${e} does not exist in CARD`)}),Object.keys(We).map(Number).forEach(e=>{const{maxLevel:t,detail:a}=We[e];if(!Object.keys(a).every(e=>{const i=a[e];return!Array.isArray(i)||i.length===t}))throw Error(`Skill ID ${e} does not have enough info for each skill level`)}),Object.keys(ua).map(Number).forEach(e=>{if(6!==ua[e].speciality.length)throw Error(`Skill level map ID ${e} does not have 6 speciality map`);if(6!==ua[e].individuality.passive.length)throw Error(`Skill level map ID ${e} does not have 6 individuality passive map`)}),n.a.render(l.a.createElement(p.a,{store:H},l.a.createElement(d.a,null,l.a.createElement(il,null))),document.getElementById("app"))}});
+`;var ll=Object(p.b)(e=>({isJPEdition:Te(e)}),e=>({toggleEdition:()=>{e(Z.toggleEdition())}}))(({isJPEdition:e,toggleEdition:t})=>{const[a,i]=l.a.useState(!1),r=[{key:"home",path:"/",title:"홈",exact:!0},{key:"cards",path:"/cards",title:"카드 목록",exact:!1},{key:"gachas",path:"/gachas",title:"가챠 목록",exact:!1},{key:"events",path:"/events",title:"이벤트 목록",exact:!1},{key:"deck-simulator",path:"/deck-simulator",title:"덱 비교기",exact:!1},{key:"card-comparator",path:"/card-comparator",title:"카드 비교기",exact:!1}];return l.a.createElement(l.a.Fragment,null,l.a.createElement(Wi,null,l.a.createElement(tl,{type:"button",onClick:()=>t()},e?"일본판":"글로벌판"),r.map(e=>l.a.createElement(al,{key:e.key,exact:e.exact,to:e.path,activeStyle:{color:"#f1f1f1"}},e.title))),l.a.createElement(Xi,null,l.a.createElement(De,null,l.a.createElement(el,{type:"button",onClick:()=>t(),style:{paddingBottom:"8px"}},e?"일본판":"글로벌판"),l.a.createElement(el,{type:"button",onClick:()=>i(!a),style:{paddingBottom:a?"8px":"0px"}},a?"메뉴 닫기":"메뉴 열기")),a&&r.map(e=>l.a.createElement(al,{key:e.key,exact:e.exact,to:e.path,activeStyle:{color:"#f1f1f1"}},e.title))),l.a.createElement(il,null,"localhost"===window.location.hostname&&!1,l.a.createElement(c.c,null,l.a.createElement(c.a,{exact:!0,path:"/",component:Ke}),l.a.createElement(c.a,{path:"/card/:id",component:kt}),l.a.createElement(c.a,{path:"/cards",component:_a}),l.a.createElement(c.a,{path:"/gachas",component:ja}),l.a.createElement(c.a,{path:"/event/:id",component:Ja}),l.a.createElement(c.a,{path:"/events",component:ei}),l.a.createElement(c.a,{path:"/deck-simulator",component:Ri}),l.a.createElement(c.a,{path:"/card-comparator",component:Qi}))))});Object.keys(_).map(Number).forEach(e=>{if(6!==_[e].length)throw Error(`ID ${e} does not have 6 parameter state`);if(void 0===S[e])throw Error(`ID ${e} does not exist in CARD`)}),Object.keys(We).map(Number).forEach(e=>{const{maxLevel:t,detail:a}=We[e];if(!Object.keys(a).every(e=>{const i=a[e];return!Array.isArray(i)||i.length===t}))throw Error(`Skill ID ${e} does not have enough info for each skill level`)}),Object.keys(ua).map(Number).forEach(e=>{if(6!==ua[e].speciality.length)throw Error(`Skill level map ID ${e} does not have 6 speciality map`);if(6!==ua[e].individuality.passive.length)throw Error(`Skill level map ID ${e} does not have 6 individuality passive map`)}),n.a.render(l.a.createElement(p.a,{store:H},l.a.createElement(d.a,null,l.a.createElement(ll,null))),document.getElementById("app"))}});
