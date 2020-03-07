@@ -92,21 +92,20 @@ const Cards: React.FC<CardsProps> = ({
         </li>
         <li>
           크리티컬에 관한 정보는 명확히 알려진 것이 없으나,&nbsp;
-          <a href="https://twitter.com/mmthom35/status/1189561036912783360" target="_blank" rel="noopener noreferrer">
-            이 트윗
-          </a>
-          의 추정에 따라
-          <br />
-          어필 &gt; 테크닉일 경우 (테크닉/340)%, 그 외의 경우 (테크닉/200)% 식을 사용하고 있습니다.
-          <br />
-          역시나&nbsp;
-          <a href="https://gall.dcinside.com/sunshine/3107809" target="_blank" rel="noopener noreferrer">
+          <a href="https://gall.dcinside.com/sunshine/3111751" target="_blank" rel="noopener noreferrer">
             이 글
           </a>
-          에서 아닌 것이 증명 되었지만 별 수 있겠습니까 다른 추정 식이 없는데. 대충 주의해서 씁시다.
+          에 따라 ((테크닉 / 340) + (보정치))% 식을 사용하고 있습니다.
         </li>
         <li>
           기대 볼티지는 위 크리티컬률 추정에 기본 크리 배수인 1.5배를 가정해 산출한 기댓값 입니다.
+        </li>
+        <li>
+          크리티컬 보정치 값 및 한돌별 스탯 값의 작성에는&nbsp;
+          <a href="http://kachagain.com/sifas/cards.php" target="_blank" rel="noopener noreferrer">
+            이 사이트
+          </a>
+          를 참고하고 있습니다.
         </li>
         <li>
           <strong>카드 아이콘을 클릭해 상세 정보를 볼 수 있습니다.</strong>

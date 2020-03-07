@@ -22,6 +22,7 @@ import { ATTRIBUTE, ROLE, RARITY } from '@/data/cardMetadata';
 import { MEMBER } from '@/data/memberMetadata';
 import { CARD_SKILL } from '@/data/cardSkill';
 import { SKILL_LEVEL_MAP } from '@/data/cardSkillLevelMap';
+import { CARD_CRIT_BASE } from '@/data/cardCritBase';
 import { SKILL, shortSkillTextKr, skillTargetTextKr } from '@/data/skill';
 import { SKILL_EFFECT_CATEGORY, SKILL_EFFECT_TYPE } from '@/data/skillEffectType';
 
@@ -180,7 +181,7 @@ const CardTable: React.FC<CardTableProps> = ({
       if (card.roleId === 4) return 0.95; // Sk
       return 1;
     })();
-    const critPercent = critProb(appl, tech);
+    const critPercent = critProb(appl, tech, CARD_CRIT_BASE[card.id].value);
     const newVoltage = Math.floor((appl + 0.5 * appl * (critPercent / 100)) * voltageMul);
     return {
       ...card,

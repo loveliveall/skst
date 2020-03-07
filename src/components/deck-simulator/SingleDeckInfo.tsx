@@ -8,6 +8,7 @@ import { FlexBox, StyledButton } from '@/components/Styles';
 
 import { getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
 import { CARD_SKILL } from '@/data/cardSkill';
+import { CARD_CRIT_BASE } from '@/data/cardCritBase';
 import { SKILL } from '@/data/skill';
 import { SKILL_EFFECT_TYPE, SKILL_EFFECT_CATEGORY } from '@/data/skillEffectType';
 import { LIVE_EFFECT_TARGET } from '@/data/liveEffectTarget';
@@ -164,7 +165,10 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
       ...acc,
       [curr]: statVal,
     };
-  }, { appl: 0, stam: 0, tech: 0 }));
+  }, {
+    cardId: slot.cardId, appl: 0, stam: 0, tech: 0,
+  }));
+
   const subUnitVoMul = [0, 1, 2].map((id) => deck.slice(3 * id, 3 * id + 3).reduce((acc, curr) => {
     if (curr.cardId !== null) {
       const card = cardTable[curr.cardId];
@@ -175,9 +179,11 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
     }
     return acc;
   }, 100));
+
   const otherStats = adjustedStats.map((stat, slotIdx) => {
     const voMul = subUnitVoMul[Math.floor(slotIdx / 3)];
-    const crit = critProb(stat.appl, stat.tech) / 100;
+    const critBase = stat.cardId === null ? 0 : CARD_CRIT_BASE[stat.cardId].value;
+    const crit = critProb(stat.appl, stat.tech, critBase) / 100;
     return {
       voltage: Math.floor(stat.appl * (voMul / 100)),
       voltageInCrit: Math.floor((stat.appl + 0.5 * stat.appl * crit) * (voMul / 100)),

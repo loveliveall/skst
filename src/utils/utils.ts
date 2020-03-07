@@ -10,8 +10,8 @@ export function numberRepr(n: number): string {
   return `${numberRepr(Math.floor(n / 1000))},${pad(n % 1000, 3)}`;
 }
 
-export function critProb(appl: number, tech: number) {
-  const val = appl > tech ? tech / 340 : tech / 200;
+export function critProb(_: number, tech: number, critBase: number) {
+  const val = tech / 340 + critBase;
   if (val > 100) return 100;
   if (val < 0) return 0;
   return val;
