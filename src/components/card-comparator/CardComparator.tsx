@@ -19,6 +19,7 @@ const RowWrapper = styled(FixedWrapper)`
 const CenterP = styled.p`
   text-align: center;
   line-height: 1.6em;
+  word-break: keep-all;
 `;
 
 const CardComparator: React.FC = () => (

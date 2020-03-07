@@ -35,8 +35,9 @@ const ActionButton = styled(StyledButton)`
   margin: 2px;
 `;
 
-const AlignedP = styled.p`
+const AlignedDiv = styled.div`
   line-height: 1.5em;
+  word-break: keep-all;
 `;
 
 interface PropsFromState {
@@ -82,7 +83,7 @@ const Cards: React.FC<CardsProps> = ({
         초기화
       </ActionButton>
     </FlexBox>
-    <AlignedP>
+    <AlignedDiv>
       <ul>
         <li>
           이 표에 있는 모든 기본 스탯 값은 만렙 및 해당 한돌 수치의 모든 특훈 개방 상태 스탯입니다.
@@ -111,7 +112,7 @@ const Cards: React.FC<CardsProps> = ({
           <strong>카드 아이콘을 클릭해 상세 정보를 볼 수 있습니다.</strong>
         </li>
       </ul>
-    </AlignedP>
+    </AlignedDiv>
     <FixedWithPad>
       <CardTable />
     </FixedWithPad>
