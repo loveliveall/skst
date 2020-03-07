@@ -5,15 +5,13 @@ import { connect } from 'react-redux';
 import { critProb } from '@/utils/utils';
 import { AppState, SEL, AC } from '@/store';
 import { FlexBox, StyledButton } from '@/components/Styles';
+import { getStatMultiplier } from '@/components/common/helpers';
 
 import { getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
 import { CARD_SKILL } from '@/data/cardSkill';
 import { CARD_CRIT_BASE } from '@/data/cardCritBase';
 import { SKILL } from '@/data/skill';
 import { SKILL_EFFECT_TYPE, SKILL_EFFECT_CATEGORY } from '@/data/skillEffectType';
-import { LIVE_EFFECT_TARGET } from '@/data/liveEffectTarget';
-import { LIVE_EFFECT_TYPE } from '@/data/liveEffectType';
-import { MEMBER } from '@/data/memberMetadata';
 
 const NoWrapFlexBox = styled(FlexBox)`
   flex-wrap: nowrap;
@@ -107,50 +105,11 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
     tech: editDeckSlotTech,
   };
   const adjustedStats = deck.map((slot) => STATS.reduce((acc, curr) => {
-    const filteredLiveEffect = liveEffect.filter((item) => {
-      const effectTarget = LIVE_EFFECT_TARGET[item.effectTargetId];
-      if (effectTarget.detail !== undefined) {
-        // We need card info in this case
-        if (slot.cardId === null) return false;
-        const card = cardTable[slot.cardId];
-        if (card === undefined) return false;
-        const member = MEMBER[card.memberId];
-        const effectDetail = effectTarget.detail;
-        if (effectDetail.category === 'attribute'
-        && !(effectDetail.exclude && effectDetail.categoryId !== card.attributeId)
-        && !(!effectDetail.exclude && effectDetail.categoryId === card.attributeId)) return false;
-        if (effectDetail.category === 'role'
-        && !(effectDetail.exclude && effectDetail.categoryId !== card.roleId)
-        && !(!effectDetail.exclude && effectDetail.categoryId === card.roleId)) return false;
-        if (effectDetail.category === 'group'
-        && !(effectDetail.exclude && effectDetail.categoryId !== member.groupId)
-        && !(!effectDetail.exclude && effectDetail.categoryId === member.groupId)) return false;
-        if (effectDetail.category === 'grade'
-        && !(effectDetail.exclude && effectDetail.categoryId !== member.grade)
-        && !(!effectDetail.exclude && effectDetail.categoryId === member.grade)) return false;
-        if (effectDetail.category === 'unit'
-        && !(effectDetail.exclude && effectDetail.categoryId !== member.unitId)
-        && !(!effectDetail.exclude && effectDetail.categoryId === member.unitId)) return false;
-      }
-      return true;
-    });
-    const statMultiplier = filteredLiveEffect.reduce((multiplier, item) => {
-      const effectType = LIVE_EFFECT_TYPE[item.effectTypeId];
-      const delta = (effectType.type === 'inc' ? 1 : -1) * item.amount;
-      if (curr === 'appl' && effectType.stat === 'baseAppl') {
-        return {
-          ...multiplier,
-          baseStat: multiplier.baseStat + delta,
-        };
-      }
-      if (curr === 'appl' && effectType.stat === 'appl') {
-        return {
-          ...multiplier,
-          stat: multiplier.stat + delta,
-        };
-      }
-      return multiplier;
-    }, { baseStat: 100, stat: 100 }); // %
+    let targetCard;
+    if (slot.cardId !== null && cardTable[slot.cardId] !== undefined) {
+      targetCard = cardTable[slot.cardId];
+    }
+    const statMultiplier = getStatMultiplier(targetCard, liveEffect, curr);
 
     let statVal = slot[curr];
     statVal = Math.floor(statVal * (statMultiplier.baseStat / 100));

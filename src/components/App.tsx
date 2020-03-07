@@ -15,6 +15,7 @@ import Gachas from '@/components/gachas/Gachas';
 import Event from '@/components/event/Event';
 import Events from '@/components/events/Events';
 import DeckSimulator from '@/components/deck-simulator/DeckSimulator';
+import CardComparator from '@/components/card-comparator/CardComparator';
 import Test from '@/components/test/Test';
 
 const FixedNavDesktop = styled.nav`
@@ -151,6 +152,12 @@ const App: React.FC<AppProps> = ({
       title: '덱 비교기',
       exact: false,
     },
+    {
+      key: 'card-comparator',
+      path: '/card-comparator',
+      title: '카드 비교기',
+      exact: false,
+    },
   ];
 
   return (
@@ -217,6 +224,7 @@ const App: React.FC<AppProps> = ({
           <Route path="/event/:id" component={Event} />
           <Route path="/events" component={Events} />
           <Route path="/deck-simulator" component={DeckSimulator} />
+          <Route path="/card-comparator" component={CardComparator} />
         </Switch>
       </Main>
     </>

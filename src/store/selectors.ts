@@ -37,4 +37,7 @@ export const SEL = {
     (item) => item.key === key,
   ),
   simulatorCardSelectModal: (state: AppState) => state.deckSimulator.cardSelectModal,
+
+  cardComparatorCardSettings: (state: AppState) => state.cardComparator.cardSettings,
+  cardComparatorCardSelectModal: (state: AppState) => state.cardComparator.cardSelectModal,
 };
