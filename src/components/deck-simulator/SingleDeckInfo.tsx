@@ -7,7 +7,7 @@ import { AppState, SEL, AC } from '@/store';
 import { FlexBox, StyledButton } from '@/components/Styles';
 import { getStatMultiplier } from '@/components/common/helpers';
 
-import { getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
+import { getCardIconAssetPath, getCardSymbol, CARD } from '@/data/cardList';
 import { CARD_SKILL } from '@/data/cardSkill';
 import { CARD_CRIT_BASE } from '@/data/cardCritBase';
 import { SKILL } from '@/data/skill';
@@ -69,7 +69,6 @@ interface OwnProps {
   deckKey: number,
 }
 interface PropsFromState {
-  cardTable: ReturnType<typeof SEL.dbCardTable>,
   deckInfo: ReturnType<typeof SEL.simulatorSingleDeck>,
   songAttributeId: ReturnType<typeof SEL.simulatorSongAttributeId>,
   liveEffect: ReturnType<typeof SEL.simulatorLiveEffect>,
@@ -86,7 +85,7 @@ interface PropsFromDispatch {
 type SingleDeckInfoProps = OwnProps & PropsFromState & PropsFromDispatch;
 
 const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
-  cardTable, openCardSelectModal,
+  openCardSelectModal,
   deckInfo, removeDeck, duplicateDeck, editDeckSlotSpecLv,
   editDeckSlotAppl, editDeckSlotStam, editDeckSlotTech,
   songAttributeId, liveEffect,
@@ -106,8 +105,8 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
   };
   const adjustedStats = deck.map((slot) => STATS.reduce((acc, curr) => {
     let targetCard;
-    if (slot.cardId !== null && cardTable[slot.cardId] !== undefined) {
-      targetCard = cardTable[slot.cardId];
+    if (slot.cardId !== null && CARD[slot.cardId] !== undefined) {
+      targetCard = CARD[slot.cardId];
     }
     const statMultiplier = getStatMultiplier(targetCard, liveEffect, curr);
 
@@ -115,7 +114,7 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
     statVal = Math.floor(statVal * (statMultiplier.baseStat / 100));
     statVal = Math.floor(statVal * (statMultiplier.stat / 100));
     if (slot.cardId !== null) {
-      const card = cardTable[slot.cardId];
+      const card = CARD[slot.cardId];
       if (card !== undefined && card.attributeId === songAttributeId) {
         statVal = Math.floor(statVal * (120 / 100));
       }
@@ -130,7 +129,7 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
 
   const subUnitVoMul = [0, 1, 2].map((id) => deck.slice(3 * id, 3 * id + 3).reduce((acc, curr) => {
     if (curr.cardId !== null) {
-      const card = cardTable[curr.cardId];
+      const card = CARD[curr.cardId];
       if (card !== undefined) {
         if (card.roleId === 1) return acc + 5; // Vo
         if (card.roleId === 4) return acc - 5; // Sk
@@ -351,7 +350,6 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
 };
 
 const mapStateToProps = (state: AppState, ownProps: OwnProps): PropsFromState => ({
-  cardTable: SEL.dbCardTable(state),
   deckInfo: SEL.simulatorSingleDeck(state, ownProps.deckKey),
   songAttributeId: SEL.simulatorSongAttributeId(state),
   liveEffect: SEL.simulatorLiveEffect(state),

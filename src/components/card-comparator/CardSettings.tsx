@@ -6,7 +6,7 @@ import { AppState, SEL, AC } from '@/store';
 
 import { FlexBox, StyledButton } from '@/components/Styles';
 import { getStatMultiplier } from '@/components/common/helpers';
-import { getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
+import { getCardIconAssetPath, getCardSymbol, CARD } from '@/data/cardList';
 import { PARAMETER } from '@/data/cardParameter';
 import { CARD_CRIT_BASE } from '@/data/cardCritBase';
 import { CARD_SKILL } from '@/data/cardSkill';
@@ -61,7 +61,6 @@ const StyledTable = styled.table`
 interface PropsFromState {
   songAttributeId: ReturnType<typeof SEL.simulatorSongAttributeId>,
   liveEffect: ReturnType<typeof SEL.simulatorLiveEffect>,
-  cardTable: ReturnType<typeof SEL.dbCardTable>,
   cardComparatorSettings: ReturnType<typeof SEL.cardComparatorCardSettings>,
 }
 interface PropsFromDispatch {
@@ -74,7 +73,7 @@ type CardSettingsProps = PropsFromState & PropsFromDispatch;
 
 const CardSettings: React.FC<CardSettingsProps> = ({
   songAttributeId, liveEffect,
-  cardTable, cardComparatorSettings,
+  cardComparatorSettings,
   openCardModal, setKizunaLv, setUncap, removeCard,
 }) => (
   <StyledTable>
@@ -96,7 +95,7 @@ const CardSettings: React.FC<CardSettingsProps> = ({
     <tbody>
       {cardComparatorSettings.map((cardSetting) => {
         const { cardId, kizunaLv, uncap } = cardSetting.card;
-        const card = cardTable[cardId];
+        const card = CARD[cardId];
         if (card === undefined) return <tr key={cardSetting.key} />;
         const stat = (['appl', 'stam', 'tech'] as const).reduce((acc, curr) => {
           const statMultiplier = getStatMultiplier(card, liveEffect, curr);
@@ -237,7 +236,6 @@ const CardSettings: React.FC<CardSettingsProps> = ({
 const mapStateToProps = (state: AppState): PropsFromState => ({
   songAttributeId: SEL.simulatorSongAttributeId(state),
   liveEffect: SEL.simulatorLiveEffect(state),
-  cardTable: SEL.dbCardTable(state),
   cardComparatorSettings: SEL.cardComparatorCardSettings(state),
 });
 
