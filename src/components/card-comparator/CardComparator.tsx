@@ -40,6 +40,8 @@ const CardComparator: React.FC = () => (
             </a>
             에 있는 가정을 그대로 적용한 수치입니다.
           </strong>
+          <br />
+          인연 레벨은 80이 최대입니다.
         </CenterP>
       </RowWrapper>
       <RowWrapper style={{ border: '1px solid black' }}>
