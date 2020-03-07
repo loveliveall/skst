@@ -125,20 +125,25 @@ export default function deckSimulatorReducer(
       const targetDeck = target.deck;
       // Check if we need swap
       const existIdx = targetDeck.findIndex((slot) => slot.cardId === action.payload.cardId);
-      const targetSlot = targetDeck[action.payload.slotIdx];
       const editedDeckSetting = targetDeck.map((slot, slotIdx) => {
+        if (existIdx === -1) {
+          if (slotIdx === action.payload.slotIdx) {
+            // Swap does not happen. Just apply card ID
+            return {
+              ...slot,
+              cardId: action.payload.cardId,
+            };
+          }
+          return slot;
+        }
+        // Swap happens
         if (slotIdx === action.payload.slotIdx) {
-          return {
-            ...slot,
-            cardId: action.payload.cardId,
-          };
+          // Slot that we want to set. Exsiting card will be applied here
+          return targetDeck[existIdx];
         }
         if (slotIdx === existIdx) {
-          // Need to swap
-          return {
-            ...slot,
-            cardId: targetSlot.cardId,
-          };
+          // Slot that will be swapped. Targeting slot will be applied here
+          return targetDeck[action.payload.slotIdx];
         }
         return slot;
       });
