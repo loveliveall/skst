@@ -185,6 +185,7 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
     const critBase = stat.cardId === null ? 0 : CARD_CRIT_BASE[stat.cardId].value;
     const crit = critProb(stat.appl, stat.tech, critBase) / 100;
     return {
+      critPercent: crit * 100,
       voltage: Math.floor(stat.appl * (voMul / 100)),
       voltageInCrit: Math.floor((stat.appl + 0.5 * stat.appl * crit) * (voMul / 100)),
       spDamage: Math.floor(stat.appl + 1.2 * stat.tech),
@@ -268,6 +269,15 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
                 ))}
               </tr>
             ))}
+            <tr>
+              <DimTd>크리티컬률 추정</DimTd>
+              {otherStats.map((stat, slotIdx) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <DimTd key={`${deckInfo.key}-${slotIdx}`}>
+                  {`${stat.critPercent.toFixed(2)}%`}
+                </DimTd>
+              ))}
+            </tr>
             <tr>
               <td>
                 보정 특기 효과량
