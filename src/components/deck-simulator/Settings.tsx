@@ -104,6 +104,7 @@ const Settings: React.FC<SettingsProps> = ({
               type="number"
               value={item.amount}
               onChange={(event) => editLiveEffectAmount(item.key, Number(event.target.value))}
+              onFocus={(event) => event.target.select()}
             />
             <Button
               onClick={() => removeLiveEffect(item.key)}

@@ -211,6 +211,7 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
                       value={slot[stat]}
                       min="0"
                       onChange={(event) => STAT_EDITOR[stat](slotIdx, Number(event.target.value))}
+                      onFocus={(event) => event.target.select()}
                     />
                   </td>
                 ))}

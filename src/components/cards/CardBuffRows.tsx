@@ -136,6 +136,7 @@ const CardEffectRows: React.FC<CardEffectRows> = ({
               disabled={attributeId === null}
               value={diffAttrDebuf.value}
               onChange={(event) => setDiffAttrDebuf(diffAttrDebuf.targetParam, Number(event.target.value))}
+              onFocus={(event) => event.target.select()}
             />
             <span>%</span>
           </div>

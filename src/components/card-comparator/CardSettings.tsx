@@ -162,6 +162,8 @@ const CardSettings: React.FC<CardSettingsProps> = ({
                   if (val < 1) val = 1;
                   setKizunaLv(cardSetting.key, val);
                 }}
+                style={{ width: '50px' }}
+                onFocus={(event) => event.target.select()}
               />
             </td>
             <td>
