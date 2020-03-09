@@ -11,6 +11,9 @@ export interface Gacha {
     } | {
       type: 'event',
       eventId: number,
+    } | {
+      type: 'reprint',
+      desc: string,
     }
   ),
 }
@@ -52,5 +55,7 @@ export const GACHA: Gacha = {
   30002: { type: 'fes', name: 'スクスタフェス', startDate: '2019.12.31.', endDate: '2020.01.06.' },
   30003: { type: 'fes', name: 'スクスタフェス', startDate: '2020.01.31.', endDate: '2020.02.06.' },
   30004: { type: 'fes', name: 'スクスタフェス', startDate: '2020.02.28.', endDate: '2020.03.06.' },
+
+  40001: { type: 'reprint', name: 'スクスタハーフアニバーサリー記念♪衣装復刻ガチャ', startDate: '2020.03.09.', endDate: '2020.03.27.', desc: 'Snow halation, 君のこころは輝いてるかい？, わくわくアニマル 의상의 SR 27인 복각' },
 };
 /* eslint-enable object-curly-newline, max-len */

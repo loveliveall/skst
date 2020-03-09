@@ -75,6 +75,7 @@ const Gachas: React.FC<GachasProps> = ({
                 if (rowData.type === 'event') return <PaddedSpan>이벤트 가챠</PaddedSpan>;
                 if (rowData.type === 'pickup') return <PaddedSpan>픽업 가챠</PaddedSpan>;
                 if (rowData.type === 'fes') return <PaddedSpan>페스 가챠</PaddedSpan>;
+                if (rowData.type === 'reprint') return <PaddedSpan>복각 가챠</PaddedSpan>;
                 return <PaddedSpan />;
               },
             },
@@ -133,6 +134,13 @@ const Gachas: React.FC<GachasProps> = ({
                     <VerticalFlex>
                       <div><strong>관련 이벤트</strong></div>
                       <div>{eventTable[rowData.eventId].name}</div>
+                    </VerticalFlex>
+                  );
+                }
+                if (rowData.type === 'reprint') {
+                  return (
+                    <VerticalFlex>
+                      <div>{rowData.desc}</div>
                     </VerticalFlex>
                   );
                 }
