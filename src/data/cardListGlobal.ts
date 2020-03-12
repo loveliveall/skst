@@ -114,5 +114,8 @@ export const PARTIAL_CARD_GLOBAL: PartialCard = {
   102: { title: '오늘은 마음껏 즐기자!', awakenTitle: 'welcome to the party' },
   103: { title: '누마즈의 특산품', awakenTitle: 'Kimino Kokorowa Kagayaiterukai?' },
   104: { title: '다들 마음에 들어 할까?', awakenTitle: '두근두근 애니멀' },
+
+  105: { title: '타락천사 강림!', awakenTitle: '트와일라이트 데몬' },
+  106: { title: '옆에서 잠깐 기다려 줄래?', awakenTitle: 'Snow Halation' },
 };
 /* eslint-enable object-curly-newline, max-len */

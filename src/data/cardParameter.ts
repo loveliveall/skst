@@ -114,7 +114,7 @@ export const PARAMETER: Parameter = {
   103: [{ appl: 2466, stam: 3292, tech: 2466 }, { appl: 2784, stam: 3716, tech: 2784 }, { appl: 3102, stam: 4140, tech: 3102 }, { appl: 3420, stam: 4352, tech: 3420 }, { appl: 3897, stam: 4776, tech: 3579 }, { appl: 4069, stam: 5426, tech: 4069 }],
   104: [{ appl: 1888, stam: 3044, tech: 3292 }, { appl: 2132, stam: 3436, tech: 3716 }, { appl: 2376, stam: 3828, tech: 4140 }, { appl: 2620, stam: 4220, tech: 4352 }, { appl: 2742, stam: 4808, tech: 4776 }, { appl: 3118, stam: 5018, tech: 5426 }],
 
-  105: [{ appl: 4575, stam: 5989, tech: 4522 }, { appl: 5469, stam: 6783, tech: 4820 }, { appl: 5767, stam: 7974, tech: 5714 }, { appl: 6363, stam: 8768, tech: 6906 }, { appl: 7555, stam: 9562, tech: 7502 }, { appl: 8161, stam: 10759, tech: 8108 }],
+  105: [{ appl: 4522, stam: 6042, tech: 4522 }, { appl: 5416, stam: 6836, tech: 4820 }, { appl: 5714, stam: 8027, tech: 5714 }, { appl: 6310, stam: 8821, tech: 6906 }, { appl: 7502, stam: 9615, tech: 7502 }, { appl: 8108, stam: 10812, tech: 8108 }],
   106: [{ appl: 3024, stam: 3024, tech: 4036 }, { appl: 3414, stam: 3414, tech: 4556 }, { appl: 3804, stam: 3804, tech: 5076 }, { appl: 4194, stam: 3999, tech: 5596 }, { appl: 4389, stam: 4389, tech: 6376 }, { appl: 4987, stam: 4987, tech: 6650 }],
 
   107: [{ appl: 4522, stam: 5275, tech: 5275 }, { appl: 4820, stam: 6316, tech: 5969 }, { appl: 5714, stam: 6663, tech: 7010 }, { appl: 6906, stam: 7357, tech: 7704 }, { appl: 7502, stam: 8745, tech: 8398 }, { appl: 8108, stam: 9458, tech: 9458 }],
