@@ -5,7 +5,9 @@ export const EVENT_GLOBAL: Event = {
   1: {
     name: '시크릿 파티!',
     eventTypeId: 1,
-    rankBorder: {},
+    rankBorder: {
+      1: 1701550, 10: 933122, 50: 421706, 100: 333524, 2000: 123707, 4000: 101075, 9000: 77350, 30000: 28444, 50000: 3836,
+    },
     ingameInfo: [2000, 4000, 9000, 30000, 50000],
     rewardBorder: {
       10: [3, 2, 2],
