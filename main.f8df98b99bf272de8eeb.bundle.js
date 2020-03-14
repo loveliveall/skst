@@ -463,7 +463,7 @@
   text-align: center;
   line-height: 1.6em;
   word-break: keep-all;
-`;var Ri=()=>l.a.createElement(l.a.Fragment,null,l.a.createElement(Ci,null,l.a.createElement(Oi,null,l.a.createElement(wi,null,l.a.createElement("h3",{style:{wordBreak:"keep-all",textAlign:"center"}},"본 화면은 PC 환경에 최적화 되어 있습니다."))),l.a.createElement(wi,null,l.a.createElement(ji,null,"여기서 계산되는 보정 스탯은 추정치이니 참고용으로만 사용해 주세요.",l.a.createElement("br",null),"보정 스탯은 (편성 스탯) * (기본 스탯 증감치) * (스탯 증감치) * (동속성 효과)로 계산됩니다."),l.a.createElement(ji,null,l.a.createElement("strong",null,"사용방법"),l.a.createElement("br",null),"라이브 편성에서 보이는 각 카드의 스탯을 입력하고 곡의 속성과 원하는 라이브 곡 효과들을 설정해 주세요.",l.a.createElement("br",null),"설정한 곡 속성 및 라이브 곡 효과가 적용된 상태의 보정 스탯(추정)이 계산됩니다.",l.a.createElement("br",null),l.a.createElement("strong",null,"크리티컬 관련 추정은 ",l.a.createElement("a",{href:"/cards"},"카드 목록"),"에 있는 가정을 그대로 적용한 수치입니다."))),l.a.createElement(wi,{style:{border:"1px solid black"}},l.a.createElement(pi,null)),l.a.createElement(wi,null,l.a.createElement(Ei,null))),l.a.createElement(Si,null));const Ni={1:0,2:100,3:187,4:231,5:264,6:290,7:313,8:333,9:351,10:367,11:382,12:396,13:409,14:422,15:433,16:445,17:455,18:466,19:475,20:485,21:494,22:503,23:512,24:520,25:528,26:536,27:543,28:551,29:558,30:565,31:572,32:579,33:586,34:592,35:598,36:605,37:611,38:617,39:623,40:629,41:634,42:640,43:645,44:651,45:656,46:662,47:667,48:672,49:677,50:682,51:687,52:692,53:696,54:701,55:706,56:710,57:715,58:720,59:724,60:728,61:733,62:737,63:741,64:746,65:750,66:754,67:758,68:762,69:766,70:770,71:774,72:778,73:782,74:785,75:789,76:793,77:797,78:800,79:804,80:808},Fi=Object(s.a)(De)`
+`;var Ri=()=>l.a.createElement(l.a.Fragment,null,l.a.createElement(Ci,null,l.a.createElement(Oi,null,l.a.createElement(wi,null,l.a.createElement("h3",{style:{wordBreak:"keep-all",textAlign:"center"}},"본 화면은 PC 환경에 최적화 되어 있습니다."))),l.a.createElement(wi,null,l.a.createElement(ji,null,"여기서 계산되는 보정 스탯은 추정치이니 참고용으로만 사용해 주세요.",l.a.createElement("br",null),"보정 스탯은 (편성 스탯) * (기본 스탯 증감치) * (스탯 증감치) * (동속성 효과)로 계산됩니다."),l.a.createElement(ji,null,l.a.createElement("strong",null,"사용방법"),l.a.createElement("br",null),"라이브 편성에서 보이는 각 카드의 스탯을 입력하고 곡의 속성과 원하는 라이브 곡 효과들을 설정해 주세요.",l.a.createElement("br",null),"설정한 곡 속성 및 라이브 곡 효과가 적용된 상태의 보정 스탯(추정)이 계산됩니다.",l.a.createElement("br",null),l.a.createElement("strong",null,"크리티컬 관련 추정은 ",l.a.createElement("a",{href:"/cards"},"카드 목록"),"에 있는 가정을 그대로 적용한 수치입니다."))),l.a.createElement(wi,{style:{border:"1px solid black"}},l.a.createElement(pi,null)),l.a.createElement(wi,null,l.a.createElement(Ei,null))),l.a.createElement(Si,null));const Ni={1:0,2:100,3:187,4:231,5:264,6:290,7:313,8:333,9:351,10:367,11:382,12:396,13:409,14:422,15:433,16:445,17:455,18:466,19:475,20:485,21:494,22:503,23:512,24:520,25:528,26:536,27:543,28:551,29:558,30:565,31:572,32:579,33:586,34:592,35:598,36:605,37:611,38:617,39:623,40:629,41:634,42:640,43:645,44:651,45:656,46:662,47:667,48:672,49:677,50:682,51:687,52:692,53:696,54:701,55:706,56:710,57:715,58:720,59:724,60:728,61:733,62:737,63:741,64:746,65:750,66:754,67:758,68:762,69:766,70:770,71:774,72:778,73:782,74:785,75:789,76:793,77:797,78:800,79:804,80:808,81:811,82:815,83:818,84:822,85:825,86:829,87:832,88:836,89:839,90:842,91:846,92:849,93:852,94:856,95:859,96:862,97:865,98:868,99:872,100:875,101:878,102:881,103:884,104:887,105:890,106:893,107:896,108:899,109:902,110:905,111:908,112:911,113:914,114:916,115:919,116:922,117:925,118:928,119:930,120:933,121:936,122:939,123:941,124:944,125:947,126:950,127:952,128:955,129:957,130:960,131:963,132:965,133:968,134:970,135:973,136:975,137:978,138:981,139:983,140:986,141:988,142:990,143:993,144:995,145:998,146:1e3,147:1003,148:1005,149:1007,150:1010,151:1012,152:1015,153:1017,154:1019,155:1022,156:1024,157:1026,158:1028,159:1031,160:1033,161:1035,162:1038,163:1040,164:1042,165:1044,166:1046,167:1049,168:1051,169:1053,170:1055,171:1057,172:1060,173:1062,174:1064,175:1066,176:1068,177:1070,178:1072,179:1075,180:1077,181:1079,182:1081,183:1083,184:1085,185:1087,186:1089,187:1091,188:1093,189:1095,190:1097,191:1099,192:1101,193:1103,194:1105,195:1107,196:1109,197:1111,198:1113,199:1115,200:1117},Fi=Object(s.a)(De)`
   width: 100%;
   flex-direction: column;
   align-items: center;
@@ -472,20 +472,18 @@
 `,Mi=Object(s.a)(Se)`
   padding: 4px 8px 4px 8px;
   margin: 2px;
-`,Ui=s.a.input`
-  margin: 4px;
-`,Bi=s.a.img`
+`,Ui=s.a.img`
   padding: 4px;
   width: 60px;
   height: 60px;
   cursor: pointer;
-`,Ki=s.a.img`
+`,Bi=s.a.img`
   padding: 4px;
   width: 36px;
   height: 36px;
-`,Gi=s.a.td`
+`,Ki=s.a.td`
   color: #777;
-`,zi=s.a.table`
+`,Gi=s.a.table`
   border: 1px solid black;
   border-collapse: collapse;
 
@@ -494,18 +492,18 @@
     padding: 4px 8px 4px 8px;
     white-space: nowrap;
   }
-`;var qi=Object(p.b)(e=>({songAttributeId:Ve(e),liveEffect:ke(e),cardComparatorSettings:Le(e)}),e=>({openCardModal:t=>{e(Y.openCardSelectModal(t))},setKizunaLv:(t,a)=>{e(Y.editCardKizuna(t,a))},setUncap:(t,a)=>{e(Y.editCardUncap(t,a))},removeCard:t=>{e(Y.removeCard(t))}}))(({songAttributeId:e,liveEffect:t,cardComparatorSettings:a,openCardModal:i,setKizunaLv:r,setUncap:n,removeCard:d})=>l.a.createElement(zi,null,l.a.createElement("thead",null,l.a.createElement("tr",null,l.a.createElement("th",null,"카드"),l.a.createElement("th",null,"인연 Lv."),l.a.createElement("th",null,"한돌"),l.a.createElement("th",null,"어필"),l.a.createElement("th",null,"스태미너"),l.a.createElement("th",null,"테크닉"),l.a.createElement("th",null,"크리율"),l.a.createElement("th",null,"기대 볼티지"),l.a.createElement("th",null,"특기 효과량"),l.a.createElement("th",null,"개성(패시브)"),l.a.createElement("td",null))),l.a.createElement("tbody",null,a.map(a=>{const{cardId:p,kizunaLv:s,uncap:c}=a.card,g=S[p];if(void 0===g)return l.a.createElement("tr",{key:a.key});const m=["appl","stam","tech"].reduce((a,i)=>{const l=si(g,t,i);let r=_[p][c][i];return r=Math.floor(r*(1+Ni[s]/1e4)),r=Math.floor(r*(l.baseStat/100)),r=Math.floor(r*(l.stat/100)),g.attributeId===e&&(r=Math.floor(1.2*r)),Object.assign(Object.assign({},a),{[i]:r})},{appl:0,stam:0,tech:0}),o=sa(m.appl,m.tech,ya[p].value),f=Math.floor(m.appl+.5*m.appl*(o/100)),I=We[at[p].specialityId].detail,u=We[at[p].individuality.passiveId].detail,y=He[I.effectTypeId],T=He[u.effectTypeId],h=ua[p].speciality[c],v=ua[p].individuality.passive[c],b=I.effectValue[h-1],V=u.effectValue[v-1],k=(()=>"fixed"===y.scaleType?`${b}`:"percent"===y.scaleType?void 0===y.baseStat?`${b/100}%`:`${Math.floor(m[y.baseStat]*(b/1e4))}`:"")(),E=(()=>"fixed"===T.scaleType?`${V}`:"percent"===T.scaleType?`${V/100}%`:"")();return l.a.createElement("tr",{key:a.key},l.a.createElement("td",null,l.a.createElement(Bi,{src:O(p,!0),alt:`${C(p,!0)}-icon`,title:C(p,!1),onClick:()=>i(a.key)})),l.a.createElement("td",null,l.a.createElement(Ui,{type:"number",min:"1",max:"80",value:s,onChange:e=>{let t=Number(e.target.value);t>80&&(t=80),t<1&&(t=1),r(a.key,t)},style:{width:"50px"},onFocus:e=>e.target.select()})),l.a.createElement("td",null,l.a.createElement("select",{id:"uncap-set",value:c,onChange:e=>n(a.key,Number(e.target.value))},[0,1,2,3,4,5].map(e=>l.a.createElement("option",{key:e,value:e},e)))),l.a.createElement("td",null,m.appl),l.a.createElement("td",null,m.stam),l.a.createElement("td",null,m.tech),l.a.createElement(Gi,null,`${o.toFixed(2)}%`),l.a.createElement(Gi,null,f),l.a.createElement("td",null,l.a.createElement($i,null,l.a.createElement(Ki,{src:Ge[y.effectCategoryId].iconAssetPath,alt:y.desc,title:y.desc}),l.a.createElement("div",null,l.a.createElement(Fi,null,l.a.createElement("span",null,Ye[I.skillTargetId].krName),l.a.createElement("span",null,k))))),l.a.createElement("td",null,l.a.createElement($i,null,l.a.createElement(Ki,{src:Ge[T.effectCategoryId].iconAssetPath,alt:T.desc,title:T.desc}),l.a.createElement("div",null,l.a.createElement(Fi,null,l.a.createElement("span",null,Ye[u.skillTargetId].krName),l.a.createElement("span",null,E))))),l.a.createElement("td",null,l.a.createElement(Mi,{onClick:()=>d(a.key)},"제거")))}),l.a.createElement("tr",null,l.a.createElement("td",{colSpan:11},l.a.createElement(Mi,{onClick:()=>i(null)},"추가"))))));var Hi=Object(p.b)(e=>({cardSettings:Le(e),cardSelectModal:Ae(e)}),e=>({addCard:t=>{e(Y.addCard(Math.random(),t))},editCard:(t,a)=>{e(Y.editCardId(t,a))},closeModal:()=>{e(Y.closeCardSelectModal())}}))(({cardSettings:e,cardSelectModal:t,addCard:a,editCard:i,closeModal:r})=>{var n;const d=t.key;if(null===d)return l.a.createElement(Di,{open:t.open,prevCardId:void 0,closeModal:r,applyCardSelection:e=>a(e)});const p=null===(n=e.find(e=>e.key===d))||void 0===n?void 0:n.card.cardId;return l.a.createElement(Di,{open:t.open,prevCardId:p,closeModal:r,applyCardSelection:e=>i(d,e)})});const Ji=Object(s.a)(De)`
+`;var zi=Object(p.b)(e=>({songAttributeId:Ve(e),liveEffect:ke(e),cardComparatorSettings:Le(e)}),e=>({openCardModal:t=>{e(Y.openCardSelectModal(t))},setKizunaLv:(t,a)=>{e(Y.editCardKizuna(t,a))},setUncap:(t,a)=>{e(Y.editCardUncap(t,a))},removeCard:t=>{e(Y.removeCard(t))}}))(({songAttributeId:e,liveEffect:t,cardComparatorSettings:a,openCardModal:i,setKizunaLv:r,setUncap:n,removeCard:d})=>l.a.createElement(Gi,null,l.a.createElement("thead",null,l.a.createElement("tr",null,l.a.createElement("th",null,"카드"),l.a.createElement("th",null,"인연 Lv."),l.a.createElement("th",null,"한돌"),l.a.createElement("th",null,"어필"),l.a.createElement("th",null,"스태미너"),l.a.createElement("th",null,"테크닉"),l.a.createElement("th",null,"크리율"),l.a.createElement("th",null,"기대 볼티지"),l.a.createElement("th",null,"특기 효과량"),l.a.createElement("th",null,"개성(패시브)"),l.a.createElement("td",null))),l.a.createElement("tbody",null,a.map(a=>{const{cardId:p,kizunaLv:s,uncap:c}=a.card,g=S[p];if(void 0===g)return l.a.createElement("tr",{key:a.key});const m=["appl","stam","tech"].reduce((a,i)=>{const l=si(g,t,i);let r=_[p][c][i];return r=Math.floor(r*(1+Ni[s]/1e4)),r=Math.floor(r*(l.baseStat/100)),r=Math.floor(r*(l.stat/100)),g.attributeId===e&&(r=Math.floor(1.2*r)),Object.assign(Object.assign({},a),{[i]:r})},{appl:0,stam:0,tech:0}),o=sa(m.appl,m.tech,ya[p].value),f=Math.floor(m.appl+.5*m.appl*(o/100)),I=We[at[p].specialityId].detail,u=We[at[p].individuality.passiveId].detail,y=He[I.effectTypeId],T=He[u.effectTypeId],h=ua[p].speciality[c],v=ua[p].individuality.passive[c],b=I.effectValue[h-1],V=u.effectValue[v-1],k=(()=>"fixed"===y.scaleType?`${b}`:"percent"===y.scaleType?void 0===y.baseStat?`${b/100}%`:`${Math.floor(m[y.baseStat]*(b/1e4))}`:"")(),E=(()=>"fixed"===T.scaleType?`${V}`:"percent"===T.scaleType?`${V/100}%`:"")();return l.a.createElement("tr",{key:a.key},l.a.createElement("td",null,l.a.createElement(Ui,{src:O(p,!0),alt:`${C(p,!0)}-icon`,title:C(p,!1),onClick:()=>i(a.key)})),l.a.createElement("td",null,l.a.createElement("select",{id:"kizuna-set",value:s,onChange:e=>r(a.key,Number(e.target.value))},new Array(200).fill(null).map((e,t)=>t+1).map(e=>l.a.createElement("option",{key:e,value:e},e)))),l.a.createElement("td",null,l.a.createElement("select",{id:"uncap-set",value:c,onChange:e=>n(a.key,Number(e.target.value))},[0,1,2,3,4,5].map(e=>l.a.createElement("option",{key:e,value:e},e)))),l.a.createElement("td",null,m.appl),l.a.createElement("td",null,m.stam),l.a.createElement("td",null,m.tech),l.a.createElement(Ki,null,`${o.toFixed(2)}%`),l.a.createElement(Ki,null,f),l.a.createElement("td",null,l.a.createElement($i,null,l.a.createElement(Bi,{src:Ge[y.effectCategoryId].iconAssetPath,alt:y.desc,title:y.desc}),l.a.createElement("div",null,l.a.createElement(Fi,null,l.a.createElement("span",null,Ye[I.skillTargetId].krName),l.a.createElement("span",null,k))))),l.a.createElement("td",null,l.a.createElement($i,null,l.a.createElement(Bi,{src:Ge[T.effectCategoryId].iconAssetPath,alt:T.desc,title:T.desc}),l.a.createElement("div",null,l.a.createElement(Fi,null,l.a.createElement("span",null,Ye[u.skillTargetId].krName),l.a.createElement("span",null,E))))),l.a.createElement("td",null,l.a.createElement(Mi,{onClick:()=>d(a.key)},"제거")))}),l.a.createElement("tr",null,l.a.createElement("td",{colSpan:11},l.a.createElement(Mi,{onClick:()=>i(null)},"추가"))))));var qi=Object(p.b)(e=>({cardSettings:Le(e),cardSelectModal:Ae(e)}),e=>({addCard:t=>{e(Y.addCard(Math.random(),t))},editCard:(t,a)=>{e(Y.editCardId(t,a))},closeModal:()=>{e(Y.closeCardSelectModal())}}))(({cardSettings:e,cardSelectModal:t,addCard:a,editCard:i,closeModal:r})=>{var n;const d=t.key;if(null===d)return l.a.createElement(Di,{open:t.open,prevCardId:void 0,closeModal:r,applyCardSelection:e=>a(e)});const p=null===(n=e.find(e=>e.key===d))||void 0===n?void 0:n.card.cardId;return l.a.createElement(Di,{open:t.open,prevCardId:p,closeModal:r,applyCardSelection:e=>i(d,e)})});const Hi=Object(s.a)(De)`
   width: 100%;
   flex-direction: column;
   align-items: center;
-`,Yi=Object(s.a)(_e)`
+`,Ji=Object(s.a)(_e)`
   padding-top: 4px;
   padding-bottom: 4px;
-`,Zi=s.a.p`
+`,Yi=s.a.p`
   text-align: center;
   line-height: 1.6em;
   word-break: keep-all;
-`;var Qi=()=>l.a.createElement(l.a.Fragment,null,l.a.createElement(Ji,null,l.a.createElement(Yi,null,l.a.createElement(Zi,null,"여기서 계산되는 스탯은 아래 식을 통해 계산됩니다:",l.a.createElement("br",null),"(카드 기본 스탯) * (인연 버프) * (기본 스탯 증감) * (스탯 증감) * (동속성 효과)",l.a.createElement("br",null),"카드 자체의 특기, 개성(패시브), 타입 등은 계산에 영향을 미치지 않습니다! 주의해주세요.",l.a.createElement("br",null),l.a.createElement("strong",null,"크리티컬 관련 추정은 ",l.a.createElement("a",{href:"/cards"},"카드 목록"),"에 있는 가정을 그대로 적용한 수치입니다."),l.a.createElement("br",null),"인연 레벨은 80이 최대입니다.")),l.a.createElement(Yi,{style:{border:"1px solid black"}},l.a.createElement(pi,null)),l.a.createElement(Yi,null,l.a.createElement(qi,null))),l.a.createElement(Hi,null));const Wi=s.a.nav`
+`;var Zi=()=>l.a.createElement(l.a.Fragment,null,l.a.createElement(Hi,null,l.a.createElement(Ji,null,l.a.createElement(Yi,null,"여기서 계산되는 스탯은 아래 식을 통해 계산됩니다:",l.a.createElement("br",null),"(카드 기본 스탯) * (인연 버프) * (기본 스탯 증감) * (스탯 증감) * (동속성 효과)",l.a.createElement("br",null),"카드 자체의 특기, 개성(패시브), 타입 등은 계산에 영향을 미치지 않습니다! 주의해주세요.",l.a.createElement("br",null),l.a.createElement("strong",null,"크리티컬 관련 추정은 ",l.a.createElement("a",{href:"/cards"},"카드 목록"),"에 있는 가정을 그대로 적용한 수치입니다."),l.a.createElement("br",null),"인연 레벨 81 이상의 인연 버프는 추정치를 적용한 수치입니다.",l.a.createElement("br",null),"추정치 식은 Math.floor(200 * Math.pow(LV - 1, 1/3) - 50) 입니다.")),l.a.createElement(Ji,{style:{border:"1px solid black"}},l.a.createElement(pi,null)),l.a.createElement(Ji,null,l.a.createElement(zi,null))),l.a.createElement(qi,null));const Qi=s.a.nav`
   height: 100%;
   width: 160px;
   position: fixed;
@@ -521,7 +519,7 @@
   @media screen and (max-width: 768px) {
     display: none;
   }
-`,Xi=s.a.nav`
+`,Wi=s.a.nav`
   width: 100%;
   position: relative;
   z-index: 1;
@@ -536,7 +534,7 @@
   @media screen and (min-width: 769px) {
     display: none;
   }
-`,el=s.a.button`
+`,Xi=s.a.button`
   width: 100%;
   color: #f1f1f1;
   border: 0px solid black;
@@ -544,7 +542,7 @@
   outline: none;
   box-shadow: none;
   font-size: 20px;
-`,tl=s.a.button`
+`,el=s.a.button`
   width: 100%;
   border: 0px solid black;
   background: none;
@@ -558,7 +556,7 @@
   &:hover {
     color: #f1f1f1;
   }
-`,al=Object(s.a)(d.c)`
+`,tl=Object(s.a)(d.c)`
   display: block;
   padding: 6px 16px 6px 16px;
   text-decoration: none;
@@ -568,7 +566,7 @@
   &:hover {
     color: #f1f1f1;
   }
-`,il=s.a.div`
+`,al=s.a.div`
   margin-left: 160px;
   padding: 12px 10px;
 
@@ -576,4 +574,4 @@
   @media screen and (max-width: 768px) {
     margin-left: 0px;
   }
-`;var ll=Object(p.b)(e=>({isJPEdition:Te(e)}),e=>({toggleEdition:()=>{e(Z.toggleEdition())}}))(({isJPEdition:e,toggleEdition:t})=>{const[a,i]=l.a.useState(!1),r=[{key:"home",path:"/",title:"홈",exact:!0},{key:"cards",path:"/cards",title:"카드 목록",exact:!1},{key:"gachas",path:"/gachas",title:"가챠 목록",exact:!1},{key:"events",path:"/events",title:"이벤트 목록",exact:!1},{key:"deck-simulator",path:"/deck-simulator",title:"덱 비교기",exact:!1},{key:"card-comparator",path:"/card-comparator",title:"카드 비교기",exact:!1}];return l.a.createElement(l.a.Fragment,null,l.a.createElement(Wi,null,l.a.createElement(tl,{type:"button",onClick:()=>t()},e?"일본판":"글로벌판"),r.map(e=>l.a.createElement(al,{key:e.key,exact:e.exact,to:e.path,activeStyle:{color:"#f1f1f1"}},e.title))),l.a.createElement(Xi,null,l.a.createElement(De,null,l.a.createElement(el,{type:"button",onClick:()=>t(),style:{paddingBottom:"8px"}},e?"일본판":"글로벌판"),l.a.createElement(el,{type:"button",onClick:()=>i(!a),style:{paddingBottom:a?"8px":"0px"}},a?"메뉴 닫기":"메뉴 열기")),a&&r.map(e=>l.a.createElement(al,{key:e.key,exact:e.exact,to:e.path,activeStyle:{color:"#f1f1f1"}},e.title))),l.a.createElement(il,null,"localhost"===window.location.hostname&&!1,l.a.createElement(c.c,null,l.a.createElement(c.a,{exact:!0,path:"/",component:Ke}),l.a.createElement(c.a,{path:"/card/:id",component:kt}),l.a.createElement(c.a,{path:"/cards",component:_a}),l.a.createElement(c.a,{path:"/gachas",component:ja}),l.a.createElement(c.a,{path:"/event/:id",component:Ja}),l.a.createElement(c.a,{path:"/events",component:ei}),l.a.createElement(c.a,{path:"/deck-simulator",component:Ri}),l.a.createElement(c.a,{path:"/card-comparator",component:Qi}))))});Object.keys(_).map(Number).forEach(e=>{if(6!==_[e].length)throw Error(`ID ${e} does not have 6 parameter state`);if(void 0===S[e])throw Error(`ID ${e} does not exist in CARD`)}),Object.keys(We).map(Number).forEach(e=>{const{maxLevel:t,detail:a}=We[e];if(!Object.keys(a).every(e=>{const i=a[e];return!Array.isArray(i)||i.length===t}))throw Error(`Skill ID ${e} does not have enough info for each skill level`)}),Object.keys(ua).map(Number).forEach(e=>{if(6!==ua[e].speciality.length)throw Error(`Skill level map ID ${e} does not have 6 speciality map`);if(6!==ua[e].individuality.passive.length)throw Error(`Skill level map ID ${e} does not have 6 individuality passive map`)}),n.a.render(l.a.createElement(p.a,{store:H},l.a.createElement(d.a,null,l.a.createElement(ll,null))),document.getElementById("app"))}});
+`;var il=Object(p.b)(e=>({isJPEdition:Te(e)}),e=>({toggleEdition:()=>{e(Z.toggleEdition())}}))(({isJPEdition:e,toggleEdition:t})=>{const[a,i]=l.a.useState(!1),r=[{key:"home",path:"/",title:"홈",exact:!0},{key:"cards",path:"/cards",title:"카드 목록",exact:!1},{key:"gachas",path:"/gachas",title:"가챠 목록",exact:!1},{key:"events",path:"/events",title:"이벤트 목록",exact:!1},{key:"deck-simulator",path:"/deck-simulator",title:"덱 비교기",exact:!1},{key:"card-comparator",path:"/card-comparator",title:"카드 비교기",exact:!1}];return l.a.createElement(l.a.Fragment,null,l.a.createElement(Qi,null,l.a.createElement(el,{type:"button",onClick:()=>t()},e?"일본판":"글로벌판"),r.map(e=>l.a.createElement(tl,{key:e.key,exact:e.exact,to:e.path,activeStyle:{color:"#f1f1f1"}},e.title))),l.a.createElement(Wi,null,l.a.createElement(De,null,l.a.createElement(Xi,{type:"button",onClick:()=>t(),style:{paddingBottom:"8px"}},e?"일본판":"글로벌판"),l.a.createElement(Xi,{type:"button",onClick:()=>i(!a),style:{paddingBottom:a?"8px":"0px"}},a?"메뉴 닫기":"메뉴 열기")),a&&r.map(e=>l.a.createElement(tl,{key:e.key,exact:e.exact,to:e.path,activeStyle:{color:"#f1f1f1"}},e.title))),l.a.createElement(al,null,"localhost"===window.location.hostname&&!1,l.a.createElement(c.c,null,l.a.createElement(c.a,{exact:!0,path:"/",component:Ke}),l.a.createElement(c.a,{path:"/card/:id",component:kt}),l.a.createElement(c.a,{path:"/cards",component:_a}),l.a.createElement(c.a,{path:"/gachas",component:ja}),l.a.createElement(c.a,{path:"/event/:id",component:Ja}),l.a.createElement(c.a,{path:"/events",component:ei}),l.a.createElement(c.a,{path:"/deck-simulator",component:Ri}),l.a.createElement(c.a,{path:"/card-comparator",component:Zi}))))});Object.keys(_).map(Number).forEach(e=>{if(6!==_[e].length)throw Error(`ID ${e} does not have 6 parameter state`);if(void 0===S[e])throw Error(`ID ${e} does not exist in CARD`)}),Object.keys(We).map(Number).forEach(e=>{const{maxLevel:t,detail:a}=We[e];if(!Object.keys(a).every(e=>{const i=a[e];return!Array.isArray(i)||i.length===t}))throw Error(`Skill ID ${e} does not have enough info for each skill level`)}),Object.keys(ua).map(Number).forEach(e=>{if(6!==ua[e].speciality.length)throw Error(`Skill level map ID ${e} does not have 6 speciality map`);if(6!==ua[e].individuality.passive.length)throw Error(`Skill level map ID ${e} does not have 6 individuality passive map`)}),n.a.render(l.a.createElement(p.a,{store:H},l.a.createElement(d.a,null,l.a.createElement(il,null))),document.getElementById("app"))}});
