@@ -30,9 +30,6 @@ const Button = styled(StyledButton)`
   padding: 4px 8px 4px 8px;
   margin: 2px;
 `;
-const StyledInput = styled.input`
-  margin: 4px;
-`;
 const IconImgButton = styled.img`
   padding: 4px;
   width: 60px;
@@ -151,20 +148,15 @@ const CardSettings: React.FC<CardSettingsProps> = ({
               />
             </td>
             <td>
-              <StyledInput
-                type="number"
-                min="1"
-                max="80"
+              <select
+                id="kizuna-set"
                 value={kizunaLv}
-                onChange={(event) => {
-                  let val = Number(event.target.value);
-                  if (val > 80) val = 80;
-                  if (val < 1) val = 1;
-                  setKizunaLv(cardSetting.key, val);
-                }}
-                style={{ width: '50px' }}
-                onFocus={(event) => event.target.select()}
-              />
+                onChange={(event) => setKizunaLv(cardSetting.key, Number(event.target.value))}
+              >
+                {new Array(200).fill(null).map((_, idx) => idx + 1).map((k) => (
+                  <option key={k} value={k}>{k}</option>
+                ))}
+              </select>
             </td>
             <td>
               <select

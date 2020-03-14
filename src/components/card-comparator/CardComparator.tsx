@@ -41,7 +41,9 @@ const CardComparator: React.FC = () => (
             에 있는 가정을 그대로 적용한 수치입니다.
           </strong>
           <br />
-          인연 레벨은 80이 최대입니다.
+          인연 레벨 81 이상의 인연 버프는 추정치를 적용한 수치입니다.
+          <br />
+          추정치 식은 Math.floor(200 * Math.pow(LV - 1, 1/3) - 50) 입니다.
         </CenterP>
       </RowWrapper>
       <RowWrapper style={{ border: '1px solid black' }}>
