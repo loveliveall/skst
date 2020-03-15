@@ -236,6 +236,9 @@ export const CARD: Card = {
   188: { memberId: 5, title: '全速力で行くにゃ〜♪', awakenTitle: '森のハンターガール', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['gacha', 10016] },
   189: { memberId: 19, title: 'いいなぁ、食べたい……！', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 4, roleId: 3, fromId: ['event', 11], outfitSeriesId: 8 },
   190: { memberId: 27, title: '気を付けてくださいね〜！', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 1, roleId: 1, fromId: ['event', 11], outfitSeriesId: 9 },
+
+  191: { memberId: 24, title: 'キミをドキッとさせちゃった？', awakenTitle: 'セレブリティ・ブルー', rarityId: 3, attributeId: 6, roleId: 1, fromId: ['gacha', 20007] },
+  192: { memberId: 18, title: 'はい♪　聞いてみて', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 6, roleId: 2, fromId: ['gacha', 20007], outfitSeriesId: 8 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
