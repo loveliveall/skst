@@ -56,11 +56,11 @@ const Card: React.FC<CardProps> = ({
   }, [match.params.id]);
   const cardId = Number(match.params.id);
   const card = cardTable[cardId];
+  const [onlySameRarity, setOnlySameRarity] = React.useState(false);
   if (card === undefined) return null;
   const member = MEMBER[card.memberId];
   const rarity = RARITY[card.rarityId];
 
-  const [onlySameRarity, setOnlySameRarity] = React.useState(false);
   return (
     <VerticalFlex>
       <RowWrapper>
