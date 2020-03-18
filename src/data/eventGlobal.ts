@@ -18,5 +18,19 @@ export const EVENT_GLOBAL: Event = {
     startDate: '2020.03.03.',
     endDate: '2020.03.13.',
   },
+  2: {
+    name: '기모노 모델은 우리가!',
+    eventTypeId: 1,
+    rankBorder: {},
+    ingameInfo: [],
+    rewardBorder: {
+      100: [2, 2, 2],
+      3000: [1, 2, 2],
+      10000: [1, 1, 2],
+      50000: [1, 1, 1],
+    },
+    startDate: '2020.03.19.',
+    endDate: '2020.03.30.',
+  },
 };
 /* eslint-enable max-len, object-property-newline */

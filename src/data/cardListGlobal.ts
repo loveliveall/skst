@@ -117,5 +117,11 @@ export const PARTIAL_CARD_GLOBAL: PartialCard = {
 
   105: { title: '타락천사 강림!', awakenTitle: '트와일라이트 데몬' },
   106: { title: '옆에서 잠깐 기다려 줄래?', awakenTitle: 'Snow Halation' },
+
+  107: { title: '다음 포즈는 어떻게 할까요?', awakenTitle: '라핀 미미' },
+  108: { title: '너무 빤히 쳐다보지 말아 줄래?', awakenTitle: 'Snow Halation' },
+  109: { title: '이, 이렇게요?', awakenTitle: '라핀 미미' },
+  110: { title: '누가 시치고산이래!', awakenTitle: 'Snow Halation' },
+  111: { title: '카스밍은 빈틈이 없다구요~!', awakenTitle: '두근두근 애니멀' },
 };
 /* eslint-enable object-curly-newline, max-len */
