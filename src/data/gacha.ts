@@ -43,6 +43,8 @@ export const GACHA: Gacha = {
   10014: { type: 'event', name: 'それゆけUMA捜索隊ガチャ後編', startDate: '2020.02.24.', endDate: '2020.02.28.', eventId: 10 },
   10015: { type: 'event', name: 'いたずらオオカミを捕まえろ！ガチャ前編', startDate: '2020.03.06.', endDate: '2020.03.11.', eventId: 11 },
   10016: { type: 'event', name: 'いたずらオオカミを捕まえろ！ガチャ後編', startDate: '2020.03.11.', endDate: '2020.03.16.', eventId: 11 },
+  10017: { type: 'event', name: 'マジカル・タイム！ガチャ前編', startDate: '2020.03.23.', endDate: '2020.03.27.', eventId: 12 },
+  10018: { type: 'event', name: 'マジカル・タイム！ガチャ後編', startDate: '2020.03.27.', endDate: '2020.03.31.', eventId: 12 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },

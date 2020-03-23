@@ -237,5 +237,14 @@ export const EVENT: Event = {
     startDate: '2020.03.06.',
     endDate: '2020.03.16.',
   },
+  12: {
+    name: 'マジカル・タイム！',
+    eventTypeId: 1,
+    rankBorder: {},
+    ingameInfo: [],
+    rewardBorder: {},
+    startDate: '2020.03.23.',
+    endDate: '2020.03.31.',
+  },
 };
 /* eslint-enable max-len, object-property-newline */

@@ -239,6 +239,13 @@ export const CARD: Card = {
 
   191: { memberId: 24, title: 'キミをドキッとさせちゃった？', awakenTitle: 'セレブリティ・ブルー', rarityId: 3, attributeId: 6, roleId: 1, fromId: ['gacha', 20007] },
   192: { memberId: 18, title: 'はい♪　聞いてみて', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 6, roleId: 2, fromId: ['gacha', 20007], outfitSeriesId: 8 },
+
+  193: { memberId: 7, title: 'いたいのいたいのとんでけ〜♪', awakenTitle: 'マジカル☆フィーバー', rarityId: 3, attributeId: 3, roleId: 1, fromId: ['gacha', 10017] },
+  194: { memberId: 12, title: '愛と勇気の魔法少女、りこっぴー', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 5, roleId: 4, fromId: ['gacha', 10017], outfitSeriesId: 8 },
+  195: { memberId: 14, title: 'ハグしてさしあげますわ', awakenTitle: 'マジカル☆フィーバー', rarityId: 3, attributeId: 4, roleId: 3, fromId: ['gacha', 10018] },
+  196: { memberId: 22, title: 'あなたにご覧にいれましょう！', awakenTitle: 'マジカル☆フィーバー', rarityId: 3, attributeId: 5, roleId: 1, fromId: ['event', 12] },
+  197: { memberId: 3, title: '魔法でなおしてあげるよ♪', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['event', 12], outfitSeriesId: 7 },
+  198: { memberId: 23, title: '水の精霊たちよ！', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['event', 12], outfitSeriesId: 9 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
