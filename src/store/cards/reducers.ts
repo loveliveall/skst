@@ -30,6 +30,14 @@ interface FilterState {
     key: number,
     target: SkillTargetInfo,
   }[],
+  indivLCategory: {
+    key: number,
+    categoryId: number,
+  }[],
+  indivLTarget: {
+    key: number,
+    target: SkillTargetInfo,
+  }[],
   uncap: number | null,
   outfitSeriesId: number | null,
 }
@@ -55,6 +63,8 @@ export const initialFilter: FilterState = {
   specTarget: [],
   indivPCategory: [],
   indivPTarget: [],
+  indivLCategory: [],
+  indivLTarget: [],
   uncap: 5,
   outfitSeriesId: null,
 };
@@ -259,6 +269,58 @@ export default function cardsReducer(
         filterDraft: {
           ...state.filterDraft,
           indivPTarget: state.filterDraft.indivPTarget.filter((item) => item.key !== action.payload.key),
+        },
+      };
+    case CardsActionTypes.FILTER_INDIV_L_CAT_ADD:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivLCategory: [...state.filterDraft.indivLCategory, action.payload],
+        },
+      };
+    case CardsActionTypes.FILTER_INDIV_L_CAT_EDIT:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivLCategory: state.filterDraft.indivLCategory.map((item) => (
+            item.key === action.payload.key ? action.payload : item
+          )),
+        },
+      };
+    case CardsActionTypes.FILTER_INDIV_L_CAT_REMOVE:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivLCategory: state.filterDraft.indivLCategory.filter((item) => item.key !== action.payload.key),
+        },
+      };
+    case CardsActionTypes.FILTER_INDIV_L_TARGET_ADD:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivLTarget: [...state.filterDraft.indivLTarget, action.payload],
+        },
+      };
+    case CardsActionTypes.FILTER_INDIV_L_TARGET_EDIT:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivLTarget: state.filterDraft.indivLTarget.map((item) => (
+            item.key === action.payload.key ? action.payload : item
+          )),
+        },
+      };
+    case CardsActionTypes.FILTER_INDIV_L_TARGET_REMOVE:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivLTarget: state.filterDraft.indivLTarget.filter((item) => item.key !== action.payload.key),
         },
       };
     case CardsActionTypes.FILTER_UNCAP_SET:

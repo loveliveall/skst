@@ -18,6 +18,12 @@ export const CardsActionTypes = {
   FILTER_INDIV_P_TARGET_ADD: 'CARDS_FILTER_INDIV_P_TARGET_ADD',
   FILTER_INDIV_P_TARGET_EDIT: 'CARDS_FILTER_INDIV_P_TARGET_EDIT',
   FILTER_INDIV_P_TARGET_REMOVE: 'CARDS_FILTER_INDIV_P_TARGET_REMOVE',
+  FILTER_INDIV_L_CAT_ADD: 'CARDS_FILTER_INDIV_L_CAT_ADD',
+  FILTER_INDIV_L_CAT_EDIT: 'CARDS_FILTER_INDIV_L_CAT_EDIT',
+  FILTER_INDIV_L_CAT_REMOVE: 'CARDS_FILTER_INDIV_L_CAT_REMOVE',
+  FILTER_INDIV_L_TARGET_ADD: 'CARDS_FILTER_INDIV_L_TARGET_ADD',
+  FILTER_INDIV_L_TARGET_EDIT: 'CARDS_FILTER_INDIV_L_TARGET_EDIT',
+  FILTER_INDIV_L_TARGET_REMOVE: 'CARDS_FILTER_INDIV_L_TARGET_REMOVE',
   FILTER_UNCAP_SET: 'CARDS_FILTER_UNCAP_SET',
   FILTER_OUTFIT_ID_SET: 'CARDS_FILTER_OUTFIT_ID_SET',
 
@@ -79,6 +85,24 @@ export const CardsActionCreators = {
   ),
   removeIndivPTargetFilter: (key: number) => createFSA(
     CardsActionTypes.FILTER_INDIV_P_TARGET_REMOVE, { key },
+  ),
+  addIndivLCategoryFilter: (key: number, categoryId: number) => createFSA(
+    CardsActionTypes.FILTER_INDIV_L_CAT_ADD, { key, categoryId },
+  ),
+  editIndivLCategoryFilter: (key: number, categoryId: number) => createFSA(
+    CardsActionTypes.FILTER_INDIV_L_CAT_EDIT, { key, categoryId },
+  ),
+  removeIndivLCategoryFilter: (key: number) => createFSA(
+    CardsActionTypes.FILTER_INDIV_L_CAT_REMOVE, { key },
+  ),
+  addIndivLTargetFilter: (key: number, target: SkillTargetInfo) => createFSA(
+    CardsActionTypes.FILTER_INDIV_L_TARGET_ADD, { key, target },
+  ),
+  editIndivLTargetFilter: (key: number, target: SkillTargetInfo) => createFSA(
+    CardsActionTypes.FILTER_INDIV_L_TARGET_EDIT, { key, target },
+  ),
+  removeIndivLTargetFilter: (key: number) => createFSA(
+    CardsActionTypes.FILTER_INDIV_L_TARGET_REMOVE, { key },
   ),
   setUncapFilter: (uncap: number | null) => createFSA(CardsActionTypes.FILTER_UNCAP_SET, { uncap }),
   setOutfitSeriesId: (id: number | null) => createFSA(CardsActionTypes.FILTER_OUTFIT_ID_SET, { id }),

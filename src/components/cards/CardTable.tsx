@@ -125,6 +125,39 @@ const CardTable: React.FC<CardTableProps> = ({
       if (!sat) return false;
     }
 
+    // Live skill filtering
+    const { liveId } = CARD_SKILL[card.id].individuality;
+    if (liveId === undefined) {
+      // Only when no filter for live skill exists
+      const sat = filter.indivLCategory.length === 0 && filter.indivLTarget.length === 0;
+      if (!sat) return false;
+    } else {
+      const ilDetail = SKILL[liveId].detail;
+      // Filter by skill category
+      if (filter.indivLCategory.length !== 0) {
+        const ilCategoryId = SKILL_EFFECT_TYPE[ilDetail.effectTypeId].effectCategoryId;
+        const sat = filter.indivLCategory.some((item) => item.categoryId === ilCategoryId);
+        if (!sat) return false;
+      }
+      // Filter by skill target
+      if (filter.indivLTarget.length !== 0) {
+        const ilTargetId = ilDetail.skillTargetId;
+        const sat = filter.indivLTarget.some((item) => {
+          const { target } = item;
+          if (target.id !== ilTargetId) return false;
+          /* eslint-disable max-len */
+          if (isAttributeTarget(target) && target.attributeId !== null && target.attributeId !== card.attributeId) return false;
+          if (isRoleTarget(target) && target.roleId !== null && target.roleId !== card.roleId) return false;
+          if (isGroupTarget(target) && target.groupId !== null && target.groupId !== MEMBER[card.memberId].groupId) return false;
+          if (isGradeTarget(target) && target.grade !== null && target.grade !== MEMBER[card.memberId].grade) return false;
+          if (isUnitTarget(target) && target.unitId !== null && target.unitId !== MEMBER[card.memberId].unitId) return false;
+          /* eslint-enable max-len */
+          return true;
+        });
+        if (!sat) return false;
+      }
+    }
+
     return true;
   }).map((card) => {
     // Base Stat Multiplier (%)

@@ -11,6 +11,8 @@ import SpecCategoryFilter from './filters/SpecCategoryFilter';
 import SpecTargetFilter from './filters/SpecTargetFilter';
 import IndivPCategoryFilter from './filters/IndivPCategoryFilter';
 import IndivPTargetFilter from './filters/IndivPTargetFilter';
+import IndivLCategoryFilter from './filters/IndivLCategoryFilter';
+import IndivLTargetFilter from './filters/IndivLTargetFilter';
 
 const BorderlessTable = styled.table`
   && { // Overriding parent component's style
@@ -91,7 +93,7 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
   return (
     <>
       <tr>
-        <td rowSpan={8}>필터</td>
+        <td rowSpan={9}>필터</td>
         <td>멤버</td>
         <td>
           <BorderlessTable>
@@ -216,6 +218,23 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
               <tr>
                 <td style={{ padding: '4px' }}><IndivPCategoryFilter /></td>
                 <td style={{ padding: '4px' }}><IndivPTargetFilter /></td>
+              </tr>
+            </tbody>
+          </BorderlessTable>
+        </td>
+      </tr>
+      <tr>
+        <td>개성(라이브)</td>
+        <td>
+          <BorderlessTable>
+            <tbody>
+              <tr>
+                <td>스킬 종류</td>
+                <td>스킬 대상</td>
+              </tr>
+              <tr>
+                <td style={{ padding: '4px' }}><IndivLCategoryFilter /></td>
+                <td style={{ padding: '4px' }}><IndivLTargetFilter /></td>
               </tr>
             </tbody>
           </BorderlessTable>
