@@ -246,6 +246,11 @@ export const CARD: Card = {
   196: { memberId: 22, title: 'あなたにご覧にいれましょう！', awakenTitle: 'マジカル☆フィーバー', rarityId: 3, attributeId: 5, roleId: 1, fromId: ['event', 12] },
   197: { memberId: 3, title: '魔法でなおしてあげるよ♪', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['event', 12], outfitSeriesId: 7 },
   198: { memberId: 23, title: '水の精霊たちよ！', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['event', 12], outfitSeriesId: 9 },
+
+  199: { memberId: 8, title: 'あなたのために歌うね', awakenTitle: 'カラフルフェスタ', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['gacha', 30005] },
+  200: { memberId: 17, title: '天国ずら〜！', awakenTitle: '楽園からの使者', rarityId: 3, attributeId: 5, roleId: 3, fromId: ['gacha', 30005] },
+  201: { memberId: 25, title: '来てくれたんだね！サンキュー♪', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 3, roleId: 4, fromId: ['gacha', 30005], outfitSeriesId: 9 },
+  202: { memberId: 26, title: 'すやあ〜すぴ〜すやすや〜〜', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['gacha', 30005], outfitSeriesId: 9 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
