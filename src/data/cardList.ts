@@ -249,8 +249,8 @@ export const CARD: Card = {
 
   199: { memberId: 8, title: 'あなたのために歌うね', awakenTitle: 'カラフルフェスタ', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['gacha', 30005] },
   200: { memberId: 17, title: '天国ずら〜！', awakenTitle: '楽園からの使者', rarityId: 3, attributeId: 5, roleId: 3, fromId: ['gacha', 30005] },
-  201: { memberId: 25, title: '来てくれたんだね！サンキュー♪', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 3, roleId: 4, fromId: ['gacha', 30005], outfitSeriesId: 9 },
-  202: { memberId: 26, title: 'すやあ〜すぴ〜すやすや〜〜', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['gacha', 30005], outfitSeriesId: 9 },
+  201: { memberId: 26, title: 'すやあ〜すぴ〜すやすや〜〜', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['gacha', 30005], outfitSeriesId: 9 },
+  202: { memberId: 25, title: '来てくれたんだね！サンキュー♪', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 3, roleId: 4, fromId: ['gacha', 30005], outfitSeriesId: 9 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

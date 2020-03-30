@@ -203,9 +203,9 @@ export const CARD_CRIT_BASE: CritBase = {
   196: { value: 0 },
   197: { value: 15 },
   198: { value: 0 },
-  // Need to be confirmed
   199: { value: 15 },
   200: { value: 0 },
   201: { value: 15 },
   202: { value: 15 },
+  // Need to be confirmed
 };
