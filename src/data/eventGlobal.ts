@@ -21,8 +21,10 @@ export const EVENT_GLOBAL: Event = {
   2: {
     name: '기모노 모델은 우리가!',
     eventTypeId: 1,
-    rankBorder: {},
-    ingameInfo: [],
+    rankBorder: {
+      1: 5640253, 10: 2465813, 50: 1398373, 100: 1207686, 2000: 276894, 4000: 225345, 9000: 177602, 30000: 50111, 50000: 3110,
+    },
+    ingameInfo: [2000, 4000, 9000, 30000, 50000],
     rewardBorder: {
       100: [2, 2, 2],
       3000: [1, 2, 2],
