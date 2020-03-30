@@ -254,6 +254,11 @@ export const CARD: Card = {
 };
 /* eslint-enable object-curly-newline, max-len */
 
+const INSUF_RANGE = [-1, -1];
+export function isInsuf(id: number) {
+  return INSUF_RANGE[0] <= id && id <= INSUF_RANGE[1];
+}
+
 export function getCardIconAssetPath(id: number, isAwaken: boolean): string {
   const card = CARD[id];
   const prefix = '/images/card-icons';

@@ -16,7 +16,7 @@ import Table from '@/components/common/Table';
 import { FlexBox } from '@/components/Styles';
 
 import {
-  getCardIconAssetPath, getCardSymbol, getFullCardList,
+  getCardIconAssetPath, getCardSymbol, getFullCardList, isInsuf,
 } from '@/data/cardList';
 import { ATTRIBUTE, ROLE, RARITY } from '@/data/cardMetadata';
 import { MEMBER } from '@/data/memberMetadata';
@@ -230,7 +230,11 @@ const CardTable: React.FC<CardTableProps> = ({
       column={[
         {
           title: 'ID',
-          render: (rowData) => <span>{rowData.id}</span>,
+          render: (rowData) => (
+            <span style={{ backgroundColor: isInsuf(rowData.id) ? '#d1d1d1' : 'transparent' }}>
+              {`${rowData.id}${isInsuf(rowData.id) ? '?' : ''}`}
+            </span>
+          ),
           customSort: (a, b) => a.id - b.id,
         },
         {

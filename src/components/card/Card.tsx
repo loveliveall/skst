@@ -5,7 +5,7 @@ import { RouteComponentProps, withRouter } from 'react-router-dom';
 import { AppState, SEL } from '@/store';
 import { FixedWrapper, FlexBox } from '@/components/Styles';
 
-import { getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
+import { getCardIconAssetPath, getCardSymbol, isInsuf } from '@/data/cardList';
 import { MEMBER } from '@/data/memberMetadata';
 import { RARITY, ATTRIBUTE, ROLE } from '@/data/cardMetadata';
 
@@ -64,8 +64,13 @@ const Card: React.FC<CardProps> = ({
   return (
     <VerticalFlex>
       <RowWrapper>
-        <h2>{`#${cardId} ${rarity.symbol} ${member.name}`}</h2>
+        <h2>{`#${cardId}${isInsuf(cardId) ? '?' : ''} ${rarity.symbol} ${member.name}`}</h2>
       </RowWrapper>
+      {isInsuf(cardId) && (
+        <RowWrapper>
+          <strong>정보 미완성</strong>
+        </RowWrapper>
+      )}
       <RowWrapper>
         <FlexBox>
           <div>
