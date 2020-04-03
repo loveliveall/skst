@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { FlexBox } from '../Styles';
 import { AppState, SEL } from '@/store';
-import { EVENT_TYPE } from '@/data/event';
+import { EVENT_TYPE, BIG_LIVE_PRIZE_TYPE } from '@/data/event';
 import { numberRepr } from '@/utils/utils';
 import { RARITY } from '@/data/cardMetadata';
 
@@ -71,20 +71,22 @@ const EventInfoTable: React.FC<EventInfoTableProps> = ({
             {EVENT_TYPE[event.eventTypeId].krName}
           </SingleTd>
         </tr>
-        <tr>
-          <TitleTh>순위 보상</TitleTh>
-          <SingleTd>
-            <VerticalFlex>
-              {Object.keys(event.rewardBorder).map(Number).map((rank) => (
-                <TextDiv key={rank}>
-                  {`${numberRepr(rank)}위: ${event.rewardBorder[rank].map(
-                    (v, idx) => `${v} ${RARITY[cardTable[eventCardIds[idx]].rarityId].symbol}`,
-                  ).join(', ')}`}
-                </TextDiv>
-              ))}
-            </VerticalFlex>
-          </SingleTd>
-        </tr>
+        {Object.keys(event.rewardBorder).length !== 0 && (
+          <tr>
+            <TitleTh>순위 보상</TitleTh>
+            <SingleTd>
+              <VerticalFlex>
+                {Object.keys(event.rewardBorder).map(Number).map((rank) => (
+                  <TextDiv key={rank}>
+                    {`${numberRepr(rank)}위: ${event.rewardBorder[rank].map(
+                      (v, idx) => `${v} ${RARITY[cardTable[eventCardIds[idx]].rarityId].symbol}`,
+                    ).join(', ')}`}
+                  </TextDiv>
+                ))}
+              </VerticalFlex>
+            </SingleTd>
+          </tr>
+        )}
         {event.eventTypeId === 2 && (
           <tr>
             <TitleTh>
@@ -100,6 +102,41 @@ const EventInfoTable: React.FC<EventInfoTableProps> = ({
               </VerticalFlex>
             </SingleTd>
           </tr>
+        )}
+        {event.eventTypeId === 3 && (
+          <>
+            <tr>
+              <TitleTh>
+                빅 라이브
+                <br />
+                대상 악곡
+              </TitleTh>
+              <SingleTd>
+                <VerticalFlex>
+                  {event.targetSongs.map((songName) => (
+                    <TextDiv key={songName}>{songName}</TextDiv>
+                  ))}
+                </VerticalFlex>
+              </SingleTd>
+            </tr>
+            <tr>
+              <TitleTh>
+                일자별 상
+              </TitleTh>
+              <SingleTd>
+                <VerticalFlex>
+                  {event.prizes.map((prizeList, idx) => {
+                    const prizeString = prizeList.map((prizeId) => BIG_LIVE_PRIZE_TYPE[prizeId].name).join(', ');
+                    return (
+                      <TextDiv key={Math.random()}>
+                        {`${idx + 1}일차: ${prizeString}`}
+                      </TextDiv>
+                    );
+                  })}
+                </VerticalFlex>
+              </SingleTd>
+            </tr>
+          </>
         )}
       </tbody>
     </StyledTable>

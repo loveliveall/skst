@@ -73,14 +73,14 @@ const Event: React.FC<EventProps> = ({
   return (
     <VerticalFlex>
       <RowWrapper>
-        <h2>{`이벤트 #${eventId} ${event.name}`}</h2>
+        <h2>{event.name}</h2>
       </RowWrapper>
       <RowWrapper>
         <PaddedDiv><strong>이벤트 보상 카드</strong></PaddedDiv>
       </RowWrapper>
       <RowWrapper>
         <FlexBox>
-          {eventCardIds.map((id) => (
+          {eventCardIds.length === 0 ? '없음' : eventCardIds.map((id) => (
             <div key={id}>
               <VerticalFlex>
                 <Link to={`/card/${id}`}>

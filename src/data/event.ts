@@ -8,6 +8,19 @@ interface EventType {
 export const EVENT_TYPE: EventType = {
   1: { type: 'story', krName: '스토리 이벤트' },
   2: { type: 'exchange', krName: '교환소 이벤트' },
+  3: { type: 'bigLive', krName: '빅 라이브' },
+};
+
+interface BigLivePrizeType {
+  readonly [id: number]: {
+    readonly name: string,
+  },
+}
+
+export const BIG_LIVE_PRIZE_TYPE: BigLivePrizeType = {
+  1: { name: '볼티지상' },
+  2: { name: '특기상' },
+  3: { name: 'Sp특기상' },
 };
 
 export interface Event {
@@ -34,6 +47,10 @@ export interface Event {
       },
       readonly voltageRankBorderIngameInfo: number[],
       readonly voltageRankSongs: string[], // TODO: Let it link with songs table
+    } | {
+      readonly eventTypeId: 3,
+      readonly targetSongs: string[], // TODO: Let it link with songs table
+      readonly prizes: number[][], // Prizes according to the date
     }
   ),
 }
@@ -252,6 +269,27 @@ export const EVENT: Event = {
     },
     startDate: '2020.03.23.',
     endDate: '2020.03.31.',
+  },
+  10001: {
+    name: 'スクスタビックライブ',
+    eventTypeId: 3,
+    rankBorder: {
+      1: 132625656, 10: 129746664, 50: 124352736, 100: 120717037, 300: 113426887, 500: 109610360, 1000: 102102577, 2000: 92143210,
+      3000: 85395754, 4000: 80156502, 5000: 75845631, 6000: 72329974, 7000: 69404886, 8000: 66764268, 9000: 64498070, 10000: 62488562,
+      20000: 48179600, 30000: 38952424, 40000: 30567450, 50000: 22458670,
+    },
+    ingameInfo: [],
+    rewardBorder: {},
+    targetSongs: ['嵐のなかの恋だから', '元気全開DAY! DAY! DAY!', '眠れる森に行きたいな'],
+    prizes: [
+      [1, 2, 3],
+      [1, 2, 3],
+      [1, 2, 3],
+      [1, 2, 3],
+      [1, 2, 3],
+    ],
+    startDate: '2020.03.19.',
+    endDate: '2020.03.23.',
   },
 };
 /* eslint-enable max-len, object-property-newline */

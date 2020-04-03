@@ -10,7 +10,7 @@ import { FlexBox, FixedWrapper } from '@/components/Styles';
 import { getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
 import { RARITY } from '@/data/cardMetadata';
 import { MEMBER } from '@/data/memberMetadata';
-import { EVENT_TYPE } from '@/data/event';
+import { EVENT_TYPE, BIG_LIVE_PRIZE_TYPE } from '@/data/event';
 
 import { numberRepr } from '@/utils/utils';
 
@@ -121,28 +121,12 @@ const Events: React.FC<EventsProps> = ({
             },
             {
               title: '주요 순위 보더',
-              render: (rowData) => (
-                <VerticalFlex>
-                  {Object.keys(rowData.rewardBorder).map(Number).map((rank) => {
-                    const border = rowData.rankBorder[rank];
-                    const displayBorder = `${border === 0 || border === undefined ? '?' : numberRepr(border)}pt`;
-                    return (
-                      <PaddedSpan key={rank}>
-                        {`${numberRepr(rank)}위: ${displayBorder}`}
-                      </PaddedSpan>
-                    );
-                  })}
-                </VerticalFlex>
-              ),
-            },
-            {
-              title: '볼티지 랭킹 주요 보더',
               render: (rowData) => {
-                if (rowData.eventTypeId === 1) return <PaddedSpan>없음</PaddedSpan>;
+                const ranks = Object.keys(rowData.rewardBorder).map(Number);
                 return (
                   <VerticalFlex>
-                    {[1, 100, 1000, 10000].map((rank) => {
-                      const border = rowData.voltageRankBorder[rank];
+                    {(ranks.length === 0 ? [1, 10, 100, 1000] : ranks).map((rank) => {
+                      const border = rowData.rankBorder[rank];
                       const displayBorder = `${border === 0 || border === undefined ? '?' : numberRepr(border)}pt`;
                       return (
                         <PaddedSpan key={rank}>
@@ -150,21 +134,6 @@ const Events: React.FC<EventsProps> = ({
                         </PaddedSpan>
                       );
                     })}
-                  </VerticalFlex>
-                );
-              },
-            },
-            {
-              title: '볼티지 랭킹 대상 악곡',
-              render: (rowData) => {
-                if (rowData.eventTypeId === 1) return <PaddedSpan>없음</PaddedSpan>;
-                return (
-                  <VerticalFlex>
-                    {rowData.voltageRankSongs.map((songName) => (
-                      <PaddedSpan key={songName}>
-                        {songName}
-                      </PaddedSpan>
-                    ))}
                   </VerticalFlex>
                 );
               },
@@ -185,6 +154,73 @@ const Events: React.FC<EventsProps> = ({
                   ))}
                 </VerticalFlex>
               ),
+            },
+            {
+              title: '비고 1',
+              render: (rowData) => {
+                if (rowData.eventTypeId === 2) {
+                  return (
+                    <VerticalFlex>
+                      <PaddedSpan>볼티지 랭킹 대상 악곡</PaddedSpan>
+                      {rowData.voltageRankSongs.map((songName) => (
+                        <PaddedSpan key={songName}>
+                          {songName}
+                        </PaddedSpan>
+                      ))}
+                    </VerticalFlex>
+                  );
+                }
+                if (rowData.eventTypeId === 3) {
+                  return (
+                    <VerticalFlex>
+                      <PaddedSpan>빅 라이브 대상 악곡</PaddedSpan>
+                      {rowData.targetSongs.map((songName) => (
+                        <PaddedSpan key={songName}>
+                          {songName}
+                        </PaddedSpan>
+                      ))}
+                    </VerticalFlex>
+                  );
+                }
+                return <PaddedSpan>없음</PaddedSpan>;
+              },
+            },
+            {
+              title: '비고 2',
+              render: (rowData) => {
+                if (rowData.eventTypeId === 2) {
+                  return (
+                    <VerticalFlex>
+                      <PaddedSpan>볼티지 랭킹 주요 보더</PaddedSpan>
+                      {[1, 100, 1000, 10000].map((rank) => {
+                        const border = rowData.voltageRankBorder[rank];
+                        const displayBorder = `${border === 0 || border === undefined ? '?' : numberRepr(border)}pt`;
+                        return (
+                          <PaddedSpan key={rank}>
+                            {`${numberRepr(rank)}위: ${displayBorder}`}
+                          </PaddedSpan>
+                        );
+                      })}
+                    </VerticalFlex>
+                  );
+                }
+                if (rowData.eventTypeId === 3) {
+                  return (
+                    <VerticalFlex>
+                      <PaddedSpan>일자별 상 종류</PaddedSpan>
+                      {rowData.prizes.map((prizeList, idx) => {
+                        const prizeString = prizeList.map((id) => BIG_LIVE_PRIZE_TYPE[id].name).join(', ');
+                        return (
+                          <PaddedSpan key={Math.random()}>
+                            {`${idx + 1}일차: ${prizeString}`}
+                          </PaddedSpan>
+                        );
+                      })}
+                    </VerticalFlex>
+                  );
+                }
+                return <PaddedSpan>없음</PaddedSpan>;
+              },
             },
           ]}
           data={Object.keys(eventTable).map(Number).map((id) => ({
