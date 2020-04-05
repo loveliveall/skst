@@ -13,9 +13,12 @@ export const OUTFIT_SERIES: OutfitSeries = {
   3: { name: 'TOKIMEKI Runners', groupId: 3, nameGlobal: 'TOKIMEKI Runners' },
   4: { name: '君のこころは輝いてるかい？', groupId: 2, nameGlobal: 'Kimino Kokorowa Kagayaiterukai?' },
   5: { name: 'わくわくアニマル', groupId: 3, nameGlobal: '두근두근 애니멀' },
-  6: { name: 'Snow halation', groupId: 1 },
+  6: { name: 'Snow halation', groupId: 1, nameGlobal: 'Snow Halation' },
   7: { name: '僕らのLIVE 君とのLIFE', groupId: 1 },
   8: { name: '青空Jumping Heart', groupId: 2 },
   9: { name: 'レインボーローズ', groupId: 3 },
+  10: { name: 'マーチング・ハーモニー', groupId: 3 },
+  11: { name: 'Brightest Melody', groupId: 2 },
+  12: { name: 'それは僕たちの奇跡', groupId: 1 },
 };
 /* eslint-enable object-curly-newline, max-len */

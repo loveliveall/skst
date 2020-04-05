@@ -145,7 +145,7 @@ export const CARD: Card = {
   114: { memberId: 23, title: '虹ヶ咲のジュリエット', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 3, roleId: 1, fromId: ['gacha', 20002], outfitSeriesId: 5 },
 
   115: { memberId: 13, title: 'ちゃんと繋がれたんだから', awakenTitle: 'ブルーレーヴ', rarityId: 3, attributeId: 6, roleId: 2, fromId: ['gacha', 10003] },
-  116: { memberId: 5, title: 'お布団気持ちいいにゃ〜♪♪', awakenTitle: 'Snow halation', rarityId: 2, attributeId: 3, roleId: 4, fromId: ['gacha', 10003], outfitSeriesId: 6 },
+  116: { memberId: 5, title: 'お布団気持ちいいにゃ～♪♪', awakenTitle: 'Snow halation', rarityId: 2, attributeId: 3, roleId: 4, fromId: ['gacha', 10003], outfitSeriesId: 6 },
   117: { memberId: 8, title: '一歩きりで終わらせないように', awakenTitle: 'フルールレーヴ', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['event', 3] },
   118: { memberId: 18, title: 'これが下町マジック……！', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['event', 3], outfitSeriesId: 4 },
   119: { memberId: 25, title: '特別なお出かけ', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['event', 3], outfitSeriesId: 5 },
@@ -157,7 +157,7 @@ export const CARD: Card = {
   123: { memberId: 16, title: '嘆くのはおやめなさい', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 6, roleId: 3, fromId: ['gacha', 10004], outfitSeriesId: 4 },
   124: { memberId: 17, title: 'それが、野鳥観察の入り口ずら！', awakenTitle: 'フォレストフェアリー', rarityId: 3, attributeId: 4, roleId: 1, fromId: ['event', 4] },
   125: { memberId: 4, title: '計画を立てましょう！', awakenTitle: 'Snow halation', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['event', 4], outfitSeriesId: 6 },
-  126: { memberId: 26, title: '遅れてごめんね〜', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 3, roleId: 1, fromId: ['event', 4], outfitSeriesId: 5 },
+  126: { memberId: 26, title: '遅れてごめんね～', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 3, roleId: 1, fromId: ['event', 4], outfitSeriesId: 5 },
 
   127: { memberId: 6, title: '私をこんなに待たせるなんて', awakenTitle: 'ドラマティックローズ', rarityId: 3, attributeId: 6, roleId: 3, fromId: ['gacha', 30001] },
   128: { memberId: 15, title: 'せっかく一緒に海に来たんだし', awakenTitle: 'スプラッシュマリン', rarityId: 3, attributeId: 2, roleId: 1, fromId: ['gacha', 30001] },
@@ -172,7 +172,7 @@ export const CARD: Card = {
   136: { memberId: 28, title: '言葉に言い表せない魅力', awakenTitle: 'わくわくアニマル', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['event', 5], outfitSeriesId: 5 },
 
   137: { memberId: 5, title: 'こっちこっち早くするにゃ！', awakenTitle: 'アフタースクールキャット', rarityId: 3, attributeId: 1, roleId: 1, fromId: ['gacha', 20004] },
-  138: { memberId: 13, title: 'ひと泳ぎしてたんだよ〜', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 4, roleId: 4, fromId: ['gacha', 20004], outfitSeriesId: 4 },
+  138: { memberId: 13, title: 'ひと泳ぎしてたんだよ～', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 4, roleId: 4, fromId: ['gacha', 20004], outfitSeriesId: 4 },
 
   139: { memberId: 9, title: 'ニコの特製お弁当いかがですかぁ', awakenTitle: '明星の汽笛', rarityId: 3, attributeId: 4, roleId: 4, fromId: ['gacha', 10006] },
   140: { memberId: 14, title: '真面目なアナウンス', awakenTitle: '君のこころは輝いてるかい？', rarityId: 2, attributeId: 6, roleId: 1, fromId: ['gacha', 10006], outfitSeriesId: 4 },
@@ -205,7 +205,7 @@ export const CARD: Card = {
 
   163: { memberId: 28, title: 'お花の冠？　あなたが作ったの？', awakenTitle: 'Delightful Waltz', rarityId: 3, attributeId: 5, roleId: 2, fromId: ['gacha', 30003] },
   164: { memberId: 9, title: '……ありがと。', awakenTitle: 'スマイリーエンジェル', rarityId: 3, attributeId: 1, roleId: 3, fromId: ['gacha', 30003] },
-  165: { memberId: 22, title: '食べる人の顔が楽しみですね〜♡', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 5, roleId: 2, fromId: ['gacha', 30003], outfitSeriesId: 9 },
+  165: { memberId: 22, title: '食べる人の顔が楽しみですね～♡', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 5, roleId: 2, fromId: ['gacha', 30003], outfitSeriesId: 9 },
   166: { memberId: 29, title: '一番気に入った璃奈ちゃんボード', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['gacha', 30003], outfitSeriesId: 9 },
 
   167: { memberId: 22, title: 'お待たせしましたぁ', awakenTitle: 'フラワーシンフォニー', rarityId: 3, attributeId: 1, roleId: 4, fromId: ['gacha', 10011] },
@@ -226,21 +226,21 @@ export const CARD: Card = {
   180: { memberId: 15, title: '水平線の先まで見渡せるよ！', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 1, roleId: 3, fromId: ['event', 10], outfitSeriesId: 8 },
 
   181: { memberId: 18, title: '私がサポートしてあげる♪', awakenTitle: 'ロイヤルプリンセス', rarityId: 3, attributeId: 3, roleId: 4, fromId: ['gacha', 30004] },
-  182: { memberId: 26, title: '次は彼方ちゃんの番で〜す♪', awakenTitle: '天使の子守歌', rarityId: 3, attributeId: 6, roleId: 1, fromId: ['gacha', 30004] },
+  182: { memberId: 26, title: '次は彼方ちゃんの番で～す♪', awakenTitle: '天使の子守歌', rarityId: 3, attributeId: 6, roleId: 1, fromId: ['gacha', 30004] },
   183: { memberId: 28, title: 'どれもこれも美味しそう', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['gacha', 30004], outfitSeriesId: 9 },
   184: { memberId: 5, title: 'むにゃむにゃ……うへへ', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['gacha', 30004], outfitSeriesId: 7 },
 
   185: { memberId: 28, title: '持ってきたんだよ', awakenTitle: '無邪気な赤ずきん', rarityId: 3, attributeId: 2, roleId: 3, fromId: ['gacha', 10015] },
   186: { memberId: 4, title: '全く、あなた達は……', awakenTitle: '僕らのLIVE 君とのLIFE', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['gacha', 10015], outfitSeriesId: 7 },
   187: { memberId: 11, title: '結構上手くない？', awakenTitle: 'ミッドナイトウルフ', rarityId: 3, attributeId: 3, roleId: 2, fromId: ['event', 11] },
-  188: { memberId: 5, title: '全速力で行くにゃ〜♪', awakenTitle: '森のハンターガール', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['gacha', 10016] },
+  188: { memberId: 5, title: '全速力で行くにゃ～♪', awakenTitle: '森のハンターガール', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['gacha', 10016] },
   189: { memberId: 19, title: 'いいなぁ、食べたい……！', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 4, roleId: 3, fromId: ['event', 11], outfitSeriesId: 8 },
-  190: { memberId: 27, title: '気を付けてくださいね〜！', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 1, roleId: 1, fromId: ['event', 11], outfitSeriesId: 9 },
+  190: { memberId: 27, title: '気を付けてくださいね～！', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 1, roleId: 1, fromId: ['event', 11], outfitSeriesId: 9 },
 
   191: { memberId: 24, title: 'キミをドキッとさせちゃった？', awakenTitle: 'セレブリティ・ブルー', rarityId: 3, attributeId: 6, roleId: 1, fromId: ['gacha', 20007] },
   192: { memberId: 18, title: 'はい♪　聞いてみて', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 6, roleId: 2, fromId: ['gacha', 20007], outfitSeriesId: 8 },
 
-  193: { memberId: 7, title: 'いたいのいたいのとんでけ〜♪', awakenTitle: 'マジカル☆フィーバー', rarityId: 3, attributeId: 3, roleId: 1, fromId: ['gacha', 10017] },
+  193: { memberId: 7, title: 'いたいのいたいのとんでけ～♪', awakenTitle: 'マジカル☆フィーバー', rarityId: 3, attributeId: 3, roleId: 1, fromId: ['gacha', 10017] },
   194: { memberId: 12, title: '愛と勇気の魔法少女、りこっぴー', awakenTitle: '青空Jumping Heart', rarityId: 2, attributeId: 5, roleId: 4, fromId: ['gacha', 10017], outfitSeriesId: 8 },
   195: { memberId: 14, title: 'ハグしてさしあげますわ', awakenTitle: 'マジカル☆フィーバー', rarityId: 3, attributeId: 4, roleId: 3, fromId: ['gacha', 10018] },
   196: { memberId: 22, title: 'あなたにご覧にいれましょう！', awakenTitle: 'マジカル☆フィーバー', rarityId: 3, attributeId: 5, roleId: 1, fromId: ['event', 12] },
@@ -248,13 +248,30 @@ export const CARD: Card = {
   198: { memberId: 23, title: '水の精霊たちよ！', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['event', 12], outfitSeriesId: 9 },
 
   199: { memberId: 8, title: 'あなたのために歌うね', awakenTitle: 'カラフルフェスタ', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['gacha', 30005] },
-  200: { memberId: 17, title: '天国ずら〜！', awakenTitle: '楽園からの使者', rarityId: 3, attributeId: 5, roleId: 3, fromId: ['gacha', 30005] },
-  201: { memberId: 26, title: 'すやあ〜すぴ〜すやすや〜〜', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['gacha', 30005], outfitSeriesId: 9 },
+  200: { memberId: 17, title: '天国ずら～！', awakenTitle: '楽園からの使者', rarityId: 3, attributeId: 5, roleId: 3, fromId: ['gacha', 30005] },
+  201: { memberId: 26, title: 'すやあ～すぴ～すやすや～～', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['gacha', 30005], outfitSeriesId: 9 },
   202: { memberId: 25, title: '来てくれたんだね！サンキュー♪', awakenTitle: 'レインボーローズ', rarityId: 2, attributeId: 3, roleId: 4, fromId: ['gacha', 30005], outfitSeriesId: 9 },
+
+  203: { memberId: 21, title: 'ひたむきな努力家', awakenTitle: 'レッスンタイム・ニジガク', rarityId: 1, attributeId: 2, roleId: 1, fromId: ['gacha', 10019] },
+  204: { memberId: 22, title: 'みんなのアイドルかすみん', awakenTitle: 'レッスンタイム・ニジガク', rarityId: 1, attributeId: 5, roleId: 2, fromId: ['gacha', 10019] },
+  205: { memberId: 23, title: '大女優を目指して', awakenTitle: 'レッスンタイム・ニジガク', rarityId: 1, attributeId: 4, roleId: 3, fromId: ['gacha', 10019] },
+  206: { memberId: 24, title: 'ストレッチは欠かせないわ！', awakenTitle: 'レッスンタイム・ニジガク', rarityId: 1, attributeId: 4, roleId: 4, fromId: ['gacha', 10019] },
+  207: { memberId: 25, title: 'たのしーこと、してみない？', awakenTitle: 'レッスンタイム・ニジガク', rarityId: 1, attributeId: 6, roleId: 3, fromId: ['gacha', 10019] },
+  208: { memberId: 26, title: 'お昼寝日和だね～♪', awakenTitle: 'レッスンタイム・ニジガク', rarityId: 1, attributeId: 6, roleId: 2, fromId: ['gacha', 10019] },
+  209: { memberId: 27, title: '生徒会長モード', awakenTitle: 'レッスンタイム・ニジガク', rarityId: 1, attributeId: 3, roleId: 3, fromId: ['gacha', 10019] },
+  210: { memberId: 28, title: '弟たちから手紙が届いたの♪', awakenTitle: 'レッスンタイム・ニジガク', rarityId: 1, attributeId: 1, roleId: 1, fromId: ['gacha', 10019] },
+  211: { memberId: 29, title: 'ココロは繋がってるよ', awakenTitle: 'レッスンタイム・ニジガク', rarityId: 1, attributeId: 3, roleId: 4, fromId: ['gacha', 10019] },
+
+  212: { memberId: 16, title: 'あっちにいって―――……あっ！！', awakenTitle: 'ベジタブル☆ワンダーランド', rarityId: 3, attributeId: 3, roleId: 1, fromId: ['gacha', 10019] },
+  213: { memberId: 28, title: 'お野菜も入れるねー。それー♪', awakenTitle: 'マーチング・ハーモニー', rarityId: 2, attributeId: 5, roleId: 4, fromId: ['gacha', 10019], outfitSeriesId: 10 },
+  214: { memberId: 3, title: '味見してみて', awakenTitle: 'ベジタブル☆ワンダーランド', rarityId: 3, attributeId: 3, roleId: 3, fromId: ['event', 13] },
+  215: { memberId: 29, title: 'みんなと一緒にひとつのお鍋', awakenTitle: 'ベジタブル☆ワンダーランド', rarityId: 3, attributeId: 5, roleId: 4, fromId: ['gacha', 10020] },
+  216: { memberId: 14, title: 'ん～、たまりませんわ！', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['event', 13], outfitSeriesId: 11 },
+  217: { memberId: 2, title: 'なんなのいきなり……', awakenTitle: 'それは僕たちの奇跡', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['event', 13], outfitSeriesId: 12 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
-const INSUF_RANGE = [-1, -1];
+const INSUF_RANGE = [203, 217];
 export function isInsuf(id: number) {
   return INSUF_RANGE[0] <= id && id <= INSUF_RANGE[1];
 }

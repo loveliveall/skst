@@ -270,6 +270,18 @@ export const EVENT: Event = {
     startDate: '2020.03.23.',
     endDate: '2020.03.31.',
   },
+  13: {
+    name: 'ベジタブル☆クッキング！',
+    eventTypeId: 2,
+    rankBorder: {},
+    ingameInfo: [],
+    voltageRankBorder: {},
+    voltageRankBorderIngameInfo: [],
+    voltageRankSongs: ['Music S.T.A.R.T!!', 'Step! ZERO to ONE', 'ドキピポ☆エモーション'],
+    rewardBorder: {},
+    startDate: '2020.04.06.',
+    endDate: '2020.04.15.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,
