@@ -34,5 +34,14 @@ export const EVENT_GLOBAL: Event = {
     startDate: '2020.03.19.',
     endDate: '2020.03.30.',
   },
+  3: {
+    name: '시타마치 관광 대모험',
+    eventTypeId: 1,
+    rankBorder: {},
+    ingameInfo: [],
+    rewardBorder: {},
+    startDate: '2020.04.06.',
+    endDate: '2020.04.15.',
+  },
 };
 /* eslint-enable max-len, object-property-newline */

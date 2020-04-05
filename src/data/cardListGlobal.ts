@@ -127,5 +127,11 @@ export const PARTIAL_CARD_GLOBAL: PartialCard = {
   112: { title: '화살에 혼을 담아', awakenTitle: '블루 아모르' },
   113: { title: '마루가 사랑하는 책!', awakenTitle: 'Kimino Kokorowa Kagayaiterukai?' },
   114: { title: '니지가사키의 줄리엣', awakenTitle: '두근두근 애니멀' },
+
+  115: { title: '이제는 하나가 됐잖아', awakenTitle: '블루 레브' },
+  116: { title: '이불이 푹신하다냥~♪♪', awakenTitle: 'Snow Halation' },
+  117: { title: '한 걸음으로 끝나지 않도록', awakenTitle: '플뢰르 레브' },
+  118: { title: '시타마치 매직…!', awakenTitle: 'Kimino Kokorowa Kagayaiterukai?' },
+  119: { title: '특별한 나들이', awakenTitle: '두근두근 애니멀' },
 };
 /* eslint-enable object-curly-newline, max-len */
