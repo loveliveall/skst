@@ -523,7 +523,23 @@
   text-align: center;
   line-height: 1.6em;
   word-break: keep-all;
-`;var gl=()=>l.a.createElement(l.a.Fragment,null,l.a.createElement(pl,null,l.a.createElement(sl,null,l.a.createElement(cl,null,"여기서 계산되는 스탯은 아래 식을 통해 계산됩니다:",l.a.createElement("br",null),"(카드 기본 스탯) * (인연 버프) * (기본 스탯 증감) * (스탯 증감) * (동속성 효과)",l.a.createElement("br",null),"카드 자체의 특기, 개성(패시브), 타입 등은 계산에 영향을 미치지 않습니다! 주의해주세요.",l.a.createElement("br",null),l.a.createElement("strong",null,"크리티컬 관련 추정은 ",l.a.createElement("a",{href:"/cards"},"카드 목록"),"에 있는 가정을 그대로 적용한 수치입니다."),l.a.createElement("br",null),"인연 레벨 81 이상의 인연 버프는 추정치를 적용한 수치입니다.",l.a.createElement("br",null),"추정치 식은 Math.floor(200 * Math.pow(LV - 1, 1/3) - 50) 입니다.")),l.a.createElement(sl,{style:{border:"1px solid black"}},l.a.createElement(ki,null)),l.a.createElement(sl,null,l.a.createElement(nl,null))),l.a.createElement(dl,null));const ml=s.a.nav`
+`;var gl=()=>l.a.createElement(l.a.Fragment,null,l.a.createElement(pl,null,l.a.createElement(sl,null,l.a.createElement(cl,null,"여기서 계산되는 스탯은 아래 식을 통해 계산됩니다:",l.a.createElement("br",null),"(카드 기본 스탯) * (인연 버프) * (기본 스탯 증감) * (스탯 증감) * (동속성 효과)",l.a.createElement("br",null),"카드 자체의 특기, 개성(패시브), 타입 등은 계산에 영향을 미치지 않습니다! 주의해주세요.",l.a.createElement("br",null),l.a.createElement("strong",null,"크리티컬 관련 추정은 ",l.a.createElement("a",{href:"/cards"},"카드 목록"),"에 있는 가정을 그대로 적용한 수치입니다."),l.a.createElement("br",null),"인연 레벨 81 이상의 인연 버프는 추정치를 적용한 수치입니다.",l.a.createElement("br",null),"추정치 식은 Math.floor(200 * Math.pow(LV - 1, 1/3) - 50) 입니다.")),l.a.createElement(sl,{style:{border:"1px solid black"}},l.a.createElement(ki,null)),l.a.createElement(sl,null,l.a.createElement(nl,null))),l.a.createElement(dl,null));const ml=s.a.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  margin-bottom: 8px;
+  word-break: keep-all;
+  & * {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+`,ol=s.a.h3`
+  margin-bottom: 0px;
+`,fl=s.a.p`
+  text-align: center;
+`;var Il=({hidden:e})=>e?l.a.createElement("div",null):l.a.createElement(ml,null,l.a.createElement(ol,null,"공지"),l.a.createElement(fl,null,"개인 사정으로 인해 2020.05.14. - 2020.06.11. 동안 업데이트가 없을 예정입니다."));const ul=s.a.nav`
   height: 100%;
   width: 160px;
   position: fixed;
@@ -539,7 +555,7 @@
   @media screen and (max-width: 768px) {
     display: none;
   }
-`,ol=s.a.nav`
+`,yl=s.a.nav`
   width: 100%;
   position: relative;
   z-index: 1;
@@ -554,7 +570,7 @@
   @media screen and (min-width: 769px) {
     display: none;
   }
-`,fl=s.a.button`
+`,Tl=s.a.button`
   width: 100%;
   color: #f1f1f1;
   border: 0px solid black;
@@ -562,7 +578,7 @@
   outline: none;
   box-shadow: none;
   font-size: 20px;
-`,Il=s.a.button`
+`,hl=s.a.button`
   width: 100%;
   border: 0px solid black;
   background: none;
@@ -576,7 +592,7 @@
   &:hover {
     color: #f1f1f1;
   }
-`,ul=Object(s.a)(d.c)`
+`,vl=Object(s.a)(d.c)`
   display: block;
   padding: 6px 16px 6px 16px;
   text-decoration: none;
@@ -586,7 +602,7 @@
   &:hover {
     color: #f1f1f1;
   }
-`,yl=s.a.div`
+`,bl=s.a.div`
   margin-left: 160px;
   padding: 12px 10px;
 
@@ -594,4 +610,4 @@
   @media screen and (max-width: 768px) {
     margin-left: 0px;
   }
-`;var Tl=Object(p.b)(e=>({isJPEdition:ke(e)}),e=>({toggleEdition:()=>{e(X.toggleEdition())}}))(({isJPEdition:e,toggleEdition:t})=>{const[a,i]=l.a.useState(!1),r=[{key:"home",path:"/",title:"홈",exact:!0},{key:"cards",path:"/cards",title:"카드 목록",exact:!1},{key:"gachas",path:"/gachas",title:"가챠 목록",exact:!1},{key:"events",path:"/events",title:"이벤트 목록",exact:!1},{key:"deck-simulator",path:"/deck-simulator",title:"덱 비교기",exact:!1},{key:"card-comparator",path:"/card-comparator",title:"카드 비교기",exact:!1}];return l.a.createElement(l.a.Fragment,null,l.a.createElement(ml,null,l.a.createElement(Il,{type:"button",onClick:()=>t()},e?"일본판":"글로벌판"),r.map(e=>l.a.createElement(ul,{key:e.key,exact:e.exact,to:e.path,activeStyle:{color:"#f1f1f1"}},e.title))),l.a.createElement(ol,null,l.a.createElement(je,null,l.a.createElement(fl,{type:"button",onClick:()=>t(),style:{paddingBottom:"8px"}},e?"일본판":"글로벌판"),l.a.createElement(fl,{type:"button",onClick:()=>i(!a),style:{paddingBottom:a?"8px":"0px"}},a?"메뉴 닫기":"메뉴 열기")),a&&r.map(e=>l.a.createElement(ul,{key:e.key,exact:e.exact,to:e.path,activeStyle:{color:"#f1f1f1"}},e.title))),l.a.createElement(yl,null,"localhost"===window.location.hostname&&!1,l.a.createElement(c.c,null,l.a.createElement(c.a,{exact:!0,path:"/",component:Je}),l.a.createElement(c.a,{path:"/card/:id",component:_t}),l.a.createElement(c.a,{path:"/cards",component:Ga}),l.a.createElement(c.a,{path:"/gachas",component:Za}),l.a.createElement(c.a,{path:"/event/:id",component:si}),l.a.createElement(c.a,{path:"/events",component:Ii}),l.a.createElement(c.a,{path:"/deck-simulator",component:Qi}),l.a.createElement(c.a,{path:"/card-comparator",component:gl}))))});Object.keys(D).map(Number).forEach(e=>{if(6!==D[e].length)throw Error(`ID ${e} does not have 6 parameter state`);if(void 0===S[e])throw Error(`ID ${e} does not exist in CARD`)}),Object.keys(it).map(Number).forEach(e=>{const{maxLevel:t,detail:a}=it[e];if(!Object.keys(a).every(e=>{const i=a[e];return!Array.isArray(i)||i.length===t}))throw Error(`Skill ID ${e} does not have enough info for each skill level`)}),Object.keys(Sa).map(Number).forEach(e=>{if(6!==Sa[e].speciality.length)throw Error(`Skill level map ID ${e} does not have 6 speciality map`);if(6!==Sa[e].individuality.passive.length)throw Error(`Skill level map ID ${e} does not have 6 individuality passive map`)}),n.a.render(l.a.createElement(p.a,{store:Z},l.a.createElement(d.a,null,l.a.createElement(Tl,null))),document.getElementById("app"))}});
+`;var Vl=Object(p.b)(e=>({isJPEdition:ke(e)}),e=>({toggleEdition:()=>{e(X.toggleEdition())}}))(({isJPEdition:e,toggleEdition:t})=>{const[a,i]=l.a.useState(!1),r=[{key:"home",path:"/",title:"홈",exact:!0},{key:"cards",path:"/cards",title:"카드 목록",exact:!1},{key:"gachas",path:"/gachas",title:"가챠 목록",exact:!1},{key:"events",path:"/events",title:"이벤트 목록",exact:!1},{key:"deck-simulator",path:"/deck-simulator",title:"덱 비교기",exact:!1},{key:"card-comparator",path:"/card-comparator",title:"카드 비교기",exact:!1}];return l.a.createElement(l.a.Fragment,null,l.a.createElement(ul,null,l.a.createElement(hl,{type:"button",onClick:()=>t()},e?"일본판":"글로벌판"),r.map(e=>l.a.createElement(vl,{key:e.key,exact:e.exact,to:e.path,activeStyle:{color:"#f1f1f1"}},e.title))),l.a.createElement(yl,null,l.a.createElement(je,null,l.a.createElement(Tl,{type:"button",onClick:()=>t(),style:{paddingBottom:"8px"}},e?"일본판":"글로벌판"),l.a.createElement(Tl,{type:"button",onClick:()=>i(!a),style:{paddingBottom:a?"8px":"0px"}},a?"메뉴 닫기":"메뉴 열기")),a&&r.map(e=>l.a.createElement(vl,{key:e.key,exact:e.exact,to:e.path,activeStyle:{color:"#f1f1f1"}},e.title))),l.a.createElement(bl,null,"localhost"===window.location.hostname&&!1,l.a.createElement(Il,null),l.a.createElement(c.c,null,l.a.createElement(c.a,{exact:!0,path:"/",component:Je}),l.a.createElement(c.a,{path:"/card/:id",component:_t}),l.a.createElement(c.a,{path:"/cards",component:Ga}),l.a.createElement(c.a,{path:"/gachas",component:Za}),l.a.createElement(c.a,{path:"/event/:id",component:si}),l.a.createElement(c.a,{path:"/events",component:Ii}),l.a.createElement(c.a,{path:"/deck-simulator",component:Qi}),l.a.createElement(c.a,{path:"/card-comparator",component:gl}))))});Object.keys(D).map(Number).forEach(e=>{if(6!==D[e].length)throw Error(`ID ${e} does not have 6 parameter state`);if(void 0===S[e])throw Error(`ID ${e} does not exist in CARD`)}),Object.keys(it).map(Number).forEach(e=>{const{maxLevel:t,detail:a}=it[e];if(!Object.keys(a).every(e=>{const i=a[e];return!Array.isArray(i)||i.length===t}))throw Error(`Skill ID ${e} does not have enough info for each skill level`)}),Object.keys(Sa).map(Number).forEach(e=>{if(6!==Sa[e].speciality.length)throw Error(`Skill level map ID ${e} does not have 6 speciality map`);if(6!==Sa[e].individuality.passive.length)throw Error(`Skill level map ID ${e} does not have 6 individuality passive map`)}),n.a.render(l.a.createElement(p.a,{store:Z},l.a.createElement(d.a,null,l.a.createElement(Vl,null))),document.getElementById("app"))}});
