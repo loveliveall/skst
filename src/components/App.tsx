@@ -17,6 +17,7 @@ import Events from '@/components/events/Events';
 import DeckSimulator from '@/components/deck-simulator/DeckSimulator';
 import CardComparator from '@/components/card-comparator/CardComparator';
 import Test from '@/components/test/Test';
+import Notice from './Notice';
 
 const FixedNavDesktop = styled.nav`
   height: 100%;
@@ -216,6 +217,7 @@ const App: React.FC<AppProps> = ({
         {window.location.hostname === 'localhost' && false && (
           <Test />
         )}
+        <Notice />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/card/:id" component={Card} />
