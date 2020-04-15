@@ -133,5 +133,8 @@ export const PARTIAL_CARD_GLOBAL: PartialCard = {
   117: { title: '한 걸음으로 끝나지 않도록', awakenTitle: '플뢰르 레브' },
   118: { title: '시타마치 매직…!', awakenTitle: 'Kimino Kokorowa Kagayaiterukai?' },
   119: { title: '특별한 나들이', awakenTitle: '두근두근 애니멀' },
+
+  120: { title: '막힘없고 맑은 선율', awakenTitle: '프렐류드 블로섬' },
+  121: { title: '네 운세도 봐 줄게', awakenTitle: 'Snow Halation' },
 };
 /* eslint-enable object-curly-newline, max-len */

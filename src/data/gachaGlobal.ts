@@ -11,4 +11,5 @@ export const GACHA_GLOBAL: Gacha = {
 
   20001: { type: 'pickup', name: '픽업 스카우트 (UR 요시코)', startDate: '2020.03.13.', endDate: '2020.03.19.' },
   20002: { type: 'pickup', name: '픽업 스카우트 (UR 우미)', startDate: '2020.03.30.', endDate: '2020.04.06.' },
+  20003: { type: 'pickup', name: '픽업 스카우트 (UR 리코)', startDate: '2020.04.15.', endDate: '2020.04.20.' },
 };/* eslint-enable object-curly-newline, max-len */
