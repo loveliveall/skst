@@ -51,6 +51,7 @@ export interface Event {
       readonly eventTypeId: 3,
       readonly targetSongs: string[], // TODO: Let it link with songs table
       readonly prizes: number[][], // Prizes according to the date
+      readonly bonusTarget: string,
     }
   ),
 }
@@ -304,6 +305,7 @@ export const EVENT: Event = {
     ingameInfo: [],
     rewardBorder: {},
     targetSongs: ['嵐のなかの恋だから', '元気全開DAY! DAY! DAY!', '眠れる森に行きたいな'],
+    bonusTarget: '3학년',
     prizes: [
       [1, 2, 3],
       [1, 2, 3],

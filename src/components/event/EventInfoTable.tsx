@@ -107,6 +107,16 @@ const EventInfoTable: React.FC<EventInfoTableProps> = ({
           <>
             <tr>
               <TitleTh>
+                이벤트
+                <br />
+                보너스 대상
+              </TitleTh>
+              <SingleTd>
+                {event.bonusTarget}
+              </SingleTd>
+            </tr>
+            <tr>
+              <TitleTh>
                 빅 라이브
                 <br />
                 대상 악곡
