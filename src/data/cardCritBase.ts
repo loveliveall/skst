@@ -207,7 +207,6 @@ export const CARD_CRIT_BASE: CritBase = {
   200: { value: 0 },
   201: { value: 15 },
   202: { value: 15 },
-  // Need to be confirmed
   203: { value: 0 },
   204: { value: 15 },
   205: { value: 0 },
@@ -223,4 +222,7 @@ export const CARD_CRIT_BASE: CritBase = {
   215: { value: 15 },
   216: { value: 15 },
   217: { value: 0 },
+  // Need to be confirmed
+  218: { value: 15 },
+  219: { value: 15 },
 };

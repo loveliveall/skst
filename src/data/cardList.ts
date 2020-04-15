@@ -268,10 +268,13 @@ export const CARD: Card = {
   215: { memberId: 29, title: 'みんなと一緒にひとつのお鍋', awakenTitle: 'ベジタブル☆ワンダーランド', rarityId: 3, attributeId: 5, roleId: 4, fromId: ['gacha', 10020] },
   216: { memberId: 14, title: 'ん～、たまりませんわ！', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['event', 13], outfitSeriesId: 11 },
   217: { memberId: 2, title: 'なんなのいきなり……', awakenTitle: 'それは僕たちの奇跡', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['event', 13], outfitSeriesId: 12 },
+
+  218: { memberId: 23, title: 'もうくすぐったいってば！', awakenTitle: '薔薇の騎士', rarityId: 3, attributeId: 4, roleId: 2, fromId: ['gacha', 20008] },
+  219: { memberId: 8, title: 'えっ……？', awakenTitle: 'それは僕たちの奇跡', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['gacha', 20008], outfitSeriesId: 12 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
-const INSUF_RANGE = [203, 217];
+const INSUF_RANGE = [-1, -1];
 export function isInsuf(id: number) {
   return INSUF_RANGE[0] <= id && id <= INSUF_RANGE[1];
 }

@@ -247,6 +247,8 @@ export const SKILL: Skill = {
   100215: { maxLevel: 5, detail: { triggerProb: 3300, skillTargetId: 5, effectTypeId: 100201, effectValue: [800, 850, 900, 950, 1000], finishType: 'duration', finishValue: 10, timing: 'onAppeal' } },
   100216: { maxLevel: 5, detail: { triggerProb: 3000, skillTargetId: 1, effectTypeId: 100901, effectValue: [300, 330, 360, 390, 420], finishType: 'duration', finishValue: 5, timing: 'onAppeal' } },
   100217: { maxLevel: 5, detail: { triggerProb: 3000, skillTargetId: 5, effectTypeId: 100301, effectValue: [500, 550, 600, 650, 700], finishType: 'duration', finishValue: 5, timing: 'onAppeal' } },
+  100218: { maxLevel: 5, detail: { triggerProb: 3300, skillTargetId: 1, effectTypeId: 100901, effectValue: [700, 750, 800, 850, 900], finishType: 'duration', finishValue: 5, timing: 'onAppeal' } },
+  100219: { maxLevel: 5, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 101101, effectValue: [2000, 2050, 2100, 2150, 2200], finishType: 'spFire', finishValue: 1, timing: 'onAppeal' } },
 
   200001: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 3, effectTypeId: 200301, effectValue: [100, 130, 160, 190, 220], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
   200002: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 6, effectTypeId: 200301, effectValue: [150, 180, 210, 240, 270], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
@@ -465,6 +467,8 @@ export const SKILL: Skill = {
   200215: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 5, effectTypeId: 200101, effectValue: [500, 550, 600, 650, 700], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
   200216: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 3, effectTypeId: 200201, effectValue: [200, 230, 260, 290, 320], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
   200217: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 9, effectTypeId: 200301, effectValue: [500, 550, 600, 650, 700], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
+  200218: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 5, effectTypeId: 200101, effectValue: [500, 550, 600, 650, 700], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
+  200219: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 7, effectTypeId: 200301, effectValue: [200, 230, 260, 290, 320], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
 
   300003: { maxLevel: 1, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 101402, effectValue: [3000], finishType: 'instant', finishValue: 0, timing: 'onTrigger', triggerTypeId: 1, triggerValue: 0, conditionId: 0 } },
   300004: { maxLevel: 1, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 100501, effectValue: [2000], finishType: 'instant', finishValue: 0, timing: 'onTrigger', triggerTypeId: 2, triggerValue: 0, conditionId: 0 } },
@@ -620,6 +624,8 @@ export const SKILL: Skill = {
   300215: { maxLevel: 1, detail: { triggerProb: 5000, skillTargetId: 5, effectTypeId: 101801, effectValue: [500], finishType: 'tillEnd', finishValue: 0, timing: 'onTrigger', triggerTypeId: 3, triggerValue: 0, conditionId: 0 } },
   300216: { maxLevel: 1, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 101003, effectValue: [700], finishType: 'instant', finishValue: 0, timing: 'onTrigger', triggerTypeId: 3, triggerValue: 0, conditionId: 0 } },
   300217: { maxLevel: 1, detail: { triggerProb: 3000, skillTargetId: 3, effectTypeId: 101301, effectValue: [200], finishType: 'tillEnd', finishValue: 0, timing: 'onTrigger', triggerTypeId: 3, triggerValue: 0, conditionId: 0 } },
+  300218: { maxLevel: 1, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 101003, effectValue: [1000], finishType: 'instant', finishValue: 0, timing: 'onTrigger', triggerTypeId: 3, triggerValue: 0, conditionId: 0 } },
+  300219: { maxLevel: 1, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 101404, effectValue: [3000], finishType: 'instant', finishValue: 0, timing: 'onTrigger', triggerTypeId: 1, triggerValue: 0, conditionId: 0 } },
 };
 /* eslint-enable object-curly-newline, max-len */
 
