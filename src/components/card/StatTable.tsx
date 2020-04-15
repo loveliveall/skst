@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { PARAMETER } from '@/data/cardParameter';
+import { CARD_CRIT_BASE } from '@/data/cardCritBase';
+import { critProb } from '@/utils/utils';
 
 const StyledTable = styled.table`
   border: 1px solid black;
@@ -71,6 +73,20 @@ const StatTable: React.FC<StatTableProps> = ({
             </tr>
           );
         })}
+        <tr style={{ color: '#777' }}>
+          <td>크리율</td>
+          {uncapArray.map((uncap) => {
+            const { appl, tech } = parameter[uncap];
+            const critBase = CARD_CRIT_BASE[id].value;
+            const statExist = appl !== 0 && tech !== 0 && critBase !== undefined;
+            return (
+              <React.Fragment key={uncap}>
+                <td>{`${statExist ? critProb(appl, tech, critBase).toFixed(2) : '?'}%`}</td>
+                {uncap !== maxUncap && <td>-</td>}
+              </React.Fragment>
+            );
+          })}
+        </tr>
       </tbody>
     </StyledTable>
   );

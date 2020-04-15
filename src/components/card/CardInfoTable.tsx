@@ -8,6 +8,7 @@ import { getSkillInfoKR } from '@/data/skill';
 import { CARD_SKILL } from '@/data/cardSkill';
 import { FlexBox } from '../Styles';
 import { SKILL_EFFECT_CATEGORY } from '@/data/skillEffectType';
+import { CARD_CRIT_BASE } from '@/data/cardCritBase';
 
 const VerticalFlex = styled(FlexBox)`
   width: 100%;
@@ -208,7 +209,9 @@ const CardInfoTable: React.FC<CardInfoTableProps> = ({
         </tr>
         <tr>
           <TitleTh>유닛</TitleTh>
-          <SingleTd colSpan={3}>{unit.name}</SingleTd>
+          <DoubleTd>{unit.name}</DoubleTd>
+          <TitleTh>크리 보정</TitleTh>
+          <DoubleTd>{`${CARD_CRIT_BASE[id].value}%p`}</DoubleTd>
         </tr>
       </tbody>
     </StyledTable>
