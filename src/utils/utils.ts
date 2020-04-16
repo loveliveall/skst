@@ -16,3 +16,19 @@ export function critProb(_: number, tech: number, critBase: number) {
   if (val < 0) return 0;
   return val;
 }
+
+export function getContrastText(hexColor: string) {
+  const r = parseInt(hexColor.substr(1, 2), 16);
+  const g = parseInt(hexColor.substr(3, 2), 16);
+  const b = parseInt(hexColor.substr(5, 2), 16);
+  const yiq = ((r * 299) + (g * 587) + (b * 114)) / 1000;
+  return (yiq >= 128) ? {
+    // black
+    active: '#010101',
+    inactive: '#818181',
+  } : {
+    // white
+    active: '#f1f1f1',
+    inactive: '#818181',
+  };
+}

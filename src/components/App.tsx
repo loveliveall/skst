@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { Switch, Route, NavLink } from 'react-router-dom';
 
 import { AppState, SEL, AC } from '@/store';
+import { getBirthdayCharacter } from '@/data/characterMeta';
+import { getContrastText } from '@/utils/utils';
 
 import { FlexBox } from '@/components/Styles';
 
@@ -19,6 +21,10 @@ import CardComparator from '@/components/card-comparator/CardComparator';
 import Test from '@/components/test/Test';
 import Notice from './Notice';
 
+const birthCharacter = getBirthdayCharacter(new Date());
+const navBgColor = birthCharacter === undefined ? '#111111' : birthCharacter.colorHex;
+const textColor = getContrastText(navBgColor);
+
 const FixedNavDesktop = styled.nav`
   height: 100%;
   width: 160px;
@@ -26,7 +32,7 @@ const FixedNavDesktop = styled.nav`
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: ${navBgColor};
   overflow-x: hidden;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -43,7 +49,7 @@ const FixedNavMobile = styled.nav`
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: ${navBgColor};
   overflow-x: hidden;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -56,7 +62,7 @@ const FixedNavMobile = styled.nav`
 
 const TransparentButton = styled.button`
   width: 100%;
-  color: #f1f1f1;
+  color: ${textColor.active};
   border: 0px solid black;
   background: none;
   outline: none;
@@ -72,11 +78,11 @@ const StyledButton = styled.button`
   box-shadow: none;
   font-size: 20px;
   text-decoration: none;
-  color: #818181;
+  color: ${textColor.inactive};
   cursor: pointer;
 
   &:hover {
-    color: #f1f1f1;
+    color: ${textColor.active};
   }
 `;
 
@@ -85,10 +91,10 @@ const StyledNavLink = styled(NavLink)`
   padding: 6px 16px 6px 16px;
   text-decoration: none;
   font-size: 20px;
-  color: #818181;
+  color: ${textColor.inactive};
 
   &:hover {
-    color: #f1f1f1;
+    color: ${textColor.active};
   }
 `;
 
@@ -175,7 +181,7 @@ const App: React.FC<AppProps> = ({
             key={page.key}
             exact={page.exact}
             to={page.path}
-            activeStyle={{ color: '#f1f1f1' }}
+            activeStyle={{ color: textColor.active }}
           >
             {page.title}
           </StyledNavLink>
@@ -207,7 +213,7 @@ const App: React.FC<AppProps> = ({
             key={page.key}
             exact={page.exact}
             to={page.path}
-            activeStyle={{ color: '#f1f1f1' }}
+            activeStyle={{ color: textColor.active }}
           >
             {page.title}
           </StyledNavLink>
