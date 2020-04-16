@@ -327,7 +327,7 @@ export const EVENT: Event = {
     bonusTarget: '1학년',
     prizes: [
       [1, 2, 3],
-      [],
+      [1, 2, 3],
       [],
       [],
       [],
