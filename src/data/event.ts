@@ -21,6 +21,7 @@ export const BIG_LIVE_PRIZE_TYPE: BigLivePrizeType = {
   1: { name: '볼티지상' },
   2: { name: '특기상' },
   3: { name: 'Sp특기상' },
+  4: { name: '' },
 };
 
 export interface Event {
@@ -315,6 +316,24 @@ export const EVENT: Event = {
     ],
     startDate: '2020.03.19.',
     endDate: '2020.03.23.',
+  },
+  10002: {
+    name: '第1回スクスタビックライブ',
+    eventTypeId: 3,
+    rankBorder: {},
+    ingameInfo: [],
+    rewardBorder: {},
+    targetSongs: ['それは僕たちの奇跡', 'Strawberry Trapper', 'Starlight'],
+    bonusTarget: '1학년',
+    prizes: [
+      [1, 2, 3],
+      [],
+      [],
+      [],
+      [],
+    ],
+    startDate: '2020.04.16.',
+    endDate: '2020.04.20.',
   },
 };
 /* eslint-enable max-len, object-property-newline */
