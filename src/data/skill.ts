@@ -630,9 +630,13 @@ export const SKILL: Skill = {
 /* eslint-enable object-curly-newline, max-len */
 
 export function shortSkillTextKr(skillDetail: SkillDetail, level: number) {
+  const { effectTypeId } = skillDetail;
   const effectType = SKILL_EFFECT_TYPE[skillDetail.effectTypeId];
   const value = skillDetail.effectValue[level - 1] / (effectType.scaleType === 'percent' ? 100 : 1);
-  return `${effectType.desc}: ${value}${effectType.scaleType === 'percent' ? '%' : ''}`;
+  const valueStr = `${value}${effectType.scaleType === 'percent' ? '%' : ''}`;
+  if (effectTypeId === 100601) return `회복하며 부활: ${valueStr}`;
+  if (effectTypeId === 101201) return `${effectType.desc}`; // 저하효과 해제
+  return `${effectType.desc}: ${valueStr}`;
 }
 
 export function skillTargetTextKr(skillDetail: SkillDetail) {

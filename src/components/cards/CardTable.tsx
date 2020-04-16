@@ -432,7 +432,7 @@ const CardTable: React.FC<CardTableProps> = ({
                   />
                 </div>
                 <DetailText>
-                  {SKILL_EFFECT_CATEGORY[categoryId].desc}
+                  {shortSkillTextKr(liveDetail, 1)}
                 </DetailText>
                 <DetailText>
                   {skillTargetTextKr(liveDetail)}
