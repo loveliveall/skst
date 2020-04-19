@@ -44,7 +44,8 @@ const Home: React.FC<HomeProps> = ({
   isJPEdition, cardTable,
 }) => {
   const rarityCardIDs = (rarityId: number) => Object.keys(cardTable).map(Number).filter(
-    (id) => cardTable[id].rarityId === rarityId && cardTable[id].fromId[0] === 'gacha',
+    (id) => (cardTable[id].rarityId === rarityId && cardTable[id].fromId[0] === 'gacha')
+      && (birthCharacter === undefined || cardTable[id].memberId === birthCharacter.id),
   );
   const tenGachaResultIDs = () => Array(10).fill(null).map((_, idx) => {
     const rarityPick = Math.random();
