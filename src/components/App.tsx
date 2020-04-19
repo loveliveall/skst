@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Switch, Route, NavLink } from 'react-router-dom';
 
 import { AppState, SEL, AC } from '@/store';
-import { getBirthdayCharacter } from '@/data/characterMeta';
+import { birthdayCharacter } from '@/data/characterMeta';
 import { getContrastText } from '@/utils/utils';
 
 import { FlexBox } from '@/components/Styles';
@@ -21,8 +21,7 @@ import CardComparator from '@/components/card-comparator/CardComparator';
 import Test from '@/components/test/Test';
 import Notice from './Notice';
 
-const birthCharacter = getBirthdayCharacter(new Date());
-const navBgColor = birthCharacter === undefined ? '#111111' : birthCharacter.colorHex;
+const navBgColor = birthdayCharacter === undefined ? '#111111' : birthdayCharacter.colorHex;
 const textColor = getContrastText(navBgColor);
 
 const FixedNavDesktop = styled.nav`

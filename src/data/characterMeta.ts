@@ -43,3 +43,5 @@ export function getBirthdayCharacter(date: Date) {
     (item) => item.birthDay === date.getDate() && item.birthMonth === date.getMonth() + 1,
   );
 }
+
+export const birthdayCharacter = getBirthdayCharacter(new Date());

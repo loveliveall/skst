@@ -4,15 +4,13 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 import { AppState, SEL } from '@/store';
-import { getBirthdayCharacter } from '@/data/characterMeta';
+import { birthdayCharacter } from '@/data/characterMeta';
 import { getCardIconAssetPath, getCardSymbol } from '@/data/cardList';
 import { MEMBER } from '@/data/memberMetadata';
 import { RARITY } from '@/data/cardMetadata';
 
 import { FlexBox, StyledButton } from '@/components/Styles';
 import CardStats from '@/components/home/CardStats';
-
-const birthCharacter = getBirthdayCharacter(new Date());
 
 function pickRandom<T>(array: T[]): T {
   return array[Math.floor(Math.random() * array.length)];
@@ -45,7 +43,7 @@ const Home: React.FC<HomeProps> = ({
 }) => {
   const rarityCardIDs = (rarityId: number) => Object.keys(cardTable).map(Number).filter(
     (id) => (cardTable[id].rarityId === rarityId && cardTable[id].fromId[0] === 'gacha')
-      && (birthCharacter === undefined || cardTable[id].memberId === birthCharacter.id),
+      && (birthdayCharacter === undefined || cardTable[id].memberId === birthdayCharacter.id),
   );
   const tenGachaResultIDs = () => Array(10).fill(null).map((_, idx) => {
     const rarityPick = Math.random();
@@ -85,9 +83,9 @@ const Home: React.FC<HomeProps> = ({
   return (
     <VerticalFlex>
       <VerticalFlex>
-        {birthCharacter !== undefined && (
+        {birthdayCharacter !== undefined && (
           <h2>
-            <span style={{ color: birthCharacter.colorHex }}>{birthCharacter.name}</span>
+            <span style={{ color: birthdayCharacter.colorHex }}>{birthdayCharacter.name}</span>
             의 생일을 축하합니다!
           </h2>
         )}
