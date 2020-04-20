@@ -48,6 +48,8 @@ export const GACHA: Gacha = {
   10018: { type: 'event', name: 'マジカル・タイム！ガチャ後編', startDate: '2020.03.27.', endDate: '2020.03.31.', eventId: 12 },
   10019: { type: 'event', name: 'ベジタブル☆クッキング！ガチャ前編', startDate: '2020.04.06.', endDate: '2020.04.11.', eventId: 13 },
   10020: { type: 'event', name: 'ベジタブル☆クッキング！ガチャ後編', startDate: '2020.04.11.', endDate: '2020.04.15.', eventId: 13 },
+  10021: { type: 'event', name: '青春のアイススケートガチャ前編', startDate: '2020.04.21.', endDate: '2020.04.25.', eventId: 14 },
+  10022: { type: 'event', name: '青春のアイススケートガチャ後編', startDate: '2020.04.25.', endDate: '2020.04.30.', eventId: 14 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },

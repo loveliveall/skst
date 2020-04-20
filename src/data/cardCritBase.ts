@@ -222,7 +222,13 @@ export const CARD_CRIT_BASE: CritBase = {
   215: { value: 15 },
   216: { value: 15 },
   217: { value: 0 },
-  // Need to be confirmed
   218: { value: 15 },
   219: { value: 15 },
+  // Need to be confirmed
+  220: { value: 0 },
+  221: { value: 0 },
+  222: { value: 0 },
+  223: { value: 15 },
+  224: { value: 0 },
+  225: { value: 0 },
 };

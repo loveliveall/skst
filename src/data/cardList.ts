@@ -271,6 +271,13 @@ export const CARD: Card = {
 
   218: { memberId: 23, title: 'もうくすぐったいってば！', awakenTitle: '薔薇の騎士', rarityId: 3, attributeId: 4, roleId: 2, fromId: ['gacha', 20008] },
   219: { memberId: 8, title: 'えっ……？', awakenTitle: 'それは僕たちの奇跡', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['gacha', 20008], outfitSeriesId: 12 },
+
+  220: { memberId: 6, title: 'ちょ、速い速い！', awakenTitle: 'Snow Crystal', rarityId: 3, attributeId: 6, roleId: 1, fromId: ['gacha', 10021] },
+  221: { memberId: 22, title: 'ひえええ！足がふらふらする！', awakenTitle: 'マーチング・ハーモニー', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['gacha', 10021], outfitSeriesId: 10 },
+  222: { memberId: 27, title: 'アイススケート対決を始めます！', awakenTitle: 'Snow Crystal', rarityId: 3, attributeId: 1, roleId: 3, fromId: ['gacha', 10022] },
+  223: { memberId: 15, title: '……いったたた～', awakenTitle: 'Snow Crystal', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['event', 14] },
+  224: { memberId: 5, title: 'どこまでだって行けちゃうにゃ～', awakenTitle: 'それは僕たちの奇跡', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['event', 14], outfitSeriesId: 12 },
+  225: { memberId: 18, title: 'マリバウアー！', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 3, roleId: 1, fromId: ['event', 14], outfitSeriesId: 11 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
