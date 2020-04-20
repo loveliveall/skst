@@ -50,5 +50,19 @@ export const EVENT_GLOBAL: Event = {
     startDate: '2020.04.06.',
     endDate: '2020.04.15.',
   },
+  4: {
+    name: '하이킹으로 리프레시!',
+    eventTypeId: 1,
+    rankBorder: {},
+    ingameInfo: [1000, 3000, 10000, 30000, 50000],
+    rewardBorder: {
+      100: [2, 2, 2],
+      3000: [1, 2, 2],
+      10000: [1, 1, 2],
+      50000: [1, 1, 1],
+    },
+    startDate: '2020.04.20.',
+    endDate: '2020.04.30.',
+  },
 };
 /* eslint-enable max-len, object-property-newline */
