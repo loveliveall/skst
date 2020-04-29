@@ -142,5 +142,11 @@ export const PARTIAL_CARD_GLOBAL: PartialCard = {
   124: { title: '새 관찰의 첫걸음이에유!', awakenTitle: '포레스트 페어리' },
   125: { title: '계획을 세워 볼까요!', awakenTitle: 'Snow Halation' },
   126: { title: '늦어서 미안해애~', awakenTitle: '두근두근 애니멀' },
+
+  127: { title: '날 이렇게 기다리게 하기야?', awakenTitle: '드라마틱 로즈' },
+  128: { title: '같이 바다에 왔으니까', awakenTitle: '스플래시 마린' },
+  129: { title: '너와 나 둘뿐이니까', awakenTitle: '블루 탕타시옹' },
+  130: { title: '시범을 보여 줄게', awakenTitle: 'Snow Halation' },
+  131: { title: '열심히 고민하면서 만들래', awakenTitle: 'Kimino Kokorowa Kagayaiterukai?' },
 };
 /* eslint-enable object-curly-newline, max-len */
