@@ -231,4 +231,8 @@ export const CARD_CRIT_BASE: CritBase = {
   223: { value: 15 },
   224: { value: 0 },
   225: { value: 0 },
+  226: { value: 15 },
+  227: { value: 0 },
+  228: { value: 15 },
+  229: { value: 0 },
 };

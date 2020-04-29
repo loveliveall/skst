@@ -278,6 +278,11 @@ export const CARD: Card = {
   223: { memberId: 15, title: '……いったたた～', awakenTitle: 'Snow Crystal', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['event', 14] },
   224: { memberId: 5, title: 'どこまでだって行けちゃうにゃ～', awakenTitle: 'それは僕たちの奇跡', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['event', 14], outfitSeriesId: 12 },
   225: { memberId: 18, title: 'マリバウアー！', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 3, roleId: 1, fromId: ['event', 14], outfitSeriesId: 11 },
+
+  226: { memberId: 4, title: '二人でひとつのストロー', awakenTitle: '月下の大和撫子', rarityId: 3, attributeId: 5, roleId: 2, fromId: ['gacha', 30006] },
+  227: { memberId: 19, title: '……受け取ってください！', awakenTitle: '小悪魔の誘惑', rarityId: 3, attributeId: 6, roleId: 3, fromId: ['gacha', 30006] },
+  228: { memberId: 21, title: 'ふふ、あの子らしいなあ', awakenTitle: 'マーチング・ハーモニー', rarityId: 2, attributeId: 3, roleId: 2, fromId: ['gacha', 30006], outfitSeriesId: 10 },
+  229: { memberId: 12, title: '憧れちゃうシチュエーション', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['gacha', 30006], outfitSeriesId: 11 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

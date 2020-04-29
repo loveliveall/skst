@@ -18,4 +18,5 @@ export const SKILL_TARGET: SkillTarget = {
   8: { krName: '동유닛', jpName: '同ユニット', ingameText: 'ユニット' },
   9: { krName: '자신', jpName: '自身', ingameText: '' },
   11: { krName: '호노카', jpName: '穂乃果', ingameText: '穂乃果' },
+  22: { krName: '리코', jpName: '梨子', ingameText: '梨子' },
 };
