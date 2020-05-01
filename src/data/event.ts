@@ -298,7 +298,9 @@ export const EVENT: Event = {
   14: {
     name: '青春のアイススケート',
     eventTypeId: 1,
-    rankBorder: {},
+    rankBorder: {
+      1: 10424502, 10: 6806417, 50: 4157398, 100: 3575670, 1000: 909654, 3000: 475152, 10000: 286105, 30000: 206544, 50000: 190080,
+    },
     ingameInfo: [],
     rewardBorder: {
       100: [2, 2, 2],
