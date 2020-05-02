@@ -13,6 +13,7 @@ import IndivPCategoryFilter from './filters/IndivPCategoryFilter';
 import IndivPTargetFilter from './filters/IndivPTargetFilter';
 import IndivLCategoryFilter from './filters/IndivLCategoryFilter';
 import IndivLTargetFilter from './filters/IndivLTargetFilter';
+import IndivLTriggerFilter from './filters/IndivLTriggerFilter';
 
 const BorderlessTable = styled.table`
   && { // Overriding parent component's style
@@ -231,10 +232,12 @@ const CardFilterRows: React.FC<CardFilterRows> = ({
               <tr>
                 <td>스킬 종류</td>
                 <td>스킬 대상</td>
+                <td>발동 조건</td>
               </tr>
               <tr>
                 <td style={{ padding: '4px' }}><IndivLCategoryFilter /></td>
                 <td style={{ padding: '4px' }}><IndivLTargetFilter /></td>
+                <td style={{ padding: '4px' }}><IndivLTriggerFilter /></td>
               </tr>
             </tbody>
           </BorderlessTable>

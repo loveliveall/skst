@@ -38,6 +38,10 @@ interface FilterState {
     key: number,
     target: SkillTargetInfo,
   }[],
+  indivLTrigger: {
+    key: number,
+    triggerId: number,
+  }[],
   uncap: number | null,
   outfitSeriesId: number | null,
 }
@@ -65,6 +69,7 @@ export const initialFilter: FilterState = {
   indivPTarget: [],
   indivLCategory: [],
   indivLTarget: [],
+  indivLTrigger: [],
   uncap: 5,
   outfitSeriesId: null,
 };
@@ -321,6 +326,32 @@ export default function cardsReducer(
         filterDraft: {
           ...state.filterDraft,
           indivLTarget: state.filterDraft.indivLTarget.filter((item) => item.key !== action.payload.key),
+        },
+      };
+    case CardsActionTypes.FILTER_INDIV_L_TRIGGER_ADD:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivLTrigger: [...state.filterDraft.indivLTrigger, action.payload],
+        },
+      };
+    case CardsActionTypes.FILTER_INDIV_L_TRIGGER_EDIT:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivLTrigger: state.filterDraft.indivLTrigger.map((item) => (
+            item.key === action.payload.key ? action.payload : item
+          )),
+        },
+      };
+    case CardsActionTypes.FILTER_INDIV_L_TRIGGER_REMOVE:
+      return {
+        ...state,
+        filterDraft: {
+          ...state.filterDraft,
+          indivLTrigger: state.filterDraft.indivLTrigger.filter((item) => item.key !== action.payload.key),
         },
       };
     case CardsActionTypes.FILTER_UNCAP_SET:

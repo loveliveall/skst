@@ -24,6 +24,9 @@ export const CardsActionTypes = {
   FILTER_INDIV_L_TARGET_ADD: 'CARDS_FILTER_INDIV_L_TARGET_ADD',
   FILTER_INDIV_L_TARGET_EDIT: 'CARDS_FILTER_INDIV_L_TARGET_EDIT',
   FILTER_INDIV_L_TARGET_REMOVE: 'CARDS_FILTER_INDIV_L_TARGET_REMOVE',
+  FILTER_INDIV_L_TRIGGER_ADD: 'CARDS_FILTER_INDIV_L_TRIGGER_ADD',
+  FILTER_INDIV_L_TRIGGER_EDIT: 'CARDS_FILTER_INDIV_L_TRIGGER_EDIT',
+  FILTER_INDIV_L_TRIGGER_REMOVE: 'CARDS_FILTER_INDIV_L_TRIGGER_REMOVE',
   FILTER_UNCAP_SET: 'CARDS_FILTER_UNCAP_SET',
   FILTER_OUTFIT_ID_SET: 'CARDS_FILTER_OUTFIT_ID_SET',
 
@@ -103,6 +106,15 @@ export const CardsActionCreators = {
   ),
   removeIndivLTargetFilter: (key: number) => createFSA(
     CardsActionTypes.FILTER_INDIV_L_TARGET_REMOVE, { key },
+  ),
+  addIndivLTriggerFilter: (key: number, triggerId: number) => createFSA(
+    CardsActionTypes.FILTER_INDIV_L_TRIGGER_ADD, { key, triggerId },
+  ),
+  editIndivLTriggerFilter: (key: number, triggerId: number) => createFSA(
+    CardsActionTypes.FILTER_INDIV_L_TRIGGER_EDIT, { key, triggerId },
+  ),
+  removeIndivLTriggerFilter: (key: number) => createFSA(
+    CardsActionTypes.FILTER_INDIV_L_TRIGGER_REMOVE, { key },
   ),
   setUncapFilter: (uncap: number | null) => createFSA(CardsActionTypes.FILTER_UNCAP_SET, { uncap }),
   setOutfitSeriesId: (id: number | null) => createFSA(CardsActionTypes.FILTER_OUTFIT_ID_SET, { id }),

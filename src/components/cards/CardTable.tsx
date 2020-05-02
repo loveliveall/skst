@@ -129,7 +129,9 @@ const CardTable: React.FC<CardTableProps> = ({
     const { liveId } = CARD_SKILL[card.id].individuality;
     if (liveId === undefined) {
       // Only when no filter for live skill exists
-      const sat = filter.indivLCategory.length === 0 && filter.indivLTarget.length === 0;
+      const sat = filter.indivLCategory.length === 0
+        && filter.indivLTarget.length === 0
+        && filter.indivLTrigger.length === 0;
       if (!sat) return false;
     } else {
       const ilDetail = SKILL[liveId].detail;
@@ -154,6 +156,14 @@ const CardTable: React.FC<CardTableProps> = ({
           /* eslint-enable max-len */
           return true;
         });
+        if (!sat) return false;
+      }
+      // Filter by skill trigger
+      if (filter.indivLTrigger.length !== 0) {
+        // Not the skill triggered by condition. Pass it.
+        if (ilDetail.timing !== 'onTrigger') return false;
+        const ilTriggerId = ilDetail.triggerTypeId;
+        const sat = filter.indivLTrigger.some((item) => item.triggerId === ilTriggerId);
         if (!sat) return false;
       }
     }
