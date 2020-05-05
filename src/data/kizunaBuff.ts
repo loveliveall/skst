@@ -83,8 +83,8 @@ export const KIZUNA_BUFF: KizunaBuff = {
   78: 800,
   79: 804,
   80: 808,
-  // Estimated
   81: 811,
+  // Estimated
   82: 815,
   83: 818,
   84: 822,
