@@ -533,7 +533,7 @@
   text-align: center;
   line-height: 1.6em;
   word-break: keep-all;
-`;var vr=()=>l.a.createElement(l.a.Fragment,null,l.a.createElement(yr,null,l.a.createElement(Tr,null,l.a.createElement(hr,null,"여기서 계산되는 스탯은 아래 식을 통해 계산됩니다:",l.a.createElement("br",null),"(카드 기본 스탯) * (인연 버프) * (기본 스탯 증감) * (스탯 증감) * (동속성 효과)",l.a.createElement("br",null),"카드 자체의 특기, 개성(패시브), 타입 등은 계산에 영향을 미치지 않습니다! 주의해주세요.",l.a.createElement("br",null),l.a.createElement("strong",null,"크리티컬 관련 추정은 ",l.a.createElement("a",{href:"/cards"},"카드 목록"),"에 있는 가정을 그대로 적용한 수치입니다."),l.a.createElement("br",null),"인연 레벨 81 이상의 인연 버프는 추정치를 적용한 수치입니다.",l.a.createElement("br",null),"추정치 식은 Math.floor(200 * Math.pow(LV - 1, 1/3) - 50) 입니다.")),l.a.createElement(Tr,{style:{border:"1px solid black"}},l.a.createElement(Ol,null)),l.a.createElement(Tr,null,l.a.createElement(Ir,null))),l.a.createElement(ur,null));const br=s.a.div`
+`;var vr=()=>l.a.createElement(l.a.Fragment,null,l.a.createElement(yr,null,l.a.createElement(Tr,null,l.a.createElement(hr,null,"여기서 계산되는 스탯은 아래 식을 통해 계산됩니다:",l.a.createElement("br",null),"(카드 기본 스탯) * (인연 버프) * (기본 스탯 증감) * (스탯 증감) * (동속성 효과)",l.a.createElement("br",null),"카드 자체의 특기, 개성(패시브), 타입 등은 계산에 영향을 미치지 않습니다! 주의해주세요.",l.a.createElement("br",null),l.a.createElement("strong",null,"크리티컬 관련 추정은 ",l.a.createElement("a",{href:"/cards"},"카드 목록"),"에 있는 가정을 그대로 적용한 수치입니다."),l.a.createElement("br",null),"인연 레벨 82 이상의 인연 버프는 추정치를 적용한 수치입니다.",l.a.createElement("br",null),"추정치 식은 Math.floor(200 * Math.pow(LV - 1, 1/3) - 50) 입니다.")),l.a.createElement(Tr,{style:{border:"1px solid black"}},l.a.createElement(Ol,null)),l.a.createElement(Tr,null,l.a.createElement(Ir,null))),l.a.createElement(ur,null));const br=s.a.div`
   width: 100%;
   display: flex;
   flex-direction: column;
