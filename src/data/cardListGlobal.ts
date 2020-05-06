@@ -148,5 +148,12 @@ export const PARTIAL_CARD_GLOBAL: PartialCard = {
   129: { title: '너와 나 둘뿐이니까', awakenTitle: '블루 탕타시옹' },
   130: { title: '시범을 보여 줄게', awakenTitle: 'Snow Halation' },
   131: { title: '열심히 고민하면서 만들래', awakenTitle: 'Kimino Kokorowa Kagayaiterukai?' },
+
+  132: { title: '별똥별에 둘러싸여', awakenTitle: '레오 스타 브라이트' },
+  133: { title: '도시락 하면…', awakenTitle: 'Snow Halation' },
+  134: { title: '어쩌면 이뤄질지도 몰라', awakenTitle: '제미니 스타 브라이트' },
+  135: { title: '치카, 일어나!', awakenTitle: 'Kimino Kokorowa Kagayaiterukai?' },
+  136: { title: '말로는 표현할 수 없는 매력', awakenTitle: '두근두근 애니멀' },
+
 };
 /* eslint-enable object-curly-newline, max-len */

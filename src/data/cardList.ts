@@ -283,6 +283,13 @@ export const CARD: Card = {
   227: { memberId: 19, title: '……受け取ってください！', awakenTitle: '小悪魔の誘惑', rarityId: 3, attributeId: 6, roleId: 3, fromId: ['gacha', 30006] },
   228: { memberId: 21, title: 'ふふ、あの子らしいなあ', awakenTitle: 'マーチング・ハーモニー', rarityId: 2, attributeId: 3, roleId: 2, fromId: ['gacha', 30006], outfitSeriesId: 10 },
   229: { memberId: 12, title: '憧れちゃうシチュエーション', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['gacha', 30006], outfitSeriesId: 11 },
+
+  230: { memberId: 17, title: '体も動いちゃうずら～！', awakenTitle: '湯けむり天女', rarityId: 3, attributeId: 3, roleId: 4, fromId: ['gacha', 10023] },
+  231: { memberId: 7, title: 'ウチのお土産はね……', awakenTitle: 'それは僕たちの奇跡', rarityId: 2, attributeId: 4, roleId: 3, fromId: ['gacha', 10023], outfitSeriesId: 12 },
+  232: { memberId: 26, title: '天国が見える……', awakenTitle: '湯けむり天女', rarityId: 3, attributeId: 5, roleId: 3, fromId: ['gacha', 10024] },
+  233: { memberId: 9, title: 'おばけみたいな虫が～～～っっ！', awakenTitle: '湯けむり天女', rarityId: 3, attributeId: 2, roleId: 2, fromId: ['event', 15] },
+  234: { memberId: 23, title: 'たあ―――――――っっ！！', awakenTitle: 'マーチング・ハーモニー', rarityId: 2, attributeId: 1, roleId: 1, fromId: ['event', 15], outfitSeriesId: 10 },
+  235: { memberId: 11, title: 'もう1回温泉行って来るね', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 3, roleId: 4, fromId: ['event', 15], outfitSeriesId: 11 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

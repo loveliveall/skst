@@ -27,7 +27,7 @@ export const GACHA: Gacha = {
   5: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.01.31.', endDate: '2020.02.28.' },
   6: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.02.28.', endDate: '2020.03.31.' },
   7: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.03.31.', endDate: '2020.04.30.' },
-  8: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.04.30.', endDate: '2020.05.??.' },
+  8: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.04.30.', endDate: '2020.05.31.' },
 
   10001: { type: 'event', name: '秘密のパーティー！ガチャ', startDate: '2019.10.03.', endDate: '2019.10.15.', eventId: 1 },
   10002: { type: 'event', name: '和装モデルはお任せあれ！ガチャ', startDate: '2019.10.21.', endDate: '2019.10.31.', eventId: 2 },
@@ -51,6 +51,8 @@ export const GACHA: Gacha = {
   10020: { type: 'event', name: 'ベジタブル☆クッキング！ガチャ後編', startDate: '2020.04.11.', endDate: '2020.04.15.', eventId: 13 },
   10021: { type: 'event', name: '青春のアイススケートガチャ前編', startDate: '2020.04.21.', endDate: '2020.04.25.', eventId: 14 },
   10022: { type: 'event', name: '青春のアイススケートガチャ後編', startDate: '2020.04.25.', endDate: '2020.04.30.', eventId: 14 },
+  10023: { type: 'event', name: '温泉旅行ラプソディガチャ前編', startDate: '2020.05.07.', endDate: '2020.05.11.', eventId: 15 },
+  10024: { type: 'event', name: '温泉旅行ラプソディガチャ後編', startDate: '2020.05.11.', endDate: '2020.05.15.', eventId: 15 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },

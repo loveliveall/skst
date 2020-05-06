@@ -311,6 +311,18 @@ export const EVENT: Event = {
     startDate: '2020.04.21.',
     endDate: '2020.04.30.',
   },
+  15: {
+    name: '温泉旅行ラプソディ',
+    eventTypeId: 2,
+    rankBorder: {},
+    ingameInfo: [],
+    voltageRankBorder: {},
+    voltageRankBorderIngameInfo: [],
+    voltageRankSongs: ['NO EXIT ORION', 'HAPPY PARTY TRAIN', 'TOKIMEKI Runners'],
+    rewardBorder: {},
+    startDate: '2020.05.07.',
+    endDate: '2020.05.15.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,

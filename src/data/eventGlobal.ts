@@ -66,5 +66,14 @@ export const EVENT_GLOBAL: Event = {
     startDate: '2020.04.20.',
     endDate: '2020.04.30.',
   },
+  5: {
+    name: '멋진 곳으로의 초대!',
+    eventTypeId: 1,
+    rankBorder: {},
+    ingameInfo: [],
+    rewardBorder: {},
+    startDate: '2020.05.07.',
+    endDate: '2020.05.18.',
+  },
 };
 /* eslint-enable max-len, object-property-newline */
