@@ -27,7 +27,8 @@ export const GACHA: Gacha = {
   5: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.01.31.', endDate: '2020.02.28.' },
   6: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.02.28.', endDate: '2020.03.31.' },
   7: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.03.31.', endDate: '2020.04.30.' },
-  8: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.04.30.', endDate: '2020.05.31.' },
+  8: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.04.30.', endDate: '2020.05.29.' },
+  9: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.05.29.', endDate: '2020.06.30.' },
 
   10001: { type: 'event', name: '秘密のパーティー！ガチャ', startDate: '2019.10.03.', endDate: '2019.10.15.', eventId: 1 },
   10002: { type: 'event', name: '和装モデルはお任せあれ！ガチャ', startDate: '2019.10.21.', endDate: '2019.10.31.', eventId: 2 },
@@ -53,6 +54,10 @@ export const GACHA: Gacha = {
   10022: { type: 'event', name: '青春のアイススケートガチャ後編', startDate: '2020.04.25.', endDate: '2020.04.30.', eventId: 14 },
   10023: { type: 'event', name: '温泉旅行ラプソディガチャ前編', startDate: '2020.05.07.', endDate: '2020.05.11.', eventId: 15 },
   10024: { type: 'event', name: '温泉旅行ラプソディガチャ後編', startDate: '2020.05.11.', endDate: '2020.05.15.', eventId: 15 },
+  10025: { type: 'event', name: '取り戻せ！笑顔のラーメンガチャ前編', startDate: '2020.05.21.', endDate: '2020.05.25.', eventId: 16 },
+  10026: { type: 'event', name: '取り戻せ！笑顔のラーメンガチャ後編', startDate: '2020.05.25.', endDate: '2020.05.29.', eventId: 16 },
+  10027: { type: 'event', name: '3人のプリンセスガチャ前編', startDate: '2020.06.05.', endDate: '2020.06.10.', eventId: 17 },
+  10028: { type: 'event', name: '3人のプリンセスガチャ後編', startDate: '2020.06.10.', endDate: '2020.06.15.', eventId: 17 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },
@@ -62,6 +67,7 @@ export const GACHA: Gacha = {
   20006: { type: 'pickup', name: 'ピックアップガチャ (UR 리나)', startDate: '2020.02.14.', endDate: '2020.02.20' },
   20007: { type: 'pickup', name: 'ピックアップガチャ (UR 카린)', startDate: '2020.03.16.', endDate: '2020.03.23.' },
   20008: { type: 'pickup', name: 'メンバーピックアップガチャ (시즈쿠, 하나요)', startDate: '2020.04.15.', endDate: '2020.04.21.' },
+  20009: { type: 'pickup', name: 'メンバーピックアップガチャ (마리, 우미)', startDate: '2020.05.15.', endDate: '2020.05.21.' },
 
   30001: { type: 'fes', name: 'スクスタフェス', startDate: '2019.11.30.', endDate: '2019.12.06.' },
   30002: { type: 'fes', name: 'スクスタフェス', startDate: '2019.12.31.', endDate: '2020.01.06.' },
@@ -69,6 +75,7 @@ export const GACHA: Gacha = {
   30004: { type: 'fes', name: 'スクスタフェス', startDate: '2020.02.28.', endDate: '2020.03.06.' },
   30005: { type: 'fes', name: 'スクスタフェス', startDate: '2020.03.31.', endDate: '2020.04.06.' },
   30006: { type: 'fes', name: 'スクスタフェス', startDate: '2020.04.30.', endDate: '2020.05.07.' },
+  30007: { type: 'fes', name: 'スクスタフェス', startDate: '2020.05.29.', endDate: '2020.06.05.' },
 
   40001: { type: 'reprint', name: 'スクスタハーフアニバーサリー記念♪衣装復刻ガチャ', startDate: '2020.03.09.', endDate: '2020.03.27.', desc: 'Snow halation, 君のこころは輝いてるかい？, わくわくアニマル 의상의 SR 27인 복각' },
 };

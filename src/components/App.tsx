@@ -222,7 +222,7 @@ const App: React.FC<AppProps> = ({
         {window.location.hostname === 'localhost' && false && (
           <Test />
         )}
-        <Notice />
+        <Notice hidden />
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/card/:id" component={Card} />

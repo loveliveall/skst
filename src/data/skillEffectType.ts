@@ -51,7 +51,7 @@ interface SkillEffectType {
 export const SKILL_EFFECT_TYPE: SkillEffectType = {
   100101: { desc: '어필 추가 (%)', scaleType: 'percent', ingameText: 'アピールUP', effectCategoryId: 1001 },
   100102: { desc: '어필 추가 (고정 수치)', scaleType: 'fixed', ingameText: '', effectCategoryId: 1001 },
-  100103: { desc: '어필 추가 (%, 특수)', scaleType: 'percent', ingameText: '', effectCategoryId: 1001 },
+  100103: { desc: '어필 추가 (%, 특수)', scaleType: 'percent', ingameText: 'アピールUPEX', effectCategoryId: 1001 },
   100104: { desc: '어필 추가 (Vo 수 비례 %)', scaleType: 'percent', ingameText: 'アピールUP(Vo)', effectCategoryId: 1001 },
   100201: { desc: '크리티컬률 상승 (%)', scaleType: 'percent', ingameText: 'クリティカルUP', effectCategoryId: 1002 },
   100301: { desc: '크리티컬치 상승 (%)', scaleType: 'percent', ingameText: '', effectCategoryId: 1003 },

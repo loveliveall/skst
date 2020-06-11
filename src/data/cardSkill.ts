@@ -276,4 +276,26 @@ export const CARD_SKILL: CardSkill = {
   233: { specialityId: 100233, individuality: { passiveId: 200233, liveId: 300233 } },
   234: { specialityId: 100234, individuality: { passiveId: 200234, liveId: 300234 } },
   235: { specialityId: 100235, individuality: { passiveId: 200235, liveId: 300235 } },
+
+  236: { specialityId: 100236, individuality: { passiveId: 200236, liveId: 300236 } },
+  237: { specialityId: 100237, individuality: { passiveId: 200237, liveId: 300237 } },
+
+  238: { specialityId: 100238, individuality: { passiveId: 200238, liveId: 300238 } },
+  239: { specialityId: 100239, individuality: { passiveId: 200239, liveId: 300239 } },
+  240: { specialityId: 100240, individuality: { passiveId: 200240, liveId: 300240 } },
+  241: { specialityId: 100241, individuality: { passiveId: 200241, liveId: 300241 } },
+  242: { specialityId: 100242, individuality: { passiveId: 200242, liveId: 300242 } },
+  243: { specialityId: 100243, individuality: { passiveId: 200243, liveId: 300243 } },
+
+  244: { specialityId: 100244, individuality: { passiveId: 200244, liveId: 300244 } },
+  245: { specialityId: 100245, individuality: { passiveId: 200245, liveId: 300245 } },
+  246: { specialityId: 100246, individuality: { passiveId: 200246, liveId: 300246 } },
+  247: { specialityId: 100247, individuality: { passiveId: 200247, liveId: 300247 } },
+
+  248: { specialityId: 100248, individuality: { passiveId: 200248, liveId: 300248 } },
+  249: { specialityId: 100249, individuality: { passiveId: 200249, liveId: 300249 } },
+  250: { specialityId: 100250, individuality: { passiveId: 200250, liveId: 300250 } },
+  251: { specialityId: 100251, individuality: { passiveId: 200251, liveId: 300251 } },
+  252: { specialityId: 100252, individuality: { passiveId: 200252, liveId: 300252 } },
+  253: { specialityId: 100253, individuality: { passiveId: 200253, liveId: 300253 } },
 };

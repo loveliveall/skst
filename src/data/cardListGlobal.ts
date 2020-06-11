@@ -155,5 +155,26 @@ export const PARTIAL_CARD_GLOBAL: PartialCard = {
   135: { title: '치카, 일어나!', awakenTitle: 'Kimino Kokorowa Kagayaiterukai?' },
   136: { title: '말로는 표현할 수 없는 매력', awakenTitle: '두근두근 애니멀' },
 
+  137: { title: '여기야, 여기! 빨리 와라냥!', awakenTitle: '애프터 스쿨 캣' },
+  138: { title: '한바탕 수영하고 왔어~', awakenTitle: 'Kimino Kokorowa Kagayaiterukai?' },
+
+  139: { title: '니코의 특제 도시락은 어떠세요?', awakenTitle: '샛별의 기적 소리' },
+  140: { title: '진지한 안내 방송', awakenTitle: 'Kimino Kokorowa Kagayaiterukai?' },
+  141: { title: '그럼 레츠 고♪', awakenTitle: '샛별의 기적 소리' },
+  142: { title: '짐은 여기에 올릴게요~', awakenTitle: 'Snow Halation' },
+  143: { title: '방긋 웃으며 장식하자', awakenTitle: '두근두근 애니멀' },
+
+  144: { title: '이 수영복, 정말 마음에 들어', awakenTitle: '허밍 엔젤' },
+  145: { title: '너와 함께라면', awakenTitle: '데블 로커' },
+  146: { title: '에헤헤… 기뻐요!', awakenTitle: '스칼렛 칼리지' },
+  147: { title: '너에게는 특별히 서비스해 줄게', awakenTitle: 'Bokura no LIVE Kimi to no LIFE' },
+  148: { title: '료칸 일 돕기', awakenTitle: 'Aozora Jumping Heart' },
+
+  149: { title: '이 놀이기구, 신나는데~♪', awakenTitle: 'Miracle voyage' },
+  150: { title: '다른 애들에게는 미안하지만', awakenTitle: '두근두근 애니멀' },
+  151: { title: '수상 놀이터에서 정하죠', awakenTitle: 'Miracle voyage' },
+  152: { title: '여기서 넘어질 수는 없어요!', awakenTitle: 'Miracle voyage' },
+  153: { title: '…후후후♪ 야호~~~♪', awakenTitle: 'Bokura no LIVE Kimi to no LIFE' },
+  154: { title: '잘 먹겠습니다~♪', awakenTitle: 'Aozora Jumping Heart' },
 };
 /* eslint-enable object-curly-newline, max-len */

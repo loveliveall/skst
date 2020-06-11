@@ -290,6 +290,28 @@ export const CARD: Card = {
   233: { memberId: 9, title: 'おばけみたいな虫が～～～っっ！', awakenTitle: '湯けむり天女', rarityId: 3, attributeId: 2, roleId: 2, fromId: ['event', 15] },
   234: { memberId: 23, title: 'たあ―――――――っっ！！', awakenTitle: 'マーチング・ハーモニー', rarityId: 2, attributeId: 1, roleId: 1, fromId: ['event', 15], outfitSeriesId: 10 },
   235: { memberId: 11, title: 'もう1回温泉行って来るね', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 3, roleId: 4, fromId: ['event', 15], outfitSeriesId: 11 },
+
+  236: { memberId: 18, title: '私たちの色', awakenTitle: 'カラフルスプラッシュ', rarityId: 3, attributeId: 1, roleId: 2, fromId: ['gacha', 20009] },
+  237: { memberId: 4, title: '完成したら見せますね', awakenTitle: 'それは僕たちの奇跡', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['gacha', 20009], outfitSeriesId: 12 },
+
+  238: { memberId: 21, title: 'いらっしゃいませ♪', awakenTitle: '熱烈歓迎☆チャイナメイド', rarityId: 3, attributeId: 5, roleId: 4, fromId: ['gacha', 10025] },
+  239: { memberId: 1, title: '私に任せて！', awakenTitle: 'それは僕たちの奇跡', rarityId: 2, attributeId: 3, roleId: 2, fromId: ['gacha', 10025], outfitSeriesId: 12 },
+  240: { memberId: 5, title: 'やっった――――！！', awakenTitle: '熱烈歓迎☆チャイにゃメイド', rarityId: 3, attributeId: 4, roleId: 3, fromId: ['gacha', 10026] },
+  241: { memberId: 14, title: 'もうひと頑張りいたしましょう！', awakenTitle: '熱烈歓迎☆チャイナメイド', rarityId: 3, attributeId: 5, roleId: 1, fromId: ['event', 16] },
+  242: { memberId: 13, title: 'わかめラーメンを作ってみたんだ', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 6, roleId: 3, fromId: ['event', 16], outfitSeriesId: 11 },
+  243: { memberId: 29, title: '全てを正確に見極めて……えい！', awakenTitle: 'マーチング・ハーモニー', rarityId: 2, attributeId: 2, roleId: 4, fromId: ['event', 16], outfitSeriesId: 10 },
+
+  244: { memberId: 25, title: '二人きりの時間を過ごしたい', awakenTitle: 'ハートビート★スクールガール', rarityId: 3, attributeId: 3, roleId: 1, fromId: ['gacha', 30007] },
+  245: { memberId: 2, title: 'キミがそばにいてくれるなら', awakenTitle: 'トゥルーアラベスク', rarityId: 3, attributeId: 6, roleId: 2, fromId: ['gacha', 30007] },
+  246: { memberId: 24, title: 'まだまだ終わらせないんだから！', awakenTitle: 'マーチング・ハーモニー', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['gacha', 30007], outfitSeriesId: 10 },
+  247: { memberId: 16, title: 'これが次の暗黒舞踏会の衣装よ！', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 5, roleId: 3, fromId: ['gacha', 30007], outfitSeriesId: 11 },
+
+  248: { memberId: 12, title: 'プリンセスに近づけたらいいな', awakenTitle: 'Noble Princess', rarityId: 3, attributeId: 5, roleId: 2, fromId: ['gacha', 10027] },
+  249: { memberId: 6, title: 'そんな顔で私のこと見ないでよ', awakenTitle: 'それは僕たちの奇跡', rarityId: 2, attributeId: 2, roleId: 1, fromId: ['gacha', 10027], outfitSeriesId: 12 },
+  250: { memberId: 24, title: '困るわ……そんな風に言うなんて', awakenTitle: 'Noble Princess', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['gacha', 10028] },
+  251: { memberId: 1, title: '本物のプリンセスになれそう', awakenTitle: 'Noble Princess', rarityId: 3, attributeId: 4, roleId: 4, fromId: ['event', 17] },
+  252: { memberId: 27, title: '私があなたの笑顔を守ります！', awakenTitle: 'マーチング・ハーモニー', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['event', 17], outfitSeriesId: 10 },
+  253: { memberId: 15, title: 'もうすぐできるからね～', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 4, roleId: 4, fromId: ['event', 17], outfitSeriesId: 11 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

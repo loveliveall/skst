@@ -15,6 +15,7 @@ export const SKILL_TRIGGER_TYPE: SkillTriggerType = {
   5: { krDesc: 'SP특기 발동시', jpDesc: 'SP特技発動時', ingameText: 'SP特技発動時' },
   6: { krDesc: '어필 찬스(AC) 실패시', jpDesc: 'アピールチャンス(AC)失敗時', ingameText: 'AC失敗時' },
   7: { krDesc: '자신의 어필시', jpDesc: '自身のアピール時', ingameText: 'アピール時' },
+  8: { krDesc: '자신의 크리티컬시', jpDesc: '自身のクリティカル時', ingameText: 'クリティカル時' },
   // Need value
   1001: { krDesc: '대미지 이상을 받았을 시', jpDesc: 'ダメージ以上受けた時', ingameText: 'ダメージ時' }, // 고정 수치 대미지 이상 받았을 경우
 };
