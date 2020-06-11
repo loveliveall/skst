@@ -8,7 +8,6 @@ export const EVENT_GLOBAL: Event = {
     rankBorder: {
       1: 1701550, 10: 933122, 50: 421706, 100: 333524, 2000: 123707, 4000: 101075, 9000: 77350, 30000: 28444, 50000: 3836,
     },
-    ingameInfo: [2000, 4000, 9000, 30000, 50000],
     rewardBorder: {
       10: [3, 2, 2],
       300: [2, 2, 2],
@@ -24,7 +23,6 @@ export const EVENT_GLOBAL: Event = {
     rankBorder: {
       1: 5640253, 10: 2465813, 50: 1398373, 100: 1207686, 2000: 276894, 4000: 225345, 9000: 177602, 30000: 50111, 50000: 3110,
     },
-    ingameInfo: [2000, 4000, 9000, 30000, 50000],
     rewardBorder: {
       100: [2, 2, 2],
       3000: [1, 2, 2],
@@ -40,7 +38,6 @@ export const EVENT_GLOBAL: Event = {
     rankBorder: {
       1: 4647837, 10: 1875000, 50: 715934, 100: 626466, 2000: 205029, 4000: 171527, 9000: 136014, 30000: 23202, 50000: 405,
     },
-    ingameInfo: [2000, 4000, 9000, 30000, 50000],
     rewardBorder: {
       100: [2, 2, 2],
       3000: [1, 2, 2],
@@ -56,7 +53,6 @@ export const EVENT_GLOBAL: Event = {
     rankBorder: {
       1: 5000000, 10: 2485678, 50: 872543, 100: 800449, 1000: 289515, 3000: 215962, 10000: 150340, 30000: 23076, 50000: 247,
     },
-    ingameInfo: [1000, 3000, 10000, 30000, 50000],
     rewardBorder: {
       100: [2, 2, 2],
       3000: [1, 2, 2],
@@ -70,7 +66,6 @@ export const EVENT_GLOBAL: Event = {
     name: '멋진 곳으로의 초대!',
     eventTypeId: 1,
     rankBorder: {},
-    ingameInfo: [],
     rewardBorder: {
       100: [2, 2, 2],
       3000: [1, 2, 2],
@@ -84,7 +79,6 @@ export const EVENT_GLOBAL: Event = {
     name: '스쿨 아이돌 트레인 출발!',
     eventTypeId: 1,
     rankBorder: {},
-    ingameInfo: [],
     rewardBorder: {
       100: [2, 2, 2],
       3000: [1, 2, 2],
@@ -98,9 +92,7 @@ export const EVENT_GLOBAL: Event = {
     name: '바다 위 대열전',
     eventTypeId: 2,
     rankBorder: {},
-    ingameInfo: [],
     voltageRankBorder: {},
-    voltageRankBorderIngameInfo: [],
     voltageRankSongs: ['It\'s our miraculous time', 'Aozora Jumping Heart', 'Anata no Risou no Heroine'],
     rewardBorder: {
       100: [2, 2, 2],
