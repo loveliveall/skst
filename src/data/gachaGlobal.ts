@@ -20,6 +20,7 @@ export const GACHA_GLOBAL: Gacha = {
   20002: { type: 'pickup', name: '픽업 스카우트 (UR 우미)', startDate: '2020.03.30.', endDate: '2020.04.06.' },
   20003: { type: 'pickup', name: '픽업 스카우트 (UR 리코)', startDate: '2020.04.15.', endDate: '2020.04.20.' },
   20004: { type: 'pickup', name: '픽업 스카우트 (UR 린)', startDate: '2020.05.18.', endDate: '2020.05.22.' },
+  20005: { type: 'pickup', name: '픽업 스카우트 (UR 하나요)', startDate: '2020.06.15.', endDate: '2020.06.20.' },
 
   30001: { type: 'fes', name: '스쿠스타 페스티벌', startDate: '2020.04.30.', endDate: '2020.05.07.' },
   30002: { type: 'fes', name: '스쿠스타 페스티벌', startDate: '2020.05.29.', endDate: '2020.06.05.' },

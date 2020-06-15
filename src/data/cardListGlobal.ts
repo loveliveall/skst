@@ -176,5 +176,8 @@ export const PARTIAL_CARD_GLOBAL: PartialCard = {
   152: { title: '여기서 넘어질 수는 없어요!', awakenTitle: 'Miracle voyage' },
   153: { title: '…후후후♪ 야호~~~♪', awakenTitle: 'Bokura no LIVE Kimi to no LIFE' },
   154: { title: '잘 먹겠습니다~♪', awakenTitle: 'Aozora Jumping Heart' },
+
+  155: { title: '너무 귀여우니까 꼬옥~', awakenTitle: '해피 퍼레이드' },
+  156: { title: '우라노호시 여고의 학생으로서', awakenTitle: 'Aozora Jumping Heart' },
 };
 /* eslint-enable object-curly-newline, max-len */
