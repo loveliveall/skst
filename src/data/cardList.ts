@@ -312,6 +312,9 @@ export const CARD: Card = {
   251: { memberId: 1, title: '本物のプリンセスになれそう', awakenTitle: 'Noble Princess', rarityId: 3, attributeId: 4, roleId: 4, fromId: ['event', 17] },
   252: { memberId: 27, title: '私があなたの笑顔を守ります！', awakenTitle: 'マーチング・ハーモニー', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['event', 17], outfitSeriesId: 10 },
   253: { memberId: 15, title: 'もうすぐできるからね～', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 4, roleId: 4, fromId: ['event', 17], outfitSeriesId: 11 },
+
+  254: { memberId: 22, title: 'かすみん、限界ですぅ！', awakenTitle: 'レディー・デビュー', rarityId: 3, attributeId: 3, roleId: 3, fromId: ['gacha', 20010] },
+  255: { memberId: 3, title: 'おかえりなさいませ、ご主人様', awakenTitle: 'それは僕たちの奇跡', rarityId: 2, attributeId: 2, roleId: 4, fromId: ['gacha', 20010], outfitSeriesId: 12 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
