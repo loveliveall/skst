@@ -6,9 +6,9 @@ import { ATTRIBUTE, ROLE, RARITY } from '@/data/cardMetadata';
 import { MEMBER, GROUP, UNIT } from '@/data/memberMetadata';
 import { getSkillInfoKR } from '@/data/skill';
 import { CARD_SKILL } from '@/data/cardSkill';
-import { FlexBox } from '../Styles';
 import { SKILL_EFFECT_CATEGORY } from '@/data/skillEffectType';
 import { CARD_CRIT_BASE } from '@/data/cardCritBase';
+import { FlexBox } from '../Styles';
 
 const VerticalFlex = styled(FlexBox)`
   width: 100%;

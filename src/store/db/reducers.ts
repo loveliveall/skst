@@ -1,10 +1,10 @@
-import { DBActionTypes, DBActions } from './actions';
 import { Card, CARD } from '@/data/cardList';
 import { PARTIAL_CARD_GLOBAL } from '@/data/cardListGlobal';
 import { Gacha, GACHA } from '@/data/gacha';
 import { GACHA_GLOBAL } from '@/data/gachaGlobal';
 import { Event, EVENT } from '@/data/event';
 import { EVENT_GLOBAL } from '@/data/eventGlobal';
+import { DBActionTypes, DBActions } from './actions';
 
 interface DBState {
   isJPEdition: boolean,

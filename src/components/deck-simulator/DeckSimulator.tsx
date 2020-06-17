@@ -72,5 +72,4 @@ const DeckSimulator: React.FC = () => (
   </>
 );
 
-
 export default DeckSimulator;

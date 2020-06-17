@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { FlexBox } from '../Styles';
 import { AppState, SEL } from '@/store';
 import { EVENT_TYPE, BIG_LIVE_PRIZE_TYPE } from '@/data/event';
 import { numberRepr } from '@/utils/utils';
 import { RARITY } from '@/data/cardMetadata';
+import { FlexBox } from '../Styles';
 
 const VerticalFlex = styled(FlexBox)`
   width: 100%;

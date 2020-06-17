@@ -42,12 +42,14 @@ module.exports = (_, argv) => {
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, 'src/index.html'),
       }),
-      new CopyWebpackPlugin([
-        'src/CNAME',
-        'src/404.html',
-        'src/favicon-128.png',
-        { from: 'assets/images', to: 'images' },
-      ]),
+      new CopyWebpackPlugin({
+        patterns: [
+          'src/CNAME',
+          'src/404.html',
+          'src/favicon-128.png',
+          { from: 'assets/images', to: 'images' },
+        ],
+      }),
     ],
   };
 

@@ -66,112 +66,115 @@ const SpecTargetFilter: React.FC<SpecTargetFilterProps> = ({
   };
   return (
     <VerticalFlex>
-      {specTarget.map((item) => (
-        <PaddedDiv key={item.key}>
-          <RightMarginSelect
-            id={`target-filter-${item.key}`}
-            value={item.target.id}
-            onChange={onTargetChangeClick(item.key)}
-          >
-            {Object.keys(SKILL_TARGET).map(Number).map((targetId) => (
-              <option value={targetId} key={targetId}>
-                {SKILL_TARGET[targetId].krName}
-              </option>
-            ))}
-          </RightMarginSelect>
-          {isAttributeTarget(item.target) && (
+      {specTarget.map((item) => {
+        const { target } = item;
+        return (
+          <PaddedDiv key={item.key}>
             <RightMarginSelect
-              id={`target-attribute-filter-${item.key}`}
-              value={item.target.attributeId || 'all'}
-              onChange={(event) => {
-                const selected = event.target.value;
-                if (selected === 'all') editSpecTarget(item.key, { ...item.target, attributeId: null });
-                else editSpecTarget(item.key, { ...item.target, attributeId: Number(selected) });
-              }}
+              id={`target-filter-${item.key}`}
+              value={target.id}
+              onChange={onTargetChangeClick(item.key)}
             >
-              <option value="all">모두</option>
-              {Object.keys(ATTRIBUTE).map(Number).map((attributeId) => (
-                <option value={attributeId} key={attributeId}>
-                  {ATTRIBUTE[attributeId].name}
+              {Object.keys(SKILL_TARGET).map(Number).map((targetId) => (
+                <option value={targetId} key={targetId}>
+                  {SKILL_TARGET[targetId].krName}
                 </option>
               ))}
             </RightMarginSelect>
-          )}
-          {isRoleTarget(item.target) && (
-            <RightMarginSelect
-              id={`target-role-filter-${item.key}`}
-              value={item.target.roleId || 'all'}
-              onChange={(event) => {
-                const selected = event.target.value;
-                if (selected === 'all') editSpecTarget(item.key, { ...item.target, roleId: null });
-                else editSpecTarget(item.key, { ...item.target, roleId: Number(selected) });
-              }}
-            >
-              <option value="all">모두</option>
-              {Object.keys(ROLE).map(Number).map((roleId) => (
-                <option value={roleId} key={roleId}>
-                  {ROLE[roleId].name}
-                </option>
-              ))}
-            </RightMarginSelect>
-          )}
-          {isGroupTarget(item.target) && (
-            <RightMarginSelect
-              id={`target-group-filter-${item.key}`}
-              value={item.target.groupId || 'all'}
-              onChange={(event) => {
-                const selected = event.target.value;
-                if (selected === 'all') editSpecTarget(item.key, { ...item.target, groupId: null });
-                else editSpecTarget(item.key, { ...item.target, groupId: Number(selected) });
-              }}
-            >
-              <option value="all">모두</option>
-              {Object.keys(GROUP).map(Number).map((groupId) => (
-                <option value={groupId} key={groupId}>
-                  {GROUP[groupId].name}
-                </option>
-              ))}
-            </RightMarginSelect>
-          )}
-          {isGradeTarget(item.target) && (
-            <RightMarginSelect
-              id={`target-grade-filter-${item.key}`}
-              value={item.target.grade || 'all'}
-              onChange={(event) => {
-                const selected = event.target.value;
-                if (selected === 'all') editSpecTarget(item.key, { ...item.target, grade: null });
-                else editSpecTarget(item.key, { ...item.target, grade: Number(selected) });
-              }}
-            >
-              <option value="all">모두</option>
-              {[1, 2, 3].map((grade) => (
-                <option value={grade} key={grade}>
-                  {`${grade}학년`}
-                </option>
-              ))}
-            </RightMarginSelect>
-          )}
-          {isUnitTarget(item.target) && (
-            <RightMarginSelect
-              id={`target-unit-filter-${item.key}`}
-              value={item.target.unitId || 'all'}
-              onChange={(event) => {
-                const selected = event.target.value;
-                if (selected === 'all') editSpecTarget(item.key, { ...item.target, unitId: null });
-                else editSpecTarget(item.key, { ...item.target, unitId: Number(selected) });
-              }}
-            >
-              <option value="all">모두</option>
-              {Object.keys(UNIT).map(Number).map((unitId) => (
-                <option value={unitId} key={unitId}>
-                  {UNIT[unitId].name}
-                </option>
-              ))}
-            </RightMarginSelect>
-          )}
-          <Button onClick={() => removeSpecTarget(item.key)}>제거</Button>
-        </PaddedDiv>
-      ))}
+            {isAttributeTarget(target) && (
+              <RightMarginSelect
+                id={`target-attribute-filter-${item.key}`}
+                value={target.attributeId || 'all'}
+                onChange={(event) => {
+                  const selected = event.target.value;
+                  if (selected === 'all') editSpecTarget(item.key, { ...target, attributeId: null });
+                  else editSpecTarget(item.key, { ...target, attributeId: Number(selected) });
+                }}
+              >
+                <option value="all">모두</option>
+                {Object.keys(ATTRIBUTE).map(Number).map((attributeId) => (
+                  <option value={attributeId} key={attributeId}>
+                    {ATTRIBUTE[attributeId].name}
+                  </option>
+                ))}
+              </RightMarginSelect>
+            )}
+            {isRoleTarget(target) && (
+              <RightMarginSelect
+                id={`target-role-filter-${item.key}`}
+                value={target.roleId || 'all'}
+                onChange={(event) => {
+                  const selected = event.target.value;
+                  if (selected === 'all') editSpecTarget(item.key, { ...target, roleId: null });
+                  else editSpecTarget(item.key, { ...target, roleId: Number(selected) });
+                }}
+              >
+                <option value="all">모두</option>
+                {Object.keys(ROLE).map(Number).map((roleId) => (
+                  <option value={roleId} key={roleId}>
+                    {ROLE[roleId].name}
+                  </option>
+                ))}
+              </RightMarginSelect>
+            )}
+            {isGroupTarget(target) && (
+              <RightMarginSelect
+                id={`target-group-filter-${item.key}`}
+                value={target.groupId || 'all'}
+                onChange={(event) => {
+                  const selected = event.target.value;
+                  if (selected === 'all') editSpecTarget(item.key, { ...target, groupId: null });
+                  else editSpecTarget(item.key, { ...target, groupId: Number(selected) });
+                }}
+              >
+                <option value="all">모두</option>
+                {Object.keys(GROUP).map(Number).map((groupId) => (
+                  <option value={groupId} key={groupId}>
+                    {GROUP[groupId].name}
+                  </option>
+                ))}
+              </RightMarginSelect>
+            )}
+            {isGradeTarget(target) && (
+              <RightMarginSelect
+                id={`target-grade-filter-${item.key}`}
+                value={target.grade || 'all'}
+                onChange={(event) => {
+                  const selected = event.target.value;
+                  if (selected === 'all') editSpecTarget(item.key, { ...target, grade: null });
+                  else editSpecTarget(item.key, { ...target, grade: Number(selected) });
+                }}
+              >
+                <option value="all">모두</option>
+                {[1, 2, 3].map((grade) => (
+                  <option value={grade} key={grade}>
+                    {`${grade}학년`}
+                  </option>
+                ))}
+              </RightMarginSelect>
+            )}
+            {isUnitTarget(target) && (
+              <RightMarginSelect
+                id={`target-unit-filter-${item.key}`}
+                value={target.unitId || 'all'}
+                onChange={(event) => {
+                  const selected = event.target.value;
+                  if (selected === 'all') editSpecTarget(item.key, { ...target, unitId: null });
+                  else editSpecTarget(item.key, { ...target, unitId: Number(selected) });
+                }}
+              >
+                <option value="all">모두</option>
+                {Object.keys(UNIT).map(Number).map((unitId) => (
+                  <option value={unitId} key={unitId}>
+                    {UNIT[unitId].name}
+                  </option>
+                ))}
+              </RightMarginSelect>
+            )}
+            <Button onClick={() => removeSpecTarget(item.key)}>제거</Button>
+          </PaddedDiv>
+        );
+      })}
       <PaddedDiv>
         <Button onClick={onAddClick}>필터 추가</Button>
       </PaddedDiv>
