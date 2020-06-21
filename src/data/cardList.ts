@@ -315,6 +315,13 @@ export const CARD: Card = {
 
   254: { memberId: 22, title: 'かすみん、限界ですぅ！', awakenTitle: 'レディー・デビュー', rarityId: 3, attributeId: 3, roleId: 3, fromId: ['gacha', 20010] },
   255: { memberId: 3, title: 'おかえりなさいませ、ご主人様', awakenTitle: 'それは僕たちの奇跡', rarityId: 2, attributeId: 2, roleId: 4, fromId: ['gacha', 20010], outfitSeriesId: 12 },
+
+  256: { memberId: 7, title: 'こうするの、っと！', awakenTitle: 'レインドロップ', rarityId: 3, attributeId: 2, roleId: 3, fromId: ['gacha', 10029] },
+  257: { memberId: 17, title: '特別な道具を使うずら', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 1, roleId: 1, fromId: ['gacha', 10029], outfitSeriesId: 11 },
+  258: { memberId: 13, title: '雨に消えたりしないように', awakenTitle: 'レインドロップ', rarityId: 3, attributeId: 1, roleId: 4, fromId: ['gacha', 10030] },
+  259: { memberId: 28, title: 'みんなも一緒に歌おうよ〜♪', awakenTitle: 'レインドロップ', rarityId: 3, attributeId: 4, roleId: 1, fromId: ['event', 18] },
+  260: { memberId: 25, title: '愛さん特製スペシャルもんじゃ', awakenTitle: 'マーチング・ハーモニー', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['event', 18], outfitSeriesId: 10 },
+  261: { memberId: 9, title: 'にこもがんばっちゃおうかな〜', awakenTitle: 'それは僕たちの奇跡', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['event', 18], outfitSeriesId: 12 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

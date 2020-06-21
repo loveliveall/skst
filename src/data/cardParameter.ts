@@ -298,5 +298,12 @@ export const PARAMETER: Parameter = {
 
   254: [{ appl: 4540, stam: 6732, tech: 4383 }, { appl: 5437, stam: 7618, tech: 4671 }, { appl: 5736, stam: 8947, tech: 5535 }, { appl: 6334, stam: 9833, tech: 6687 }, { appl: 7530, stam: 10719, tech: 7263 }, { appl: 8132, stam: 12060, tech: 7854 }],
   255: [{ appl: 3557, stam: 2507, tech: 4390 }, { appl: 4015, stam: 2831, tech: 4956 }, { appl: 4473, stam: 3155, tech: 5522 }, { appl: 4931, stam: 3317, tech: 6088 }, { appl: 5160, stam: 3641, tech: 6937 }, { appl: 5858, stam: 4135, tech: 7238 }],
+
+  256: [{ appl: 5016, stam: 6732, tech: 3907 }, { appl: 6006, stam: 7618, tech: 4164 }, { appl: 6336, stam: 8947, tech: 4935 }, { appl: 6996, stam: 9833, tech: 5963 }, { appl: 8316, stam: 10719, tech: 6477 }, { appl: 8976, stam: 12060, tech: 7010 }],
+  257: [{ appl: 4183, stam: 2611, tech: 3662 }, { appl: 4723, stam: 2949, tech: 4134 }, { appl: 5263, stam: 3287, tech: 4606 }, { appl: 5533, stam: 3625, tech: 5078 }, { appl: 6073, stam: 3794, tech: 5786 }, { appl: 6895, stam: 4308, tech: 6032 }],
+  258: [{ appl: 5016, stam: 4066, tech: 6574 }, { appl: 5346, stam: 4602, tech: 7873 }, { appl: 6336, stam: 5406, tech: 8306 }, { appl: 7656, stam: 5942, tech: 9172 }, { appl: 8316, stam: 6478, tech: 10904 }, { appl: 8976, stam: 7292, tech: 11780 }],
+  259: [{ appl: 4477, stam: 4104, tech: 4224 }, { appl: 5067, stam: 4374, tech: 5058 }, { appl: 5952, stam: 5184, tech: 5336 }, { appl: 6542, stam: 6264, tech: 5892 }, { appl: 7132, stam: 6804, tech: 7004 }, { appl: 8030, stam: 7344, tech: 7572 }],
+  260: [{ appl: 2066, stam: 3871, tech: 2668 }, { appl: 2332, stam: 4371, tech: 3012 }, { appl: 2598, stam: 4871, tech: 3356 }, { appl: 2864, stam: 5121, tech: 3700 }, { appl: 3263, stam: 5621, tech: 3872 }, { appl: 3400, stam: 6379, tech: 4393 }],
+  261: [{ appl: 2668, stam: 2489, tech: 3439 }, { appl: 3012, stam: 2811, tech: 3883 }, { appl: 3356, stam: 3133, tech: 4327 }, { appl: 3700, stam: 3294, tech: 4771 }, { appl: 3872, stam: 3616, tech: 5437 }, { appl: 4393, stam: 4110, tech: 5671 }],
 };
 /* eslint-enable object-curly-newline, max-len */

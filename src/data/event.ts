@@ -342,6 +342,19 @@ export const EVENT: Event = {
     startDate: '2020.06.05.',
     endDate: '2020.06.15.',
   },
+  18: {
+    name: '君と、雨に歌えば',
+    eventTypeId: 1,
+    rankBorder: {},
+    rewardBorder: {
+      100: [2, 2, 2],
+      3000: [1, 2, 2],
+      10000: [1, 2, 1],
+      50000: [1, 1, 1],
+    },
+    startDate: '2020.06.22.',
+    endDate: '2020.06.30.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,

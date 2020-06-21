@@ -58,6 +58,8 @@ export const GACHA: Gacha = {
   10026: { type: 'event', name: '取り戻せ！笑顔のラーメンガチャ後編', startDate: '2020.05.25.', endDate: '2020.05.29.', eventId: 16 },
   10027: { type: 'event', name: '3人のプリンセスガチャ前編', startDate: '2020.06.05.', endDate: '2020.06.10.', eventId: 17 },
   10028: { type: 'event', name: '3人のプリンセスガチャ後編', startDate: '2020.06.10.', endDate: '2020.06.15.', eventId: 17 },
+  10029: { type: 'event', name: '君と、雨に歌えばガチャ前編', startDate: '2020.06.22.', endDate: '2020.06.26.', eventId: 18 },
+  10030: { type: 'event', name: '君と、雨に歌えばガチャ後編', startDate: '2020.06.26.', endDate: '2020.06.30.', eventId: 18 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },
