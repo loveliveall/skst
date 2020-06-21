@@ -15,6 +15,8 @@ export const GACHA_GLOBAL: Gacha = {
   10006: { type: 'event', name: '스쿨 아이돌 트레인 출발! 스카우트', startDate: '2020.05.22.', endDate: '2020.05.29.', eventId: 6 },
   10007: { type: 'event', name: '바다 위 대열전 스카우트(전편)', startDate: '2020.06.05.', endDate: '2020.06.15.', eventId: 7 },
   10008: { type: 'event', name: '바다 위 대열전 스카우트(후편)', startDate: '2020.06.07.', endDate: '2020.06.15.', eventId: 7 },
+  10009: { type: 'event', name: '스페셜 디저트를 드셔보세요♡ 스카우트 [전편]', startDate: '2020.06.20.', endDate: '2020.06.30.', eventId: 8 },
+  10010: { type: 'event', name: '스페셜 디저트를 드셔보세요♡ 스카우트 [후편]', startDate: '2020.06.22.', endDate: '2020.06.30.', eventId: 8 },
 
   20001: { type: 'pickup', name: '픽업 스카우트 (UR 요시코)', startDate: '2020.03.13.', endDate: '2020.03.19.' },
   20002: { type: 'pickup', name: '픽업 스카우트 (UR 우미)', startDate: '2020.03.30.', endDate: '2020.04.06.' },

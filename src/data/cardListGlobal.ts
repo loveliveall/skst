@@ -179,5 +179,12 @@ export const PARTIAL_CARD_GLOBAL: PartialCard = {
 
   155: { title: '너무 귀여우니까 꼬옥~', awakenTitle: '해피 퍼레이드' },
   156: { title: '우라노호시 여고의 학생으로서', awakenTitle: 'Aozora Jumping Heart' },
+
+  157: { title: '입에서 살살 녹아', awakenTitle: 'Sweets Deco' },
+  158: { title: '방금 제가 만든 역작이예요♪', awakenTitle: '두근두근 애니멀' },
+  159: { title: '아니야, 난 정말 괜찮아!', awakenTitle: 'Sweets Deco' },
+  160: { title: '앗, 다들 와 주셨군요?', awakenTitle: 'Sweets Deco' },
+  161: { title: '자, 빨리 가자', awakenTitle: 'Aozora Jumping Heart' },
+  162: { title: '내가 점을 봐 줄게', awakenTitle: 'Bokura no LIVE Kimi to no LIFE' },
 };
 /* eslint-enable object-curly-newline, max-len */
