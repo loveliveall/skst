@@ -95,12 +95,12 @@ export const KIZUNA_BUFF: KizunaBuff = {
   90: 842, // Needs double-check
   91: 846,
   92: 849,
-  // Estimated
   93: 852,
   94: 856,
   95: 859,
   96: 862,
   97: 865,
+  // Estimated
   98: 868,
   99: 872,
   100: 875,
