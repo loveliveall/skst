@@ -322,6 +322,11 @@ export const CARD: Card = {
   259: { memberId: 28, title: 'みんなも一緒に歌おうよ〜♪', awakenTitle: 'レインドロップ', rarityId: 3, attributeId: 4, roleId: 1, fromId: ['event', 18] },
   260: { memberId: 25, title: '愛さん特製スペシャルもんじゃ', awakenTitle: 'マーチング・ハーモニー', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['event', 18], outfitSeriesId: 10 },
   261: { memberId: 9, title: 'にこもがんばっちゃおうかな〜', awakenTitle: 'それは僕たちの奇跡', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['event', 18], outfitSeriesId: 12 },
+
+  262: { memberId: 11, title: 'あなたと一緒に海を見ていたいな', awakenTitle: 'チカキュン☆サマー', rarityId: 3, attributeId: 2, roleId: 1, fromId: ['gacha', 30008] },
+  263: { memberId: 5, title: 'にゃああっ……！', awakenTitle: 'Pom!☆', rarityId: 3, attributeId: 3, roleId: 2, fromId: ['gacha', 30008] },
+  264: { memberId: 26, title: '遥ちゃん専用アルバムなの！', awakenTitle: 'マーチング・ハーモニー', rarityId: 2, attributeId: 2, roleId: 4, fromId: ['gacha', 30008], outfitSeriesId: 10 },
+  265: { memberId: 19, title: '今日は絶対、すくうんだ', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 5, roleId: 2, fromId: ['gacha', 30008], outfitSeriesId: 11 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
