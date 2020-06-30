@@ -16,7 +16,7 @@ export const OUTFIT_SERIES: OutfitSeries = {
   6: { name: 'Snow halation', groupId: 1, nameGlobal: 'Snow Halation' },
   7: { name: '僕らのLIVE 君とのLIFE', groupId: 1, nameGlobal: 'Bokura no LIVE Kimi to no LIFE' },
   8: { name: '青空Jumping Heart', groupId: 2, nameGlobal: 'Aozora Jumping Heart' },
-  9: { name: 'レインボーローズ', groupId: 3 },
+  9: { name: 'レインボーローズ', groupId: 3, nameGlobal: '레인보우 로즈' },
   10: { name: 'マーチング・ハーモニー', groupId: 3 },
   11: { name: 'Brightest Melody', groupId: 2 },
   12: { name: 'それは僕たちの奇跡', groupId: 1 },

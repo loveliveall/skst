@@ -6,6 +6,7 @@ export const GACHA_GLOBAL: Gacha = {
   2: { type: 'normal', name: '올스타 스카우트', startDate: '2020.03.31.', endDate: '2020.04.30.' },
   3: { type: 'normal', name: '올스타 스카우트', startDate: '2020.04.30.', endDate: '2020.05.29.' },
   4: { type: 'normal', name: '올스타 스카우트', startDate: '2020.05.29.', endDate: '2020.06.30.' },
+  5: { type: 'normal', name: '올스타 스카우트', startDate: '2020.06.30.', endDate: '2020.07.30.' },
 
   10001: { type: 'event', name: '시크릿 파티! 스카우트', startDate: '2020.03.03.', endDate: '2020.03.13.', eventId: 1 },
   10002: { type: 'event', name: '기모노 모델은 우리가! 스카우트', startDate: '2020.03.19.', endDate: '2020.03.30.', eventId: 2 },
@@ -26,4 +27,5 @@ export const GACHA_GLOBAL: Gacha = {
 
   30001: { type: 'fes', name: '스쿠스타 페스티벌', startDate: '2020.04.30.', endDate: '2020.05.07.' },
   30002: { type: 'fes', name: '스쿠스타 페스티벌', startDate: '2020.05.29.', endDate: '2020.06.05.' },
+  30003: { type: 'fes', name: '스쿠스타 페스티벌', startDate: '2020.06.03.', endDate: '2020.07.05.' },
 };/* eslint-enable object-curly-newline, max-len */
