@@ -345,7 +345,9 @@ export const EVENT: Event = {
   18: {
     name: '君と、雨に歌えば',
     eventTypeId: 1,
-    rankBorder: {},
+    rankBorder: {
+      1: 10267727, 10: 6160945, 50: 2778526, 100: 2326584, 1000: 657080, 3000: 397437, 10000: 231556, 30000: 167337, 50000: 143633,
+    },
     rewardBorder: {
       100: [2, 2, 2],
       3000: [1, 2, 2],
@@ -413,6 +415,17 @@ export const EVENT: Event = {
     ],
     startDate: '2020.05.16.',
     endDate: '2020.05.20.',
+  },
+  10004: {
+    name: '第3回スクスタビックライブ',
+    eventTypeId: 3,
+    rankBorder: {},
+    rewardBorder: {},
+    targetSongs: ['NO EXIT ORION', '青空Jumping Heart', '夢への一歩'],
+    bonusTarget: 'Aqours +20%',
+    prizes: [],
+    startDate: '2020.07.01.',
+    endDate: '2020.07.05.',
   },
 };
 /* eslint-enable max-len, object-property-newline */
