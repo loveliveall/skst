@@ -29,6 +29,7 @@ export const GACHA: Gacha = {
   7: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.03.31.', endDate: '2020.04.30.' },
   8: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.04.30.', endDate: '2020.05.29.' },
   9: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.05.29.', endDate: '2020.06.30.' },
+  10: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.06.30.', endDate: '2020.07.31.' },
 
   10001: { type: 'event', name: '秘密のパーティー！ガチャ', startDate: '2019.10.03.', endDate: '2019.10.15.', eventId: 1 },
   10002: { type: 'event', name: '和装モデルはお任せあれ！ガチャ', startDate: '2019.10.21.', endDate: '2019.10.31.', eventId: 2 },
