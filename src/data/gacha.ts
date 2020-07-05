@@ -61,6 +61,8 @@ export const GACHA: Gacha = {
   10028: { type: 'event', name: '3人のプリンセスガチャ後編', startDate: '2020.06.10.', endDate: '2020.06.15.', eventId: 17 },
   10029: { type: 'event', name: '君と、雨に歌えばガチャ前編', startDate: '2020.06.22.', endDate: '2020.06.26.', eventId: 18 },
   10030: { type: 'event', name: '君と、雨に歌えばガチャ後編', startDate: '2020.06.26.', endDate: '2020.06.30.', eventId: 18 },
+  10031: { type: 'event', name: 'ヨハネと花陽の事件簿ガチャ前編', startDate: '2020.07.06.', endDate: '2020.07.10.', eventId: 19 },
+  10032: { type: 'event', name: 'ヨハネと花陽の事件簿ガチャ後編', startDate: '2020.07.10.', endDate: '2020.07.15.', eventId: 19 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },
