@@ -191,5 +191,12 @@ export const PARTIAL_CARD_GLOBAL: PartialCard = {
   164: { title: '…고마워.', awakenTitle: '스마일리 엔젤' },
   165: { title: '먹은 사람의 표정이 기대되네요~♡', awakenTitle: '레인보우 로즈' },
   166: { title: '가장 마음에 든 리나보드', awakenTitle: '레인보우 로즈' },
+
+  167: { title: '오래 기다리셨죠?', awakenTitle: '플라워 심포니' },
+  168: { title: '어머나… 참 예쁜 꽃이네!', awakenTitle: 'Bokura no LIVE Kimi to no LIFE' },
+  169: { title: '오늘만 선보이는 둘만의 소리', awakenTitle: '플라워 심포니' },
+  170: { title: '내… 탄생화인걸', awakenTitle: '플라워 심포니' },
+  171: { title: '후후후… 기다려, 리리!', awakenTitle: 'Aozora Jumping Heart' },
+  172: { title: '나만 따라와♪', awakenTitle: '레인보우 로즈' },
 };
 /* eslint-enable object-curly-newline, max-len */

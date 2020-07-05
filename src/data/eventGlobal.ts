@@ -124,5 +124,20 @@ export const EVENT_GLOBAL: Event = {
     startDate: '2020.06.20.',
     endDate: '2020.06.30.',
   },
+  9: {
+    name: '둘이서 연주하는 소리',
+    eventTypeId: 2,
+    rankBorder: {},
+    voltageRankBorder: {},
+    voltageRankSongs: ['PSYCHIC FIRE', 'Mirai no Bokura wa Shitteru yo', 'Diamond'],
+    rewardBorder: {
+      100: [2, 2, 2],
+      3000: [1, 2, 2],
+      10000: [1, 1, 2],
+      50000: [1, 1, 1],
+    },
+    startDate: '2020.07.05.',
+    endDate: '2020.07.15.',
+  },
 };
 /* eslint-enable max-len, object-property-newline */
