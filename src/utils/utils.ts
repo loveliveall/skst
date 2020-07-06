@@ -5,9 +5,10 @@ function pad(n: number, digit: number) {
 }
 
 export function numberRepr(n: number): string {
-  if (n < 0) throw Error('Only positive numbers are allowed');
-  if (n < 1000) return n.toString();
-  return `${numberRepr(Math.floor(n / 1000))},${pad(n % 1000, 3)}`;
+  const absN = Math.abs(n);
+  const sign = n / absN === -1 ? '-' : '';
+  if (n < 1000) return `${sign}${absN}`;
+  return `${sign}${numberRepr(Math.floor(absN / 1000))},${pad(absN % 1000, 3)}`;
 }
 
 export function critProb(_: number, tech: number, critBase: number) {
