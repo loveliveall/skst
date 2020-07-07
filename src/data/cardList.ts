@@ -328,12 +328,12 @@ export const CARD: Card = {
   264: { memberId: 26, title: '遥ちゃん専用アルバムなの！', awakenTitle: 'マーチング・ハーモニー', rarityId: 2, attributeId: 2, roleId: 4, fromId: ['gacha', 30008], outfitSeriesId: 10 },
   265: { memberId: 19, title: '今日は絶対、すくうんだ', awakenTitle: 'Brightest Melody', rarityId: 2, attributeId: 5, roleId: 2, fromId: ['gacha', 30008], outfitSeriesId: 11 },
 
-  266: { memberId: 8, title: '私わかったよ！', awakenTitle: '見習い探偵', rarityId: 3, attributeId: 2, roleId: 2, fromId: ['gacha', 10031] },
-  267: { memberId: 13, title: '焦らなくていいからね', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['gacha', 10031], outfitSeriesId: 13 },
-  268: { memberId: 16, title: '名探偵ヨハネよ！', awakenTitle: '堕天探偵☆ヨハネ', rarityId: 3, attributeId: 6, roleId: 3, fromId: ['event', 19] },
-  269: { memberId: 26, title: '彼方ちゃん、ここに見参！', awakenTitle: '神出鬼没☆怪盗K', rarityId: 3, attributeId: 1, roleId: 4, fromId: ['gacha', 10032] },
-  270: { memberId: 2, title: '怪盗からのメッセージが！！', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['event', 19], outfitSeriesId: 14 },
-  271: { memberId: 21, title: 'いい感じにできてるよ！', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['event', 19], outfitSeriesId: 15 },
+  269: { memberId: 8, title: '私わかったよ！', awakenTitle: '見習い探偵', rarityId: 3, attributeId: 2, roleId: 2, fromId: ['gacha', 10031] },
+  270: { memberId: 13, title: '焦らなくていいからね', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['gacha', 10031], outfitSeriesId: 13 },
+  271: { memberId: 16, title: '名探偵ヨハネよ！', awakenTitle: '堕天探偵☆ヨハネ', rarityId: 3, attributeId: 6, roleId: 3, fromId: ['event', 19] },
+  272: { memberId: 26, title: '彼方ちゃん、ここに見参！', awakenTitle: '神出鬼没☆怪盗K', rarityId: 3, attributeId: 1, roleId: 4, fromId: ['gacha', 10032] },
+  273: { memberId: 2, title: '怪盗からのメッセージが！！', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['event', 19], outfitSeriesId: 14 },
+  274: { memberId: 21, title: 'いい感じにできてるよ！', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['event', 19], outfitSeriesId: 15 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
