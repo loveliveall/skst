@@ -1,7 +1,7 @@
 import { CARD } from './cardList';
 import { PARAMETER } from './cardParameter';
 // import { CARD_SKILL } from './cardSkill';
-import { SKILL } from './skill';
+// import { SKILL } from './skill';
 import { SKILL_LEVEL_MAP } from './cardSkillLevelMap';
 
 // Parameter length and ID range validator
@@ -15,20 +15,20 @@ Object.keys(PARAMETER).map(Number).forEach((id) => {
   }
 });
 
-// Sill instance should have maxLevel items if field is array
-Object.keys(SKILL).map(Number).forEach((id) => {
-  const { maxLevel, detail } = SKILL[id];
-  const allLevelInfoExists = Object.keys(detail).every((field) => {
-    const v = detail[field as keyof typeof detail];
-    if (Array.isArray(v)) {
-      return v.length === maxLevel;
-    }
-    return true;
-  });
-  if (!allLevelInfoExists) {
-    throw Error(`Skill ID ${id} does not have enough info for each skill level`);
-  }
-});
+// Skill instance should have maxLevel items if field is array
+// Object.keys(SKILL).map(Number).forEach((id) => {
+//   const { maxLevel, detail } = SKILL[id];
+//   const allLevelInfoExists = Object.keys(detail).every((field) => {
+//     const v = detail[field as keyof typeof detail];
+//     if (Array.isArray(v)) {
+//       return v.length === maxLevel;
+//     }
+//     return true;
+//   });
+//   if (!allLevelInfoExists) {
+//     throw Error(`Skill ID ${id} does not have enough info for each skill level`);
+//   }
+// });
 
 // Skill level map validator
 Object.keys(SKILL_LEVEL_MAP).map(Number).forEach((id) => {

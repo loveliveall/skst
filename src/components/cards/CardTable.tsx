@@ -24,7 +24,7 @@ import { CARD_SKILL } from '@/data/cardSkill';
 import { SKILL_LEVEL_MAP } from '@/data/cardSkillLevelMap';
 import { CARD_CRIT_BASE } from '@/data/cardCritBase';
 import { SKILL, shortSkillTextKr, skillTargetTextKr } from '@/data/skill';
-import { SKILL_EFFECT_CATEGORY, SKILL_EFFECT_TYPE } from '@/data/skillEffectType';
+import { SKILL_EFFECT_CATEGORY, SKILL_EFFECT_TYPE, COMPOSED_SKILL_EFFECT_TYPE } from '@/data/skillEffectType';
 
 const CardIconImg = styled.img`
   padding: 4px;
@@ -77,7 +77,12 @@ const CardTable: React.FC<CardTableProps> = ({
     const specDetail = SKILL[CARD_SKILL[card.id].specialityId].detail;
     // Filter by skill category
     if (filter.specCategory.length !== 0) {
-      const specCategoryId = SKILL_EFFECT_TYPE[specDetail.effectTypeId].effectCategoryId;
+      const specCategoryId = (() => {
+        if ('type' in specDetail) {
+          return COMPOSED_SKILL_EFFECT_TYPE[specDetail.effectTypeId].effectCategoryId;
+        }
+        return SKILL_EFFECT_TYPE[specDetail.effectTypeId].effectCategoryId;
+      })();
       const sat = filter.specCategory.some((item) => item.categoryId === specCategoryId);
       if (!sat) return false;
     }
@@ -103,7 +108,12 @@ const CardTable: React.FC<CardTableProps> = ({
     const ipDetail = SKILL[CARD_SKILL[card.id].individuality.passiveId].detail;
     // Filter by skill category
     if (filter.indivPCategory.length !== 0) {
-      const ipCategoryId = SKILL_EFFECT_TYPE[ipDetail.effectTypeId].effectCategoryId;
+      const ipCategoryId = (() => {
+        if ('type' in ipDetail) {
+          return COMPOSED_SKILL_EFFECT_TYPE[ipDetail.effectTypeId].effectCategoryId;
+        }
+        return SKILL_EFFECT_TYPE[ipDetail.effectTypeId].effectCategoryId;
+      })();
       const sat = filter.indivPCategory.some((item) => item.categoryId === ipCategoryId);
       if (!sat) return false;
     }
@@ -137,7 +147,12 @@ const CardTable: React.FC<CardTableProps> = ({
       const ilDetail = SKILL[liveId].detail;
       // Filter by skill category
       if (filter.indivLCategory.length !== 0) {
-        const ilCategoryId = SKILL_EFFECT_TYPE[ilDetail.effectTypeId].effectCategoryId;
+        const ilCategoryId = (() => {
+          if ('type' in ilDetail) {
+            return COMPOSED_SKILL_EFFECT_TYPE[ilDetail.effectTypeId].effectCategoryId;
+          }
+          return SKILL_EFFECT_TYPE[ilDetail.effectTypeId].effectCategoryId;
+        })();
         const sat = filter.indivLCategory.some((item) => item.categoryId === ilCategoryId);
         if (!sat) return false;
       }
@@ -197,6 +212,7 @@ const CardTable: React.FC<CardTableProps> = ({
       const ipDetail = SKILL[CARD_SKILL[card.id].individuality.passiveId].detail;
       const ipLevel = SKILL_LEVEL_MAP[card.id].individuality.passive[card.uncap];
       if (ipDetail.skillTargetId !== 2) { // Exclude itself
+        if ('type' in ipDetail) throw Error('TODO: Fix if dual passive appears');
         const amount = ipDetail.effectValue[ipLevel - 1] / 100;
         switch (ipDetail.effectTypeId) {
           case 200101:
@@ -348,7 +364,12 @@ const CardTable: React.FC<CardTableProps> = ({
             const levelMap = SKILL_LEVEL_MAP[rowData.id].speciality;
             const specialityDetail = SKILL[CARD_SKILL[rowData.id].specialityId].detail;
             const { effectTypeId } = specialityDetail;
-            const categoryId = SKILL_EFFECT_TYPE[effectTypeId].effectCategoryId;
+            const categoryId = (() => {
+              if ('type' in specialityDetail) {
+                return COMPOSED_SKILL_EFFECT_TYPE[effectTypeId].effectCategoryId;
+              }
+              return SKILL_EFFECT_TYPE[effectTypeId].effectCategoryId;
+            })();
             return (
               <VerticalFlex>
                 <div>
@@ -358,9 +379,9 @@ const CardTable: React.FC<CardTableProps> = ({
                     title={SKILL_EFFECT_CATEGORY[categoryId].desc}
                   />
                 </div>
-                <DetailText>
-                  {shortSkillTextKr(specialityDetail, levelMap[rowData.uncap])}
-                </DetailText>
+                {shortSkillTextKr(specialityDetail, levelMap[rowData.uncap]).map((text) => (
+                  <DetailText key={text}>{text}</DetailText>
+                ))}
                 <DetailText>
                   {skillTargetTextKr(specialityDetail)}
                 </DetailText>
@@ -369,18 +390,52 @@ const CardTable: React.FC<CardTableProps> = ({
           },
           customSort: (a, b) => {
             const aDetail = SKILL[CARD_SKILL[a.id].specialityId].detail;
-            const aEffect = SKILL_EFFECT_TYPE[aDetail.effectTypeId];
+            const aEffect = (() => {
+              if ('type' in aDetail) {
+                return COMPOSED_SKILL_EFFECT_TYPE[aDetail.effectTypeId];
+              }
+              return SKILL_EFFECT_TYPE[aDetail.effectTypeId];
+            })();
             const bDetail = SKILL[CARD_SKILL[b.id].specialityId].detail;
-            const bEffect = SKILL_EFFECT_TYPE[bDetail.effectTypeId];
+            const bEffect = (() => {
+              if ('type' in bDetail) {
+                return COMPOSED_SKILL_EFFECT_TYPE[bDetail.effectTypeId];
+              }
+              return SKILL_EFFECT_TYPE[bDetail.effectTypeId];
+            })();
             if (aEffect.effectCategoryId - bEffect.effectCategoryId !== 0) {
               return aEffect.effectCategoryId - bEffect.effectCategoryId;
             }
-            if (aEffect.scaleType !== bEffect.scaleType) {
-              return aEffect.scaleType === 'percent' ? 1 : -1;
+            const aScaleType = (() => {
+              if ('type' in aEffect) {
+                return SKILL_EFFECT_TYPE[aEffect.subEffectTypeIds[0]].scaleType;
+              }
+              return aEffect.scaleType;
+            })();
+            const bScaleType = (() => {
+              if ('type' in bEffect) {
+                return SKILL_EFFECT_TYPE[bEffect.subEffectTypeIds[0]].scaleType;
+              }
+              return bEffect.scaleType;
+            })();
+            if (aScaleType !== bScaleType) {
+              return aScaleType === 'percent' ? 1 : -1;
             }
             const aLevel = SKILL_LEVEL_MAP[a.id].speciality[a.uncap];
             const bLevel = SKILL_LEVEL_MAP[b.id].speciality[b.uncap];
-            return aDetail.effectValue[aLevel - 1] - bDetail.effectValue[bLevel - 1];
+            const aValue = (() => {
+              if ('type' in aDetail) {
+                return aDetail.effects[0].effectValue[aLevel - 1];
+              }
+              return aDetail.effectValue[aLevel - 1];
+            })();
+            const bValue = (() => {
+              if ('type' in bDetail) {
+                return bDetail.effects[0].effectValue[bLevel - 1];
+              }
+              return bDetail.effectValue[bLevel - 1];
+            })();
+            return aValue - bValue;
           },
         },
         {
@@ -389,7 +444,12 @@ const CardTable: React.FC<CardTableProps> = ({
             const levelMap = SKILL_LEVEL_MAP[rowData.id].individuality.passive;
             const passiveDetail = SKILL[CARD_SKILL[rowData.id].individuality.passiveId].detail;
             const { effectTypeId } = passiveDetail;
-            const categoryId = SKILL_EFFECT_TYPE[effectTypeId].effectCategoryId;
+            const categoryId = (() => {
+              if ('type' in passiveDetail) {
+                return COMPOSED_SKILL_EFFECT_TYPE[effectTypeId].effectCategoryId;
+              }
+              return SKILL_EFFECT_TYPE[effectTypeId].effectCategoryId;
+            })();
             return (
               <VerticalFlex>
                 <div>
@@ -399,9 +459,9 @@ const CardTable: React.FC<CardTableProps> = ({
                     title={SKILL_EFFECT_CATEGORY[categoryId].desc}
                   />
                 </div>
-                <DetailText>
-                  {shortSkillTextKr(passiveDetail, levelMap[rowData.uncap])}
-                </DetailText>
+                {shortSkillTextKr(passiveDetail, levelMap[rowData.uncap]).map((text) => (
+                  <DetailText key={text}>{text}</DetailText>
+                ))}
                 <DetailText>
                   {skillTargetTextKr(passiveDetail)}
                 </DetailText>
@@ -410,18 +470,52 @@ const CardTable: React.FC<CardTableProps> = ({
           },
           customSort: (a, b) => {
             const aDetail = SKILL[CARD_SKILL[a.id].individuality.passiveId].detail;
-            const aEffect = SKILL_EFFECT_TYPE[aDetail.effectTypeId];
+            const aEffect = (() => {
+              if ('type' in aDetail) {
+                return COMPOSED_SKILL_EFFECT_TYPE[aDetail.effectTypeId];
+              }
+              return SKILL_EFFECT_TYPE[aDetail.effectTypeId];
+            })();
             const bDetail = SKILL[CARD_SKILL[b.id].individuality.passiveId].detail;
-            const bEffect = SKILL_EFFECT_TYPE[bDetail.effectTypeId];
+            const bEffect = (() => {
+              if ('type' in bDetail) {
+                return COMPOSED_SKILL_EFFECT_TYPE[bDetail.effectTypeId];
+              }
+              return SKILL_EFFECT_TYPE[bDetail.effectTypeId];
+            })();
             if (aEffect.effectCategoryId - bEffect.effectCategoryId !== 0) {
               return aEffect.effectCategoryId - bEffect.effectCategoryId;
             }
-            if (aEffect.scaleType !== bEffect.scaleType) {
-              return aEffect.scaleType === 'percent' ? 1 : -1;
+            const aScaleType = (() => {
+              if ('type' in aEffect) {
+                return SKILL_EFFECT_TYPE[aEffect.subEffectTypeIds[0]].scaleType;
+              }
+              return aEffect.scaleType;
+            })();
+            const bScaleType = (() => {
+              if ('type' in bEffect) {
+                return SKILL_EFFECT_TYPE[bEffect.subEffectTypeIds[0]].scaleType;
+              }
+              return bEffect.scaleType;
+            })();
+            if (aScaleType !== bScaleType) {
+              return aScaleType === 'percent' ? 1 : -1;
             }
-            const aLevel = SKILL_LEVEL_MAP[a.id].individuality.passive[a.uncap];
-            const bLevel = SKILL_LEVEL_MAP[b.id].individuality.passive[b.uncap];
-            return aDetail.effectValue[aLevel - 1] - bDetail.effectValue[bLevel - 1];
+            const aLevel = SKILL_LEVEL_MAP[a.id].speciality[a.uncap];
+            const bLevel = SKILL_LEVEL_MAP[b.id].speciality[b.uncap];
+            const aValue = (() => {
+              if ('type' in aDetail) {
+                return aDetail.effects[0].effectValue[aLevel - 1];
+              }
+              return aDetail.effectValue[aLevel - 1];
+            })();
+            const bValue = (() => {
+              if ('type' in bDetail) {
+                return bDetail.effects[0].effectValue[bLevel - 1];
+              }
+              return bDetail.effectValue[bLevel - 1];
+            })();
+            return aValue - bValue;
           },
         },
         {
@@ -431,7 +525,12 @@ const CardTable: React.FC<CardTableProps> = ({
             if (liveId === undefined) return <span />;
             const liveDetail = SKILL[liveId].detail;
             const { effectTypeId } = liveDetail;
-            const categoryId = SKILL_EFFECT_TYPE[effectTypeId].effectCategoryId;
+            const categoryId = (() => {
+              if ('type' in liveDetail) {
+                return COMPOSED_SKILL_EFFECT_TYPE[effectTypeId].effectCategoryId;
+              }
+              return SKILL_EFFECT_TYPE[effectTypeId].effectCategoryId;
+            })();
             return (
               <VerticalFlex>
                 <div>
@@ -441,9 +540,9 @@ const CardTable: React.FC<CardTableProps> = ({
                     title={SKILL_EFFECT_CATEGORY[categoryId].desc}
                   />
                 </div>
-                <DetailText>
-                  {shortSkillTextKr(liveDetail, 1)}
-                </DetailText>
+                {shortSkillTextKr(liveDetail, 1).map((text) => (
+                  <DetailText key={text}>{text}</DetailText>
+                ))}
                 <DetailText>
                   {skillTargetTextKr(liveDetail)}
                 </DetailText>
@@ -456,16 +555,52 @@ const CardTable: React.FC<CardTableProps> = ({
             if (aLiveId === undefined) return -1;
             if (bLiveId === undefined) return 1;
             const aDetail = SKILL[aLiveId].detail;
-            const aEffect = SKILL_EFFECT_TYPE[aDetail.effectTypeId];
+            const aEffect = (() => {
+              if ('type' in aDetail) {
+                return COMPOSED_SKILL_EFFECT_TYPE[aDetail.effectTypeId];
+              }
+              return SKILL_EFFECT_TYPE[aDetail.effectTypeId];
+            })();
             const bDetail = SKILL[bLiveId].detail;
-            const bEffect = SKILL_EFFECT_TYPE[bDetail.effectTypeId];
+            const bEffect = (() => {
+              if ('type' in bDetail) {
+                return COMPOSED_SKILL_EFFECT_TYPE[bDetail.effectTypeId];
+              }
+              return SKILL_EFFECT_TYPE[bDetail.effectTypeId];
+            })();
             if (aEffect.effectCategoryId - bEffect.effectCategoryId !== 0) {
               return aEffect.effectCategoryId - bEffect.effectCategoryId;
             }
-            if (aEffect.scaleType !== bEffect.scaleType) {
-              return aEffect.scaleType === 'percent' ? 1 : -1;
+            const aScaleType = (() => {
+              if ('type' in aEffect) {
+                return SKILL_EFFECT_TYPE[aEffect.subEffectTypeIds[0]].scaleType;
+              }
+              return aEffect.scaleType;
+            })();
+            const bScaleType = (() => {
+              if ('type' in bEffect) {
+                return SKILL_EFFECT_TYPE[bEffect.subEffectTypeIds[0]].scaleType;
+              }
+              return bEffect.scaleType;
+            })();
+            if (aScaleType !== bScaleType) {
+              return aScaleType === 'percent' ? 1 : -1;
             }
-            return aDetail.effectValue[0] - bDetail.effectValue[0];
+            const aLevel = SKILL_LEVEL_MAP[a.id].speciality[a.uncap];
+            const bLevel = SKILL_LEVEL_MAP[b.id].speciality[b.uncap];
+            const aValue = (() => {
+              if ('type' in aDetail) {
+                return aDetail.effects[0].effectValue[aLevel - 1];
+              }
+              return aDetail.effectValue[aLevel - 1];
+            })();
+            const bValue = (() => {
+              if ('type' in bDetail) {
+                return bDetail.effects[0].effectValue[bLevel - 1];
+              }
+              return bDetail.effectValue[bLevel - 1];
+            })();
+            return aValue - bValue;
           },
         },
         {

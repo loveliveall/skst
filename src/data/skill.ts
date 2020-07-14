@@ -1,16 +1,27 @@
-import { SKILL_EFFECT_TYPE, SKILL_EFFECT_STRING } from './skillEffectType';
+import { SKILL_EFFECT_TYPE, COMPOSED_SKILL_EFFECT_TYPE, SKILL_EFFECT_STRING } from './skillEffectType';
 import { SKILL_TARGET } from './skillTarget';
 import { SKILL_TRIGGER_TYPE } from './skillTriggerType';
 import { SKILL_CONDITION } from './skillCondition';
+
+type EffectValue = number[];
+type FinishType = 'instant' | 'duration' | 'spFire' | 'never' | 'tillEnd' | 'tillACEnd';
+type FinishValue = number;
+type EffectDetail = {
+  readonly effectValue: EffectValue,
+  readonly finishType: FinishType,
+  readonly finishValue: FinishValue,
+};
 
 type SkillDetail = {
   readonly triggerProb: number,
   readonly skillTargetId: number,
   readonly effectTypeId: number,
-  readonly effectValue: number[],
-  readonly finishType: 'instant' | 'duration' | 'spFire' | 'never' | 'tillEnd' | 'tillACEnd',
-  readonly finishValue: number,
 } & (
+  EffectDetail | {
+    readonly type: 'dual',
+    readonly effects: [EffectDetail, EffectDetail],
+  }
+) & (
   {
     readonly timing: 'onTrigger',
     readonly triggerTypeId: number,
@@ -301,6 +312,8 @@ export const SKILL: Skill = {
   100272: { maxLevel: 5, detail: { triggerProb: 3300, skillTargetId: 1, effectTypeId: 101301, effectValue: [500, 530, 560, 590, 620], finishType: 'duration', finishValue: 5, timing: 'onAppeal' } },
   100273: { maxLevel: 5, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 100401, effectValue: [600, 700, 800, 900, 1000], finishType: 'duration', finishValue: 10, timing: 'onAppeal' } },
   100274: { maxLevel: 5, detail: { triggerProb: 3000, skillTargetId: 5, effectTypeId: 100101, effectValue: [400, 450, 500, 550, 600], finishType: 'duration', finishValue: 5, timing: 'onAppeal' } },
+  100275: { maxLevel: 5, detail: { type: 'dual', triggerProb: 3300, skillTargetId: 0, effectTypeId: 300101, effects: [{ effectValue: [300, 350, 400, 450, 500], finishType: 'instant', finishValue: 0 }, { effectValue: [1700, 1750, 1800, 1850, 1900], finishType: 'spFire', finishValue: 1 }], timing: 'onAppeal' } },
+  100276: { maxLevel: 5, detail: { triggerProb: 3000, skillTargetId: 5, effectTypeId: 100201, effectValue: [500, 550, 600, 650, 700], finishType: 'duration', finishValue: 10, timing: 'onAppeal' } },
 
   200001: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 3, effectTypeId: 200301, effectValue: [100, 130, 160, 190, 220], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
   200002: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 6, effectTypeId: 200301, effectValue: [150, 180, 210, 240, 270], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
@@ -573,6 +586,8 @@ export const SKILL: Skill = {
   200272: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 5, effectTypeId: 200101, effectValue: [500, 550, 600, 650, 700], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
   200273: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 5, effectTypeId: 200201, effectValue: [300, 350, 400, 450, 500], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
   200274: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 4, effectTypeId: 200301, effectValue: [300, 330, 360, 390, 420], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
+  200275: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 9, effectTypeId: 200301, effectValue: [700, 750, 800, 850, 900], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
+  200276: { maxLevel: 5, detail: { triggerProb: 10000, skillTargetId: 5, effectTypeId: 200201, effectValue: [300, 350, 400, 450, 500], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 0, triggerValue: 0, conditionId: 0 } },
 
   300003: { maxLevel: 1, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 101402, effectValue: [3000], finishType: 'instant', finishValue: 0, timing: 'onTrigger', triggerTypeId: 1, triggerValue: 0, conditionId: 0 } },
   300004: { maxLevel: 1, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 100501, effectValue: [2000], finishType: 'instant', finishValue: 0, timing: 'onTrigger', triggerTypeId: 2, triggerValue: 0, conditionId: 0 } },
@@ -782,17 +797,32 @@ export const SKILL: Skill = {
   300272: { maxLevel: 1, detail: { triggerProb: 1000, skillTargetId: 1, effectTypeId: 100201, effectValue: [550], finishType: 'duration', finishValue: 5, timing: 'onTrigger', triggerTypeId: 7, triggerValue: 0, conditionId: 0 } },
   300273: { maxLevel: 1, detail: { triggerProb: 2500, skillTargetId: 0, effectTypeId: 100601, effectValue: [1000], finishType: 'never', finishValue: 0, timing: 'onTrigger', triggerTypeId: 3, triggerValue: 0, conditionId: 0 } },
   300274: { maxLevel: 1, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 101402, effectValue: [2500], finishType: 'instant', finishValue: 0, timing: 'onTrigger', triggerTypeId: 1, triggerValue: 0, conditionId: 0 } },
+  300275: { maxLevel: 1, detail: { triggerProb: 3000, skillTargetId: 0, effectTypeId: 101003, effectValue: [800], finishType: 'instant', finishValue: 0, timing: 'onTrigger', triggerTypeId: 1, triggerValue: 0, conditionId: 0 } },
+  300276: { maxLevel: 1, detail: { triggerProb: 3000, skillTargetId: 1, effectTypeId: 100101, effectValue: [400], finishType: 'duration', finishValue: 10, timing: 'onTrigger', triggerTypeId: 2, triggerValue: 0, conditionId: 0 } },
 };
 /* eslint-enable object-curly-newline, max-len */
 
-export function shortSkillTextKr(skillDetail: SkillDetail, level: number) {
-  const { effectTypeId } = skillDetail;
-  const effectType = SKILL_EFFECT_TYPE[skillDetail.effectTypeId];
-  const value = skillDetail.effectValue[level - 1] / (effectType.scaleType === 'percent' ? 100 : 1);
+function shortSkillTextKrHelper(effectTypeId: number, effectValue: EffectValue, level: number) {
+  // For single skill type
+  const effectType = SKILL_EFFECT_TYPE[effectTypeId];
+  const value = effectValue[level - 1] / (effectType.scaleType === 'percent' ? 100 : 1);
   const valueStr = `${value}${effectType.scaleType === 'percent' ? '%' : ''}`;
   if (effectTypeId === 100601) return `회복하며 부활: ${valueStr}`;
   if (effectTypeId === 101201) return `${effectType.desc}`; // 저하효과 해제
   return `${effectType.desc}: ${valueStr}`;
+}
+
+export function shortSkillTextKr(skillDetail: SkillDetail, level: number) {
+  const { effectTypeId } = skillDetail;
+  if ('type' in skillDetail) {
+    // Dual type
+    const effectType = COMPOSED_SKILL_EFFECT_TYPE[effectTypeId];
+    if (effectType.type !== skillDetail.type) throw Error('Skill type must agree');
+    return skillDetail.effects.map((effect, idx) => (
+      shortSkillTextKrHelper(effectType.subEffectTypeIds[idx], effect.effectValue, level)
+    ));
+  }
+  return [shortSkillTextKrHelper(effectTypeId, skillDetail.effectValue, level)];
 }
 
 export function skillTargetTextKr(skillDetail: SkillDetail) {
@@ -801,54 +831,73 @@ export function skillTargetTextKr(skillDetail: SkillDetail) {
   return skillTargetId === 0 ? '' : `대상: ${targetText}`;
 }
 
+function getSingleEffectString(effectTypeId: number, effectDetail: EffectDetail) {
+  const prefix = (() => {
+    if (effectDetail.finishType === 'duration') return `${effectDetail.finishValue} 노트 동안`;
+    if (effectDetail.finishType === 'spFire') {
+      if (effectDetail.finishValue === 1) return '다음';
+      return `다음 ${effectDetail.finishValue}번의`;
+    }
+    if (effectDetail.finishType === 'tillEnd') return '게임 종료까지';
+    if (effectDetail.finishType === 'tillACEnd') return '어필 찬스 종료까지';
+    return '';
+  })();
+  const effectStr = SKILL_EFFECT_STRING[effectTypeId];
+  const effect = SKILL_EFFECT_TYPE[effectTypeId];
+  const value = effectDetail.effectValue.map((v) => {
+    if (v === 0) return '?';
+    if (effect.scaleType === 'percent') return v / 100;
+    return v;
+  }).join(' / ');
+
+  // Debuff clear does not need value
+  if (effectTypeId === 101201) return [prefix, effectStr.beforeValue].join(' ');
+  return [prefix, effectStr.beforeValue, value, effectStr.afterValue].join(' ');
+}
+
 export function getSkillInfoKR(skillId: number) {
-  const skill = SKILL[skillId];
+  const skillDetail = SKILL[skillId].detail;
   // Get effect catagory ID
-  const { effectCategoryId } = SKILL_EFFECT_TYPE[skill.detail.effectTypeId];
+  const effectCategoryId = (() => {
+    if ('type' in skillDetail) {
+      // Dual type
+      return COMPOSED_SKILL_EFFECT_TYPE[skillDetail.effectTypeId].effectCategoryId;
+    }
+    return SKILL_EFFECT_TYPE[skillDetail.effectTypeId].effectCategoryId;
+  })();
   // Get skill effect string
   const effectString = (() => {
-    const prefix = (() => {
-      if (skill.detail.finishType === 'duration') return `${skill.detail.finishValue} 노트 동안`;
-      if (skill.detail.finishType === 'spFire') {
-        if (skill.detail.finishValue === 1) return '다음';
-        return `다음 ${skill.detail.finishValue}번의`;
-      }
-      if (skill.detail.finishType === 'tillEnd') return '게임 종료까지';
-      if (skill.detail.finishType === 'tillACEnd') return '어필 찬스 종료까지';
-      return '';
-    })();
-    const effectStr = SKILL_EFFECT_STRING[skill.detail.effectTypeId];
-    const effect = SKILL_EFFECT_TYPE[skill.detail.effectTypeId];
-    const value = skill.detail.effectValue.map((v) => {
-      if (v === 0) return '?';
-      if (effect.scaleType === 'percent') return v / 100;
-      return v;
-    }).join(' / ');
-
-    // Debuff clear does not need value
-    if (skill.detail.effectTypeId === 101201) return [prefix, effectStr.beforeValue].join(' ');
-    return [prefix, effectStr.beforeValue, value, effectStr.afterValue].join(' ');
+    if ('type' in skillDetail) {
+      // Dual type
+      const effectType = COMPOSED_SKILL_EFFECT_TYPE[skillDetail.effectTypeId];
+      return skillDetail.effects.map((effect, idx) => getSingleEffectString(effectType.subEffectTypeIds[idx], effect));
+    }
+    return [getSingleEffectString(skillDetail.effectTypeId, {
+      effectValue: skillDetail.effectValue,
+      finishType: skillDetail.finishType,
+      finishValue: skillDetail.finishValue,
+    })];
   })();
   // Get target string
   const targetString = (() => {
-    if (skill.detail.skillTargetId === 0) return '';
-    return SKILL_TARGET[skill.detail.skillTargetId].krName;
+    if (skillDetail.skillTargetId === 0) return '';
+    return SKILL_TARGET[skillDetail.skillTargetId].krName;
   })();
   // Get trigger string
   const triggerString = (() => {
-    if (skill.detail.timing === 'onTrigger') {
-      const skillTrigger = SKILL_TRIGGER_TYPE[skill.detail.triggerTypeId];
-      const { triggerValue, conditionId } = skill.detail;
+    if (skillDetail.timing === 'onTrigger') {
+      const skillTrigger = SKILL_TRIGGER_TYPE[skillDetail.triggerTypeId];
+      const { triggerValue, conditionId } = skillDetail;
       let ret = '';
       if (triggerValue !== 0) ret += `${triggerValue} `;
-      if (skill.detail.triggerTypeId !== 0) ret += `${skillTrigger.krDesc}`;
+      if (skillDetail.triggerTypeId !== 0) ret += `${skillTrigger.krDesc}`;
       if (conditionId !== 0) ret += ` ${SKILL_CONDITION[conditionId].desc}`;
       return ret;
     }
     return '어필 시';
   })();
   // Get trigger probability string
-  const probString = skill.detail.triggerProb === 10000 ? '' : `${skill.detail.triggerProb / 100}%`;
+  const probString = skillDetail.triggerProb === 10000 ? '' : `${skillDetail.triggerProb / 100}%`;
   return {
     effectCategoryId,
     probString,

@@ -146,10 +146,12 @@ const CardInfoTable: React.FC<CardInfoTableProps> = ({
               />
               <div>
                 <VerticalFlex>
-                  <TextDiv>
-                    {`${specialityInfo.effectString}${specialityInfo.targetString === ''
-                      ? '' : `, 대상: ${specialityInfo.targetString}`}`}
-                  </TextDiv>
+                  {specialityInfo.effectString.map((str) => (
+                    <TextDiv key={str}>{str}</TextDiv>
+                  ))}
+                  {specialityInfo.targetString !== '' && (
+                    <TextDiv>{`대상: ${specialityInfo.targetString}`}</TextDiv>
+                  )}
                   <TextDiv>{`발동 확률: ${specialityInfo.probString}`}</TextDiv>
                 </VerticalFlex>
               </div>

@@ -12,7 +12,7 @@ import { CARD_CRIT_BASE } from '@/data/cardCritBase';
 import { CARD_SKILL } from '@/data/cardSkill';
 import { SKILL } from '@/data/skill';
 import { SKILL_TARGET } from '@/data/skillTarget';
-import { SKILL_EFFECT_TYPE, SKILL_EFFECT_CATEGORY } from '@/data/skillEffectType';
+import { SKILL_EFFECT_TYPE, SKILL_EFFECT_CATEGORY, COMPOSED_SKILL_EFFECT_TYPE } from '@/data/skillEffectType';
 import { KIZUNA_BUFF } from '@/data/kizunaBuff';
 
 import { critProb } from '@/utils/utils';
@@ -114,28 +114,65 @@ const CardSettings: React.FC<CardSettingsProps> = ({
         }, { appl: 0, stam: 0, tech: 0 });
         const critPercent = critProb(stat.appl, stat.tech, CARD_CRIT_BASE[cardId].value);
         const vol = Math.floor(stat.appl + 0.5 * stat.appl * (critPercent / 100));
-        const speciality = SKILL[CARD_SKILL[cardId].specialityId].detail;
-        const indivP = SKILL[CARD_SKILL[cardId].individuality.passiveId].detail;
-        const specType = SKILL_EFFECT_TYPE[speciality.effectTypeId];
-        const indivPType = SKILL_EFFECT_TYPE[indivP.effectTypeId];
-        const specialityLv = SKILL_LEVEL_MAP[cardId].speciality[uncap];
-        const indivPLv = SKILL_LEVEL_MAP[cardId].individuality.passive[uncap];
-        const specEffectValue = speciality.effectValue[specialityLv - 1];
-        const indivPEffectValue = indivP.effectValue[indivPLv - 1];
-        const specDisplayStr = (() => {
-          if (specType.scaleType === 'fixed') return `${specEffectValue}`;
-          if (specType.scaleType === 'percent') {
-            if (specType.baseStat === undefined) {
-              return `${specEffectValue / 100}%`;
+        const getSingleEffectDisplayStr = (effectTypeId: number, effectValue: number[], level: number) => {
+          const value = effectValue[level - 1];
+          const effectType = SKILL_EFFECT_TYPE[effectTypeId];
+          if (effectType.scaleType === 'fixed') return `${value}`;
+          if (effectType.scaleType === 'percent') {
+            if (effectType.baseStat === undefined) {
+              return `${value / 100}%`;
             }
-            return `${Math.floor(stat[specType.baseStat] * (specEffectValue / 10000))}`;
+            return `${Math.floor(stat[effectType.baseStat] * (value / 10000))}`;
           }
           return '';
+        };
+        const speciality = SKILL[CARD_SKILL[cardId].specialityId].detail;
+        const specialityLv = SKILL_LEVEL_MAP[cardId].speciality[uncap];
+        const specType = (() => {
+          if ('type' in speciality) {
+            return COMPOSED_SKILL_EFFECT_TYPE[speciality.effectTypeId];
+          }
+          return SKILL_EFFECT_TYPE[speciality.effectTypeId];
+        })();
+        const specDesc = (() => {
+          if ('type' in specType) {
+            return specType.subEffectTypeIds.map((id) => SKILL_EFFECT_TYPE[id].desc).join('/');
+          }
+          return specType.desc;
+        })();
+        const specDisplayStr = (() => {
+          if ('type' in speciality) {
+            const effectType = COMPOSED_SKILL_EFFECT_TYPE[speciality.effectTypeId];
+            if (effectType.type !== speciality.type) throw Error('Skill type must agree');
+            return speciality.effects.map((effect, idx) => (
+              getSingleEffectDisplayStr(effectType.subEffectTypeIds[idx], effect.effectValue, specialityLv)
+            )).join('/');
+          }
+          return getSingleEffectDisplayStr(speciality.effectTypeId, speciality.effectValue, specialityLv);
+        })();
+        const indivP = SKILL[CARD_SKILL[cardId].individuality.passiveId].detail;
+        const indivPLv = SKILL_LEVEL_MAP[cardId].individuality.passive[uncap];
+        const indivPType = (() => {
+          if ('type' in indivP) {
+            return COMPOSED_SKILL_EFFECT_TYPE[indivP.effectTypeId];
+          }
+          return SKILL_EFFECT_TYPE[indivP.effectTypeId];
+        })();
+        const indivPDesc = (() => {
+          if ('type' in indivPType) {
+            return indivPType.subEffectTypeIds.map((id) => SKILL_EFFECT_TYPE[id].desc).join('/');
+          }
+          return indivPType.desc;
         })();
         const indivPDisplayStr = (() => {
-          if (indivPType.scaleType === 'fixed') return `${indivPEffectValue}`;
-          if (indivPType.scaleType === 'percent') return `${indivPEffectValue / 100}%`;
-          return '';
+          if ('type' in indivP) {
+            const effectType = COMPOSED_SKILL_EFFECT_TYPE[indivP.effectTypeId];
+            if (effectType.type !== indivP.type) throw Error('Skill type must agree');
+            return indivP.effects.map((effect, idx) => (
+              getSingleEffectDisplayStr(effectType.subEffectTypeIds[idx], effect.effectValue, indivPLv)
+            )).join('/');
+          }
+          return getSingleEffectDisplayStr(indivP.effectTypeId, indivP.effectValue, indivPLv);
         })();
         return (
           <tr key={cardSetting.key}>
@@ -178,8 +215,8 @@ const CardSettings: React.FC<CardSettingsProps> = ({
               <Flex>
                 <SmallImg
                   src={SKILL_EFFECT_CATEGORY[specType.effectCategoryId].iconAssetPath}
-                  alt={specType.desc}
-                  title={specType.desc}
+                  alt={specDesc}
+                  title={specDesc}
                 />
                 <div>
                   <VerticalFlex>
@@ -193,8 +230,8 @@ const CardSettings: React.FC<CardSettingsProps> = ({
               <Flex>
                 <SmallImg
                   src={SKILL_EFFECT_CATEGORY[indivPType.effectCategoryId].iconAssetPath}
-                  alt={indivPType.desc}
-                  title={indivPType.desc}
+                  alt={indivPDesc}
+                  title={indivPDesc}
                 />
                 <div>
                   <VerticalFlex>

@@ -334,6 +334,9 @@ export const CARD: Card = {
   272: { memberId: 26, title: '彼方ちゃん、ここに見参！', awakenTitle: '神出鬼没☆怪盗K', rarityId: 3, attributeId: 1, roleId: 4, fromId: ['gacha', 10032] },
   273: { memberId: 2, title: '怪盗からのメッセージが！！', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['event', 19], outfitSeriesId: 14 },
   274: { memberId: 21, title: 'いい感じにできてるよ！', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['event', 19], outfitSeriesId: 15 },
+
+  275: { memberId: 6, title: '……そうね。すごくキレイ', awakenTitle: 'あなたに捧げるセレナーデ', rarityId: 3, attributeId: 5, roleId: 2, fromId: ['gacha', 20011] },
+  276: { memberId: 27, title: '最高のステージでしたね！', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 5, roleId: 4, fromId: ['gacha', 20011] },
 };
 /* eslint-enable object-curly-newline, max-len */
 

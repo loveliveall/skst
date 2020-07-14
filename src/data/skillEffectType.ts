@@ -29,11 +29,14 @@ export const SKILL_EFFECT_CATEGORY: SkillEffectCategory = {
   2001: { desc: '기본 어필 추가', iconAssetPath: '/images/icons/skill/passive_appl_inc.png' },
   2002: { desc: '기본 스태미너 추가', iconAssetPath: '/images/icons/skill/passive_stam_inc.png' },
   2003: { desc: '기본 테크닉 추가', iconAssetPath: '/images/icons/skill/passive_tech_inc.png' },
+
+  3001: { desc: 'SP 게이지 획득 + SP 볼티지 획득량 추가', iconAssetPath: '/images/icons/skill/live_sp_gain_inc_and_sp_vo_inc.png' },
 };
 
 export const LIVE_SKILL_CATEGORIES = [
   1001, 1002, 1003, 1004, 1005, 1006, 1007, 1008, 1009, 1010,
   1011, 1012, 1013, 1014, 1015, 1016, 1017, 1018, 1019,
+  3001,
 ];
 export const PASSIVE_SKILL_CATEGORIES = [2001, 2002, 2003];
 
@@ -92,6 +95,18 @@ export const SKILL_EFFECT_TYPE: SkillEffectType = {
   200301: { desc: '기본 테크닉 추가 (%)', scaleType: 'percent', ingameText: 'テクニック＋', effectCategoryId: 2003 },
 };
 /* eslint-enable object-curly-newline, max-len */
+
+interface ComposedSkillEffectType {
+  readonly [id: number]: {
+    readonly type: 'dual',
+    readonly subEffectTypeIds: [number, number],
+    readonly effectCategoryId: number,
+  },
+}
+
+export const COMPOSED_SKILL_EFFECT_TYPE: ComposedSkillEffectType = {
+  300101: { type: 'dual', subEffectTypeIds: [101002, 101103], effectCategoryId: 3001 },
+};
 
 interface SkillEffectString {
   readonly [id: number]: {
