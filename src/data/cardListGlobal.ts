@@ -198,5 +198,8 @@ export const PARTIAL_CARD_GLOBAL: PartialCard = {
   170: { title: '내… 탄생화인걸', awakenTitle: '플라워 심포니' },
   171: { title: '후후후… 기다려, 리리!', awakenTitle: 'Aozora Jumping Heart' },
   172: { title: '나만 따라와♪', awakenTitle: '레인보우 로즈' },
+
+  173: { title: '꼭 클리어할 거야…!', awakenTitle: '필링 시그널' },
+  174: { title: '원, 투, 스리, 포', awakenTitle: 'Bokura no LIVE Kimi to no LIFE' },
 };
 /* eslint-enable object-curly-newline, max-len */
