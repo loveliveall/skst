@@ -323,4 +323,11 @@ export const CARD_SKILL: CardSkill = {
 
   275: { specialityId: 100275, individuality: { passiveId: 200275, liveId: 300275 } },
   276: { specialityId: 100276, individuality: { passiveId: 200276, liveId: 300276 } },
+
+  277: { specialityId: 100277, individuality: { passiveId: 200277, liveId: 300277 } },
+  278: { specialityId: 100278, individuality: { passiveId: 200278, liveId: 300278 } },
+  279: { specialityId: 100279, individuality: { passiveId: 200279, liveId: 300279 } },
+  280: { specialityId: 100280, individuality: { passiveId: 200280, liveId: 300280 } },
+  281: { specialityId: 100281, individuality: { passiveId: 200281, liveId: 300281 } },
+  282: { specialityId: 100282, individuality: { passiveId: 200282, liveId: 300282 } },
 };

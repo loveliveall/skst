@@ -378,6 +378,14 @@ export const EVENT: Event = {
     startDate: '2020.07.06.',
     endDate: '2020.07.15.',
   },
+  20: {
+    name: '璃奈のビックリお化け屋敷',
+    eventTypeId: 1,
+    rankBorder: {},
+    rewardBorder: {},
+    startDate: '2020.07.22.',
+    endDate: '2020.07.31.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,

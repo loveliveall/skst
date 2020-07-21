@@ -337,6 +337,13 @@ export const CARD: Card = {
 
   275: { memberId: 6, title: '……そうね。すごくキレイ', awakenTitle: 'あなたに捧げるセレナーデ', rarityId: 3, attributeId: 5, roleId: 2, fromId: ['gacha', 20011] },
   276: { memberId: 27, title: '最高のステージでしたね！', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 5, roleId: 4, fromId: ['gacha', 20011] },
+
+  277: { memberId: 29, title: '璃奈ちゃんボード「くふふ」', awakenTitle: 'もののけガール', rarityId: 3, attributeId: 1, roleId: 1, fromId: ['gacha', 10033] },
+  278: { memberId: 3, title: 'はぁ～……生き返る……', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 6, roleId: 3, fromId: ['gacha', 10033], outfitSeriesId: 14 },
+  279: { memberId: 4, title: 'て、天井！！　壁にも！！', awakenTitle: 'もののけガール', rarityId: 3, attributeId: 6, roleId: 3, fromId: ['gacha', 10034] },
+  280: { memberId: 19, title: 'ピギャアアアア！！', awakenTitle: 'もののけガール', rarityId: 3, attributeId: 5, roleId: 4, fromId: ['event', 20] },
+  281: { memberId: 12, title: 'こ、こっちに向かってきてる！', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['event', 20], outfitSeriesId: 13 },
+  282: { memberId: 22, title: 'そういうの無理だもん！！', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['event', 20], outfitSeriesId: 15 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

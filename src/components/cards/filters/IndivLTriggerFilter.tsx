@@ -48,8 +48,7 @@ const IndivLTriggerFilter: React.FC<IndivLTriggerFilterProps> = ({
             onChange={(event) => editIndivLTrigger(item.key, Number(event.target.value))}
           >
             {Object.keys(SKILL_TRIGGER_TYPE).map(Number).map((triggerId) => {
-              let txt = SKILL_TRIGGER_TYPE[triggerId].krDesc;
-              if (triggerId === 1001) txt = `일정 ${txt}`;
+              const txt = SKILL_TRIGGER_TYPE[triggerId].krDesc;
               return (
                 <option value={triggerId} key={triggerId}>
                   {txt}
