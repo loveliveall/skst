@@ -201,5 +201,12 @@ export const PARTIAL_CARD_GLOBAL: PartialCard = {
 
   173: { title: '꼭 클리어할 거야…!', awakenTitle: '필링 시그널' },
   174: { title: '원, 투, 스리, 포', awakenTitle: 'Bokura no LIVE Kimi to no LIFE' },
+
+  175: { title: '잠깐만… 으아아앗.', awakenTitle: '용궁 공주님' },
+  176: { title: '내일도 만나러 올게', awakenTitle: '레인보우 로즈' },
+  177: { title: 'UMA도 꼭 낚일 거야!', awakenTitle: '용궁 공주님' },
+  178: { title: '좀 더 깊이 잠수해 볼까', awakenTitle: '용궁 공주님' },
+  179: { title: '도움이 될 수 있다면', awakenTitle: 'Bokura no LIVE Kimi to no LIFE' },
+  180: { title: '수평선 너머까지 보여!', awakenTitle: 'Aozora Jumping Heart' },
 };
 /* eslint-enable object-curly-newline, max-len */

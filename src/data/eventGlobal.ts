@@ -145,5 +145,18 @@ export const EVENT_GLOBAL: Event = {
     startDate: '2020.07.05.',
     endDate: '2020.07.15.',
   },
+  10: {
+    name: '레츠 고! UMA 탐색대',
+    eventTypeId: 1,
+    rankBorder: {},
+    rewardBorder: {
+      100: [2, 2, 2],
+      3000: [1, 2, 2],
+      10000: [1, 2, 1],
+      50000: [1, 1, 1],
+    },
+    startDate: '2020.07.20.',
+    endDate: '2020.07.30.',
+  },
 };
 /* eslint-enable max-len, object-property-newline */

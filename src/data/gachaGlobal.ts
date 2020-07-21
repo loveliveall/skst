@@ -20,6 +20,8 @@ export const GACHA_GLOBAL: Gacha = {
   10010: { type: 'event', name: '스페셜 디저트를 드셔보세요♡ 스카우트 [후편]', startDate: '2020.06.22.', endDate: '2020.06.30.', eventId: 8 },
   10011: { type: 'event', name: '둘이서 연주하는 소리 스카우트 [전편]', startDate: '2020.07.05.', endDate: '2020.07.15.', eventId: 9 },
   10012: { type: 'event', name: '둘이서 연주하는 소리 스카우트 [후편]', startDate: '2020.07.07.', endDate: '2020.07.15.', eventId: 9 },
+  10013: { type: 'event', name: '레츠 고! UMA 탐색대 스카우트 [전편]', startDate: '2020.07.20.', endDate: '2020.07.30.', eventId: 10 },
+  10014: { type: 'event', name: '레츠 고! UMA 탐색대 스카우트 [후편]', startDate: '2020.07.22.', endDate: '2020.07.30.', eventId: 10 },
 
   20001: { type: 'pickup', name: '픽업 스카우트 (UR 요시코)', startDate: '2020.03.13.', endDate: '2020.03.19.' },
   20002: { type: 'pickup', name: '픽업 스카우트 (UR 우미)', startDate: '2020.03.30.', endDate: '2020.04.06.' },
