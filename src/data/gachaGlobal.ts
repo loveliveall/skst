@@ -33,4 +33,6 @@ export const GACHA_GLOBAL: Gacha = {
   30001: { type: 'fes', name: '스쿠스타 페스티벌', startDate: '2020.04.30.', endDate: '2020.05.07.' },
   30002: { type: 'fes', name: '스쿠스타 페스티벌', startDate: '2020.05.29.', endDate: '2020.06.05.' },
   30003: { type: 'fes', name: '스쿠스타 페스티벌', startDate: '2020.06.30.', endDate: '2020.07.05.' },
+
+  40001: { type: 'reprint', name: '하프 애니버서리 전야제♪ 의상 리바이벌 스카우트', startDate: '2020.07.24.', endDate: '2020.08.05.', desc: 'Snow Halation, Kimino Kokorowa Kagayaiterukai?, 두근두근 애니멀 의상의 SR 27인 복각' },
 };/* eslint-enable object-curly-newline, max-len */
