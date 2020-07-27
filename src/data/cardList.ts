@@ -344,6 +344,11 @@ export const CARD: Card = {
   280: { memberId: 19, title: 'ピギャアアアア！！', awakenTitle: 'もののけガール', rarityId: 3, attributeId: 5, roleId: 4, fromId: ['event', 20] },
   281: { memberId: 12, title: 'こ、こっちに向かってきてる！', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['event', 20], outfitSeriesId: 13 },
   282: { memberId: 22, title: 'そういうの無理だもん！！', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['event', 20], outfitSeriesId: 15 },
+
+  283: { memberId: 23, title: '先輩、きっとあれです！', awakenTitle: 'ブルーミングガーデン', rarityId: 3, attributeId: 3, roleId: 3, fromId: ['gacha', 30009] },
+  284: { memberId: 14, title: '……わ、わかりましたわ', awakenTitle: 'ラグジュアリー・ピンク', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['gacha', 30009] },
+  285: { memberId: 15, title: '本当に似合うかな……？', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 6, roleId: 1, fromId: ['gacha', 30009], outfitSeriesId: 16 },
+  286: { memberId: 9, title: '育ち盛りだから', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 5, roleId: 2, fromId: ['gacha', 30009], outfitSeriesId: 14 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
