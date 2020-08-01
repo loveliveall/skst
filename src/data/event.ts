@@ -381,8 +381,15 @@ export const EVENT: Event = {
   20: {
     name: '璃奈のビックリお化け屋敷',
     eventTypeId: 1,
-    rankBorder: {},
-    rewardBorder: {},
+    rankBorder: {
+      1: 17983382, 10: 8695254, 50: 4644900, 100: 3541327, 1000: 738415, 3000: 435761, 10000: 283474, 30000: 197015, 50000: 161903,
+    },
+    rewardBorder: {
+      100: [2, 2, 2],
+      3000: [1, 2, 2],
+      10000: [1, 1, 2],
+      50000: [1, 1, 1],
+    },
     startDate: '2020.07.22.',
     endDate: '2020.07.31.',
   },
@@ -465,6 +472,18 @@ export const EVENT: Event = {
     ],
     startDate: '2020.07.01.',
     endDate: '2020.07.05.',
+  },
+  10005: {
+    name: '第4回スクスタビックライブ',
+    eventTypeId: 3,
+    rankBorder: {},
+    rewardBorder: {},
+    targetSongs: ['Snow halation', 'KOKORO Magic "A to Z"', 'ダイアモンド'],
+    bonusTarget: '니지동 +20%',
+    prizes: [
+    ],
+    startDate: '2020.08.01.',
+    endDate: '2020.08.05.',
   },
 };
 /* eslint-enable max-len, object-property-newline */
