@@ -1,10 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
 import styled from 'styled-components';
 import { Switch, Route, NavLink } from 'react-router-dom';
 
-import { AppState, SEL, AC } from '@/store';
 import { birthdayCharacter } from '@/data/characterMeta';
 import { getContrastText } from '@/utils/utils';
 
@@ -69,22 +66,6 @@ const TransparentButton = styled.button`
   font-size: 20px;
 `;
 
-const StyledButton = styled.button`
-  width: 100%;
-  border: 0px solid black;
-  background: none;
-  outline: none;
-  box-shadow: none;
-  font-size: 20px;
-  text-decoration: none;
-  color: ${textColor.inactive};
-  cursor: pointer;
-
-  &:hover {
-    color: ${textColor.active};
-  }
-`;
-
 const StyledNavLink = styled(NavLink)`
   display: block;
   padding: 6px 16px 6px 16px;
@@ -114,17 +95,9 @@ interface PageInfo {
   exact: boolean,
 }
 
-interface PropsFromState {
-  isJPEdition: ReturnType<typeof SEL.dbIsJPEdition>,
-}
-interface PropsFromDispatch {
-  toggleEdition: () => void,
-}
-type AppProps = PropsFromState & PropsFromDispatch;
+type AppProps = {};
 
-const App: React.FC<AppProps> = ({
-  isJPEdition, toggleEdition,
-}) => {
+const App: React.FC<AppProps> = () => {
   const [openNav, setOpenNav] = React.useState(false);
 
   const pages: PageInfo[] = [
@@ -169,12 +142,6 @@ const App: React.FC<AppProps> = ({
   return (
     <>
       <FixedNavDesktop>
-        <StyledButton
-          type="button"
-          onClick={() => toggleEdition()}
-        >
-          {isJPEdition ? '일본판' : '글로벌판'}
-        </StyledButton>
         {pages.map((page) => (
           <StyledNavLink
             key={page.key}
@@ -188,15 +155,6 @@ const App: React.FC<AppProps> = ({
       </FixedNavDesktop>
       <FixedNavMobile>
         <FlexBox>
-          <TransparentButton
-            type="button"
-            onClick={() => toggleEdition()}
-            style={{
-              paddingBottom: '8px',
-            }}
-          >
-            {isJPEdition ? '일본판' : '글로벌판'}
-          </TransparentButton>
           <TransparentButton
             type="button"
             onClick={() => setOpenNav(!openNav)}
@@ -238,14 +196,4 @@ const App: React.FC<AppProps> = ({
   );
 };
 
-const mapStateToProps = (state: AppState): PropsFromState => ({
-  isJPEdition: SEL.dbIsJPEdition(state),
-});
-
-const mapDispatchToProps = (dispatch: Dispatch): PropsFromDispatch => ({
-  toggleEdition: () => {
-    dispatch(AC.db.toggleEdition());
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
