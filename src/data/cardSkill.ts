@@ -314,25 +314,25 @@ export const CARD_SKILL: CardSkill = {
   264: { specialityId: 100264, individuality: { passiveId: 200264, liveId: 300264 } },
   265: { specialityId: 100265, individuality: { passiveId: 200265, liveId: 300265 } },
 
+  266: { specialityId: 100266, individuality: { passiveId: 200266, liveId: 300266 } },
+  267: { specialityId: 100267, individuality: { passiveId: 200267, liveId: 300267 } },
+  268: { specialityId: 100268, individuality: { passiveId: 200268, liveId: 300268 } },
   269: { specialityId: 100269, individuality: { passiveId: 200269, liveId: 300269 } },
   270: { specialityId: 100270, individuality: { passiveId: 200270, liveId: 300270 } },
   271: { specialityId: 100271, individuality: { passiveId: 200271, liveId: 300271 } },
+
   272: { specialityId: 100272, individuality: { passiveId: 200272, liveId: 300272 } },
   273: { specialityId: 100273, individuality: { passiveId: 200273, liveId: 300273 } },
-  274: { specialityId: 100274, individuality: { passiveId: 200274, liveId: 300274 } },
 
+  274: { specialityId: 100274, individuality: { passiveId: 200274, liveId: 300274 } },
   275: { specialityId: 100275, individuality: { passiveId: 200275, liveId: 300275 } },
   276: { specialityId: 100276, individuality: { passiveId: 200276, liveId: 300276 } },
-
   277: { specialityId: 100277, individuality: { passiveId: 200277, liveId: 300277 } },
   278: { specialityId: 100278, individuality: { passiveId: 200278, liveId: 300278 } },
   279: { specialityId: 100279, individuality: { passiveId: 200279, liveId: 300279 } },
+
   280: { specialityId: 100280, individuality: { passiveId: 200280, liveId: 300280 } },
   281: { specialityId: 100281, individuality: { passiveId: 200281, liveId: 300281 } },
   282: { specialityId: 100282, individuality: { passiveId: 200282, liveId: 300282 } },
-
   283: { specialityId: 100283, individuality: { passiveId: 200283, liveId: 300283 } },
-  284: { specialityId: 100284, individuality: { passiveId: 200284, liveId: 300284 } },
-  285: { specialityId: 100285, individuality: { passiveId: 200285, liveId: 300285 } },
-  286: { specialityId: 100286, individuality: { passiveId: 200286, liveId: 300286 } },
 };
