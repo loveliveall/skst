@@ -137,7 +137,7 @@ const Gachas: React.FC<GachasProps> = ({
                     </VerticalFlex>
                   );
                 }
-                if (rowData.type === 'reprint') {
+                if ((rowData.type === 'fes' && rowData.desc !== undefined) || rowData.type === 'reprint') {
                   return (
                     <VerticalFlex>
                       <div>{rowData.desc}</div>

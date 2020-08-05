@@ -393,6 +393,16 @@ export const EVENT: Event = {
     startDate: '2020.07.22.',
     endDate: '2020.07.31.',
   },
+  21: {
+    name: '勝ち抜け！スポーツバトル',
+    eventTypeId: 2,
+    rankBorder: {},
+    voltageRankBorder: {},
+    voltageRankSongs: ['僕らのLIVE 君とのLIFE', 'Wake up, Challenger!!', 'MELODY'],
+    rewardBorder: {},
+    startDate: '2020.08.06.',
+    endDate: '2020.08.14.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,

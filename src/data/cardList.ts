@@ -349,6 +349,17 @@ export const CARD: Card = {
   281: { memberId: 14, title: '……わ、わかりましたわ', awakenTitle: 'ラグジュアリー・ピンク', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['gacha', 30009] },
   282: { memberId: 15, title: '本当に似合うかな……？', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 6, roleId: 1, fromId: ['gacha', 30009], outfitSeriesId: 16 },
   283: { memberId: 9, title: '育ち盛りだから', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 5, roleId: 2, fromId: ['gacha', 30009], outfitSeriesId: 14 },
+
+  284: { memberId: 210, title: '虹ヶ咲学園1年生', awakenTitle: '理想は高く', rarityId: 1, attributeId: 1, roleId: 1, fromId: ['gacha', 30010] },
+  285: { memberId: 210, title: '完璧主義スクールアイドル', awakenTitle: '虹ヶ咲ニューフェイス', rarityId: 1, attributeId: 3, roleId: 4, fromId: ['gacha', 30010] },
+  286: { memberId: 210, title: 'えっ！？　真っ赤……？', awakenTitle: '決意の光', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 30010] },
+
+  287: { memberId: 18, title: 'ウフフ♪　元気のいいコね！', awakenTitle: 'トワイライト・カウガール', rarityId: 3, attributeId: 5, roleId: 4, fromId: ['gacha', 10035] },
+  288: { memberId: 29, title: '鞠莉さんの部屋に泊まってみたい', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 4, roleId: 3, fromId: ['gacha', 10035], outfitSeriesId: 15 },
+  289: { memberId: 2, title: '優勝は……私のものよ！', awakenTitle: 'Queen of the Circuit', rarityId: 3, attributeId: 3, roleId: 1, fromId: ['gacha', 10036] },
+  290: { memberId: 27, title: 'レインボートルマリンアロ―！！', awakenTitle: 'ジャスティス・アーチャー', rarityId: 3, attributeId: 2, roleId: 2, fromId: ['event', 21] },
+  291: { memberId: 5, title: 'もう１回やりたいにゃ！', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 5, roleId: 2, fromId: ['event', 21], outfitSeriesId: 14 },
+  292: { memberId: 17, title: '落ちるずら～！', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['event', 21], outfitSeriesId: 16 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

@@ -7,10 +7,13 @@ export interface Gacha {
     }
   ) & (
     {
-      type: 'normal' | 'pickup' | 'fes',
+      type: 'normal' | 'pickup',
     } | {
       type: 'event',
       eventId: number,
+    } | {
+      type: 'fes',
+      desc?: string,
     } | {
       type: 'reprint',
       desc: string,
@@ -66,6 +69,8 @@ export const GACHA: Gacha = {
   10032: { type: 'event', name: 'ヨハネと花陽の事件簿ガチャ後編', startDate: '2020.07.10.', endDate: '2020.07.15.', eventId: 19 },
   10033: { type: 'event', name: '璃奈のビックリお化け屋敷ガチャ前編', startDate: '2020.07.22.', endDate: '2020.07.26.', eventId: 20 },
   10034: { type: 'event', name: '璃奈のビックリお化け屋敷ガチャ後編', startDate: '2020.07.26.', endDate: '2020.07.31.', eventId: 20 },
+  10035: { type: 'event', name: '勝ち抜け！スポーツバトルガチャ前編', startDate: '2020.08.06.', endDate: '2020.08.10.', eventId: 21 },
+  10036: { type: 'event', name: '勝ち抜け！スポーツバトルガチャ後編', startDate: '2020.08.10.', endDate: '2020.08.14.', eventId: 21 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },
@@ -88,6 +93,7 @@ export const GACHA: Gacha = {
   30007: { type: 'fes', name: 'スクスタフェス', startDate: '2020.05.29.', endDate: '2020.06.05.' },
   30008: { type: 'fes', name: 'スクスタフェス', startDate: '2020.06.30.', endDate: '2020.07.06.' },
   30009: { type: 'fes', name: 'スクスタフェス', startDate: '2020.07.28.', endDate: '2020.08.06.' },
+  30010: { type: 'fes', name: 'ニジガクフェス', startDate: '2020.08.05.', endDate: '2020.08.14.', desc: '페스 카린, 세츠나, 엠마, 카나타, 아이 복각 및 시오리코 참전' },
 
   40001: { type: 'reprint', name: 'スクスタハーフアニバーサリー記念♪衣装復刻ガチャ', startDate: '2020.03.09.', endDate: '2020.03.27.', desc: 'Snow halation, 君のこころは輝いてるかい？, わくわくアニマル 의상의 SR 27인 복각' },
 };
