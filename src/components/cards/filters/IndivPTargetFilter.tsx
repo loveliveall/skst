@@ -156,7 +156,7 @@ const IndivPTargetFilter: React.FC<IndivPTargetFilterProps> = ({
             {isUnitTarget(target) && (
               <RightMarginSelect
                 id={`target-unit-filter-${item.key}`}
-                value={target.unitId || 'all'}
+                value={target.unitId ?? 'all'}
                 onChange={(event) => {
                   const selected = event.target.value;
                   if (selected === 'all') editIndivPTarget(item.key, { ...target, unitId: null });

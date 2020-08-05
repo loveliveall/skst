@@ -35,6 +35,7 @@ const CHARACTER_META: CharacterMeta[] = [
   { id: 27, name: '유키 세츠나', birthMonth: 8, birthDay: 8, colorHex: '#d81c2f' },
   { id: 28, name: '엠마 베르데', birthMonth: 2, birthDay: 5, colorHex: '#7dc62b' },
   { id: 29, name: '텐노지 리나', birthMonth: 11, birthDay: 13, colorHex: '#969fb5' },
+  { id: 210, name: '미후네 시오리코', birthMonth: 10, birthDay: 5, colorHex: '#36b482' },
 ];
 /* eslint-enable max-len, object-property-newline, object-curly-newline */
 

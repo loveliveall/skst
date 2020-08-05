@@ -20,6 +20,7 @@ interface Unit {
 }
 
 export const UNIT: Unit = {
+  0: { name: '없음', symbol: 'none' },
   // Group 1
   1: { name: 'Printemps', symbol: 'printemps' },
   2: { name: 'lily white', symbol: 'lily-white' },
@@ -78,5 +79,6 @@ export const MEMBER: Member = {
   27: { name: '유키 세츠나', shortName: '세츠나', jpName: '優木せつ菜', enName: 'setsuna', grade: 2, unitId: 8, groupId: 3, iconAssetPath: '/images/icons/member/setsuna.png' },
   28: { name: '엠마 베르데', shortName: '엠마', jpName: 'エマ・ヴェルデ', enName: 'verde', grade: 3, unitId: 9, groupId: 3, iconAssetPath: '/images/icons/member/verde.png' },
   29: { name: '텐노지 리나', shortName: '리나', jpName: '天王寺璃奈', enName: 'rina', grade: 1, unitId: 9, groupId: 3, iconAssetPath: '/images/icons/member/rina.png' },
+  210: { name: '미후네 시오리코', shortName: '시오리코', jpName: '三船栞子', enName: 'shioriko', grade: 1, unitId: 0, groupId: 3, iconAssetPath: '/images/icons/member/shioriko.png' },
 };
 /* eslint-enable object-curly-newline, max-len */
