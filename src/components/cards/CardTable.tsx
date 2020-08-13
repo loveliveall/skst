@@ -212,20 +212,31 @@ const CardTable: React.FC<CardTableProps> = ({
       const ipDetail = SKILL[CARD_SKILL[card.id].individuality.passiveId].detail;
       const ipLevel = SKILL_LEVEL_MAP[card.id].individuality.passive[card.uncap];
       if (ipDetail.skillTargetId !== 2) { // Exclude itself
-        if ('type' in ipDetail) throw Error('TODO: Fix if dual passive appears');
-        const amount = ipDetail.effectValue[ipLevel - 1] / 100;
-        switch (ipDetail.effectTypeId) {
-          case 200101:
-            baseApplMul += amount;
-            break;
-          case 200201:
-            baseStamMul += amount;
-            break;
-          case 200301:
-            baseTechMul += amount;
-            break;
-          default:
-            console.error('Should not reach here');
+        if ('type' in ipDetail) {
+          const amounts = ipDetail.effects.map((effect) => effect.effectValue[ipLevel - 1] / 100);
+          switch (ipDetail.effectTypeId) {
+            case 400101:
+              baseApplMul += amounts[0];
+              baseStamMul += amounts[1];
+              break;
+            default:
+              console.error('Should not reach here');
+          }
+        } else {
+          const amount = ipDetail.effectValue[ipLevel - 1] / 100;
+          switch (ipDetail.effectTypeId) {
+            case 200101:
+              baseApplMul += amount;
+              break;
+            case 200201:
+              baseStamMul += amount;
+              break;
+            case 200301:
+              baseTechMul += amount;
+              break;
+            default:
+              console.error('Should not reach here');
+          }
         }
       }
     }
@@ -501,8 +512,8 @@ const CardTable: React.FC<CardTableProps> = ({
             if (aScaleType !== bScaleType) {
               return aScaleType === 'percent' ? 1 : -1;
             }
-            const aLevel = SKILL_LEVEL_MAP[a.id].speciality[a.uncap];
-            const bLevel = SKILL_LEVEL_MAP[b.id].speciality[b.uncap];
+            const aLevel = SKILL_LEVEL_MAP[a.id].individuality.passive[a.uncap];
+            const bLevel = SKILL_LEVEL_MAP[b.id].individuality.passive[b.uncap];
             const aValue = (() => {
               if ('type' in aDetail) {
                 return aDetail.effects[0].effectValue[aLevel - 1];
@@ -586,19 +597,17 @@ const CardTable: React.FC<CardTableProps> = ({
             if (aScaleType !== bScaleType) {
               return aScaleType === 'percent' ? 1 : -1;
             }
-            const aLevel = SKILL_LEVEL_MAP[a.id].speciality[a.uncap];
-            const bLevel = SKILL_LEVEL_MAP[b.id].speciality[b.uncap];
             const aValue = (() => {
               if ('type' in aDetail) {
-                return aDetail.effects[0].effectValue[aLevel - 1];
+                return aDetail.effects[0].effectValue[0];
               }
-              return aDetail.effectValue[aLevel - 1];
+              return aDetail.effectValue[0];
             })();
             const bValue = (() => {
               if ('type' in bDetail) {
-                return bDetail.effects[0].effectValue[bLevel - 1];
+                return bDetail.effects[0].effectValue[0];
               }
-              return bDetail.effectValue[bLevel - 1];
+              return bDetail.effectValue[0];
             })();
             return aValue - bValue;
           },
