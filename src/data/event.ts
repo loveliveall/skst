@@ -399,7 +399,12 @@ export const EVENT: Event = {
     rankBorder: {},
     voltageRankBorder: {},
     voltageRankSongs: ['僕らのLIVE 君とのLIFE', 'Wake up, Challenger!!', 'MELODY'],
-    rewardBorder: {},
+    rewardBorder: {
+      100: [2, 2, 2],
+      3000: [1, 2, 2],
+      10000: [1, 2, 1],
+      50000: [1, 1, 1],
+    },
     startDate: '2020.08.06.',
     endDate: '2020.08.14.',
   },
