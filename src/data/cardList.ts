@@ -362,7 +362,7 @@ export const CARD: Card = {
   292: { memberId: 17, title: '落ちるずら～！', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['event', 21], outfitSeriesId: 16 },
 
   293: { memberId: 21, title: 'ぎゅって捕まってもいい？', awakenTitle: 'Present For You♡', rarityId: 3, attributeId: 6, roleId: 2, fromId: ['gacha', 20012] },
-  294: { memberId: 11, title: '一緒に涼もう', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['gacha', 20012] },
+  294: { memberId: 11, title: '一緒に涼もう', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['gacha', 20012], outfitSeriesId: 16 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
