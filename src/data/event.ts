@@ -414,6 +414,14 @@ export const EVENT: Event = {
     startDate: '2020.08.06.',
     endDate: '2020.08.14.',
   },
+  22: {
+    name: 'オモチャ屋さんパニック☆',
+    eventTypeId: 1,
+    rankBorder: {},
+    rewardBorder: {},
+    startDate: '2020.08.21.',
+    endDate: '2020.08.31.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,

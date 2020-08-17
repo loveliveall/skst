@@ -71,6 +71,8 @@ export const GACHA: Gacha = {
   10034: { type: 'event', name: '璃奈のビックリお化け屋敷ガチャ後編', startDate: '2020.07.26.', endDate: '2020.07.31.', eventId: 20 },
   10035: { type: 'event', name: '勝ち抜け！スポーツバトルガチャ前編', startDate: '2020.08.06.', endDate: '2020.08.10.', eventId: 21 },
   10036: { type: 'event', name: '勝ち抜け！スポーツバトルガチャ後編', startDate: '2020.08.10.', endDate: '2020.08.14.', eventId: 21 },
+  10037: { type: 'event', name: 'オモチャ屋さんパニック☆ガチャ前編', startDate: '2020.08.18.', endDate: '2020.08.31.', eventId: 22 },
+  10038: { type: 'event', name: 'オモチャ屋さんパニック☆ガチャ後編', startDate: '2020.08.21.', endDate: '2020.08.31.', eventId: 22 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },

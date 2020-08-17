@@ -347,7 +347,7 @@ export const CARD: Card = {
 
   280: { memberId: 23, title: '先輩、きっとあれです！', awakenTitle: 'ブルーミングガーデン', rarityId: 3, attributeId: 3, roleId: 3, fromId: ['gacha', 30009] },
   281: { memberId: 14, title: '……わ、わかりましたわ', awakenTitle: 'ラグジュアリー・ピンク', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['gacha', 30009] },
-  282: { memberId: 15, title: '本当に似合うかな……？', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 6, roleId: 1, fromId: ['gacha', 30009], outfitSeriesId: 16 },
+  282: { memberId: 15, title: '本当に似合うかな……？', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 6, roleId: 1, fromId: ['gacha', 30009], outfitSeriesId: 13 },
   283: { memberId: 9, title: '育ち盛りだから', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 5, roleId: 2, fromId: ['gacha', 30009], outfitSeriesId: 14 },
 
   284: { memberId: 210, title: '虹ヶ咲学園1年生', awakenTitle: '理想は高く', rarityId: 1, attributeId: 1, roleId: 1, fromId: ['gacha', 30010] },
@@ -359,10 +359,17 @@ export const CARD: Card = {
   289: { memberId: 2, title: '優勝は……私のものよ！', awakenTitle: 'Queen of the Circuit', rarityId: 3, attributeId: 3, roleId: 1, fromId: ['gacha', 10036] },
   290: { memberId: 27, title: 'レインボートルマリンアロ―！！', awakenTitle: 'ジャスティス・アーチャー', rarityId: 3, attributeId: 2, roleId: 2, fromId: ['event', 21] },
   291: { memberId: 5, title: 'もう１回やりたいにゃ！', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 5, roleId: 2, fromId: ['event', 21], outfitSeriesId: 14 },
-  292: { memberId: 17, title: '落ちるずら～！', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['event', 21], outfitSeriesId: 16 },
+  292: { memberId: 17, title: '落ちるずら～！', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['event', 21], outfitSeriesId: 13 },
 
   293: { memberId: 21, title: 'ぎゅって捕まってもいい？', awakenTitle: 'Present For You♡', rarityId: 3, attributeId: 6, roleId: 2, fromId: ['gacha', 20012] },
-  294: { memberId: 11, title: '一緒に涼もう', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['gacha', 20012], outfitSeriesId: 16 },
+  294: { memberId: 11, title: '一緒に涼もう', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['gacha', 20012], outfitSeriesId: 13 },
+
+  295: { memberId: 15, title: '電車を走らせるよ〜！いけーー！', awakenTitle: 'おもちゃの世界へようこそ', rarityId: 3, attributeId: 4, roleId: 1, fromId: ['gacha', 10037] },
+  296: { memberId: 24, title: 'このシリーズの人形、持ってたわ', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 3, roleId: 2, fromId: ['gacha', 10037], outfitSeriesId: 15 },
+  297: { memberId: 9, title: 'ままごとセットを使いましょう！', awakenTitle: 'おもちゃの世界へようこそ', rarityId: 3, attributeId: 3, roleId: 3, fromId: ['gacha', 10038] },
+  298: { memberId: 25, title: '愛さんを捕まえてみな～！', awakenTitle: 'おもちゃの世界へようこそ', rarityId: 3, attributeId: 2, roleId: 2, fromId: ['event', 22] },
+  299: { memberId: 14, title: '思い出し笑いですわ', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 2, roleId: 1, fromId: ['event', 22], outfitSeriesId: 13 },
+  300: { memberId: 8, title: 'あ、あれっ、あれー！？', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 4, roleId: 3, fromId: ['event', 22], outfitSeriesId: 14 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
