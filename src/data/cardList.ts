@@ -370,6 +370,11 @@ export const CARD: Card = {
   298: { memberId: 25, title: '愛さんを捕まえてみな～！', awakenTitle: 'おもちゃの世界へようこそ', rarityId: 3, attributeId: 2, roleId: 2, fromId: ['event', 22] },
   299: { memberId: 14, title: '思い出し笑いですわ', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 2, roleId: 1, fromId: ['event', 22], outfitSeriesId: 13 },
   300: { memberId: 8, title: 'あ、あれっ、あれー！？', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 4, roleId: 3, fromId: ['event', 22], outfitSeriesId: 14 },
+
+  301: { memberId: 1, title: 'ほらほら、じっとして〜', awakenTitle: 'コスミック☆ドライバー', rarityId: 3, attributeId: 1, roleId: 1, fromId: ['gacha', 30011] },
+  302: { memberId: 12, title: '私とあなた、二人だけの時間', awakenTitle: '薔薇のしらべ', rarityId: 3, attributeId: 4, roleId: 3, fromId: ['gacha', 30011] },
+  303: { memberId: 7, title: '神様に聞いてみる？', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['gacha', 30011], outfitSeriesId: 14 },
+  304: { memberId: 28, title: 'ふわふわで、カラフルでキラキラ', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['gacha', 30011], outfitSeriesId: 15 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
