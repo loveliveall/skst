@@ -530,5 +530,17 @@ export const EVENT: Event = {
     startDate: '2020.08.01.',
     endDate: '2020.08.05.',
   },
+  10006: {
+    name: '第5回スクスタビックライブ',
+    eventTypeId: 3,
+    rankBorder: {},
+    rewardBorder: {},
+    targetSongs: ['僕らは今のなかで', '未来の僕らは知ってるよ', 'TOKIMEKI Runners 17章Ver.'],
+    bonusTarget: 'μ\'s +20%',
+    prizes: [
+    ],
+    startDate: '2020.09.01.',
+    endDate: '2020.09.06.',
+  },
 };
 /* eslint-enable max-len, object-property-newline */
