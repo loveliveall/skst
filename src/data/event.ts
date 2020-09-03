@@ -429,6 +429,16 @@ export const EVENT: Event = {
     startDate: '2020.08.21.',
     endDate: '2020.08.31.',
   },
+  23: {
+    name: 'チョイ悪イメチェン計画',
+    eventTypeId: 2,
+    rankBorder: {},
+    voltageRankBorder: {},
+    voltageRankSongs: ['HEART to HEART!', 'SKY JOURNEY', 'あなたの理想のヒロイン'],
+    rewardBorder: {},
+    startDate: '2020.09.07.',
+    endDate: '2020.09.15.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,

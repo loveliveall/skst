@@ -375,6 +375,13 @@ export const CARD: Card = {
   302: { memberId: 12, title: '私とあなた、二人だけの時間', awakenTitle: '薔薇のしらべ', rarityId: 3, attributeId: 4, roleId: 3, fromId: ['gacha', 30011] },
   303: { memberId: 7, title: '神様に聞いてみる？', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['gacha', 30011], outfitSeriesId: 14 },
   304: { memberId: 28, title: 'ふわふわで、カラフルでキラキラ', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['gacha', 30011], outfitSeriesId: 15 },
+
+  305: { memberId: 3, title: '２人とも……そこまでにして！', awakenTitle: 'Pioneering a new World', rarityId: 3, attributeId: 1, roleId: 2, fromId: ['gacha', 10039] },
+  306: { memberId: 23, title: '風になったような気分', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 5, roleId: 4, fromId: ['gacha', 10039], outfitSeriesId: 15 },
+  307: { memberId: 11, title: 'やるからには負けられない！', awakenTitle: 'Pioneering a new World', rarityId: 3, attributeId: 5, roleId: 3, fromId: ['event', 23] },
+  308: { memberId: 27, title: 'やらないわけにはいきません', awakenTitle: 'Pioneering a new World', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['gacha', 10040] },
+  309: { memberId: 6, title: 'なんでこんなことになるのよ～！', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 3, roleId: 1, fromId: ['event', 23], outfitSeriesId: 14 },
+  310: { memberId: 16, title: '設定言うな！', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['event', 23], outfitSeriesId: 13 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
