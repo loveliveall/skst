@@ -18,6 +18,7 @@ interface DeckSimulatorState {
   }[],
   deckSettings: {
     key: number,
+    cleanse: boolean,
     deck: DeckSetting,
   }[],
   cardSelectModal: {
@@ -46,6 +47,7 @@ const initialState: DeckSimulatorState = {
   liveEffect: [],
   deckSettings: [{
     key: new Date().getTime(),
+    cleanse: false,
     deck: defaultDeck,
   }],
   cardSelectModal: {
@@ -117,7 +119,14 @@ export default function deckSimulatorReducer(
     case DeckSimulatorActionTypes.DECK_ADD:
       return {
         ...state,
-        deckSettings: [...state.deckSettings, { key: action.payload.key, deck: defaultDeck }],
+        deckSettings: [
+          ...state.deckSettings,
+          {
+            key: action.payload.key,
+            deck: defaultDeck,
+            cleanse: false,
+          },
+        ],
       };
     case DeckSimulatorActionTypes.DECK_SLOT_CARD_ID_EDIT: {
       const target = state.deckSettings.find((item) => item.key === action.payload.key);
@@ -254,9 +263,29 @@ export default function deckSimulatorReducer(
       if (dupDeck === undefined) throw Error('Duplication MUST have original');
       return {
         ...state,
-        deckSettings: [...state.deckSettings, { key: new Date().getTime(), deck: [...dupDeck.deck] }],
+        deckSettings: [
+          ...state.deckSettings,
+          {
+            key: new Date().getTime(),
+            cleanse: dupDeck.cleanse,
+            deck: [...dupDeck.deck],
+          },
+        ],
       };
     }
+    case DeckSimulatorActionTypes.DECK_CLEANSE_TOGGLE:
+      return {
+        ...state,
+        deckSettings: state.deckSettings.map((item) => {
+          if (item.key !== action.payload.key) {
+            return item;
+          }
+          return {
+            ...item,
+            cleanse: !item.cleanse,
+          };
+        }),
+      };
     case DeckSimulatorActionTypes.CARD_SELECT_MODAL_OPEN:
       return {
         ...state,

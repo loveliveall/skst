@@ -95,7 +95,7 @@ const CardSettings: React.FC<CardSettingsProps> = ({
         const card = CARD[cardId];
         if (card === undefined) return <tr key={cardSetting.key} />;
         const stat = (['appl', 'stam', 'tech'] as const).reduce((acc, curr) => {
-          const statMultiplier = getStatMultiplier(card, liveEffect, curr);
+          const statMultiplier = getStatMultiplier(card, liveEffect, curr, false);
           let val = PARAMETER[cardId][uncap][curr];
           // Applying kizuna buff
           val = Math.floor(val * (1 + KIZUNA_BUFF[kizunaLv] / 10000));

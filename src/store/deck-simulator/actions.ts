@@ -15,6 +15,7 @@ export const DeckSimulatorActionTypes = {
   DECK_SLOT_TECH_EDIT: 'DECK_SIMULATOR_DECK_SLOT_TECH_EDIT',
   DECK_REMOVE: 'DECK_SIMULATOR_DECK_REMOVE',
   DECK_DUPLICATE: 'DECK_SIMULATOR_DECK_DUPLICATE',
+  DECK_CLEANSE_TOGGLE: 'DECK_SIMULATOR_DECK_CLEANSE_TOGGLE',
   CARD_SELECT_MODAL_OPEN: 'DECK_SIMULATOR_CARD_SELECT_MODAL_OPEN',
   CARD_SELECT_MODAL_CLOSE: 'DECK_SIMULATOR_CARD_SELECT_MODAL_CLOSE',
 } as const;
@@ -63,6 +64,9 @@ export const DeckSimulatorActionCreators = {
   ),
   duplicateDeck: (key: number) => createFSA(
     DeckSimulatorActionTypes.DECK_DUPLICATE, { key },
+  ),
+  toggleCleanse: (key: number) => createFSA(
+    DeckSimulatorActionTypes.DECK_CLEANSE_TOGGLE, { key },
   ),
   openCardSelectModal: (key: number, slotIdx: number) => createFSA(
     DeckSimulatorActionTypes.CARD_SELECT_MODAL_OPEN, { key, slotIdx },

@@ -9,6 +9,7 @@ export function getStatMultiplier(
   card: typeof CARD[number] | undefined,
   liveEffect: ReturnType<typeof SEL.simulatorLiveEffect>,
   stat: 'appl' | 'stam' | 'tech',
+  cleanse: boolean,
 ) {
   const filteredLiveEffect = liveEffect.filter((item) => {
     const effectTarget = LIVE_EFFECT_TARGET[item.effectTargetId];
@@ -36,7 +37,8 @@ export function getStatMultiplier(
   });
   return filteredLiveEffect.reduce((multiplier, item) => {
     const effectType = LIVE_EFFECT_TYPE[item.effectTypeId];
-    const delta = (effectType.type === 'inc' ? 1 : -1) * item.amount;
+    const _delta = (effectType.type === 'inc' ? 1 : -1) * item.amount; // eslint-disable-line no-underscore-dangle
+    const delta = _delta < 0 && cleanse ? 0 : _delta;
     if (stat === 'appl' && effectType.stat === 'baseAppl') {
       return {
         ...multiplier,

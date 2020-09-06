@@ -77,6 +77,7 @@ interface PropsFromDispatch {
   openCardSelectModal: (slotIdx: number) => void,
   removeDeck: () => void,
   duplicateDeck: () => void,
+  toggleDeckCleanse: () => void,
   editDeckSlotSpecLv: (slotIdx: number, specLv: number) => void,
   editDeckSlotAppl: (slotIdx: number, appl: number) => void,
   editDeckSlotStam: (slotIdx: number, stam: number) => void,
@@ -86,7 +87,7 @@ type SingleDeckInfoProps = OwnProps & PropsFromState & PropsFromDispatch;
 
 const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
   openCardSelectModal,
-  deckInfo, removeDeck, duplicateDeck, editDeckSlotSpecLv,
+  deckInfo, removeDeck, duplicateDeck, toggleDeckCleanse, editDeckSlotSpecLv,
   editDeckSlotAppl, editDeckSlotStam, editDeckSlotTech,
   songAttributeId, liveEffect,
 }) => {
@@ -108,7 +109,7 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
     if (slot.cardId !== null && CARD[slot.cardId] !== undefined) {
       targetCard = CARD[slot.cardId];
     }
-    const statMultiplier = getStatMultiplier(targetCard, liveEffect, curr);
+    const statMultiplier = getStatMultiplier(targetCard, liveEffect, curr, deckInfo.cleanse);
 
     let statVal = slot[curr];
     statVal = Math.floor(statVal * (statMultiplier.baseStat / 100));
@@ -155,7 +156,15 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
         <StyledTable>
           <thead>
             <tr>
-              <td />
+              <td>
+                <input
+                  type="checkbox"
+                  checked={deckInfo.cleanse}
+                  onClick={() => toggleDeckCleanse()}
+                  style={{ marginRight: 4 }}
+                />
+                저하 효과 해제
+              </td>
               <td colSpan={3} style={{ backgroundColor: '#FF7D97' }}>빨간 작전</td>
               <td colSpan={3} style={{ backgroundColor: '#9EE49A' }}>초록 작전</td>
               <td colSpan={3} style={{ backgroundColor: '#7DCEFF' }}>파란 작전</td>
@@ -388,6 +397,9 @@ const mapDispatchToProps = (dispatch: Dispatch, ownProps: OwnProps): PropsFromDi
   },
   duplicateDeck: () => {
     dispatch(AC.deckSimulator.duplicateDeck(ownProps.deckKey));
+  },
+  toggleDeckCleanse: () => {
+    dispatch(AC.deckSimulator.toggleCleanse(ownProps.deckKey));
   },
   editDeckSlotSpecLv: (slotIdx, specLv) => {
     dispatch(AC.deckSimulator.editDeckSlotSpecLv(ownProps.deckKey, slotIdx, specLv));
