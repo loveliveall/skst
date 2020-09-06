@@ -19,6 +19,7 @@ interface DeckSimulatorState {
   deckSettings: {
     key: number,
     cleanse: boolean,
+    maxDamage: number[], // Idx 0: Red, 1: Green, 2: Blue
     deck: DeckSetting,
   }[],
   cardSelectModal: {
@@ -42,12 +43,15 @@ const defaultDeck: DeckSetting = [
 ];
 /* eslint-enable object-curly-newline */
 
+const DEFAULT_MAX_DAMAGE = 50000;
+
 const initialState: DeckSimulatorState = {
   songAttributeId: null,
   liveEffect: [],
   deckSettings: [{
     key: new Date().getTime(),
     cleanse: false,
+    maxDamage: [DEFAULT_MAX_DAMAGE, DEFAULT_MAX_DAMAGE, DEFAULT_MAX_DAMAGE],
     deck: defaultDeck,
   }],
   cardSelectModal: {
@@ -125,6 +129,7 @@ export default function deckSimulatorReducer(
             key: action.payload.key,
             deck: defaultDeck,
             cleanse: false,
+            maxDamage: [DEFAULT_MAX_DAMAGE, DEFAULT_MAX_DAMAGE, DEFAULT_MAX_DAMAGE],
           },
         ],
       };
@@ -268,6 +273,7 @@ export default function deckSimulatorReducer(
           {
             key: new Date().getTime(),
             cleanse: dupDeck.cleanse,
+            maxDamage: dupDeck.maxDamage,
             deck: [...dupDeck.deck],
           },
         ],
@@ -283,6 +289,24 @@ export default function deckSimulatorReducer(
           return {
             ...item,
             cleanse: !item.cleanse,
+          };
+        }),
+      };
+    case DeckSimulatorActionTypes.DECK_MAX_DAMAGE_SET:
+      return {
+        ...state,
+        deckSettings: state.deckSettings.map((item) => {
+          if (item.key !== action.payload.key) {
+            return item;
+          }
+          return {
+            ...item,
+            maxDamage: item.maxDamage.map((max, idx) => {
+              if (idx !== action.payload.subunitIdx) {
+                return max;
+              }
+              return action.payload.value;
+            }),
           };
         }),
       };

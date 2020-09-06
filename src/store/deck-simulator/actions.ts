@@ -16,6 +16,7 @@ export const DeckSimulatorActionTypes = {
   DECK_REMOVE: 'DECK_SIMULATOR_DECK_REMOVE',
   DECK_DUPLICATE: 'DECK_SIMULATOR_DECK_DUPLICATE',
   DECK_CLEANSE_TOGGLE: 'DECK_SIMULATOR_DECK_CLEANSE_TOGGLE',
+  DECK_MAX_DAMAGE_SET: 'DECK_SIMULATOR_DECK_MAX_DAMAGE_SET',
   CARD_SELECT_MODAL_OPEN: 'DECK_SIMULATOR_CARD_SELECT_MODAL_OPEN',
   CARD_SELECT_MODAL_CLOSE: 'DECK_SIMULATOR_CARD_SELECT_MODAL_CLOSE',
 } as const;
@@ -67,6 +68,9 @@ export const DeckSimulatorActionCreators = {
   ),
   toggleCleanse: (key: number) => createFSA(
     DeckSimulatorActionTypes.DECK_CLEANSE_TOGGLE, { key },
+  ),
+  setMaxDamage: (key: number, subunitIdx: number, value: number) => createFSA(
+    DeckSimulatorActionTypes.DECK_MAX_DAMAGE_SET, { key, subunitIdx, value },
   ),
   openCardSelectModal: (key: number, slotIdx: number) => createFSA(
     DeckSimulatorActionTypes.CARD_SELECT_MODAL_OPEN, { key, slotIdx },

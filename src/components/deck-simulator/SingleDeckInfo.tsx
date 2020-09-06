@@ -78,6 +78,7 @@ interface PropsFromDispatch {
   removeDeck: () => void,
   duplicateDeck: () => void,
   toggleDeckCleanse: () => void,
+  setMaxDamage: (subunitIdx: number, value: number) => void,
   editDeckSlotSpecLv: (slotIdx: number, specLv: number) => void,
   editDeckSlotAppl: (slotIdx: number, appl: number) => void,
   editDeckSlotStam: (slotIdx: number, stam: number) => void,
@@ -87,12 +88,12 @@ type SingleDeckInfoProps = OwnProps & PropsFromState & PropsFromDispatch;
 
 const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
   openCardSelectModal,
-  deckInfo, removeDeck, duplicateDeck, toggleDeckCleanse, editDeckSlotSpecLv,
-  editDeckSlotAppl, editDeckSlotStam, editDeckSlotTech,
+  deckInfo, removeDeck, duplicateDeck, toggleDeckCleanse, setMaxDamage,
+  editDeckSlotSpecLv, editDeckSlotAppl, editDeckSlotStam, editDeckSlotTech,
   songAttributeId, liveEffect,
 }) => {
   if (deckInfo === undefined) return null;
-  const { deck } = deckInfo;
+  const { deck, maxDamage } = deckInfo;
   const STATS = ['appl', 'stam', 'tech'] as const;
   const STAT_NAME = {
     appl: '어필',
@@ -141,12 +142,18 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
 
   const otherStats = adjustedStats.map((stat, slotIdx) => {
     const voMul = subUnitVoMul[Math.floor(slotIdx / 3)];
+    const subunitMaxDamage = deckInfo.maxDamage[Math.floor(slotIdx / 3)];
     const critBase = stat.cardId === null ? 0 : CARD_CRIT_BASE[stat.cardId].value;
     const crit = critProb(stat.appl, stat.tech, critBase) / 100;
+    const _baseVoltage = Math.floor(stat.appl * (voMul / 100)); // eslint-disable-line no-underscore-dangle
+    const baseVoltage = Math.min(_baseVoltage, subunitMaxDamage);
+    const _critVoltage = Math.floor(baseVoltage * 1.5); // eslint-disable-line no-underscore-dangle
+    const critVoltage = Math.min(_critVoltage, subunitMaxDamage);
+    const expectedVoltage = Math.floor(baseVoltage * (1 - crit) + critVoltage * crit);
     return {
       critPercent: crit * 100,
-      voltage: Math.floor(stat.appl * (voMul / 100)),
-      voltageInCrit: Math.floor((stat.appl + 0.5 * stat.appl * crit) * (voMul / 100)),
+      voltage: baseVoltage,
+      voltageInCrit: expectedVoltage,
       spDamage: Math.floor(stat.appl + 1.2 * stat.tech),
     };
   });
@@ -171,6 +178,22 @@ const SingleDeckInfo: React.FC<SingleDeckInfoProps> = ({
             </tr>
           </thead>
           <tbody>
+            <tr>
+              <td>대미지 한계치</td>
+              {maxDamage.map((max, subunitIdx) => (
+                // eslint-disable-next-line react/no-array-index-key
+                <td key={`${deckInfo.key}-${subunitIdx}-max-damage`} colSpan={3}>
+                  <StyledInput
+                    id="max-damage"
+                    type="number"
+                    value={max}
+                    min="0"
+                    onChange={(event) => setMaxDamage(subunitIdx, Number(event.target.value))}
+                    onFocus={(event) => event.target.select()}
+                  />
+                </td>
+              ))}
+            </tr>
             <tr>
               <td>카드</td>
               {deck.map((slot, slotIdx) => (
@@ -400,6 +423,9 @@ const mapDispatchToProps = (dispatch: Dispatch, ownProps: OwnProps): PropsFromDi
   },
   toggleDeckCleanse: () => {
     dispatch(AC.deckSimulator.toggleCleanse(ownProps.deckKey));
+  },
+  setMaxDamage: (subunitIdx, value) => {
+    dispatch(AC.deckSimulator.setMaxDamage(ownProps.deckKey, subunitIdx, value));
   },
   editDeckSlotSpecLv: (slotIdx, specLv) => {
     dispatch(AC.deckSimulator.editDeckSlotSpecLv(ownProps.deckKey, slotIdx, specLv));
