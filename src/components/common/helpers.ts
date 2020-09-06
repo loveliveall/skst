@@ -39,6 +39,12 @@ export function getStatMultiplier(
     const effectType = LIVE_EFFECT_TYPE[item.effectTypeId];
     const _delta = (effectType.type === 'inc' ? 1 : -1) * item.amount; // eslint-disable-line no-underscore-dangle
     const delta = _delta < 0 && cleanse ? 0 : _delta;
+    if (effectType.stat === 'all') {
+      return {
+        ...multiplier,
+        stat: multiplier.stat + delta,
+      };
+    }
     if (stat === 'appl' && effectType.stat === 'baseAppl') {
       return {
         ...multiplier,
