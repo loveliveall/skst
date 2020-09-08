@@ -126,8 +126,8 @@ export const KIZUNA_BUFF: KizunaBuff = {
   121: 936,
   122: 939,
   123: 942,
-  // Estimated
   124: 944,
+  // Estimated
   125: 947,
   126: 950,
   127: 952,
