@@ -15,6 +15,7 @@ import Event from '@/components/event/Event';
 import Events from '@/components/events/Events';
 import DeckSimulator from '@/components/deck-simulator/DeckSimulator';
 import CardComparator from '@/components/card-comparator/CardComparator';
+import VoltageCalculator from '@/components/voltage-calculator/VoltageCalculator';
 import Test from '@/components/test/Test';
 import Notice from './Notice';
 
@@ -137,6 +138,12 @@ const App: React.FC<AppProps> = () => {
       title: '카드 비교기',
       exact: false,
     },
+    {
+      key: 'voltage-calculator',
+      path: '/voltage-calculator',
+      title: '볼티지 계산기',
+      exact: false,
+    },
   ];
 
   return (
@@ -190,6 +197,7 @@ const App: React.FC<AppProps> = () => {
           <Route path="/events" component={Events} />
           <Route path="/deck-simulator" component={DeckSimulator} />
           <Route path="/card-comparator" component={CardComparator} />
+          <Route path="/voltage-calculator" component={VoltageCalculator} />
         </Switch>
       </Main>
     </>

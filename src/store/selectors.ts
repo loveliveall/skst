@@ -43,4 +43,6 @@ export const SEL = {
 
   cardComparatorCardSettings: (state: AppState) => state.cardComparator.cardSettings,
   cardComparatorCardSelectModal: (state: AppState) => state.cardComparator.cardSelectModal,
+
+  voltageCalculatorSettings: (state: AppState) => state.voltageCalculator.settings,
 };
