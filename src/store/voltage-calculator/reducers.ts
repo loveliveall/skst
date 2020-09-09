@@ -1,10 +1,11 @@
 import { VoltageCalculatorActionTypes, VoltageCalculatorActions } from './actions';
 
-type SlotSetting = {
+export type SlotSetting = {
   maxDamage: number,
   // Raw stats
   rawAppl: number,
   rawTech: number,
+  critBasePercent: number,
   // Accessory
   accessories: {
     isSameAttr: boolean,
@@ -29,6 +30,7 @@ type SlotSetting = {
   judgementFactor: number,
   comboFactor: number,
   voltageBuffPercent: number,
+  isSP: boolean,
   isAC: boolean,
   subunitVoFactor: number,
   isSameAttr: boolean,
@@ -43,6 +45,7 @@ const DEFAULT_SLOT_SETTING: SlotSetting = {
   maxDamage: 50000,
   rawAppl: 0,
   rawTech: 0,
+  critBasePercent: 0,
   accessories: [
     { isSameAttr: false, id: 1 },
     { isSameAttr: false, id: 1 },
@@ -63,6 +66,7 @@ const DEFAULT_SLOT_SETTING: SlotSetting = {
   judgementFactor: 1.0,
   comboFactor: 1.0,
   voltageBuffPercent: 0,
+  isSP: false,
   isAC: false,
   subunitVoFactor: 1.0,
   isSameAttr: false,
@@ -131,6 +135,17 @@ export default function voltageCalculatorReducer(
           return {
             ...item,
             rawTech: action.payload.value,
+          };
+        }),
+      };
+    case VoltageCalculatorActionTypes.SLOT_CRIT_BASE_EDIT:
+      return {
+        ...state,
+        settings: state.settings.map((item) => {
+          if (item.key !== action.payload.key) return item;
+          return {
+            ...item,
+            critBasePercent: action.payload.percent,
           };
         }),
       };
@@ -313,6 +328,17 @@ export default function voltageCalculatorReducer(
           return {
             ...item,
             voltageBuffPercent: action.payload.percent,
+          };
+        }),
+      };
+    case VoltageCalculatorActionTypes.SLOT_IS_SP_TOGGLE:
+      return {
+        ...state,
+        settings: state.settings.map((item) => {
+          if (item.key !== action.payload.key) return item;
+          return {
+            ...item,
+            isSP: !item.isSP,
           };
         }),
       };

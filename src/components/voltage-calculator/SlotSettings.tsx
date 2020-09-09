@@ -9,7 +9,8 @@ import { AC, SEL } from '@/store';
 import { ACCESSORY_PARAMETERS } from '@/data/accessoryParameters';
 
 import Legends from './Legends';
-import { Cell, ROW_NUM } from './common';
+import { Cell, ROW_NUM, LineCell } from './common';
+import { getVoltageInfo, getFormationStat } from './algorithm';
 
 import {
   PositiveIntegerInputCell,
@@ -46,6 +47,9 @@ const SlotSettings: React.FC = () => {
       <Legends />
       {settings.map((slotInfo) => {
         const { key } = slotInfo;
+        const formationStat = getFormationStat(slotInfo);
+        const vol = getVoltageInfo(slotInfo, false);
+        const volCleanse = getVoltageInfo(slotInfo, true);
         return (
           <React.Fragment key={key}>
             <Cell center middle>
@@ -72,6 +76,11 @@ const SlotSettings: React.FC = () => {
               id="raw-tech"
               value={slotInfo.rawTech}
               onChange={(value) => dispatch(A.editSlotRawTech(key, value))}
+            />
+            <PositivePercentInputCell
+              id="crit-base"
+              value={slotInfo.critBasePercent}
+              onChange={(value) => dispatch(A.editSlotCritBase(key, value))}
             />
             <BooleanInputCell
               id="is-same-attr"
@@ -208,6 +217,12 @@ const SlotSettings: React.FC = () => {
               onChange={(value) => dispatch(A.editSlotVoltageBuff(key, value))}
             />
             <BooleanInputCell
+              id="is-sp"
+              checked={slotInfo.isSP}
+              onToggle={() => dispatch(A.toggleSlotIsSP(key))}
+              label="SP 상태"
+            />
+            <BooleanInputCell
               id="is-ac"
               checked={slotInfo.isAC}
               onToggle={() => dispatch(A.toggleSlotIsAC(key))}
@@ -267,6 +282,40 @@ const SlotSettings: React.FC = () => {
               value={slotInfo.sameAttrBonusPercent}
               onChange={(value) => dispatch(A.editSlotSameAttrBonus(key, value))}
             />
+            {/* Result section */}
+            <LineCell />
+            <Cell center middle>
+              {formationStat.appl}
+            </Cell>
+            <Cell center middle>
+              {formationStat.tech}
+            </Cell>
+            <LineCell />
+            <Cell center middle>
+              {`${vol.critProb.toFixed(2)}%`}
+            </Cell>
+            <Cell center middle>
+              {vol.voltage}
+            </Cell>
+            <Cell center middle>
+              {vol.critVoltage}
+            </Cell>
+            <Cell center middle>
+              {vol.expVoltage.toFixed(2)}
+            </Cell>
+            <LineCell />
+            <Cell center middle>
+              {`${volCleanse.critProb.toFixed(2)}%`}
+            </Cell>
+            <Cell center middle>
+              {volCleanse.voltage}
+            </Cell>
+            <Cell center middle>
+              {volCleanse.critVoltage}
+            </Cell>
+            <Cell center middle>
+              {volCleanse.expVoltage.toFixed(2)}
+            </Cell>
           </React.Fragment>
         );
       })}

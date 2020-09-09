@@ -5,6 +5,7 @@ export const VoltageCalculatorActionTypes = {
   SLOT_MAX_DAMAGE_EDIT: 'VOLTAGE_CALCULATOR_MAX_DAMAGE_EDIT',
   SLOT_RAW_APPL_EDIT: 'VOLTAGE_CALCULATOR_SLOT_RAW_APPL_EDIT',
   SLOT_RAW_TECH_EDIT: 'VOLTAGE_CALCULATOR_SLOT_RAW_TECH_EDIT',
+  SLOT_CRIT_BASE_EDIT: 'VOLTAGE_CALCULATOR_SLOT_CRIT_BASE_EDIT',
 
   SLOT_ACCESSORY_EDIT: 'VOLTAGE_CALCULATOR_SLOT_ACCESSORY_EDIT',
 
@@ -26,6 +27,7 @@ export const VoltageCalculatorActionTypes = {
   SLOT_JUDGEMENT_FACTOR_EDIT: 'VOLTAGE_CALCULATOR_SLOT_JUDGEMENT_FACTOR_EDIT',
   SLOT_COMBO_FACTOR_EDIT: 'VOLTAGE_CALCULATOR_SLOT_COMBO_FACTOR_EDIT',
   SLOT_VOLTAGE_BUFF_EDIT: 'VOLTAGE_CALCULATOR_SLOT_VOLTAGE_BUFF_EDIT',
+  SLOT_IS_SP_TOGGLE: 'VOLTAGE_CALCULATOR_IS_SP_TOGGLE',
   SLOT_IS_AC_TOGGLE: 'VOLTAGE_CALCULATOR_IS_AC_TOGGLE',
   SLOT_SUBUNIT_VO_EDIT: 'VOLTAGE_CALCULATOR_SLOT_SUBUNIT_VO_EDIT',
   SLOT_IS_SAME_ATTR_TOGGLE: 'VOLTAGE_CALCULATOR_IS_SAME_ATTR_TOGGLE',
@@ -51,6 +53,9 @@ export const VoltageCalculatorActionCreators = {
   ),
   editSlotRawTech: (key: number, value: number) => createFSA(
     VoltageCalculatorActionTypes.SLOT_RAW_TECH_EDIT, { key, value },
+  ),
+  editSlotCritBase: (key: number, percent: number) => createFSA(
+    VoltageCalculatorActionTypes.SLOT_CRIT_BASE_EDIT, { key, percent },
   ),
   editSlotAccessory: (key: number, idx: number, isSameAttr: boolean, id: number) => createFSA(
     VoltageCalculatorActionTypes.SLOT_ACCESSORY_EDIT, {
@@ -101,6 +106,9 @@ export const VoltageCalculatorActionCreators = {
   ),
   editSlotVoltageBuff: (key: number, percent: number) => createFSA(
     VoltageCalculatorActionTypes.SLOT_VOLTAGE_BUFF_EDIT, { key, percent },
+  ),
+  toggleSlotIsSP: (key: number) => createFSA(
+    VoltageCalculatorActionTypes.SLOT_IS_SP_TOGGLE, { key },
   ),
   toggleSlotIsAC: (key: number) => createFSA(
     VoltageCalculatorActionTypes.SLOT_IS_AC_TOGGLE, { key },
