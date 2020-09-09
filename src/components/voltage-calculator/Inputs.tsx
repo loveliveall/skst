@@ -50,6 +50,25 @@ export const PositivePercentInputCell: React.FC<InputProps> = ({
   </Cell>
 );
 
+export const PositivePercentPointInputCell: React.FC<InputProps> = ({
+  id, value, onChange,
+}) => (
+  <Cell center middle>
+    <span>
+      <StyledInput
+        id={id}
+        type="number"
+        step="0.01"
+        value={value}
+        min="0"
+        onChange={(event) => onChange(Number(event.target.value))}
+        onFocus={(event) => event.target.select()}
+      />
+      %p
+    </span>
+  </Cell>
+);
+
 interface BooleanInputProps {
   id: string,
   checked: boolean,

@@ -15,6 +15,7 @@ import { getVoltageInfo, getFormationStat } from './algorithm';
 import {
   PositiveIntegerInputCell,
   PositivePercentInputCell,
+  PositivePercentPointInputCell,
   BooleanInputCell,
 } from './Inputs';
 
@@ -77,7 +78,7 @@ const SlotSettings: React.FC = () => {
               value={slotInfo.rawTech}
               onChange={(value) => dispatch(A.editSlotRawTech(key, value))}
             />
-            <PositivePercentInputCell
+            <PositivePercentPointInputCell
               id="crit-base"
               value={slotInfo.critBasePercent}
               onChange={(value) => dispatch(A.editSlotCritBase(key, value))}
