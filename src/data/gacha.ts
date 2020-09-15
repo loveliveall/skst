@@ -89,6 +89,7 @@ export const GACHA: Gacha = {
   20010: { type: 'pickup', name: 'メンバーピックアップガチャ (카스미, 코토리)', startDate: '2020.06.15.', endDate: '2020.06.22.' },
   20011: { type: 'pickup', name: 'メンバーピックアップガチャ (마키, 세츠나)', startDate: '2020.07.15.', endDate: '2020.07.22.' },
   20012: { type: 'pickup', name: 'メンバーピックアップガチャ (아유무, 치카)', startDate: '2020.08.14.', endDate: '2020.08.25.' },
+  20013: { type: 'pickup', name: 'メンバーピックアップガチャ (노조미, 아이)', startDate: '2020.09.13.', endDate: '2020.09.25.' },
 
   30001: { type: 'fes', name: 'スクスタフェス', startDate: '2019.11.30.', endDate: '2019.12.06.' },
   30002: { type: 'fes', name: 'スクスタフェス', startDate: '2019.12.31.', endDate: '2020.01.06.' },

@@ -382,6 +382,9 @@ export const CARD: Card = {
   308: { memberId: 27, title: 'やらないわけにはいきません', awakenTitle: 'Pioneering a new World', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['gacha', 10040] },
   309: { memberId: 6, title: 'なんでこんなことになるのよ～！', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 3, roleId: 1, fromId: ['event', 23], outfitSeriesId: 14 },
   310: { memberId: 16, title: '設定言うな！', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['event', 23], outfitSeriesId: 13 },
+
+  311: { memberId: 7, title: 'ほーら、ごはんだよ～', awakenTitle: '彩り金平糖', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['gacha', 20013] },
+  312: { memberId: 25, title: '一球入魂～～～～っ！！', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 6, roleId: 1, fromId: ['gacha', 20013], outfitSeriesId: 15 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
