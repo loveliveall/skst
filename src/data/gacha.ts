@@ -76,6 +76,8 @@ export const GACHA: Gacha = {
   10038: { type: 'event', name: 'オモチャ屋さんパニック☆ガチャ後編', startDate: '2020.08.21.', endDate: '2020.08.31.', eventId: 22 },
   10039: { type: 'event', name: 'チョイ悪イメチェン計画ガチャ前編', startDate: '2020.09.04.', endDate: '2020.09.15.', eventId: 23 },
   10040: { type: 'event', name: 'チョイ悪イメチェン計画ガチャ後編', startDate: '2020.09.07.', endDate: '2020.09.15.', eventId: 23 },
+  10041: { type: 'event', name: '秋の味覚を召し上がれ！ガチャ前編', startDate: '2020.09.18.', endDate: '2020.09.30.', eventId: 24 },
+  10042: { type: 'event', name: '秋の味覚を召し上がれ！ガチャ後編', startDate: '2020.09.21.', endDate: '2020.09.30.', eventId: 24 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },

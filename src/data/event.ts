@@ -450,6 +450,14 @@ export const EVENT: Event = {
     startDate: '2020.09.07.',
     endDate: '2020.09.15.',
   },
+  24: {
+    name: '秋の味覚を召し上がれ！',
+    eventTypeId: 1,
+    rankBorder: {},
+    rewardBorder: {},
+    startDate: '2020.09.21.',
+    endDate: '2020.09.30.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,

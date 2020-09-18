@@ -368,5 +368,12 @@ export const PARAMETER: Parameter = {
 
   311: [{ appl: 5107, stam: 4788, tech: 6064 }, { appl: 5443, stam: 5418, tech: 7261 }, { appl: 6451, stam: 6363, tech: 7660 }, { appl: 7795, stam: 6993, tech: 8458 }, { appl: 8467, stam: 7623, tech: 10054 }, { appl: 9139, stam: 8568, tech: 10852 }],
   312: [{ appl: 4261, stam: 3830, tech: 2550 }, { appl: 4811, stam: 4324, tech: 2880 }, { appl: 5361, stam: 4818, tech: 3210 }, { appl: 5636, stam: 5312, tech: 3540 }, { appl: 6186, stam: 5559, tech: 4035 }, { appl: 7017, stam: 6313, tech: 4209 }],
+
+  313: [{ appl: 4468, stam: 7341, tech: 4149 }, { appl: 5350, stam: 8307, tech: 4422 }, { appl: 5644, stam: 9756, tech: 5241 }, { appl: 6232, stam: 10722, tech: 6333 }, { appl: 7408, stam: 11688, tech: 6879 }, { appl: 7996, stam: 13137, tech: 7425 }],
+  314: [{ appl: 4261, stam: 3620, tech: 2770 }, { appl: 4811, stam: 4086, tech: 3126 }, { appl: 5361, stam: 4552, tech: 3482 }, { appl: 5636, stam: 5018, tech: 3838 }, { appl: 6186, stam: 5251, tech: 4372 }, { appl: 7017, stam: 5963, tech: 4559 }],
+  315: [{ appl: 5905, stam: 5586, tech: 4468 }, { appl: 6293, stam: 6320, tech: 5350 }, { appl: 7457, stam: 7421, tech: 5644 }, { appl: 9009, stam: 8155, tech: 6232 }, { appl: 9785, stam: 8889, tech: 7408 }, { appl: 10567, stam: 9996, tech: 7996 }],
+  316: [{ appl: 4950, stam: 4409, tech: 4015 }, { appl: 5602, stam: 4699, tech: 4807 }, { appl: 6580, stam: 5569, tech: 5071 }, { appl: 7232, stam: 6729, tech: 5599 }, { appl: 7884, stam: 7309, tech: 6655 }, { appl: 8866, stam: 7908, tech: 7190 }],
+  317: [{ appl: 2728, stam: 2813, tech: 3251 }, { appl: 3080, stam: 3175, tech: 3671 }, { appl: 3432, stam: 3537, tech: 4091 }, { appl: 3784, stam: 3718, tech: 4511 }, { appl: 3960, stam: 4080, tech: 5141 }, { appl: 4488, stam: 4633, tech: 5358 }],
+  318: [{ appl: 3080, stam: 2461, tech: 3251 }, { appl: 3476, stam: 2779, tech: 3671 }, { appl: 3872, stam: 3097, tech: 4091 }, { appl: 4268, stam: 3415, tech: 4301 }, { appl: 4466, stam: 3892, tech: 4721 }, { appl: 5069, stam: 4053, tech: 5358 }],
 };
 /* eslint-enable object-curly-newline, max-len */

@@ -385,6 +385,13 @@ export const CARD: Card = {
 
   311: { memberId: 7, title: 'ほーら、ごはんだよ～', awakenTitle: '彩り金平糖', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['gacha', 20013] },
   312: { memberId: 25, title: '一球入魂～～～～っ！！', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 6, roleId: 1, fromId: ['gacha', 20013], outfitSeriesId: 15 },
+
+  313: { memberId: 17, title: 'よいしょ！よいしょ！', awakenTitle: 'オータムキッチン', rarityId: 3, attributeId: 1, roleId: 3, fromId: ['gacha', 10041] },
+  314: { memberId: 4, title: '足を滑らせてそのまま川へ……', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 2, roleId: 1, fromId: ['gacha', 10041], outfitSeriesId: 14 },
+  315: { memberId: 28, title: 'このお魚とっても美味しい！', awakenTitle: 'オータムキッチン', rarityId: 3, attributeId: 3, roleId: 4, fromId: ['gacha', 10042] },
+  316: { memberId: 8, title: '私達もたくさん採ってきたよ', awakenTitle: 'オータムキッチン', rarityId: 3, attributeId: 4, roleId: 1, fromId: ['event', 24] },
+  317: { memberId: 19, title: 'ルビィもう歩けないよ……', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['event', 24], outfitSeriesId: 13 },
+  318: { memberId: 26, title: '彼方ちゃん眠る暇もないからー！', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['event', 24], outfitSeriesId: 15 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
