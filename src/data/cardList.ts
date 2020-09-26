@@ -336,7 +336,7 @@ export const CARD: Card = {
   271: { memberId: 21, title: 'いい感じにできてるよ！', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['event', 19], outfitSeriesId: 15 },
 
   272: { memberId: 6, title: '……そうね。すごくキレイ', awakenTitle: 'あなたに捧げるセレナーデ', rarityId: 3, attributeId: 5, roleId: 2, fromId: ['gacha', 20011] },
-  273: { memberId: 27, title: '最高のステージでしたね！', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 5, roleId: 4, fromId: ['gacha', 20011] },
+  273: { memberId: 27, title: '最高のステージでしたね！', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 5, roleId: 4, fromId: ['gacha', 20011], outfitSeriesId: 15 },
 
   274: { memberId: 29, title: '璃奈ちゃんボード「くふふ」', awakenTitle: 'もののけガール', rarityId: 3, attributeId: 1, roleId: 1, fromId: ['gacha', 10033] },
   275: { memberId: 3, title: 'はぁ～……生き返る……', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 6, roleId: 3, fromId: ['gacha', 10033], outfitSeriesId: 14 },
@@ -352,7 +352,7 @@ export const CARD: Card = {
 
   284: { memberId: 210, title: '虹ヶ咲学園1年生', awakenTitle: '理想は高く', rarityId: 1, attributeId: 1, roleId: 1, fromId: ['gacha', 30010] },
   285: { memberId: 210, title: '完璧主義スクールアイドル', awakenTitle: '虹ヶ咲ニューフェイス', rarityId: 1, attributeId: 3, roleId: 4, fromId: ['gacha', 30010] },
-  286: { memberId: 210, title: 'えっ！？　真っ赤……？', awakenTitle: '決意の光', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 30010] },
+  286: { memberId: 210, title: 'えっ！？　真っ赤……？', awakenTitle: '決意の光', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 30010], outfitSeriesId: 3 },
 
   287: { memberId: 18, title: 'ウフフ♪　元気のいいコね！', awakenTitle: 'トワイライト・カウガール', rarityId: 3, attributeId: 5, roleId: 4, fromId: ['gacha', 10035] },
   288: { memberId: 29, title: '鞠莉さんの部屋に泊まってみたい', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 4, roleId: 3, fromId: ['gacha', 10035], outfitSeriesId: 15 },
