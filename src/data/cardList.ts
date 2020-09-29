@@ -392,6 +392,11 @@ export const CARD: Card = {
   316: { memberId: 8, title: '私達もたくさん採ってきたよ', awakenTitle: 'オータムキッチン', rarityId: 3, attributeId: 4, roleId: 1, fromId: ['event', 24] },
   317: { memberId: 19, title: 'ルビィもう歩けないよ……', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['event', 24], outfitSeriesId: 13 },
   318: { memberId: 26, title: '彼方ちゃん眠る暇もないからー！', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['event', 24], outfitSeriesId: 15 },
+
+  319: { memberId: 13, title: '今まで見た中で一番綺麗', awakenTitle: 'Secret Galaxy', rarityId: 3, attributeId: 4, roleId: 1, fromId: ['gacha', 30014] },
+  320: { memberId: 22, title: 'じゃ――――ん！　どうですか？', awakenTitle: '甘いひととき', rarityId: 3, attributeId: 2, roleId: 2, fromId: ['gacha', 30014] },
+  321: { memberId: 1, title: 'やっぱりこれがなくっちゃね', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['gacha', 30014], outfitSeriesId: 14 },
+  322: { memberId: 18, title: 'ここから見る夕日', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['gacha', 30014], outfitSeriesId: 13 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

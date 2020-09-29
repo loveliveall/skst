@@ -106,6 +106,7 @@ export const GACHA: Gacha = {
   30011: { type: 'fes', name: 'スクスタフェス', startDate: '2020.08.26.', endDate: '2020.09.12.' },
   30012: { type: 'fes', name: '1st Anniversary μ\'sフェス', startDate: '2020.09.26.', endDate: '2020.10.11.', desc: '페스 마키, 코토리, 니코, 하나요, 우미, 에리, 린, 호노카 복각' },
   30013: { type: 'fes', name: '1st Anniversary Aqoursフェス', startDate: '2020.09.26.', endDate: '2020.10.11.', desc: '페스 요우, 요시코, 마리, 하나마루, 루비, 치카, 다이아, 리코 복각' },
+  30014: { type: 'fes', name: 'スクスタフェス', startDate: '2020.09.30.', endDate: '2020.10.11.' },
 
   40001: { type: 'reprint', name: 'スクスタハーフアニバーサリー記念♪衣装復刻ガチャ', startDate: '2020.03.09.', endDate: '2020.03.27.', desc: 'Snow halation, 君のこころは輝いてるかい？, わくわくアニマル 의상의 SR 27인 복각' },
 };
