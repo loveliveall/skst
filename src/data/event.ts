@@ -453,8 +453,15 @@ export const EVENT: Event = {
   24: {
     name: '秋の味覚を召し上がれ！',
     eventTypeId: 1,
-    rankBorder: {},
-    rewardBorder: {},
+    rankBorder: {
+      1: 16520747, 10: 11905391, 50: 4581499, 100: 3705560, 1000: 850721, 3000: 521200, 10000: 340278, 30000: 240677, 50000: 201547,
+    },
+    rewardBorder: {
+      100: [2, 2, 2],
+      3000: [1, 2, 2],
+      10000: [1, 1, 2],
+      50000: [1, 1, 1],
+    },
     startDate: '2020.09.21.',
     endDate: '2020.09.30.',
   },
@@ -580,6 +587,17 @@ export const EVENT: Event = {
     ],
     startDate: '2020.09.01.',
     endDate: '2020.09.06.',
+  },
+  10007: {
+    name: '第6回スクスタビックライブ (1st Anniversary)',
+    eventTypeId: 3,
+    rankBorder: {},
+    rewardBorder: {},
+    targetSongs: ['ユメノトビラ', 'MIRACLE WAVE', '決意の光'],
+    bonusTarget: '전 멤버 +10%',
+    prizes: [],
+    startDate: '2020.10.01.',
+    endDate: '2020.10.06.',
   },
 };
 /* eslint-enable max-len, object-property-newline */
