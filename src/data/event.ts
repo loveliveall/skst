@@ -465,6 +465,16 @@ export const EVENT: Event = {
     startDate: '2020.09.21.',
     endDate: '2020.09.30.',
   },
+  25: {
+    name: '月のウサギと女神様',
+    eventTypeId: 2,
+    rankBorder: {},
+    voltageRankBorder: {},
+    voltageRankSongs: ['LOVELESS WORLD', '恋になりたいAQUARIUM', '哀温ノ詩'],
+    rewardBorder: {},
+    startDate: '2020.10.07.',
+    endDate: '2020.10.15.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,

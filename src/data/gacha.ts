@@ -35,6 +35,7 @@ export const GACHA: Gacha = {
   10: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.06.30.', endDate: '2020.07.31.' },
   11: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.07.31.', endDate: '2020.08.31.' },
   12: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.08.31.', endDate: '2020.09.30.' },
+  13: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.09.30.', endDate: '2020.10.31.' },
 
   10001: { type: 'event', name: '秘密のパーティー！ガチャ', startDate: '2019.10.03.', endDate: '2019.10.15.', eventId: 1 },
   10002: { type: 'event', name: '和装モデルはお任せあれ！ガチャ', startDate: '2019.10.21.', endDate: '2019.10.31.', eventId: 2 },
@@ -78,6 +79,8 @@ export const GACHA: Gacha = {
   10040: { type: 'event', name: 'チョイ悪イメチェン計画ガチャ後編', startDate: '2020.09.07.', endDate: '2020.09.15.', eventId: 23 },
   10041: { type: 'event', name: '秋の味覚を召し上がれ！ガチャ前編', startDate: '2020.09.18.', endDate: '2020.09.30.', eventId: 24 },
   10042: { type: 'event', name: '秋の味覚を召し上がれ！ガチャ後編', startDate: '2020.09.21.', endDate: '2020.09.30.', eventId: 24 },
+  10043: { type: 'event', name: '月のウサギと女神様ガチャ前編', startDate: '2020.10.04.', endDate: '2020.10.15.', eventId: 25 },
+  10044: { type: 'event', name: '月のウサギと女神様ガチャ後編', startDate: '2020.10.07.', endDate: '2020.10.15.', eventId: 25 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },

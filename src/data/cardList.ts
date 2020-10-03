@@ -352,7 +352,7 @@ export const CARD: Card = {
 
   284: { memberId: 210, title: '虹ヶ咲学園1年生', awakenTitle: '理想は高く', rarityId: 1, attributeId: 1, roleId: 1, fromId: ['gacha', 30010] },
   285: { memberId: 210, title: '完璧主義スクールアイドル', awakenTitle: '虹ヶ咲ニューフェイス', rarityId: 1, attributeId: 3, roleId: 4, fromId: ['gacha', 30010] },
-  286: { memberId: 210, title: 'えっ！？　真っ赤……？', awakenTitle: '決意の光', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 30010], outfitSeriesId: 3 },
+  286: { memberId: 210, title: 'えっ！？　真っ赤……？', awakenTitle: '決意の光', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 30010], outfitSeriesId: 17 },
 
   287: { memberId: 18, title: 'ウフフ♪　元気のいいコね！', awakenTitle: 'トワイライト・カウガール', rarityId: 3, attributeId: 5, roleId: 4, fromId: ['gacha', 10035] },
   288: { memberId: 29, title: '鞠莉さんの部屋に泊まってみたい', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 4, roleId: 3, fromId: ['gacha', 10035], outfitSeriesId: 15 },
@@ -397,6 +397,13 @@ export const CARD: Card = {
   320: { memberId: 22, title: 'じゃ――――ん！　どうですか？', awakenTitle: '甘いひととき', rarityId: 3, attributeId: 2, roleId: 2, fromId: ['gacha', 30014] },
   321: { memberId: 1, title: 'やっぱりこれがなくっちゃね', awakenTitle: 'Wonderful Rush', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['gacha', 30014], outfitSeriesId: 14 },
   322: { memberId: 18, title: 'ここから見る夕日', awakenTitle: '恋になりたいAQUARIUM', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['gacha', 30014], outfitSeriesId: 13 },
+
+  323: { memberId: 23, title: '「月の世界」へとご案内', awakenTitle: '十五夜の月うさぎ', rarityId: 3, attributeId: 1, roleId: 1, fromId: ['gacha', 10043] },
+  324: { memberId: 9, title: '伝説のスクールアイドル伝説', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 1, roleId: 3, fromId: ['gacha', 10043], outfitSeriesId: 16 },
+  325: { memberId: 12, title: 'きれい……', awakenTitle: '十五夜の月うさぎ', rarityId: 3, attributeId: 3, roleId: 4, fromId: ['gacha', 10044] },
+  326: { memberId: 5, title: 'なんだか最近、とっても眠くって', awakenTitle: '十五夜の月うさぎ', rarityId: 3, attributeId: 2, roleId: 3, fromId: ['event', 25] },
+  327: { memberId: 28, title: 'お願いだから力をかして！', awakenTitle: '哀温ノ詩', rarityId: 2, attributeId: 2, roleId: 1, fromId: ['event', 25], outfitSeriesId: 17 },
+  328: { memberId: 13, title: 'おしょうゆをつけて、っと', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 5, roleId: 2, fromId: ['event', 25], outfitSeriesId: 18 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

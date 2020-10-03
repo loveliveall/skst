@@ -23,5 +23,8 @@ export const OUTFIT_SERIES: OutfitSeries = {
   13: { name: '恋になりたいAQUARIUM', groupId: 2 },
   14: { name: 'Wonderful Rush', groupId: 1 },
   15: { name: 'Love U my friends', groupId: 3 },
+  16: { name: 'ユメノトビラ', groupId: 1 },
+  17: { name: '니지 3집 의상', groupId: 3 },
+  18: { name: '未体験HORIZON', groupId: 2 },
 };
 /* eslint-enable object-curly-newline, max-len */
