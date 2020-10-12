@@ -404,6 +404,9 @@ export const CARD: Card = {
   326: { memberId: 5, title: 'なんだか最近、とっても眠くって', awakenTitle: '十五夜の月うさぎ', rarityId: 3, attributeId: 2, roleId: 3, fromId: ['event', 25] },
   327: { memberId: 28, title: 'お願いだから力をかして！', awakenTitle: '哀温ノ詩', rarityId: 2, attributeId: 2, roleId: 1, fromId: ['event', 25], outfitSeriesId: 17 },
   328: { memberId: 13, title: 'おしょうゆをつけて、っと', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 5, roleId: 2, fromId: ['event', 25], outfitSeriesId: 18 },
+
+  329: { memberId: 19, title: 'どこを探しても無かったグッズ！', awakenTitle: 'ゆめいっぱい☆ルビィランド', rarityId: 3, attributeId: 3, roleId: 2, fromId: ['gacha', 20014] },
+  330: { memberId: 2, title: 'んぐっ！？', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['gacha', 20014], outfitSeriesId: 16 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
