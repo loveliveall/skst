@@ -81,6 +81,8 @@ export const GACHA: Gacha = {
   10042: { type: 'event', name: '秋の味覚を召し上がれ！ガチャ後編', startDate: '2020.09.21.', endDate: '2020.09.30.', eventId: 24 },
   10043: { type: 'event', name: '月のウサギと女神様ガチャ前編', startDate: '2020.10.04.', endDate: '2020.10.15.', eventId: 25 },
   10044: { type: 'event', name: '月のウサギと女神様ガチャ後編', startDate: '2020.10.07.', endDate: '2020.10.15.', eventId: 25 },
+  10045: { type: 'event', name: '楽しいハロウィンパーティーガチャ前編', startDate: '2020.10.19.', endDate: '2020.10.30.', eventId: 26 },
+  10046: { type: 'event', name: '楽しいハロウィンパーティーガチャ後編', startDate: '2020.10.22.', endDate: '2020.10.30.', eventId: 26 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },

@@ -390,5 +390,12 @@ export const PARAMETER: Parameter = {
 
   329: [{ appl: 5842, stam: 3403, tech: 6980 }, { appl: 6226, stam: 4075, tech: 7898 }, { appl: 7378, stam: 4299, tech: 9275 }, { appl: 8914, stam: 4747, tech: 10193 }, { appl: 9682, stam: 5643, tech: 11111 }, { appl: 10465, stam: 6103, tech: 12498 }],
   330: [{ appl: 4011, stam: 2604, tech: 4223 }, { appl: 4529, stam: 2940, tech: 4769 }, { appl: 5047, stam: 3276, tech: 5315 }, { appl: 5565, stam: 3612, tech: 5588 }, { appl: 5824, stam: 4116, tech: 6134 }, { appl: 6603, stam: 4284, tech: 6960 }],
+
+  331: [{ appl: 6980, stam: 3403, tech: 5842 }, { appl: 7898, stam: 3627, tech: 6994 }, { appl: 9275, stam: 4299, tech: 7378 }, { appl: 10193, stam: 5195, tech: 8146 }, { appl: 11111, stam: 5643, tech: 9682 }, { appl: 12498, stam: 6103, tech: 10465 }],
+  332: [{ appl: 3250, stam: 4118, tech: 3472 }, { appl: 3670, stam: 4650, tech: 3920 }, { appl: 4090, stam: 5182, tech: 4368 }, { appl: 4510, stam: 5448, tech: 4816 }, { appl: 5140, stam: 5980, tech: 5040 }, { appl: 5355, stam: 6783, tech: 5712 }],
+  333: [{ appl: 6163, stam: 5024, tech: 5024 }, { appl: 6569, stam: 5686, tech: 6017 }, { appl: 7787, stam: 6679, tech: 6348 }, { appl: 9411, stam: 7341, tech: 7010 }, { appl: 10223, stam: 8003, tech: 8334 }, { appl: 11045, stam: 9009, tech: 9009 }],
+  334: [{ appl: 3267, stam: 6158, tech: 3670 }, { appl: 3912, stam: 6968, tech: 3911 }, { appl: 4127, stam: 8183, tech: 4634 }, { appl: 4557, stam: 8993, tech: 5598 }, { appl: 5417, stam: 9803, tech: 6080 }, { appl: 5863, stam: 11025, tech: 6568 }],
+  335: [{ appl: 2509, stam: 2874, tech: 3596 }, { appl: 2833, stam: 3244, tech: 4060 }, { appl: 3157, stam: 3614, tech: 4524 }, { appl: 3481, stam: 3984, tech: 4756 }, { appl: 3643, stam: 4539, tech: 5220 }, { appl: 4141, stam: 4732, tech: 5916 }],
+  336: [{ appl: 3316, stam: 2605, tech: 3047 }, { appl: 3744, stam: 2941, tech: 3441 }, { appl: 4172, stam: 3277, tech: 3835 }, { appl: 4600, stam: 3445, tech: 4229 }, { appl: 4814, stam: 3781, tech: 4820 }, { appl: 5471, stam: 4288, tech: 5028 }],
 };
 /* eslint-enable object-curly-newline, max-len */

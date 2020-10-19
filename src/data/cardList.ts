@@ -407,6 +407,13 @@ export const CARD: Card = {
 
   329: { memberId: 19, title: 'どこを探しても無かったグッズ！', awakenTitle: 'ゆめいっぱい☆ルビィランド', rarityId: 3, attributeId: 3, roleId: 2, fromId: ['gacha', 20014] },
   330: { memberId: 2, title: 'んぐっ！？', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['gacha', 20014], outfitSeriesId: 16 },
+
+  331: { memberId: 18, title: '魔女のシャイ煮～！', awakenTitle: 'マジカル☆ハロウィン', rarityId: 3, attributeId: 6, roleId: 1, fromId: ['gacha', 10045] },
+  332: { memberId: 26, title: '辛いよう～！！', awakenTitle: 'Märchen Star', rarityId: 2, attributeId: 4, roleId: 3, fromId: ['gacha', 10045], outfitSeriesId: 17 },
+  333: { memberId: 4, title: 'お見事、正解です', awakenTitle: 'マジカル☆ハロウィン', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['gacha', 10046] },
+  334: { memberId: 24, title: '私の真似をして座ってちょうだい', awakenTitle: 'マジカル☆ハロウィン', rarityId: 3, attributeId: 1, roleId: 3, fromId: ['event', 26] },
+  335: { memberId: 11, title: 'そーっと、そーっと……', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 6, roleId: 2, fromId: ['event', 26], outfitSeriesId: 18 },
+  336: { memberId: 3, title: '頑張って作ったお話', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 3, roleId: 4, fromId: ['event', 26], outfitSeriesId: 16 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

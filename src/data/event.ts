@@ -486,6 +486,14 @@ export const EVENT: Event = {
     startDate: '2020.10.07.',
     endDate: '2020.10.15.',
   },
+  26: {
+    name: '楽しいハロウィンパーティー',
+    eventTypeId: 1,
+    rankBorder: {},
+    rewardBorder: {},
+    startDate: '2020.10.22.',
+    endDate: '2020.10.30.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,
