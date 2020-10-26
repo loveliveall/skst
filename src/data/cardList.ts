@@ -414,6 +414,11 @@ export const CARD: Card = {
   334: { memberId: 24, title: '私の真似をして座ってちょうだい', awakenTitle: 'マジカル☆ハロウィン', rarityId: 3, attributeId: 1, roleId: 3, fromId: ['event', 26] },
   335: { memberId: 11, title: 'そーっと、そーっと……', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 6, roleId: 2, fromId: ['event', 26], outfitSeriesId: 18 },
   336: { memberId: 3, title: '頑張って作ったお話', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 3, roleId: 4, fromId: ['event', 26], outfitSeriesId: 16 },
+
+  337: { memberId: 7, title: 'ウチのこと見てくれないの？', awakenTitle: '運命の導き手', rarityId: 3, attributeId: 5, roleId: 2, fromId: ['gacha', 30015] },
+  338: { memberId: 29, title: '今日、楽しかったから……', awakenTitle: 'ココロ・サイエンス', rarityId: 3, attributeId: 4, roleId: 3, fromId: ['gacha', 30015] },
+  339: { memberId: 21, title: 'おすそ分けを持ってきたんだ！', awakenTitle: 'Say Good-Bye 涙', rarityId: 2, attributeId: 5, roleId: 3, fromId: ['gacha', 30015], outfitSeriesId: 17 },
+  340: { memberId: 15, title: 'どうかな？　このメガネ！', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 3, roleId: 2, fromId: ['gacha', 30015], outfitSeriesId: 18 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

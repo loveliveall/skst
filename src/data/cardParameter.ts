@@ -397,5 +397,10 @@ export const PARAMETER: Parameter = {
   334: [{ appl: 3267, stam: 6158, tech: 3670 }, { appl: 3912, stam: 6968, tech: 3911 }, { appl: 4127, stam: 8183, tech: 4634 }, { appl: 4557, stam: 8993, tech: 5598 }, { appl: 5417, stam: 9803, tech: 6080 }, { appl: 5863, stam: 11025, tech: 6568 }],
   335: [{ appl: 2509, stam: 2874, tech: 3596 }, { appl: 2833, stam: 3244, tech: 4060 }, { appl: 3157, stam: 3614, tech: 4524 }, { appl: 3481, stam: 3984, tech: 4756 }, { appl: 3643, stam: 4539, tech: 5220 }, { appl: 4141, stam: 4732, tech: 5916 }],
   336: [{ appl: 3316, stam: 2605, tech: 3047 }, { appl: 3744, stam: 2941, tech: 3441 }, { appl: 4172, stam: 3277, tech: 3835 }, { appl: 4600, stam: 3445, tech: 4229 }, { appl: 4814, stam: 3781, tech: 4820 }, { appl: 5471, stam: 4288, tech: 5028 }],
+
+  337: [{ appl: 6181, stam: 3701, tech: 7774 }, { appl: 6587, stam: 4433, tech: 8796 }, { appl: 7805, stam: 4677, tech: 10329 }, { appl: 9429, stam: 5165, tech: 11351 }, { appl: 10241, stam: 6141, tech: 12373 }, { appl: 11066, stam: 6639, tech: 13912 }],
+  338: [{ appl: 4516, stam: 8165, tech: 4682 }, { appl: 5407, stam: 9239, tech: 4990 }, { appl: 5704, stam: 10850, tech: 5914 }, { appl: 6298, stam: 11924, tech: 7146 }, { appl: 7486, stam: 12998, tech: 7762 }, { appl: 8087, stam: 14619, tech: 8397 }],
+  339: [{ appl: 3143, stam: 4445, tech: 3250 }, { appl: 3549, stam: 5019, tech: 3670 }, { appl: 3955, stam: 5593, tech: 4090 }, { appl: 4361, stam: 5880, tech: 4510 }, { appl: 4970, stam: 6454, tech: 4720 }, { appl: 5175, stam: 7317, tech: 5355 }],
+  340: [{ appl: 4223, stam: 1619, tech: 4986 }, { appl: 4769, stam: 1829, tech: 5630 }, { appl: 5315, stam: 2039, tech: 6274 }, { appl: 5861, stam: 2249, tech: 6596 }, { appl: 6134, stam: 2564, tech: 7240 }, { appl: 6960, stam: 2676, tech: 8211 }],
 };
 /* eslint-enable object-curly-newline, max-len */
