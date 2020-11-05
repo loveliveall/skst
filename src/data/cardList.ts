@@ -419,6 +419,14 @@ export const CARD: Card = {
   338: { memberId: 29, title: '今日、楽しかったから……', awakenTitle: 'ココロ・サイエンス', rarityId: 3, attributeId: 4, roleId: 3, fromId: ['gacha', 30015] },
   339: { memberId: 21, title: 'おすそ分けを持ってきたんだ！', awakenTitle: 'Say Good-Bye 涙', rarityId: 2, attributeId: 5, roleId: 3, fromId: ['gacha', 30015], outfitSeriesId: 17 },
   340: { memberId: 15, title: 'どうかな？　このメガネ！', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 3, roleId: 2, fromId: ['gacha', 30015], outfitSeriesId: 18 },
+
+  341: { memberId: 1, title: 'トップバッター', awakenTitle: 'S.I.Collection', rarityId: 3, attributeId: 3, roleId: 3, fromId: ['gacha', 10047] },
+  342: { memberId: 17, title: 'ずらあああ……！', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['gacha', 10047], outfitSeriesId: 18 },
+  343: { memberId: 25, title: 'カメラさん、こっちこっち！', awakenTitle: 'S.I.Collection', rarityId: 3, attributeId: 5, roleId: 4, fromId: ['gacha', 10048] },
+  344: { memberId: 14, title: '次は、わたくしですわね', awakenTitle: 'S.I.Collection', rarityId: 3, attributeId: 6, roleId: 2, fromId: ['event', 27] },
+  345: { memberId: 7, title: 'なんとかなったみたいやね', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 2, roleId: 1, fromId: ['event', 27], outfitSeriesId: 16 },
+  346: { memberId: 23, title: '役者魂が震えたぎります！', awakenTitle: 'やがてひとつの物語', rarityId: 2, attributeId: 6, roleId: 3, fromId: ['event', 27], outfitSeriesId: 17 },
+
 };
 /* eslint-enable object-curly-newline, max-len */
 

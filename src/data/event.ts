@@ -501,6 +501,16 @@ export const EVENT: Event = {
     startDate: '2020.10.22.',
     endDate: '2020.10.30.',
   },
+  27: {
+    name: '駆け抜けろランウェイ',
+    eventTypeId: 2,
+    rankBorder: {},
+    voltageRankBorder: {},
+    voltageRankSongs: ['Wonder zone', 'トリコリコPLEASE!!', 'My Own Fairy-Tale'],
+    rewardBorder: {},
+    startDate: '2020.11.08.',
+    endDate: '2020.11.15.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,
@@ -645,6 +655,24 @@ export const EVENT: Event = {
     ],
     startDate: '2020.10.01.',
     endDate: '2020.10.06.',
+  },
+  10008: {
+    name: '第7回スクスタビックライブ',
+    eventTypeId: 3,
+    rankBorder: {},
+    rewardBorder: {},
+    targetSongs: ['PSYCHIC FIRE', 'Wake up Challenger!', 'Just Believe!'],
+    bonusTarget: '니지동 +20%',
+    prizes: [
+      [2, 3, 4],
+      [2, 3, 4],
+      [2, 3, 4],
+      [2, 3, 4],
+      [2, 3, 4],
+      [2, 3, 4],
+    ],
+    startDate: '2020.11.01.',
+    endDate: '2020.11.06.',
   },
 };
 /* eslint-enable max-len, object-property-newline */
