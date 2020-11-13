@@ -427,6 +427,8 @@ export const CARD: Card = {
   345: { memberId: 7, title: 'なんとかなったみたいやね', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 2, roleId: 1, fromId: ['event', 27], outfitSeriesId: 16 },
   346: { memberId: 23, title: '役者魂が震えたぎります！', awakenTitle: 'やがてひとつの物語', rarityId: 2, attributeId: 6, roleId: 3, fromId: ['event', 27], outfitSeriesId: 17 },
 
+  347: { memberId: 11, title: 'やってもやっても終わらない', awakenTitle: 'Afternoon Tea♡', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['gacha', 20015] },
+  348: { memberId: 6, title: '当たり前のことでしょ', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 5, roleId: 4, fromId: ['gacha', 20015], outfitSeriesId: 16 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
