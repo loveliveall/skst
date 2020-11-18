@@ -511,6 +511,14 @@ export const EVENT: Event = {
     startDate: '2020.11.08.',
     endDate: '2020.11.15.',
   },
+  28: {
+    name: '最高の遊園地攻略法！？',
+    eventTypeId: 1,
+    rankBorder: {},
+    rewardBorder: {},
+    startDate: '2020.11.22.',
+    endDate: '2020.11.30.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,

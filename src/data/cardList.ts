@@ -429,6 +429,13 @@ export const CARD: Card = {
 
   347: { memberId: 11, title: 'やってもやっても終わらない', awakenTitle: 'Afternoon Tea♡', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['gacha', 20015] },
   348: { memberId: 6, title: '当たり前のことでしょ', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 5, roleId: 4, fromId: ['gacha', 20015], outfitSeriesId: 16 },
+
+  349: { memberId: 26, title: 'いっけーーーー！！！', awakenTitle: 'きらきら★ナイトパレード', rarityId: 3, attributeId: 4, roleId: 2, fromId: ['gacha', 10049] },
+  350: { memberId: 5, title: 'ん～、おいしー！', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 1, roleId: 3, fromId: ['gacha', 10049], outfitSeriesId: 16 },
+  351: { memberId: 16, title: 'すごい、すごいわ！', awakenTitle: 'きらきら★ナイトパレード', rarityId: 3, attributeId: 2, roleId: 1, fromId: ['gacha', 10050] },
+  352: { memberId: 6, title: 'キラキラしてる……！', awakenTitle: 'きらきら★ナイトパレード', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['event', 28] },
+  353: { memberId: 22, title: 'どうですか、似合いますか？', awakenTitle: 'Margaret', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['event', 28], outfitSeriesId: 17 },
+  354: { memberId: 18, title: 'まだまだ行くわよ～', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 5, roleId: 3, fromId: ['event', 28], outfitSeriesId: 18 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
