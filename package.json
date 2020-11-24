@@ -21,6 +21,10 @@
   },
   "homepage": "https://github.com/loveliveall/skst#readme",
   "devDependencies": {
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.4",
+    "@types/react-redux": "^7.1.5",
+    "@types/react-router-dom": "^5.1.3",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -42,10 +46,6 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@types/react": "^16.9.43",
-    "@types/react-dom": "^16.9.4",
-    "@types/react-redux": "^7.1.5",
-    "@types/react-router-dom": "^5.1.3",
     "fast-deep-equal": "^3.1.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
