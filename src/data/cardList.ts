@@ -436,6 +436,11 @@ export const CARD: Card = {
   352: { memberId: 6, title: 'キラキラしてる……！', awakenTitle: 'きらきら★ナイトパレード', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['event', 28] },
   353: { memberId: 22, title: 'どうですか、似合いますか？', awakenTitle: 'Margaret', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['event', 28], outfitSeriesId: 17 },
   354: { memberId: 18, title: 'まだまだ行くわよ～', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 5, roleId: 3, fromId: ['event', 28], outfitSeriesId: 18 },
+
+  355: { memberId: 21, title: '……はい、私の傘に入って', awakenTitle: '運命の人', rarityId: 3, attributeId: 3, roleId: 4, fromId: ['gacha', 30016] },
+  356: { memberId: 210, title: 'あなたから見て、どうですか？', awakenTitle: '翡翠色の残響', rarityId: 3, attributeId: 1, roleId: 1, fromId: ['gacha', 30016] },
+  357: { memberId: 1, title: 'ふふっ、こんな感じかなあ〜？', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['gacha', 30016], outfitSeriesId: 16 },
+  358: { memberId: 29, title: 'うん、上手にできました〜', awakenTitle: 'アナログハート', rarityId: 2, attributeId: 3, roleId: 2, fromId: ['gacha', 30016], outfitSeriesId: 17 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

@@ -360,4 +360,8 @@ export const CARD_CRIT_BASE: CritBase = {
   352: { value: 15 },
   353: { value: 0 },
   354: { value: 0 },
+  355: { value: 15 },
+  356: { value: 0 },
+  357: { value: 15 },
+  358: { value: 0 },
 };
