@@ -519,6 +519,16 @@ export const EVENT: Event = {
     startDate: '2020.11.22.',
     endDate: '2020.11.30.',
   },
+  29: {
+    name: '１番のクリスマスプレゼント',
+    eventTypeId: 2,
+    rankBorder: {},
+    voltageRankBorder: {},
+    voltageRankSongs: ['Snow halation', 'MIRACLE WAVE', 'Margaret'],
+    rewardBorder: {},
+    startDate: '2020.12.07.',
+    endDate: '2020.12.14.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,

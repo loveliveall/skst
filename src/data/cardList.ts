@@ -441,6 +441,13 @@ export const CARD: Card = {
   356: { memberId: 210, title: 'あなたから見て、どうですか？', awakenTitle: '翡翠色の残響', rarityId: 3, attributeId: 1, roleId: 1, fromId: ['gacha', 30016] },
   357: { memberId: 1, title: 'ふふっ、こんな感じかなあ〜？', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['gacha', 30016], outfitSeriesId: 16 },
   358: { memberId: 29, title: 'うん、上手にできました〜', awakenTitle: 'アナログハート', rarityId: 2, attributeId: 3, roleId: 2, fromId: ['gacha', 30016], outfitSeriesId: 17 },
+
+  359: { memberId: 3, title: 'ふふっ、どうかな？　似合う？', awakenTitle: 'サンタガールが街にやってくる', rarityId: 3, attributeId: 4, roleId: 1, fromId: ['gacha', 10051] },
+  360: { memberId: 19, title: 'ううう……', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['gacha', 10051], outfitSeriesId: 18 },
+  361: { memberId: 27, title: '私にとって１番のプレゼント', awakenTitle: 'サンタガールが街にやってくる', rarityId: 3, attributeId: 1, roleId: 2, fromId: ['gacha', 10052] },
+  362: { memberId: 15, title: 'やったーーー、勝ちーーーー！', awakenTitle: 'サンタガールが街にやってくる', rarityId: 3, attributeId: 5, roleId: 3, fromId: ['event', 29] },
+  363: { memberId: 8, title: 'すっごくおいしそうーーーー！！', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['event', 29], outfitSeriesId: 16 },
+  364: { memberId: 25, title: '毎年感動しちゃうよ', awakenTitle: '楽しいの天才', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['event', 29], outfitSeriesId: 17 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

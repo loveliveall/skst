@@ -364,4 +364,10 @@ export const CARD_CRIT_BASE: CritBase = {
   356: { value: 0 },
   357: { value: 15 },
   358: { value: 0 },
+  359: { value: 0 },
+  360: { value: 0 },
+  361: { value: 0 },
+  362: { value: 0 },
+  363: { value: 0 },
+  364: { value: 15 },
 };
