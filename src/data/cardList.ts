@@ -448,6 +448,9 @@ export const CARD: Card = {
   362: { memberId: 15, title: 'やったーーー、勝ちーーーー！', awakenTitle: 'サンタガールが街にやってくる', rarityId: 3, attributeId: 5, roleId: 3, fromId: ['event', 29] },
   363: { memberId: 8, title: 'すっごくおいしそうーーーー！！', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['event', 29], outfitSeriesId: 16 },
   364: { memberId: 25, title: '毎年感動しちゃうよ', awakenTitle: '楽しいの天才', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['event', 29], outfitSeriesId: 17 },
+
+  365: { memberId: 9, title: '私はいいのよ！', awakenTitle: 'もこもこホワイトスノー', rarityId: 3, attributeId: 5, roleId: 2, fromId: ['gacha', 20016] },
+  366: { memberId: 14, title: 'ふふ……♪　とても暖かいですね', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['gacha', 20016], outfitSeriesId: 18 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

@@ -36,6 +36,7 @@ export const SKILL_EFFECT_CATEGORY: SkillEffectCategory = {
 
   4001: { desc: '기본 어필 + 스태미너 추가', iconAssetPath: '/images/icons/skill/passive_appl_stam_inc.png' },
   4002: { desc: '기본 어필 + 테크닉 추가', iconAssetPath: '/images/icons/skill/passive_appl_tech_inc.png' },
+  4003: { desc: '기본 테크닉 + 스태미너 추가', iconAssetPath: '/images/icons/skill/passive_tech_stam_inc.png' },
 };
 
 export const LIVE_SKILL_CATEGORIES = [
@@ -116,6 +117,7 @@ export const COMPOSED_SKILL_EFFECT_TYPE: ComposedSkillEffectType = {
 
   400101: { type: 'dual', subEffectTypeIds: [200101, 200201], effectCategoryId: 4001 },
   400201: { type: 'dual', subEffectTypeIds: [200101, 200301], effectCategoryId: 4002 },
+  400301: { type: 'dual', subEffectTypeIds: [200301, 200201], effectCategoryId: 4003 },
 };
 
 interface SkillEffectString {
