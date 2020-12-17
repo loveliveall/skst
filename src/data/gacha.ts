@@ -91,6 +91,8 @@ export const GACHA: Gacha = {
   10050: { type: 'event', name: '最高の遊園地攻略法！？ガチャ後編', startDate: '2020.11.22.', endDate: '2020.11.30.', eventId: 28 },
   10051: { type: 'event', name: '１番のクリスマスプレゼントガチャ前編', startDate: '2020.12.04.', endDate: '2020.12.14.', eventId: 29 },
   10052: { type: 'event', name: '１番のクリスマスプレゼントガチャ後編', startDate: '2020.12.07.', endDate: '2020.12.14.', eventId: 29 },
+  10053: { type: 'event', name: 'イルミネーションナイトガチャ前編', startDate: '2020.12.18.', endDate: '2020.12.28.', eventId: 30 },
+  10054: { type: 'event', name: 'イルミネーションナイトガチャ後編', startDate: '2020.12.21.', endDate: '2020.12.28.', eventId: 30 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },

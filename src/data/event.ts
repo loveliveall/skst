@@ -529,6 +529,14 @@ export const EVENT: Event = {
     startDate: '2020.12.07.',
     endDate: '2020.12.14.',
   },
+  30: {
+    name: 'イルミネーションナイト',
+    eventTypeId: 1,
+    rankBorder: {},
+    rewardBorder: {},
+    startDate: '2020.12.21.',
+    endDate: '2020.12.28.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,

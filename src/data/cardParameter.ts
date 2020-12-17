@@ -434,5 +434,12 @@ export const PARAMETER: Parameter = {
 
   365: [{ appl: 6324, stam: 3403, tech: 6498 }, { appl: 6740, stam: 4075, tech: 7352 }, { appl: 7988, stam: 4299, tech: 8633 }, { appl: 9652, stam: 4747, tech: 9487 }, { appl: 10484, stam: 5643, tech: 10341 }, { appl: 11335, stam: 6103, tech: 11628 }],
   366: [{ appl: 3472, stam: 3684, tech: 3684 }, { appl: 3920, stam: 4160, tech: 4160 }, { appl: 4368, stam: 4636, tech: 4636 }, { appl: 4816, stam: 4874, tech: 5112 }, { appl: 5488, stam: 5350, tech: 5350 }, { appl: 5712, stam: 6069, tech: 6069 }],
+
+  367: [{ appl: 4628, stam: 7098, tech: 4790 }, { appl: 5540, stam: 8032, tech: 5105 }, { appl: 5844, stam: 9433, tech: 6050 }, { appl: 6452, stam: 10367, tech: 7310 }, { appl: 7668, stam: 11301, tech: 7940 }, { appl: 8282, stam: 12718, tech: 8577 }],
+  368: [{ appl: 4223, stam: 3143, tech: 3472 }, { appl: 4769, stam: 3549, tech: 3920 }, { appl: 5315, stam: 3955, tech: 4368 }, { appl: 5588, stam: 4361, tech: 4816 }, { appl: 6134, stam: 4564, tech: 5488 }, { appl: 6960, stam: 5175, tech: 5712 }],
+  369: [{ appl: 6002, stam: 4059, tech: 6163 }, { appl: 6397, stam: 4860, tech: 6975 }, { appl: 7582, stam: 5127, tech: 8193 }, { appl: 9162, stam: 5661, tech: 9005 }, { appl: 9952, stam: 6729, tech: 9817 }, { appl: 10754, stam: 7266, tech: 11045 }],
+  370: [{ appl: 4286, stam: 4015, tech: 5086 }, { appl: 4568, stam: 4543, tech: 6088 }, { appl: 5414, stam: 5335, tech: 6422 }, { appl: 6542, stam: 5863, tech: 7090 }, { appl: 7106, stam: 6391, tech: 8426 }, { appl: 7670, stam: 7190, tech: 9107 }],
+  371: [{ appl: 3047, stam: 2960, tech: 2960 }, { appl: 3441, stam: 3342, tech: 3342 }, { appl: 3835, stam: 3724, tech: 3724 }, { appl: 4229, stam: 3915, tech: 4106 }, { appl: 4426, stam: 4297, tech: 4679 }, { appl: 5028, stam: 4879, tech: 4879 }],
+  372: [{ appl: 4037, stam: 2239, tech: 2692 }, { appl: 4559, stam: 2529, tech: 3040 }, { appl: 5081, stam: 2819, tech: 3388 }, { appl: 5342, stam: 3109, tech: 3736 }, { appl: 5864, stam: 3254, tech: 4258 }, { appl: 6654, stam: 3696, tech: 4437 }],
 };
 /* eslint-enable object-curly-newline, max-len */

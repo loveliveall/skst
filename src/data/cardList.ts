@@ -451,6 +451,13 @@ export const CARD: Card = {
 
   365: { memberId: 9, title: '私はいいのよ！', awakenTitle: 'もこもこホワイトスノー', rarityId: 3, attributeId: 5, roleId: 2, fromId: ['gacha', 20016] },
   366: { memberId: 14, title: 'ふふ……♪　とても暖かいですね', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 3, roleId: 3, fromId: ['gacha', 20016], outfitSeriesId: 18 },
+
+  367: { memberId: 7, title: 'ウチらの楽しい夜に乾杯♪', awakenTitle: '魅惑のDevil', rarityId: 3, attributeId: 3, roleId: 3, fromId: ['gacha', 10053] },
+  368: { memberId: 16, title: 'ほんとに別世界の住人って感じ…', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 3, roleId: 1, fromId: ['gacha', 10053], outfitSeriesId: 18 },
+  369: { memberId: 28, title: '次はデザートに行くよ～♪', awakenTitle: '魅惑のDevil', rarityId: 3, attributeId: 1, roleId: 2, fromId: ['gacha', 10054] },
+  370: { memberId: 17, title: 'まるでライブ会場みたいずら', awakenTitle: '魅惑のDevil', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['event', 30] },
+  371: { memberId: 4, title: '早く待ち合わせ場所に', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 4, roleId: 4, fromId: ['event', 30], outfitSeriesId: 16 },
+  372: { memberId: 24, title: 'さぁ、着いたわよ', awakenTitle: 'Fire Bird', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['event', 30], outfitSeriesId: 17 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
