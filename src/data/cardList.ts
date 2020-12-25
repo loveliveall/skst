@@ -458,6 +458,12 @@ export const CARD: Card = {
   370: { memberId: 17, title: 'まるでライブ会場みたいずら', awakenTitle: '魅惑のDevil', rarityId: 3, attributeId: 2, roleId: 4, fromId: ['event', 30] },
   371: { memberId: 4, title: '早く待ち合わせ場所に', awakenTitle: 'ユメノトビラ', rarityId: 2, attributeId: 4, roleId: 4, fromId: ['event', 30], outfitSeriesId: 16 },
   372: { memberId: 24, title: 'さぁ、着いたわよ', awakenTitle: 'Fire Bird', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['event', 30], outfitSeriesId: 17 },
+
+  373: { memberId: 2, title: 'エガオ、エイエン、エリーチカ☆', awakenTitle: 'センセーショナル・ディーバ', rarityId: 3, attributeId: 4, roleId: 4, fromId: ['gacha', 30017] },
+  374: { memberId: 13, title: 'こんな日はのんびりしよ', awakenTitle: 'Loyal Knight', rarityId: 3, attributeId: 6, roleId: 3, fromId: ['gacha', 30017] },
+  375: { memberId: 22, title: 'どっちにしよっかなぁ～', awakenTitle: 'かすみん☆ユートピア', rarityId: 3, attributeId: 6, roleId: 1, fromId: ['gacha', 30017] },
+  376: { memberId: 27, title: 'ま、漫画、隠さなくちゃ！', awakenTitle: 'LIKE IT！LOVE IT！', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 30017] },
+  377: { memberId: 12, title: '家族になってくれて、ありがとう', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['gacha', 30017] },
 };
 /* eslint-enable object-curly-newline, max-len */
 

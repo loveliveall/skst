@@ -127,6 +127,7 @@ export const GACHA: Gacha = {
   30014: { type: 'fes', name: 'スクスタフェス', startDate: '2020.09.30.', endDate: '2020.10.11.' },
   30015: { type: 'fes', name: 'スクスタフェス', startDate: '2020.10.26.', endDate: '2020.11.13.' },
   30016: { type: 'fes', name: 'スクスタフェス', startDate: '2020.11.26.', endDate: '2020.12.11.' },
+  30017: { type: 'fes', name: 'スクスタフェス', startDate: '2020.12.26.', endDate: '2021.01.14.' },
 
   40001: { type: 'reprint', name: 'スクスタハーフアニバーサリー記念♪衣装復刻ガチャ', startDate: '2020.03.09.', endDate: '2020.03.27.', desc: 'Snow halation, 君のこころは輝いてるかい？, わくわくアニマル 의상의 SR 27인 복각' },
 };
