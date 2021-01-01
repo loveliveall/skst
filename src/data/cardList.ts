@@ -462,8 +462,15 @@ export const CARD: Card = {
   373: { memberId: 2, title: 'エガオ、エイエン、エリーチカ☆', awakenTitle: 'センセーショナル・ディーバ', rarityId: 3, attributeId: 4, roleId: 4, fromId: ['gacha', 30017] },
   374: { memberId: 13, title: 'こんな日はのんびりしよ', awakenTitle: 'Loyal Knight', rarityId: 3, attributeId: 6, roleId: 3, fromId: ['gacha', 30017] },
   375: { memberId: 22, title: 'どっちにしよっかなぁ～', awakenTitle: 'かすみん☆ユートピア', rarityId: 3, attributeId: 6, roleId: 1, fromId: ['gacha', 30017] },
-  376: { memberId: 27, title: 'ま、漫画、隠さなくちゃ！', awakenTitle: 'LIKE IT！LOVE IT！', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 30017] },
-  377: { memberId: 12, title: '家族になってくれて、ありがとう', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['gacha', 30017] },
+  376: { memberId: 27, title: 'ま、漫画、隠さなくちゃ！', awakenTitle: 'LIKE IT！LOVE IT！', rarityId: 2, attributeId: 2, roleId: 2, fromId: ['gacha', 30017], outfitSeriesId: 17 },
+  377: { memberId: 12, title: '家族になってくれて、ありがとう', awakenTitle: '未体験HORIZON', rarityId: 2, attributeId: 6, roleId: 4, fromId: ['gacha', 30017], outfitSeriesId: 18 },
+
+  378: { memberId: 8, title: 'どうか見守っていてください', awakenTitle: '色鮮やか☆新春', rarityId: 3, attributeId: 3, roleId: 2, fromId: ['gacha', 10055] },
+  379: { memberId: 25, title: '愛さんに任せて♪', awakenTitle: '虹色Passions！', rarityId: 2, attributeId: 2, roleId: 1, fromId: ['gacha', 10055], outfitSeriesId: 19 },
+  380: { memberId: 12, title: 'ふふ、分かる？', awakenTitle: '色鮮やか☆新春', rarityId: 3, attributeId: 1, roleId: 1, fromId: ['gacha', 10055] },
+  381: { memberId: 26, title: '大吉パワーを、半分こだよ～！', awakenTitle: '色鮮やか☆新春', rarityId: 3, attributeId: 2, roleId: 3, fromId: ['event', 31] },
+  382: { memberId: 6, title: 'ごくっ……じゃあ、いくわよ！', awakenTitle: 'KiRa-KiRa Sensation!', rarityId: 2, attributeId: 6, roleId: 2, fromId: ['event', 31], outfitSeriesId: 20 },
+  383: { memberId: 17, title: 'お姫様みたいずら～っ', awakenTitle: 'MIRACLE WAVE', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['event', 31], outfitSeriesId: 21 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

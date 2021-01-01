@@ -537,6 +537,16 @@ export const EVENT: Event = {
     startDate: '2020.12.21.',
     endDate: '2020.12.28.',
   },
+  31: {
+    name: 'あけまして、浦の星流初詣',
+    eventTypeId: 2,
+    rankBorder: {},
+    voltageRankBorder: {},
+    voltageRankSongs: ['それは僕たちの奇跡', 'Landing action Yeah!!', '開花宣言'],
+    rewardBorder: {},
+    startDate: '2021.01.07.',
+    endDate: '2021.01.14.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,

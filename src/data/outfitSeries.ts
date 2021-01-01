@@ -26,5 +26,8 @@ export const OUTFIT_SERIES: OutfitSeries = {
   16: { name: 'ユメノトビラ', groupId: 1 },
   17: { name: '니지 3집 의상', groupId: 3 },
   18: { name: '未体験HORIZON', groupId: 2 },
+  19: { name: '虹色Passions！', groupId: 3 },
+  20: { name: 'KiRa-KiRa Sensation!', groupId: 1 },
+  21: { name: 'MIRACLE WAVE', groupId: 2 },
 };
 /* eslint-enable object-curly-newline, max-len */
