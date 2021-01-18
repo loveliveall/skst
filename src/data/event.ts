@@ -547,6 +547,14 @@ export const EVENT: Event = {
     startDate: '2021.01.07.',
     endDate: '2021.01.14.',
   },
+  32: {
+    name: '新春丑年特別エクササイズ',
+    eventTypeId: 1,
+    rankBorder: {},
+    rewardBorder: {},
+    startDate: '2021.01.22.',
+    endDate: '2021.01.30.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,

@@ -95,6 +95,8 @@ export const GACHA: Gacha = {
   10053: { type: 'event', name: 'イルミネーションナイトガチャ前編', startDate: '2020.12.18.', endDate: '2020.12.28.', eventId: 30 },
   10054: { type: 'event', name: 'イルミネーションナイトガチャ後編', startDate: '2020.12.21.', endDate: '2020.12.28.', eventId: 30 },
   10055: { type: 'event', name: 'あけまして、浦の星流初詣ガチャ', startDate: '2021.01.01.', endDate: '2021.01.14.', eventId: 31 },
+  10056: { type: 'event', name: '新春丑年特別エクササイズガチャ前編', startDate: '2021.01.19.', endDate: '2021.01.30.', eventId: 32 },
+  10057: { type: 'event', name: '新春丑年特別エクササイズガチャ後編', startDate: '2021.01.22.', endDate: '2021.01.30.', eventId: 32 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },
@@ -112,6 +114,7 @@ export const GACHA: Gacha = {
   20014: { type: 'pickup', name: 'メンバーピックアップガチャ (루비, 에리)', startDate: '2020.10.12.', endDate: '2020.10.25.' },
   20015: { type: 'pickup', name: 'メンバーピックアップガチャ (치카, 마키)', startDate: '2020.11.14.', endDate: '2020.11.26.' },
   20016: { type: 'pickup', name: 'メンバーピックアップガチャ (니코, 다이아)', startDate: '2020.12.14.', endDate: '2020.12.26.' },
+  20017: { type: 'pickup', name: 'メンバーピックアップガチャ (아유무, 다이아)', startDate: '2021.01.14.', endDate: '2021.01.30.' },
 
   30001: { type: 'fes', name: 'スクスタフェス', startDate: '2019.11.30.', endDate: '2019.12.06.' },
   30002: { type: 'fes', name: 'スクスタフェス', startDate: '2019.12.31.', endDate: '2020.01.06.' },

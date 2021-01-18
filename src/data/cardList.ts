@@ -471,6 +471,16 @@ export const CARD: Card = {
   381: { memberId: 26, title: '大吉パワーを、半分こだよ～！', awakenTitle: '色鮮やか☆新春', rarityId: 3, attributeId: 2, roleId: 3, fromId: ['event', 31] },
   382: { memberId: 6, title: 'ごくっ……じゃあ、いくわよ！', awakenTitle: 'KiRa-KiRa Sensation!', rarityId: 2, attributeId: 6, roleId: 2, fromId: ['event', 31], outfitSeriesId: 20 },
   383: { memberId: 17, title: 'お姫様みたいずら～っ', awakenTitle: 'MIRACLE WAVE', rarityId: 2, attributeId: 2, roleId: 3, fromId: ['event', 31], outfitSeriesId: 21 },
+
+  384: { memberId: 21, title: '休んでいないとダメだよ！', awakenTitle: 'ミスティック・フェアリー', rarityId: 3, attributeId: 2, roleId: 1, fromId: ['gacha', 20017] },
+  385: { memberId: 14, title: '温かい……甘くて美味しいですわ', awakenTitle: 'MIRACLE WAVE', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['gacha', 20017] },
+
+  386: { memberId: 4, title: '全力できてください！', awakenTitle: 'モーモー♡ファームデイズ', rarityId: 3, attributeId: 3, roleId: 1, fromId: ['gacha', 10056] },
+  387: { memberId: 11, title: 'すっごい伸びるね、このおもち！', awakenTitle: 'MIRACLE WAVE', rarityId: 2, attributeId: 1, roleId: 4, fromId: ['gacha', 10056], outfitSeriesId: 21 },
+  388: { memberId: 24, title: 'こんな感じで', awakenTitle: 'モーモー♡ファームデイズ', rarityId: 3, attributeId: 4, roleId: 4, fromId: ['gacha', 10057] },
+  389: { memberId: 13, title: 'いつでもオッケーだよ！', awakenTitle: 'モーモー♡ファームデイズ', rarityId: 3, attributeId: 2, roleId: 2, fromId: ['event', 32] },
+  390: { memberId: 1, title: '衣装が着れなくなっているなんて', awakenTitle: 'KiRa-KiRa Sensation!', rarityId: 2, attributeId: 1, roleId: 3, fromId: ['event', 32], outfitSeriesId: 20 },
+  391: { memberId: 29, title: '先生を呼んできた', awakenTitle: '虹色Passions！', rarityId: 2, attributeId: 6, roleId: 1, fromId: ['event', 32], outfitSeriesId: 19 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
