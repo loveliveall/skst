@@ -555,6 +555,16 @@ export const EVENT: Event = {
     startDate: '2021.01.22.',
     endDate: '2021.01.30.',
   },
+  33: {
+    name: '愛がたっぷり、バレンタイン♪',
+    eventTypeId: 2,
+    rankBorder: {},
+    voltageRankBorder: {},
+    voltageRankSongs: ['Wonderful Rush', '君のこころは輝いてるかい？', 'アナログハート'],
+    rewardBorder: {},
+    startDate: '2021.02.07.',
+    endDate: '2021.02.14.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,

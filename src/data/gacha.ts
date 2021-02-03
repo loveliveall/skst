@@ -38,7 +38,7 @@ export const GACHA: Gacha = {
   13: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.09.30.', endDate: '2020.10.31.' },
   14: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.10.31.', endDate: '2020.11.30.' },
   15: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.12.01.', endDate: '2020.12.31.' },
-  16: { type: 'normal', name: 'オールスターガチャ', startDate: '2021.01.01.', endDate: '2021.12.31.' },
+  16: { type: 'normal', name: 'オールスターガチャ', startDate: '2021.01.01.', endDate: '2021.01.31.' },
 
   10001: { type: 'event', name: '秘密のパーティー！ガチャ', startDate: '2019.10.03.', endDate: '2019.10.15.', eventId: 1 },
   10002: { type: 'event', name: '和装モデルはお任せあれ！ガチャ', startDate: '2019.10.21.', endDate: '2019.10.31.', eventId: 2 },
@@ -97,6 +97,8 @@ export const GACHA: Gacha = {
   10055: { type: 'event', name: 'あけまして、浦の星流初詣ガチャ', startDate: '2021.01.01.', endDate: '2021.01.14.', eventId: 31 },
   10056: { type: 'event', name: '新春丑年特別エクササイズガチャ前編', startDate: '2021.01.19.', endDate: '2021.01.30.', eventId: 32 },
   10057: { type: 'event', name: '新春丑年特別エクササイズガチャ後編', startDate: '2021.01.22.', endDate: '2021.01.30.', eventId: 32 },
+  10058: { type: 'event', name: '愛がたっぷり、バレンタイン♪ガチャ前編', startDate: '2021.02.04.', endDate: '2021.02.14.', eventId: 33 },
+  10059: { type: 'event', name: '愛がたっぷり、バレンタイン♪ガチャ後編', startDate: '2021.02.07.', endDate: '2021.02.14.', eventId: 33 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },
@@ -133,6 +135,7 @@ export const GACHA: Gacha = {
   30015: { type: 'fes', name: 'スクスタフェス', startDate: '2020.10.26.', endDate: '2020.11.13.' },
   30016: { type: 'fes', name: 'スクスタフェス', startDate: '2020.11.26.', endDate: '2020.12.11.' },
   30017: { type: 'fes', name: 'スクスタフェス', startDate: '2020.12.26.', endDate: '2021.01.14.' },
+  30018: { type: 'fes', name: 'スクスタフェス', startDate: '2021.01.30.', endDate: '2021.02.14.' },
 
   40001: { type: 'reprint', name: 'スクスタハーフアニバーサリー記念♪衣装復刻ガチャ', startDate: '2020.03.09.', endDate: '2020.03.27.', desc: 'Snow halation, 君のこころは輝いてるかい？, わくわくアニマル 의상의 SR 27인 복각' },
 };

@@ -481,6 +481,18 @@ export const CARD: Card = {
   389: { memberId: 13, title: 'いつでもオッケーだよ！', awakenTitle: 'モーモー♡ファームデイズ', rarityId: 3, attributeId: 2, roleId: 2, fromId: ['event', 32] },
   390: { memberId: 1, title: '衣装が着れなくなっているなんて', awakenTitle: 'KiRa-KiRa Sensation!', rarityId: 2, attributeId: 1, roleId: 3, fromId: ['event', 32], outfitSeriesId: 20 },
   391: { memberId: 29, title: '先生を呼んできた', awakenTitle: '虹色Passions！', rarityId: 2, attributeId: 6, roleId: 1, fromId: ['event', 32], outfitSeriesId: 19 },
+
+  392: { memberId: 9, title: 'うるさいわね……ふわぁ～', awakenTitle: 'Little Venus', rarityId: 3, attributeId: 2, roleId: 1, fromId: ['gacha', 30018] },
+  393: { memberId: 15, title: 'む～、悔しい！', awakenTitle: '宴の艶めき', rarityId: 3, attributeId: 1, roleId: 4, fromId: ['gacha', 30018] },
+  394: { memberId: 5, title: 'うう～～すっごいかわいいにゃー', awakenTitle: 'KiRa-KiRa Sensation!', rarityId: 2, attributeId: 6, roleId: 2, fromId: ['gacha', 30018], outfitSeriesId: 20 },
+  395: { memberId: 23, title: '運命的な出会い', awakenTitle: '虹色Passions！', rarityId: 2, attributeId: 4, roleId: 4, fromId: ['gacha', 30018], outfitSeriesId: 19 },
+
+  396: { memberId: 1, title: 'はい、どうぞ', awakenTitle: 'スイート♡ショコラ', rarityId: 3, attributeId: 5, roleId: 2, fromId: ['gacha', 10058] },
+  397: { memberId: 21, title: 'いつも私のことを感じてほしいな', awakenTitle: '虹色Passions！', rarityId: 2, attributeId: 1, roleId: 1, fromId: ['gacha', 10058], outfitSeriesId: 19 },
+  398: { memberId: 18, title: '最高にラヴリーな毎日を一緒に', awakenTitle: 'スイート♡ショコラ', rarityId: 3, attributeId: 4, roleId: 3, fromId: ['gacha', 10059] },
+  399: { memberId: 23, title: 'チョコに乗せて伝えたかったから', awakenTitle: 'スイート♡ショコラ', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['event', 33] },
+  400: { memberId: 19, title: '大好きな人にチョコをあげるんだ', awakenTitle: 'MIRACLE WAVE', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['event', 33], outfitSeriesId: 21 },
+  401: { memberId: 9, title: '宇宙で一番かわいいチョコ', awakenTitle: 'KiRa-KiRa Sensation!', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['event', 33], outfitSeriesId: 20 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
