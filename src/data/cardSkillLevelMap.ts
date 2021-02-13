@@ -480,7 +480,7 @@ export const SKILL_LEVEL_MAP: SkillLevelMap = {
   400: { speciality: [3, 3, 3, 4, 4, 5], individuality: { passive: [3, 3, 3, 4, 4, 5] } },
   401: { speciality: [3, 3, 3, 4, 4, 5], individuality: { passive: [3, 3, 3, 4, 4, 5] } },
 
-  402: { speciality: [3, 3, 3, 4, 4, 5], individuality: { passive: [3, 4, 4, 5, 6, 7] } }, // May change
+  402: { speciality: [4, 4, 5, 5, 5, 5], individuality: { passive: [5, 5, 5, 6, 6, 7] } }, // May change
   403: { speciality: [3, 3, 3, 4, 4, 5], individuality: { passive: [3, 3, 3, 4, 4, 5] } },
   404: { speciality: [3, 3, 3, 4, 4, 5], individuality: { passive: [3, 3, 3, 4, 4, 5] } },
 };
