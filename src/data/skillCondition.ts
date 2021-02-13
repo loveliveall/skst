@@ -11,4 +11,5 @@ export const SKILL_CONDITION: SkillCondition = {
   4: { desc: '4회만 발동' },
   8: { desc: '8회만 발동' },
   10: { desc: '10회만 발동' },
+  10002: { desc: '최대 2%' },
 };

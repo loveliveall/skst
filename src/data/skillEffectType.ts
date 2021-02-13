@@ -94,6 +94,7 @@ export const SKILL_EFFECT_TYPE: SkillEffectType = {
   101601: { desc: '기본 SP 게이지 획득량 상승 (%)', scaleType: 'percent', ingameText: 'SPゲージ獲得＋', effectCategoryId: 1016 },
   101701: { desc: '기본 특기 발동률 상승 (%)', scaleType: 'percent', ingameText: '特技発動率＋', effectCategoryId: 1017 },
   101801: { desc: '기본 어필 추가 (%)', scaleType: 'percent', ingameText: 'アピール＋', effectCategoryId: 1018 },
+  101802: { desc: '잔여 스태미너 비례 기본 어필 추가 (%)', scaleType: 'percent', ingameText: 'アピール＋(元気)', effectCategoryId: 1018 },
   101901: { desc: '기본 크리티컬치 상승 (%)', scaleType: 'percent', ingameText: 'クリティカル＋', effectCategoryId: 1019 },
 
   200101: { desc: '기본 어필 추가 (%)', scaleType: 'percent', ingameText: 'アピール＋', effectCategoryId: 2001 },
@@ -165,6 +166,7 @@ export const SKILL_EFFECT_STRING: SkillEffectString = {
   101601: { beforeValue: '기본 SP 게이지 획득량', afterValue: '% 상승' },
   101701: { beforeValue: '기본 특기 발동률', afterValue: '% 상승' },
   101801: { beforeValue: '기본 어필', afterValue: '% 추가' },
+  101802: { beforeValue: '남은 스태미너에 비례해 기본 어필 추가', afterValue: '' },
   101901: { beforeValue: '기본 크리티컬치', afterValue: '% 상승' },
 
   200101: { beforeValue: '기본 어필', afterValue: '% 추가' },

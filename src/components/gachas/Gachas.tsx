@@ -76,6 +76,7 @@ const Gachas: React.FC<GachasProps> = ({
                 if (rowData.type === 'pickup') return <PaddedSpan>픽업 가챠</PaddedSpan>;
                 if (rowData.type === 'fes') return <PaddedSpan>페스 가챠</PaddedSpan>;
                 if (rowData.type === 'reprint') return <PaddedSpan>복각 가챠</PaddedSpan>;
+                if (rowData.type === 'party') return <PaddedSpan>파티 가챠</PaddedSpan>;
                 return <PaddedSpan />;
               },
             },
@@ -101,7 +102,7 @@ const Gachas: React.FC<GachasProps> = ({
             {
               title: '신규 등장',
               render: (rowData) => {
-                if (['event', 'pickup', 'fes'].includes(rowData.type)) {
+                if (['event', 'pickup', 'fes', 'party'].includes(rowData.type)) {
                   return (
                     <VerticalFlex>
                       <FlexBox>

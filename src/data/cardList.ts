@@ -493,6 +493,10 @@ export const CARD: Card = {
   399: { memberId: 23, title: 'チョコに乗せて伝えたかったから', awakenTitle: 'スイート♡ショコラ', rarityId: 3, attributeId: 6, roleId: 4, fromId: ['event', 33] },
   400: { memberId: 19, title: '大好きな人にチョコをあげるんだ', awakenTitle: 'MIRACLE WAVE', rarityId: 2, attributeId: 5, roleId: 1, fromId: ['event', 33], outfitSeriesId: 21 },
   401: { memberId: 9, title: '宇宙で一番かわいいチョコ', awakenTitle: 'KiRa-KiRa Sensation!', rarityId: 2, attributeId: 4, roleId: 2, fromId: ['event', 33], outfitSeriesId: 20 },
+
+  402: { memberId: 25, title: 'おめでとー！そしてありがとー！', awakenTitle: 'アイ♡ドール', rarityId: 3, attributeId: 4, roleId: 1, fromId: ['gacha', 50001] },
+  403: { memberId: 8, title: 'たくさんの人に伝わるような', awakenTitle: 'KiRa-KiRa Sensation!', rarityId: 2, attributeId: 2, roleId: 4, fromId: ['gacha', 50001], outfitSeriesId: 20 },
+  404: { memberId: 210, title: '要検討というところでしょうか', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['gacha', 50001], outfitSeriesId: 15 },
 };
 /* eslint-enable object-curly-newline, max-len */
 
