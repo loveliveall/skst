@@ -101,6 +101,8 @@ export const GACHA: Gacha = {
   10057: { type: 'event', name: '新春丑年特別エクササイズガチャ後編', startDate: '2021.01.22.', endDate: '2021.01.30.', eventId: 32 },
   10058: { type: 'event', name: '愛がたっぷり、バレンタイン♪ガチャ前編', startDate: '2021.02.04.', endDate: '2021.02.14.', eventId: 33 },
   10059: { type: 'event', name: '愛がたっぷり、バレンタイン♪ガチャ後編', startDate: '2021.02.07.', endDate: '2021.02.14.', eventId: 33 },
+  10060: { type: 'event', name: '未来のラボは大騒ぎガチャ前編', startDate: '2021.02.17.', endDate: '2021.02.27.', eventId: 34 },
+  10061: { type: 'event', name: '未来のラボは大騒ぎガチャ後編', startDate: '2021.02.20.', endDate: '2021.02.27.', eventId: 34 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },

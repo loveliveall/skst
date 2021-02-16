@@ -497,6 +497,13 @@ export const CARD: Card = {
   402: { memberId: 25, title: 'おめでとー！そしてありがとー！', awakenTitle: 'アイ♡ドール', rarityId: 3, attributeId: 4, roleId: 1, fromId: ['gacha', 50001] },
   403: { memberId: 8, title: 'たくさんの人に伝わるような', awakenTitle: 'KiRa-KiRa Sensation!', rarityId: 2, attributeId: 2, roleId: 4, fromId: ['gacha', 50001], outfitSeriesId: 20 },
   404: { memberId: 210, title: '要検討というところでしょうか', awakenTitle: 'Love U my friends', rarityId: 2, attributeId: 4, roleId: 1, fromId: ['gacha', 50001], outfitSeriesId: 15 },
+
+  405: { memberId: 2, title: 'みんなにもよろしく♪', awakenTitle: 'スチームパンク☆アドベンチャー', rarityId: 3, attributeId: 1, roleId: 2, fromId: ['gacha', 10060] },
+  406: { memberId: 12, title: 'あ――――っ！　いた！！', awakenTitle: 'MIRACLE WAVE', rarityId: 2, attributeId: 4, roleId: 3, fromId: ['gacha', 10060], outfitSeriesId: 21 },
+  407: { memberId: 11, title: 'こっちのボタンを……あれ？', awakenTitle: 'スチームパンク☆アドベンチャー', rarityId: 3, attributeId: 2, roleId: 3, fromId: ['gacha', 10061] },
+  408: { memberId: 27, title: 'は、花……花びらです！', awakenTitle: 'スチームパンク☆アドベンチャー', rarityId: 3, attributeId: 5, roleId: 1, fromId: ['event', 34] },
+  409: { memberId: 3, title: '彼方さんの運命候補達です', awakenTitle: 'KiRa-KiRa Sensation!', rarityId: 2, attributeId: 1, roleId: 2, fromId: ['event', 34], outfitSeriesId: 20 },
+  410: { memberId: 26, title: '完全無欠のチーズケーキの研究', awakenTitle: '虹色Passions！', rarityId: 2, attributeId: 5, roleId: 4, fromId: ['event', 34], outfitSeriesId: 19 },
 };
 /* eslint-enable object-curly-newline, max-len */
 

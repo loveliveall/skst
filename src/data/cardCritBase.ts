@@ -410,4 +410,10 @@ export const CARD_CRIT_BASE: CritBase = {
   402: { value: 0 },
   403: { value: 0 },
   404: { value: 0 },
+  405: { value: 0 },
+  406: { value: 0 },
+  407: { value: 0 },
+  408: { value: 0 },
+  409: { value: 0 },
+  410: { value: 0 },
 };

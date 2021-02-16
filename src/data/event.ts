@@ -565,6 +565,14 @@ export const EVENT: Event = {
     startDate: '2021.02.07.',
     endDate: '2021.02.14.',
   },
+  34: {
+    name: '未来のラボは大騒ぎ',
+    eventTypeId: 1,
+    rankBorder: {},
+    rewardBorder: {},
+    startDate: '2021.02.20.',
+    endDate: '2021.02.27.',
+  },
   10001: {
     name: 'スクスタビックライブ',
     eventTypeId: 3,
