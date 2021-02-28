@@ -1,13 +1,14 @@
 module.exports = {
+  root: true,
+  parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
+  parserOptions: {
+    project: ['./tsconfig.json'],
+  },
   extends: [
     'airbnb-typescript',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
   ],
-  env: {
-    node: true,
-    browser: true,
-  },
   settings: {
     'import/resolver': {
       alias: {
@@ -18,13 +19,19 @@ module.exports = {
       },
     },
   },
+  ignorePatterns: [
+    '.eslintrc.js',
+    'webpack.config.js',
+  ],
   rules: {
-    'no-console': 'off',
-    'max-len': ['error', 120],
-    'react/prop-types': 'off',
     'import/prefer-default-export': 'off',
-    'jsx-a11y/no-noninteractive-element-interactions': 'off',
-    'jsx-a11y/click-events-have-key-events': 'off',
+    'max-len': ['error', {
+      code: 120,
+      tabWidth: 2,
+      ignoreComments: true,
+    }],
+    'react/prop-types': 'off',
+    '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/member-delimiter-style': ['error', {
       multiline: {
         delimiter: 'comma',
@@ -35,7 +42,5 @@ module.exports = {
         requireLast: true,
       },
     }],
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
   },
-}
+};

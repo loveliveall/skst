@@ -4,18 +4,31 @@
     "noImplicitAny": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es6",
-    "baseUrl": "./",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "noUncheckedIndexedAccess": true,
     "strict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
-    "jsx": "react",
+    "target": "es6",
+    "baseUrl": "./",
     "module": "esnext",
     "moduleResolution": "node",
+    "lib": [
+      "es2015",
+      "es2017",
+      "dom"
+    ],
+    "removeComments": true,
+    "jsx": "react",
     "paths": {
       "@/*": ["src/*"]
     }
-  }
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules/*",
+  ]
 }

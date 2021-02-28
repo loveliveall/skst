@@ -1,4 +1,4 @@
-export interface Gacha {
+export type Gacha = {
   readonly [id: number]: (
     {
       name: string,
@@ -7,7 +7,9 @@ export interface Gacha {
     }
   ) & (
     {
-      type: 'normal' | 'pickup',
+      type: 'allstar',
+    } | {
+      type: 'pickup',
     } | {
       type: 'event',
       eventId: number,
@@ -15,32 +17,32 @@ export interface Gacha {
       type: 'fes',
       desc?: string,
     } | {
-      type: 'reprint',
-      desc: string,
-    } | {
       type: 'party',
     }
   ),
-}
+};
+export type GachaType = Gacha[number]['type'];
+
+export const GACHA_TYPES: GachaType[] = ['allstar', 'pickup', 'event', 'fes', 'party'];
 
 /* eslint-disable object-curly-newline, max-len */
 export const GACHA: Gacha = {
-  1: { type: 'normal', name: 'リリース記念ガチャ', startDate: '2019.09.26.', endDate: '2019.10.31.' },
-  2: { type: 'normal', name: 'オールスターガチャ', startDate: '2019.10.31.', endDate: '2019.11.30.' },
-  3: { type: 'normal', name: 'オールスターガチャ', startDate: '2019.11.30.', endDate: '2019.12.31.' },
-  4: { type: 'normal', name: 'オールスターガチャ', startDate: '2019.12.31.', endDate: '2020.01.31.' },
-  5: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.01.31.', endDate: '2020.02.28.' },
-  6: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.02.28.', endDate: '2020.03.31.' },
-  7: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.03.31.', endDate: '2020.04.30.' },
-  8: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.04.30.', endDate: '2020.05.29.' },
-  9: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.05.29.', endDate: '2020.06.30.' },
-  10: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.06.30.', endDate: '2020.07.31.' },
-  11: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.07.31.', endDate: '2020.08.31.' },
-  12: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.08.31.', endDate: '2020.09.30.' },
-  13: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.09.30.', endDate: '2020.10.31.' },
-  14: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.10.31.', endDate: '2020.11.30.' },
-  15: { type: 'normal', name: 'オールスターガチャ', startDate: '2020.12.01.', endDate: '2020.12.31.' },
-  16: { type: 'normal', name: 'オールスターガチャ', startDate: '2021.01.01.', endDate: '2021.01.31.' },
+  1: { type: 'allstar', name: 'リリース記念ガチャ', startDate: '2019.09.26.', endDate: '2019.10.31.' },
+  2: { type: 'allstar', name: 'オールスターガチャ', startDate: '2019.10.31.', endDate: '2019.11.30.' },
+  3: { type: 'allstar', name: 'オールスターガチャ', startDate: '2019.11.30.', endDate: '2019.12.31.' },
+  4: { type: 'allstar', name: 'オールスターガチャ', startDate: '2019.12.31.', endDate: '2020.01.31.' },
+  5: { type: 'allstar', name: 'オールスターガチャ', startDate: '2020.01.31.', endDate: '2020.02.28.' },
+  6: { type: 'allstar', name: 'オールスターガチャ', startDate: '2020.02.28.', endDate: '2020.03.31.' },
+  7: { type: 'allstar', name: 'オールスターガチャ', startDate: '2020.03.31.', endDate: '2020.04.30.' },
+  8: { type: 'allstar', name: 'オールスターガチャ', startDate: '2020.04.30.', endDate: '2020.05.29.' },
+  9: { type: 'allstar', name: 'オールスターガチャ', startDate: '2020.05.29.', endDate: '2020.06.30.' },
+  10: { type: 'allstar', name: 'オールスターガチャ', startDate: '2020.06.30.', endDate: '2020.07.31.' },
+  11: { type: 'allstar', name: 'オールスターガチャ', startDate: '2020.07.31.', endDate: '2020.08.31.' },
+  12: { type: 'allstar', name: 'オールスターガチャ', startDate: '2020.08.31.', endDate: '2020.09.30.' },
+  13: { type: 'allstar', name: 'オールスターガチャ', startDate: '2020.09.30.', endDate: '2020.10.31.' },
+  14: { type: 'allstar', name: 'オールスターガチャ', startDate: '2020.10.31.', endDate: '2020.11.30.' },
+  15: { type: 'allstar', name: 'オールスターガチャ', startDate: '2020.12.01.', endDate: '2020.12.31.' },
+  16: { type: 'allstar', name: 'オールスターガチャ', startDate: '2021.01.01.', endDate: '2021.01.31.' },
 
   10001: { type: 'event', name: '秘密のパーティー！ガチャ', startDate: '2019.10.03.', endDate: '2019.10.15.', eventId: 1 },
   10002: { type: 'event', name: '和装モデルはお任せあれ！ガチャ', startDate: '2019.10.21.', endDate: '2019.10.31.', eventId: 2 },
@@ -140,9 +142,8 @@ export const GACHA: Gacha = {
   30016: { type: 'fes', name: 'スクスタフェス', startDate: '2020.11.26.', endDate: '2020.12.11.' },
   30017: { type: 'fes', name: 'スクスタフェス', startDate: '2020.12.26.', endDate: '2021.01.14.' },
   30018: { type: 'fes', name: 'スクスタフェス', startDate: '2021.01.30.', endDate: '2021.02.14.' },
+  30019: { type: 'fes', name: 'スクスタフェス', startDate: '2021.02.28.', endDate: '2021.03.15.' },
 
-  40001: { type: 'reprint', name: 'スクスタハーフアニバーサリー記念♪衣装復刻ガチャ', startDate: '2020.03.09.', endDate: '2020.03.27.', desc: 'Snow halation, 君のこころは輝いてるかい？, わくわくアニマル 의상의 SR 27인 복각' },
-
-  50001: { type: 'party', name: 'パーティーガチャ', startDate: '2021.02.14.', endDate: '2021.02.28.' },
+  40001: { type: 'party', name: 'パーティーガチャ', startDate: '2021.02.14.', endDate: '2021.02.28.' },
 };
 /* eslint-enable object-curly-newline, max-len */

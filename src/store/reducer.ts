@@ -1,17 +1,12 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from '@reduxjs/toolkit';
 
-import cardsReducer from './cards/reducers';
-import cardComparatorReducer from './card-comparator/reducers';
-import dbReducer from './db/reducers';
-import deckSimulatorReducer from './deck-simulator/reducers';
-import voltageCalculatorReducer from './voltage-calculator/reducers';
+import cardFilterReducer from './card-filter/slice';
+import settingsReducer from './settings/slice';
 
-export const rootReducer = combineReducers({
-  cards: cardsReducer,
-  cardComparator: cardComparatorReducer,
-  db: dbReducer,
-  deckSimulator: deckSimulatorReducer,
-  voltageCalculator: voltageCalculatorReducer,
+const appReducer = combineReducers({
+  cardFilter: cardFilterReducer,
+  settings: settingsReducer,
 });
 
-export type AppState = ReturnType<typeof rootReducer>;
+export type AppState = ReturnType<typeof appReducer>;
+export default appReducer;

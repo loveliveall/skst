@@ -1,12 +1,14 @@
-// Re-exporting
-import { store } from './store';
-import { AppState } from './reducer';
-import { AC } from './actions';
-import { SEL } from './selectors';
+import { configureStore } from '@reduxjs/toolkit';
+import { useDispatch, useSelector, TypedUseSelectorHook } from 'react-redux';
+import reducer, { AppState as RootState } from './reducer';
 
-export {
-  store,
-  AppState,
-  AC,
-  SEL,
-};
+const store = configureStore({
+  reducer,
+});
+
+export default store;
+
+export type AppState = RootState;
+export type AppDispatch = typeof store.dispatch;
+export const useAppDispatch = () => useDispatch<AppDispatch>();
+export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector;

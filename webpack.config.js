@@ -17,7 +17,7 @@ module.exports = (_, argv) => {
     entry: path.resolve(__dirname, 'src/index'),
     output: {
       path: path.resolve(__dirname, 'build'),
-      filename: '[name].[hash].bundle.js',
+      filename: '[name].[contenthash].bundle.js',
       chunkFilename: '[name].[chunkhash].bundle.js',
       publicPath: '/',
     },
@@ -39,16 +39,18 @@ module.exports = (_, argv) => {
     },
     plugins: [
       new CleanWebpackPlugin(),
-      new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, 'src/index.html'),
-      }),
       new CopyWebpackPlugin({
         patterns: [
-          'src/CNAME',
-          'src/404.html',
-          'src/favicon-128.png',
-          { from: 'assets/images', to: 'images' },
+          {
+            from: 'public',
+            globOptions: {
+              ignore: ['**/index.html'],
+            },
+          },
         ],
+      }),
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, 'public/index.html'),
       }),
     ],
   };
