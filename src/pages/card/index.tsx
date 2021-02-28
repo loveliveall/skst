@@ -24,6 +24,7 @@ import { RARITY } from '@/data/cardMetadata';
 
 import CardBasicInfo from './CardBasicInfo';
 import CardStatInfo from './CardStatInfo';
+import CardStatRank from './CardStatRank';
 import CardSkillInfo from './CardSkillInfo';
 
 type MatchProps = {
@@ -98,6 +99,7 @@ const Card: React.FC<CardProps> = ({
       <CardBasicInfo cardId={cardId} />
       <CardStatInfo cardId={cardId} />
       <CardSkillInfo cardId={cardId} />
+      <CardStatRank cardId={cardId} />
     </VStack>
   );
 };
