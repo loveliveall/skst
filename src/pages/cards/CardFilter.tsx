@@ -467,6 +467,7 @@ const CardFilter: React.FC = () => {
               </Select>
               {filt.firstOut?.type === 'gacha' && (
                 <Select
+                  size="sm"
                   value={filt.firstOut.gachaType ?? 'all'}
                   onChange={(e) => dispatch(setFirstOutFilter({
                     type: 'gacha',
