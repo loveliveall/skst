@@ -149,7 +149,7 @@ const CardFilter: React.FC = () => {
               })}
             </VStack>
           </Row>
-          <Row title="속성">
+          <Row title="타입">
             <HStack spacing={2}>
               <ImageButton
                 active={roleAll}
@@ -171,7 +171,7 @@ const CardFilter: React.FC = () => {
               ))}
             </HStack>
           </Row>
-          <Row title="타입">
+          <Row title="속성">
             <HStack spacing={2}>
               <ImageButton
                 active={attributeAll}
