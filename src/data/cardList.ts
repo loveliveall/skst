@@ -430,6 +430,12 @@ export const CARD: Card = {
   413: { memberId: 210, title: '私の格好、変ではありませんか？', awakenTitle: '清純♡ラブリーモーメント', rarityId: 30, attributeId: 3, roleId: 3, critOffset: 0 },
   414: { memberId: 103, title: 'よーし、そのいき！', awakenTitle: 'MIRACLE WAVE', rarityId: 20, attributeId: 3, roleId: 1, critOffset: 0 },
   415: { memberId: 204, title: 'これは……パンダのクッキー？', awakenTitle: '虹色Passions！', rarityId: 20, attributeId: 2, roleId: 3, critOffset: 0 },
+  416: { memberId: 107, title: 'おーい、ことりさーん！', awakenTitle: 'ピュアホワイト♡', rarityId: 30, attributeId: 1, roleId: 1, critOffset: 0 },
+  417: { memberId: 7, title: '……このことだったんやね', awakenTitle: 'KiRa-KiRa Sensation!', rarityId: 20, attributeId: 6, roleId: 4, critOffset: 1500 },
+  418: { memberId: 209, title: 'お願い。力をかして', awakenTitle: 'ピュアホワイト♡', rarityId: 30, attributeId: 3, roleId: 3, critOffset: 0 },
+  419: { memberId: 3, title: 'ちゃんと届きますように！', awakenTitle: 'ピュアホワイト♡', rarityId: 30, attributeId: 6, roleId: 4, critOffset: 1500 },
+  420: { memberId: 105, title: '手触りもたまらない', awakenTitle: 'MIRACLE WAVE', rarityId: 20, attributeId: 5, roleId: 3, critOffset: 0 },
+  421: { memberId: 208, title: 'だから……ぎゅーっ！', awakenTitle: '虹色Passions！', rarityId: 20, attributeId: 4, roleId: 2, critOffset: 0 },  
 };
 
 export const FULL_CARD_LIST = Object.keys(CARD).map(Number).map((cardId) => {

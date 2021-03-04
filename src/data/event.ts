@@ -246,4 +246,11 @@ export const EVENT: Event = {
     startDate: '2021.02.20.',
     endDate: '2021.02.27.',
   },
+  35: {
+    name: '思いよ届け、ホワイトデー',
+    eventTypeId: 2,
+    voltageRankSongs: ['COLORFUL VOICE', 'GALAXY HidE and SeeK', '友 & 愛'],
+    startDate: '2021.03.07.',
+    endDate: '2021.03.14.',
+  },
 };
