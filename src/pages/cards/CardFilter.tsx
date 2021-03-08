@@ -19,8 +19,6 @@ import {
   DeleteIcon,
 } from '@chakra-ui/icons';
 
-import FixedWrapper from '@/components/FixedWrapper';
-
 import { useAppDispatch, useAppSelector } from '@/store';
 import {
   setAttributeFilter,
@@ -63,6 +61,8 @@ import { OUTFIT_SERIES } from '@/data/outfitSeries';
 import { GACHA_TYPES, GachaType } from '@/data/gacha';
 import { EFFECT_CATEGORY, SKILL_TARGET, SKILL_TRIGGER_TYPE } from '@/data/skillMetadata';
 
+import { Row } from './comps';
+
 const ATTRIBUTE_IDS = Object.keys(ATTRIBUTE).map(Number);
 const ROLE_IDS = Object.keys(ROLE).map(Number);
 const RED_EFFECT_CATEGORY_IDS = Object.keys(EFFECT_CATEGORY).map(Number).filter(
@@ -88,20 +88,6 @@ const ImageButton: React.FC<ImageButtonProps> = ({ active, ...props }) => (
     // eslint-disable-next-line react/jsx-props-no-spreading
     {...props}
   />
-);
-
-type RowProps = {
-  title: string,
-};
-const Row: React.FC<RowProps> = ({ title, children }) => (
-  <FixedWrapper>
-    <HStack spacing={2}>
-      <Center flexShrink={0}>
-        <Heading size="sm">{title}</Heading>
-      </Center>
-      {children}
-    </HStack>
-  </FixedWrapper>
 );
 
 const CardFilter: React.FC = () => {
