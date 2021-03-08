@@ -5,7 +5,7 @@ export function getCritProb(tech: number, critOffset: number): number {
   return (0.3 * tech + critOffset) / 100;
 }
 
-export function statModifier(
+export function statModifier(args: {
   baseAppl: number, baseStam: number, baseTech: number,
   passiveApplBuff: number, passiveStamBuff: number, passiveTechBuff: number, // Percent value (i.e., 20 means 20%), sum of all passive buffs applied
   accApplSum: number, accStamSum: number, accTechSum: number, // Attribute revision applied (i.e., x1.1 on same attribute)
@@ -27,7 +27,30 @@ export function statModifier(
   acBaseVolMod: number, // Analogus to acBaseApplMod
   maxVoltage: number,
   isSameAttr: boolean,
-) {
+}) {
+  const {
+    baseAppl, baseStam, baseTech,
+    passiveApplBuff, passiveStamBuff, passiveTechBuff,
+    accApplSum, accStamSum, accTechSum,
+    eventApplBuff, eventStamBuff, eventTechBuff,
+    baseApplMod,
+    applMod,
+    applSpecialMod,
+    critDamageBuff,
+    critOffset,
+    judgementMod,
+    comboMod,
+    acBaseApplMod,
+    isSPTime,
+    voltageModRatio,
+    voltageModFixed,
+    isACTime,
+    stratMod,
+    staminaRemain,
+    acBaseVolMod,
+    maxVoltage,
+    isSameAttr,
+  } = args;
   // Ref. https://www.notion.so/Deep-Dive-02a4e8b610f847f7a106f9b8cc7e75c7
   // Step 1. Live base parameter calculation
   //   Step 1-2. Use base parameter
