@@ -4,6 +4,7 @@ import {
 } from '@chakra-ui/react';
 
 import CardFilter from './CardFilter';
+import CardEffector from './CardEffector';
 
 const CardMenu: React.FC = () => {
   const [accordionIdxs, setAccordionIdxs] = React.useState<number[]>([]);
@@ -20,6 +21,7 @@ const CardMenu: React.FC = () => {
       whiteSpace="nowrap"
     >
       <CardFilter />
+      <CardEffector />
     </Accordion>
   );
 };
