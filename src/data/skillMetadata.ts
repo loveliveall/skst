@@ -56,6 +56,7 @@ type SkillEffect = {
     readonly str: string,
     readonly scaleType: 'percent' | 'value' | 'mixed',
     readonly shortTxt?: string,
+    readonly target?: 'baseAppl' | 'baseStam' | 'baseTech',
   },
 };
 export const SKILL_EFFECT: SkillEffect = {
@@ -64,9 +65,9 @@ export const SKILL_EFFECT: SkillEffect = {
   4: { str: '실드 X 획득', scaleType: 'value' },
   5: { str: '스태미너 X 회복', scaleType: 'value' },
   6: { str: '스태미너 대미지 X 감소', scaleType: 'percent', shortTxt: '대미지 X 감소' },
-  9: { str: '기본 스태미너 X 추가', scaleType: 'percent' }, // Passive
-  10: { str: '기본 어필 X 추가', scaleType: 'percent' }, // Passive
-  11: { str: '기본 테크닉 X 추가', scaleType: 'percent' }, // Passive
+  9: { str: '기본 스태미너 X 추가', scaleType: 'percent', target: 'baseStam' }, // Passive
+  10: { str: '기본 어필 X 추가', scaleType: 'percent', target: 'baseAppl' }, // Passive
+  11: { str: '기본 테크닉 X 추가', scaleType: 'percent', target: 'baseTech' }, // Passive
   17: { str: '어필 X 추가', scaleType: 'mixed' },
   18: { str: '획득 볼티지 X 추가', scaleType: 'mixed' },
   19: { str: 'SP 게이지 획득량 X 상승', scaleType: 'percent' },

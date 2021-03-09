@@ -8,7 +8,7 @@ export function getCritProb(tech: number, critOffset: number): number {
 export function statModifier(args: {
   baseAppl: number, baseStam: number, baseTech: number,
   passiveApplBuff: number, passiveStamBuff: number, passiveTechBuff: number, // Percent value (i.e., 20 means 20%), sum of all passive buffs applied
-  accApplSum: number, accStamSum: number, accTechSum: number, // Attribute revision applied (i.e., x1.1 on same attribute)
+  accApplSum: number, accStamSum: number, accTechSum: number, // Accessory stat sum, attribute revision applied (i.e., x1.1 on same attribute)
   eventApplBuff: number, eventStamBuff: number, eventTechBuff: number, // Percent value (i.e., 20 means 20%), sum of all event buffs applied
   baseApplMod: number, // Percent value (i.e., 20 means +20%, -20 means -20%), sum of all base appl modifiers
   applMod: number, // Analogous with above

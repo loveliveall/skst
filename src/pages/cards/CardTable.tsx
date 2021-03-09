@@ -12,7 +12,7 @@ import DataTable from '@/components/DataTable';
 import {
   defaultCmp, getCardSrc, gachaTypeToLabel, processSkill, getSkillLevelMap, isPercentValue,
 } from '@/utils';
-import { getCritProb } from '@/statUtils';
+import { statModifier } from '@/statUtils';
 import { useAppSelector } from '@/store';
 
 import { FULL_CARD_LIST } from '@/data/cardList';
@@ -27,6 +27,7 @@ import { CARD_PASSIVE_SKILL } from '@/data/cardPassiveSkill';
 const CardTable: React.FC = () => {
   const tooltipColor = useColorModeValue('gray.500', 'gray.400');
   const filt = useAppSelector((state) => state.cardFilter);
+  const eff = useAppSelector((state) => state.cardEffector);
   // TODO: This logic will be get really complicated
   const CARD_LIST = React.useMemo(() => FULL_CARD_LIST
     .filter((card) => {
@@ -107,10 +108,72 @@ const CardTable: React.FC = () => {
       }
       return true;
     })
-    .map((card) => ({
-      ...card,
-      critProb: getCritProb(card.t, card.critOffset),
-    })), [filt]);
+    .map((card) => {
+      const { uncap } = card;
+      const levelMap = getSkillLevelMap(card.id);
+      // Values for Step 1-3
+      const passiveSkills = CARD_PASSIVE_SKILL[card.id]!;
+      const skillLevel = levelMap.passiveSkills[0]![uncap]!;
+      const selfPassiveStatMod = passiveSkills.reduce((acc, curr) => {
+        const s = processSkill(curr);
+        if (s.effectCategory.type === 'red') return acc;
+        // Only care about blue type skills
+        const modifier = curr.effects.reduce((mod, e) => {
+          const { target } = SKILL_EFFECT[e.type]!;
+          if (target === undefined) throw Error(`Skill effect type ${e.type} does not have target`);
+          const value = e.values[skillLevel - 1]!;
+          // We are sure that they are percent value
+          return {
+            a: mod.a + (target === 'baseAppl' ? value / 100 : 0),
+            s: mod.s + (target === 'baseStam' ? value / 100 : 0),
+            t: mod.t + (target === 'baseTech' ? value / 100 : 0),
+          };
+        }, { a: 0, s: 0, t: 0 });
+        return {
+          a: acc.a + modifier.a,
+          s: acc.s + modifier.s,
+          t: acc.t + modifier.t,
+        };
+      }, { a: 0, s: 0, t: 0 });
+      const passiveStatMod = eff.applySelfPassive ? selfPassiveStatMod : { a: 0, s: 0, t: 0 };
+      // TODO: Add Guest Buff Here
+      /* eslint-disable object-property-newline */
+      const newStat = statModifier({
+        baseAppl: card.a, baseStam: card.s, baseTech: card.t,
+        passiveApplBuff: passiveStatMod.a, passiveStamBuff: passiveStatMod.s, passiveTechBuff: passiveStatMod.t,
+        accApplSum: 0, accStamSum: 0, accTechSum: 0,
+        eventApplBuff: 0, eventStamBuff: 0, eventTechBuff: 0,
+        baseApplMod: 0,
+        applMod: 0,
+        applSpecialMod: 0,
+        critDamageBuff: 0,
+        critOffset: card.critOffset,
+        judgementMod: 1.0,
+        comboMod: 1.0,
+        acBaseApplMod: 0,
+        isSPTime: false,
+        voltageModRatio: 0,
+        voltageModFixed: 0,
+        isACTime: false,
+        stratMod: 1.0,
+        staminaRemain: 100,
+        acBaseVolMod: 0,
+        maxVoltage: 50000,
+        isSameAttr: false,
+      });
+      /* eslint-enable object-property-newline */
+      const critProbForCalc = newStat.critProb / 100;
+      return {
+        ...card,
+        a: newStat.a,
+        s: newStat.s,
+        t: newStat.t,
+        critProb: newStat.critProb,
+        voltage: newStat.voltage,
+        critVoltage: newStat.critVoltage,
+        expVoltage: newStat.voltage * (1 - critProbForCalc) + newStat.critVoltage * critProbForCalc,
+      };
+    }), [filt, eff]);
   return (
     <DataTable
       data={CARD_LIST}
@@ -212,6 +275,11 @@ const CardTable: React.FC = () => {
           title: '크리율',
           render: (row) => <Text>{`${row.critProb.toFixed(2)}%`}</Text>,
           customSort: (a, b) => defaultCmp(a.critProb, b.critProb),
+        },
+        {
+          title: '기대 볼티지',
+          render: (row) => <Text>{`${row.expVoltage.toFixed(2)}`}</Text>,
+          customSort: (a, b) => defaultCmp(a.expVoltage, b.expVoltage),
         },
         {
           title: '첫 등장',
