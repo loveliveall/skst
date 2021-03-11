@@ -57,7 +57,7 @@ const Gachas: React.FC = () => {
           },
           {
             title: '종료일',
-            render: (row) => <Text>{row.startDate}</Text>,
+            render: (row) => <Text>{row.endDate}</Text>,
             customSort: (a, b) => defaultCmp(a.endDate, b.endDate),
           },
           {
