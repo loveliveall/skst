@@ -435,7 +435,9 @@ export const CARD: Card = {
   418: { memberId: 209, title: 'お願い。力をかして', awakenTitle: 'ピュアホワイト♡', rarityId: 30, attributeId: 3, roleId: 3, critOffset: 0 },
   419: { memberId: 3, title: 'ちゃんと届きますように！', awakenTitle: 'ピュアホワイト♡', rarityId: 30, attributeId: 6, roleId: 4, critOffset: 1500 },
   420: { memberId: 105, title: '手触りもたまらない', awakenTitle: 'MIRACLE WAVE', rarityId: 20, attributeId: 5, roleId: 3, critOffset: 0 },
-  421: { memberId: 208, title: 'だから……ぎゅーっ！', awakenTitle: '虹色Passions！', rarityId: 20, attributeId: 4, roleId: 2, critOffset: 0 },  
+  421: { memberId: 208, title: 'だから……ぎゅーっ！', awakenTitle: '虹色Passions！', rarityId: 20, attributeId: 4, roleId: 2, critOffset: 0 },
+  422: { memberId: 104, title: '素晴らしいアイディアです！', awakenTitle: 'ホーリーダイヤモンド', rarityId: 30, attributeId: 3, roleId: 1, critOffset: 0 },
+  423: { memberId: 4, title: '私もさっき来たところです', awakenTitle: 'KiRa-KiRa Sensation!', rarityId: 20, attributeId: 6, roleId: 1, critOffset: 0 },  
 };
 
 export const FULL_CARD_LIST = Object.keys(CARD).map(Number).map((cardId) => {
