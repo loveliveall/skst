@@ -253,4 +253,10 @@ export const EVENT: Event = {
     startDate: '2021.03.07.',
     endDate: '2021.03.14.',
   },
+  36: {
+    name: 'レーザーサバイバル戦線！',
+    eventTypeId: 1,
+    startDate: '2021.03.23.',
+    endDate: '2021.03.30.',
+  },
 };

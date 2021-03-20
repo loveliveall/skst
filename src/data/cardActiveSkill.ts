@@ -428,6 +428,12 @@ export const CARD_ACTIVE_SKILL: CardActiveSkill = {
   420: { triggerTypeId: 255, triggerProb: 3000, targetIds: [58], conditions: [], effects: [{ type: 94, values: [1500, 1800, 2100, 2400, 2700], calcType: 2, finishType: 3, finishValue: 0 }] },
   421: { triggerTypeId: 255, triggerProb: 3000, targetIds: [1], conditions: [], effects: [{ type: 19, values: [930, 960, 990, 1020, 1050], calcType: 2, finishType: 2, finishValue: 2 }] },
   422: { triggerTypeId: 255, triggerProb: 3300, targetIds: [56], conditions: [], effects: [{ type: 18, values: [600, 630, 660, 690, 720], calcType: 2, finishType: 2, finishValue: 5 }] },
-  423: { triggerTypeId: 255, triggerProb: 3000, targetIds: [58], conditions: [], effects: [{ type: 90, values: [2500, 2800, 3100, 3400, 3700], calcType: 2, finishType: 3, finishValue: 0 }] },  
+  423: { triggerTypeId: 255, triggerProb: 3000, targetIds: [58], conditions: [], effects: [{ type: 90, values: [2500, 2800, 3100, 3400, 3700], calcType: 2, finishType: 3, finishValue: 0 }] },
+  424: { triggerTypeId: 255, triggerProb: 3300, targetIds: [56], conditions: [], effects: [{ type: 17, values: [600, 630, 660, 690, 720], calcType: 2, finishType: 2, finishValue: 5 }] },
+  425: { triggerTypeId: 255, triggerProb: 3000, targetIds: [58], conditions: [], effects: [{ type: 25, values: [2000, 2050, 2100, 2150, 2200], calcType: 1, finishType: 7, finishValue: 1 }] },
+  426: { triggerTypeId: 255, triggerProb: 3300, targetIds: [58], conditions: [], effects: [{ type: 94, values: [2000, 2300, 2600, 2900, 3200], calcType: 2, finishType: 3, finishValue: 0 }] },
+  427: { triggerTypeId: 255, triggerProb: 3300, targetIds: [58], conditions: [], effects: [{ type: 91, values: [600, 650, 700, 750, 800], calcType: 2, finishType: 3, finishValue: 0 }] },
+  428: { triggerTypeId: 255, triggerProb: 3000, targetIds: [56], conditions: [], effects: [{ type: 20, values: [800, 850, 900, 950, 1000], calcType: 1, finishType: 2, finishValue: 3 }] },
+  429: { triggerTypeId: 255, triggerProb: 3000, targetIds: [58], conditions: [], effects: [{ type: 97, values: [1700, 2000, 2300, 2600, 2900], calcType: 2, finishType: 3, finishValue: 0 }] },
 };
 /* eslint-enable */

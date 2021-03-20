@@ -107,6 +107,8 @@ export const GACHA: Gacha = {
   10061: { type: 'event', name: '未来のラボは大騒ぎガチャ後編', startDate: '2021.02.20.', endDate: '2021.02.27.', eventId: 34 },
   10062: { type: 'event', name: '思いよ届け、ホワイトデーガチャ前編', startDate: '2021.03.04.', endDate: '2021.03.14.', eventId: 35 },
   10063: { type: 'event', name: '思いよ届け、ホワイトデーガチャ後編', startDate: '2021.03.07.', endDate: '2021.03.14.', eventId: 35 },
+  10064: { type: 'event', name: 'レーザーサバイバル戦線！ガチャ前編', startDate: '2021.03.20.', endDate: '2021.03.30.', eventId: 36 },
+  10065: { type: 'event', name: 'レーザーサバイバル戦線！ガチャ後編', startDate: '2021.03.23.', endDate: '2021.03.30.', eventId: 36 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },

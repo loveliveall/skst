@@ -40,6 +40,7 @@ export const SKILL_TARGET: SkillTarget = {
   1: { str: '전원' },
   2: { str: '호노카' },
   12: { str: '리코' },
+  20: { str: '아유무' },
   50: { str: '자신 이외' },
   53: { str: '동작전' },
   54: { str: '동학교' },

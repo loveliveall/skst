@@ -432,4 +432,10 @@ export const CARD_SOURCE: CardSource = {
   421: { type: 'event', eventId: 35 },
   422: { type: 'gacha', gachaId: 40002 },
   423: { type: 'gacha', gachaId: 40002 },
+  424: { type: 'gacha', gachaId: 10064 },
+  425: { type: 'gacha', gachaId: 10064 },
+  426: { type: 'gacha', gachaId: 10065 },
+  427: { type: 'event', eventId: 36 },
+  428: { type: 'event', eventId: 36 },
+  429: { type: 'event', eventId: 36 },
 };
