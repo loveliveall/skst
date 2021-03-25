@@ -69,7 +69,8 @@ const CardTable: React.FC = () => {
         const passiveSkills = CARD_PASSIVE_SKILL[card.id];
         if (passiveSkills === undefined) return false;
         const judge = passiveSkills.some((passiveSkill) => {
-          const { targetIds, effectCategoryId } = processSkill(passiveSkill);
+          const { targetIds, effectCategoryId, effectCategory } = processSkill(passiveSkill);
+          if (effectCategory.type !== 'blue') return false; // This scope only targets blue type passiveSkil
           if (filt.passiveBlueCategory.length !== 0) {
             const filtCategories = filt.passiveBlueCategory.map((e) => e.effectCategoryId);
             if (!filtCategories.includes(effectCategoryId)) return false;
@@ -89,7 +90,10 @@ const CardTable: React.FC = () => {
         const passiveSkills = CARD_PASSIVE_SKILL[card.id];
         if (passiveSkills === undefined) return false;
         const judge = passiveSkills.some((passiveSkill) => {
-          const { targetIds, effectCategoryId, triggerTypeId } = processSkill(passiveSkill);
+          const {
+            targetIds, effectCategoryId, triggerTypeId, effectCategory,
+          } = processSkill(passiveSkill);
+          if (effectCategory.type !== 'red') return false; // This scope only targets red type passiveSkil
           if (filt.passiveRedCategory.length !== 0) {
             const filtCategories = filt.passiveRedCategory.map((e) => e.effectCategoryId);
             if (!filtCategories.includes(effectCategoryId)) return false;
