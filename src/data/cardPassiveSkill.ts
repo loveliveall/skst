@@ -799,5 +799,13 @@ export const CARD_PASSIVE_SKILL: CardPassiveSkill = {
     { triggerTypeId: 11, triggerProb: 10000, targetIds: [58], conditions: [{ type: 6, value: 0 }, { type: 3, value: 10 }], effects: [{ type: 110, values: [1000], calcType: 2, finishType: 3, finishValue: 0 }] }],
   429: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [53], conditions: [], effects: [{ type: 9, values: [300, 350, 400, 450, 500], calcType: 2, finishType: 255, finishValue: 0 }] },
     { triggerTypeId: 4, triggerProb: 10000, targetIds: [58], conditions: [], effects: [{ type: 97, values: [660], calcType: 2, finishType: 3, finishValue: 0 }] }],
+  430: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [56], conditions: [], effects: [{ type: 10, values: [400, 430, 460, 490, 520], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 11, triggerProb: 10000, targetIds: [58], conditions: [{ type: 6, value: 0 }, { type: 3, value: 10 }], effects: [{ type: 110, values: [1500], calcType: 2, finishType: 3, finishValue: 0 }] }],
+  431: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [53], conditions: [], effects: [{ type: 10, values: [300, 350, 400, 450, 500], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 9, triggerProb: 10000, targetIds: [58], conditions: [{ type: 3, value: 5 }], effects: [{ type: 6, values: [3000], calcType: 2, finishType: 2, finishValue: 1 }] }],
+  432: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [56], conditions: [], effects: [{ type: 10, values: [200, 230, 260, 290, 320], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 2, triggerProb: 10000, targetIds: [58], conditions: [], effects: [{ type: 92, values: [400], calcType: 2, finishType: 3, finishValue: 0 }] }],
+  433: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [56], conditions: [], effects: [{ type: 10, values: [200, 230, 260, 290, 320], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 2, triggerProb: 10000, targetIds: [56], conditions: [], effects: [{ type: 18, values: [100], calcType: 2, finishType: 1, finishValue: 0 }] }],
 };
 /* eslint-enable */

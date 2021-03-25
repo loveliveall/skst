@@ -147,6 +147,7 @@ export const GACHA: Gacha = {
   30017: { type: 'fes', name: 'スクスタフェス', startDate: '2020.12.26.', endDate: '2021.01.14.' },
   30018: { type: 'fes', name: 'スクスタフェス', startDate: '2021.01.30.', endDate: '2021.02.14.' },
   30019: { type: 'fes', name: 'スクスタフェス', startDate: '2021.02.28.', endDate: '2021.03.15.' },
+  30020: { type: 'fes', name: 'スクスタフェス', startDate: '2021.03.26.', endDate: '2021.04.14.' },
 
   40001: { type: 'party', name: 'パーティーガチャ', startDate: '2021.02.14.', endDate: '2021.02.28.' },
   40002: { type: 'party', name: 'パーティーガチャ', startDate: '2021.03.15.', endDate: '2021.03.26.' },
