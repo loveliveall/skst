@@ -54,6 +54,8 @@ function getStatRanks(
     const sSame = targets.filter((card) => card.s === param.s).length - 1;
     const tRank = targets.filter((card) => card.t > param.t).length + 1;
     const tSame = targets.filter((card) => card.t === param.t).length - 1;
+    const sumRank = targets.filter((card) => (card.a + card.s + card.t) > (param.a + param.s + param.t)).length + 1;
+    const sumSame = targets.filter((card) => (card.a + card.s + card.t) === (param.a + param.s + param.t)).length - 1;
     return {
       total,
       a: {
@@ -67,6 +69,10 @@ function getStatRanks(
       t: {
         rank: tRank,
         same: tSame,
+      },
+      sum: {
+        rank: sumRank,
+        same: sumSame,
       },
     };
   });
@@ -91,6 +97,7 @@ const StatRankTable: React.FC<StatRankTableProps> = ({
             <Th>어필</Th>
             <Th>스태</Th>
             <Th>테크닉</Th>
+            <Th>스탯합</Th>
           </Tr>
         </Thead>
         <Tbody>
@@ -98,6 +105,7 @@ const StatRankTable: React.FC<StatRankTableProps> = ({
             const aRatio = el.a.rank / el.total;
             const sRatio = el.s.rank / el.total;
             const tRatio = el.t.rank / el.total;
+            const sumRatio = el.sum.rank / el.total;
             return (
               // eslint-disable-next-line react/no-array-index-key
               <Tr key={uncap}>
@@ -116,6 +124,11 @@ const StatRankTable: React.FC<StatRankTableProps> = ({
                   <Text as="span">{`${el.t.rank} / ${el.total}`}</Text>
                   &nbsp;
                   {el.t.same !== 0 && <Text as="span" fontSize="xs">{`(${el.t.same})`}</Text>}
+                </Td>
+                <Td color={getCellColorCode(sumRatio)}>
+                  <Text as="span">{`${el.sum.rank} / ${el.total}`}</Text>
+                  &nbsp;
+                  {el.sum.same !== 0 && <Text as="span" fontSize="xs">{`(${el.sum.same})`}</Text>}
                 </Td>
               </Tr>
             );
