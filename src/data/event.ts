@@ -259,4 +259,11 @@ export const EVENT: Event = {
     startDate: '2021.03.23.',
     endDate: '2021.03.30.',
   },
+  37: {
+    name: '桜の精霊に会いに',
+    eventTypeId: 2,
+    voltageRankSongs: ['No brand girls', '近未来ハッピーエンド', '眠れる森に行きたいな'],
+    startDate: '2021.04.07.',
+    endDate: '2021.04.14.',
+  },
 };

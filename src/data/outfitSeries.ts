@@ -33,4 +33,7 @@ export const OUTFIT_SERIES: OutfitSeries = {
   19: { name: '虹色Passions！', groupId: 3, matching: ['虹色Passions！'] },
   20: { name: 'KiRa-KiRa Sensation!', groupId: 1, matching: ['KiRa-KiRa Sensation!'] },
   21: { name: 'MIRACLE WAVE', groupId: 2, matching: ['MIRACLE WAVE'] },
+  22: { name: 'Just Believe!!!', groupId: 3, matching: ['Just Believe!!!'] },
+  23: { name: 'HAPPY PARTY TRAIN', groupId: 2, matching: ['HAPPY PARTY TRAIN'] },
+  24: { name: 'No brand girls', groupId: 1, matching: ['No brand girls'] },
 };

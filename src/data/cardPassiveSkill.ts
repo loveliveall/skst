@@ -807,5 +807,17 @@ export const CARD_PASSIVE_SKILL: CardPassiveSkill = {
     { triggerTypeId: 2, triggerProb: 10000, targetIds: [58], conditions: [], effects: [{ type: 92, values: [400], calcType: 2, finishType: 3, finishValue: 0 }] }],
   433: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [56], conditions: [], effects: [{ type: 10, values: [200, 230, 260, 290, 320], calcType: 2, finishType: 255, finishValue: 0 }] },
     { triggerTypeId: 2, triggerProb: 10000, targetIds: [56], conditions: [], effects: [{ type: 18, values: [100], calcType: 2, finishType: 1, finishValue: 0 }] }],
+    434: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [56], conditions: [], effects: [{ type: 10, values: [400, 430, 460, 490, 520], calcType: 2, finishType: 255, finishValue: 0 }] },
+  { triggerTypeId: 10, triggerProb: 10000, targetIds: [58], conditions: [], effects: [{ type: 90, values: [700], calcType: 2, finishType: 3, finishValue: 0 }] }],
+  435: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [53], conditions: [], effects: [{ type: 9, values: [300, 350, 400, 450, 500], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 3, triggerProb: 10000, targetIds: [58], conditions: [], effects: [{ type: 94, values: [240], calcType: 2, finishType: 3, finishValue: 0 }] }],
+  436: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [53], conditions: [], effects: [{ type: 9, values: [500, 550, 600, 650, 700], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 7, triggerProb: 10000, targetIds: [58], conditions: [{ type: 5, value: 350 }, { type: 3, value: 3 }], effects: [{ type: 94, values: [3300], calcType: 2, finishType: 3, finishValue: 0 }] }],
+  437: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [53], conditions: [], effects: [{ type: 11, values: [500, 550, 600, 650, 700], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 3, triggerProb: 10000, targetIds: [56], conditions: [], effects: [{ type: 22, values: [700], calcType: 1, finishType: 2, finishValue: 5 }] }],
+  438: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [59], conditions: [], effects: [{ type: 11, values: [500, 550, 600, 650, 700], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 9, triggerProb: 10000, targetIds: [58], conditions: [], effects: [{ type: 110, values: [300], calcType: 2, finishType: 3, finishValue: 0 }] }],
+  439: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [59], conditions: [], effects: [{ type: 10, values: [500, 550, 600, 650, 700], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 3, triggerProb: 10000, targetIds: [58], conditions: [], effects: [{ type: 25, values: [260], calcType: 1, finishType: 7, finishValue: 1 }] }],
 };
 /* eslint-enable */
