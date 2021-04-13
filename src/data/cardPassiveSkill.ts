@@ -819,5 +819,9 @@ export const CARD_PASSIVE_SKILL: CardPassiveSkill = {
     { triggerTypeId: 9, triggerProb: 10000, targetIds: [58], conditions: [], effects: [{ type: 110, values: [300], calcType: 2, finishType: 3, finishValue: 0 }] }],
   439: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [59], conditions: [], effects: [{ type: 10, values: [500, 550, 600, 650, 700], calcType: 2, finishType: 255, finishValue: 0 }] },
     { triggerTypeId: 3, triggerProb: 10000, targetIds: [58], conditions: [], effects: [{ type: 25, values: [260], calcType: 1, finishType: 7, finishValue: 1 }] }],
+  440: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [56], conditions: [], effects: [{ type: 10, values: [530, 550, 570, 590, 610, 630, 650], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 10, triggerProb: 10000, targetIds: [56], conditions: [], effects: [{ type: 22, values: [1000], calcType: 1, finishType: 2, finishValue: 3 }] }],
+  441: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [57], conditions: [], effects: [{ type: 10, values: [300, 330, 360, 390, 420], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 3, triggerProb: 10000, targetIds: [53], conditions: [], effects: [{ type: 119, values: [100], calcType: 2, finishType: 2, finishValue: 3 }] }],
 };
 /* eslint-enable */

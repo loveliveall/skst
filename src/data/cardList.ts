@@ -454,6 +454,8 @@ export const CARD: Card = {
   437: { memberId: 9, title: 'まるで、夢の世界みたい♪', awakenTitle: 'Cherry blossom fairy', rarityId: 30, attributeId: 6, roleId: 4, critOffset: 1500 },
   438: { memberId: 106, title: '風よ、ヨハネに従いなさい！', awakenTitle: 'HAPPY PARTY TRAIN', rarityId: 20, attributeId: 2, roleId: 4, critOffset: 1500 },
   439: { memberId: 7, title: 'つぼみを見るだけでもウチは幸せ', awakenTitle: 'No brand girls', rarityId: 20, attributeId: 3, roleId: 2, critOffset: 0 },
+  440: { memberId: 1, title: 'す～……す～……', awakenTitle: 'キャプテン☆穂乃果', rarityId: 30, attributeId: 2, roleId: 4, critOffset: 1500 },
+  441: { memberId: 206, title: 'こっちにおいで', awakenTitle: 'Just Believe!!!', rarityId: 20, attributeId: 6, roleId: 1, critOffset: 0 },
 };
 
 export const FULL_CARD_LIST = Object.keys(CARD).map(Number).map((cardId) => {

@@ -445,5 +445,7 @@ export const CARD_ACTIVE_SKILL: CardActiveSkill = {
   437: { triggerTypeId: 255, triggerProb: 3300, targetIds: [53], conditions: [], effects: [{ type: 22, values: [420, 440, 460, 480, 500], calcType: 1, finishType: 2, finishValue: 5 }] },
   438: { triggerTypeId: 255, triggerProb: 3000, targetIds: [58], conditions: [], effects: [{ type: 116, values: [1700, 2000, 2300, 2600, 2900], calcType: 2, finishType: 3, finishValue: 0 }] },
   439: { triggerTypeId: 255, triggerProb: 3000, targetIds: [1], conditions: [], effects: [{ type: 19, values: [300, 330, 360, 390, 420], calcType: 2, finishType: 2, finishValue: 5 }] },
+  440: { triggerTypeId: 255, triggerProb: 3300, targetIds: [58], conditions: [], effects: [{ type: 116, values: [2000, 2300, 2600, 2900, 3200], calcType: 2, finishType: 3, finishValue: 0 }] },
+  441: { triggerTypeId: 255, triggerProb: 3000, targetIds: [57], conditions: [], effects: [{ type: 18, values: [400, 430, 460, 490, 520], calcType: 2, finishType: 2, finishValue: 5 }] },
 };
 /* eslint-enable */

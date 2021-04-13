@@ -153,5 +153,6 @@ export const GACHA: Gacha = {
 
   40001: { type: 'party', name: 'パーティーガチャ', startDate: '2021.02.14.', endDate: '2021.02.28.' },
   40002: { type: 'party', name: 'パーティーガチャ', startDate: '2021.03.15.', endDate: '2021.03.26.' },
+  40003: { type: 'party', name: 'パーティーガチャ', startDate: '2021.04.14.', endDate: '2021.04.29.' },
 };
 /* eslint-enable object-curly-newline, max-len */
