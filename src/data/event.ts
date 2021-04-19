@@ -266,4 +266,10 @@ export const EVENT: Event = {
     startDate: '2021.04.07.',
     endDate: '2021.04.14.',
   },
+  38: {
+    name: 'あの木の下で逢いましょう',
+    eventTypeId: 1,
+    startDate: '2021.04.22.',
+    endDate: '2021.04.29.',
+  },
 };

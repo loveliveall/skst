@@ -111,6 +111,8 @@ export const GACHA: Gacha = {
   10065: { type: 'event', name: 'レーザーサバイバル戦線！ガチャ後編', startDate: '2021.03.23.', endDate: '2021.03.30.', eventId: 36 },
   10066: { type: 'event', name: '桜の精霊に会いにガチャ前編', startDate: '2021.04.04.', endDate: '2021.04.14.', eventId: 37 },
   10067: { type: 'event', name: '桜の精霊に会いにガチャ後編', startDate: '2021.04.07.', endDate: '2021.04.14.', eventId: 37 },
+  10068: { type: 'event', name: 'あの木の下で逢いましょうガチャ前編', startDate: '2021.04.19.', endDate: '2021.04.29.', eventId: 38 },
+  10069: { type: 'event', name: 'あの木の下で逢いましょうガチャ後編', startDate: '2021.04.22.', endDate: '2021.04.29.', eventId: 38 },
 
   20001: { type: 'pickup', name: 'ピックアップガチャ (UR 요시코)', startDate: '2019.10.15.', endDate: '2019.10.21.' },
   20002: { type: 'pickup', name: 'ピックアップガチャ (UR 우미)', startDate: '2019.10.31.', endDate: '2019.11.06.' },

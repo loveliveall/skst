@@ -456,6 +456,12 @@ export const CARD: Card = {
   439: { memberId: 7, title: 'つぼみを見るだけでもウチは幸せ', awakenTitle: 'No brand girls', rarityId: 20, attributeId: 3, roleId: 2, critOffset: 0 },
   440: { memberId: 1, title: 'す～……す～……', awakenTitle: 'キャプテン☆穂乃果', rarityId: 30, attributeId: 2, roleId: 4, critOffset: 1500 },
   441: { memberId: 206, title: 'こっちにおいで', awakenTitle: 'Just Believe!!!', rarityId: 20, attributeId: 6, roleId: 1, critOffset: 0 },
+  442: { memberId: 5, title: 'ごろごろすると気持ちいいにゃ～', awakenTitle: 'signs of spring', rarityId: 30, attributeId: 4, roleId: 1, critOffset: 0 },
+  443: { memberId: 202, title: 'かすみん、ただいま戻りました！', awakenTitle: 'Just Believe!!!', rarityId: 20, attributeId: 2, roleId: 1, critOffset: 0 },
+  444: { memberId: 204, title: '花占い', awakenTitle: 'signs of spring', rarityId: 30, attributeId: 6, roleId: 3, critOffset: 0 },
+  445: { memberId: 101, title: '逃げろ！', awakenTitle: 'signs of spring', rarityId: 30, attributeId: 5, roleId: 2, critOffset: 1500 },
+  446: { memberId: 8, title: '凛ちゃんの居場所、分かったかも', awakenTitle: 'No brand girls', rarityId: 20, attributeId: 6, roleId: 3, critOffset: 0 },
+  447: { memberId: 109, title: 'はい、これでもう大丈夫♪', awakenTitle: 'HAPPY PARTY TRAIN', rarityId: 20, attributeId: 1, roleId: 4, critOffset: 1500 },
 };
 
 export const FULL_CARD_LIST = Object.keys(CARD).map(Number).map((cardId) => {
