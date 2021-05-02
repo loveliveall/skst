@@ -835,5 +835,13 @@ export const CARD_PASSIVE_SKILL: CardPassiveSkill = {
     { triggerTypeId: 6, triggerProb: 10000, targetIds: [58], conditions: [{ type: 2, value: 5000 }, { type: 3, value: 1 }], effects: [{ type: 97, values: [2000], calcType: 2, finishType: 3, finishValue: 0 }] }],
   447: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [60], conditions: [], effects: [{ type: 10, values: [200, 230, 260, 290, 320], calcType: 2, finishType: 255, finishValue: 0 }] },
     { triggerTypeId: 4, triggerProb: 10000, targetIds: [60], conditions: [], effects: [{ type: 22, values: [600], calcType: 1, finishType: 2, finishValue: 5 }] }],
+  448: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [56], conditions: [], effects: [{ type: 10, values: [400, 430, 460, 490, 520], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 10, triggerProb: 10000, targetIds: [56], conditions: [], effects: [{ type: 20, values: [1500], calcType: 1, finishType: 2, finishValue: 3 }] }],
+  449: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [53], conditions: [], effects: [{ type: 10, values: [500, 550, 600, 650, 700], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 10, triggerProb: 10000, targetIds: [59], conditions: [], effects: [{ type: 22, values: [3000], calcType: 1, finishType: 2, finishValue: 3 }] }],
+  450: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [56], conditions: [], effects: [{ type: 9, values: [200, 230, 260, 290, 320], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 3, triggerProb: 10000, targetIds: [58], conditions: [{ type: 3, value: 4 }], effects: [{ type: 97, values: [1200], calcType: 2, finishType: 3, finishValue: 0 }] }],
+  451: [{ triggerTypeId: 255, triggerProb: 10000, targetIds: [56], conditions: [], effects: [{ type: 10, values: [200, 230, 260, 290, 320], calcType: 2, finishType: 255, finishValue: 0 }] },
+    { triggerTypeId: 10, triggerProb: 10000, targetIds: [56], conditions: [{ type: 3, value: 1 }], effects: [{ type: 19, values: [2400], calcType: 2, finishType: 2, finishValue: 10 }] }],
 };
 /* eslint-enable */
